@@ -141,12 +141,20 @@ function StatCard({ label, value }) {
   );
 }
 
-function PhoneFrame({ src, alt, floatDelay = 0 }) {
+function PhoneFrame({ src, alt, floatDelay = 0, onClick }) {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div
+    <button
+      type="button"
+      onClick={onClick}
+      aria-label={`Zoom ${alt}`}
       style={{
+        appearance: "none",
+        padding: 0,
+        border: "none",
+        background: "transparent",
+        cursor: "zoom-in",
         position: "relative",
         width: "100%",
         maxWidth: 220,
@@ -189,19 +197,39 @@ function PhoneFrame({ src, alt, floatDelay = 0 }) {
           }}
         />
       </div>
-    </div>
+    </button>
   );
 }
 
 export default function Portfolio() {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
+  const [selectedScreenshot, setSelectedScreenshot] = useState(null);
   const baseUrl = import.meta.env.BASE_URL || "/";
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 60);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    if (!selectedScreenshot) return undefined;
+
+    const previousOverflow = document.body.style.overflow;
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setSelectedScreenshot(null);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [selectedScreenshot]);
 
   const screenshots = useMemo(
     () => [
@@ -489,6 +517,7 @@ export default function Portfolio() {
                       src={item.src}
                       alt={item.alt}
                       floatDelay={index * 0.35}
+                      onClick={() => setSelectedScreenshot(item)}
                     />
                   ))}
                 </div>
@@ -806,6 +835,89 @@ export default function Portfolio() {
           </div>
         </section>
       </div>
+
+      {selectedScreenshot ? (
+        <div
+          onClick={() => setSelectedScreenshot(null)}
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 1400,
+            background: "rgba(5,6,8,0.88)",
+            backdropFilter: "blur(16px)",
+            WebkitBackdropFilter: "blur(16px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "2rem 1.25rem",
+          }}
+        >
+          <button
+            type="button"
+            onClick={() => setSelectedScreenshot(null)}
+            aria-label="Close screenshot preview"
+            style={{
+              position: "absolute",
+              top: 24,
+              right: 24,
+              width: 44,
+              height: 44,
+              borderRadius: 999,
+              border: "1px solid rgba(255,255,255,0.14)",
+              background: "rgba(255,255,255,0.06)",
+              color: "#f5f5f7",
+              fontSize: 22,
+              lineHeight: 1,
+              cursor: "pointer",
+            }}
+          >
+            ×
+          </button>
+
+          <div
+            onClick={(event) => event.stopPropagation()}
+            style={{
+              width: "min(92vw, 1200px)",
+              maxHeight: "88vh",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 14,
+            }}
+          >
+            <img
+              src={selectedScreenshot.src}
+              alt={selectedScreenshot.alt}
+              style={{
+                display: "block",
+                maxWidth: "100%",
+                maxHeight: "80vh",
+                width: "auto",
+                height: "auto",
+                borderRadius: 28,
+                border: "1px solid rgba(255,255,255,0.12)",
+                boxShadow: "0 30px 80px rgba(0,0,0,0.45)",
+                background: "#0b0b0c",
+              }}
+            />
+
+            <div
+              style={{
+                padding: "10px 14px",
+                borderRadius: 999,
+                border: "1px solid rgba(255,255,255,0.1)",
+                background: "rgba(255,255,255,0.05)",
+                color: "rgba(255,255,255,0.78)",
+                fontSize: 13,
+                lineHeight: 1.4,
+                textAlign: "center",
+              }}
+            >
+              {selectedScreenshot.alt}
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }
