@@ -647,7 +647,7 @@ export default function Portfolio() {
                 }}
               >
                 <StatCard label="Platform" value="iPhone Pro + Arduino" />
-                <StatCard label="Sensors" value="Camera + LiDAR + IMU" />
+                <StatCard label="Sensors" value="Camera + LiDAR" />
                 <StatCard label="Output" value="5 haptic tactors" />
                 <StatCard label="Focus" value="Collision-free navigation" />
               </div>

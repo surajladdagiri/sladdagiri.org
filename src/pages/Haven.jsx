@@ -472,46 +472,6 @@ export default function Haven() {
     },
   ];
 
-  const futureDirections = [
-    {
-      title: "Object-aware navigation",
-      description:
-        "Future versions can classify passable structures such as doors, stairs, and grass, then communicate each case through clearer haptic patterns and smarter path planning.",
-    },
-    {
-      title: "Mobile navigation integration",
-      description:
-        "HAVEN can pair local obstacle avoidance with tools such as Google Maps, combining GPS-level route planning with close-range environmental awareness.",
-    },
-    {
-      title: "Component optimization",
-      description:
-        "Further work focuses on weatherproofing, longer battery life, lighter packaging, and lower-profile mounting components that better support daily wear.",
-    },
-  ];
-
-  const codeSnippet = [
-    "if let line = NavigationEngine.straightLinePath(from: startGrid, to: goal, in: grid) {",
-    "    rawPath = line",
-    "} else if let star = NavigationEngine.astar(grid: grid, from: startGrid, to: goal) {",
-    "    rawPath = star",
-    "} else {",
-    "    self.triggerNoPathAlert(now: CACurrentMediaTime())",
-    "    return",
-    "}",
-    "",
-    "storedDesiredYaw = NavigationEngine.desiredYaw(path: rawPath, from: startGrid)",
-    "",
-    "let haptics: [Int] = {",
-    "    if let d = desiredYaw {",
-    "        return NavigationEngine.hapticValues(desiredYaw: d, currentYaw: currentYaw)",
-    "    }",
-    "    return [0, 0, 0, 0, 0]",
-    "}()",
-    "let command = haptics.map { String(min(100, max(0, $0))) }.joined(separator: \",\")",
-    "bleManager.sendCommand(command)",
-  ].join("\n");
-
   return (
     <div
       style={{
@@ -548,8 +508,7 @@ export default function Haven() {
 
         @media (max-width: 1080px) {
           .haven-hero-grid,
-          .haven-detail-grid,
-          .haven-code-grid {
+          .haven-detail-grid {
             grid-template-columns: 1fr !important;
           }
 
@@ -566,8 +525,7 @@ export default function Haven() {
           .haven-subproject-grid,
           .haven-metric-grid,
           .haven-info-grid,
-          .haven-stage-grid,
-          .haven-future-grid {
+          .haven-stage-grid {
             grid-template-columns: 1fr !important;
           }
         }
@@ -714,10 +672,6 @@ export default function Haven() {
                 >
                   <CTAButton primary onClick={() => navigate("/portfolio")}>
                     Back to Portfolio
-                  </CTAButton>
-
-                  <CTAButton href="#navigation-core">
-                    View Navigation Core
                   </CTAButton>
 
                   <CTAButton href="mailto:suraj@sladdagiri.org">
@@ -1047,181 +1001,10 @@ export default function Haven() {
                 gap: "0.9rem",
               }}
             >
-              <InfoCard label="Institution" value="UC San Diego" />
-              <InfoCard label="Program" value="Bioengineering Senior Design 2025" />
-              <InfoCard label="Team" value="Alexander Lange, Nick Monell, Peilin Pan, Suraj Laddagiri" />
-              <InfoCard label="Leadership" value="Gert Cauwenberghs and Adyant Balaji" />
             </div>
           </div>
         </div>
 
-        <div
-          id="navigation-core"
-          className="haven-code-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: "1rem",
-            animation: "havenFadeRise 1000ms ease both",
-            animationDelay: "240ms",
-          }}
-        >
-          <div
-            style={{
-              borderRadius: 30,
-              padding: "1.6rem",
-              background: "rgba(255,255,255,0.03)",
-              border: "1px solid rgba(255,255,255,0.08)",
-              boxShadow: "0 16px 46px rgba(0,0,0,0.18)",
-            }}
-          >
-            <div
-              style={{
-                fontSize: 12,
-                textTransform: "uppercase",
-                letterSpacing: "0.14em",
-                color: "rgba(255,255,255,0.34)",
-                marginBottom: 10,
-              }}
-            >
-              Navigation core
-            </div>
-
-            <h2
-              style={{
-                margin: "0 0 0.8rem",
-                fontSize: "clamp(28px, 4vw, 40px)",
-                lineHeight: 1.05,
-                letterSpacing: "-0.04em",
-                color: "#f5f5f7",
-              }}
-            >
-              Swift logic that turns mapped space into haptics.
-            </h2>
-
-            <p
-              style={{
-                margin: "0 0 1.2rem",
-                fontSize: 15,
-                lineHeight: 1.8,
-                color: "rgba(255,255,255,0.58)",
-              }}
-            >
-              The Swift pipeline you shared prioritizes a straight corridor when
-              it is safe, falls back to A* in tighter scenes, then serializes
-              the resulting five-motor haptic values for Bluetooth delivery to
-              the Arduino.
-            </p>
-
-            <pre
-              style={{
-                margin: 0,
-                padding: "1.1rem",
-                borderRadius: 22,
-                background: "rgba(4,10,18,0.86)",
-                border: "1px solid rgba(83,197,255,0.18)",
-                color: "#dceeff",
-                fontSize: 13,
-                lineHeight: 1.75,
-                overflowX: "auto",
-                fontFamily:
-                  'ui-monospace, SFMono-Regular, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-              }}
-            >
-              {codeSnippet}
-            </pre>
-          </div>
-
-          <div
-            style={{
-              borderRadius: 30,
-              padding: "1.6rem",
-              background:
-                "linear-gradient(155deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025))",
-              border: "1px solid rgba(255,255,255,0.08)",
-              boxShadow: "0 16px 46px rgba(0,0,0,0.18)",
-            }}
-          >
-            <div
-              style={{
-                fontSize: 12,
-                textTransform: "uppercase",
-                letterSpacing: "0.14em",
-                color: "rgba(255,255,255,0.34)",
-                marginBottom: 10,
-              }}
-            >
-              Future directions
-            </div>
-
-            <h2
-              style={{
-                margin: "0 0 0.8rem",
-                fontSize: "clamp(28px, 4vw, 40px)",
-                lineHeight: 1.05,
-                letterSpacing: "-0.04em",
-                color: "#f5f5f7",
-              }}
-            >
-              Clear next steps from the report.
-            </h2>
-
-            <p
-              style={{
-                margin: "0 0 1.2rem",
-                fontSize: 15,
-                lineHeight: 1.8,
-                color: "rgba(255,255,255,0.58)",
-              }}
-            >
-              The strongest next steps from the report are broader user
-              validation, richer scene understanding, and tighter integration
-              with long-distance mobile navigation tools.
-            </p>
-
-            <div
-              className="haven-future-grid"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "1fr",
-                gap: "0.9rem",
-              }}
-            >
-              {futureDirections.map((item) => (
-                <div
-                  key={item.title}
-                  style={{
-                    borderRadius: 24,
-                    padding: "1rem",
-                    background: "rgba(255,255,255,0.03)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                  }}
-                >
-                  <h3
-                    style={{
-                      margin: "0 0 0.55rem",
-                      fontSize: 18,
-                      letterSpacing: "-0.03em",
-                      color: "#f5f5f7",
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p
-                    style={{
-                      margin: 0,
-                      fontSize: 14,
-                      lineHeight: 1.75,
-                      color: "rgba(255,255,255,0.56)",
-                    }}
-                  >
-                    {item.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </section>
     </div>
   );
