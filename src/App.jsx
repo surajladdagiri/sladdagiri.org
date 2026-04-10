@@ -12,6 +12,19 @@ const NAV_LINKS = [
   { label: "Demos", path: "/demos" },
 ];
 
+function getDocumentTitle(pathname) {
+  if (pathname === "/") return "Suraj Laddagiri | Portfolio";
+  if (pathname === "/portfolio") return "Portfolio | Suraj Laddagiri";
+  if (pathname === "/demos") return "Demos | Suraj Laddagiri";
+  if (pathname === "/musicstrip") return "Music Strip | Suraj Laddagiri";
+  if (pathname === "/musicstrip/privacy") {
+    return "Music Strip Privacy | Suraj Laddagiri";
+  }
+  if (pathname === "/haven") return "HAVEN | Suraj Laddagiri";
+
+  return "Suraj Laddagiri | Portfolio";
+}
+
 function HomeIcon() {
   return (
     <svg
@@ -181,6 +194,7 @@ function Layout() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
+    document.title = getDocumentTitle(location.pathname);
   }, [location.pathname]);
 
   return (
