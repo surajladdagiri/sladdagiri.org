@@ -363,9 +363,9 @@ export default function Haven() {
 
   const featureCards = [
     {
-      title: "Smartphone perception stack",
+      title: "Smartphone-based sensing",
       description:
-        "HAVEN uses a LiDAR-equipped iPhone as the sensing and compute layer, combining the camera, depth sensing, and inertial data into a wearable navigation pipeline.",
+        "HAVEN uses a LiDAR-equipped iPhone as the perception and compute layer, combining the camera, depth sensor, and IMU into a low-cost wearable navigation stack.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <rect
@@ -388,9 +388,9 @@ export default function Haven() {
       ),
     },
     {
-      title: "Scene mapping and routing",
+      title: "SLAM-backed path planning",
       description:
-        "The navigation engine converts live spatial data into a walkable path, preferring a direct corridor when possible and falling back to A* search when the scene becomes more complex.",
+        "The software converts live spatial data into a walkable route, using ARKit scene understanding, a forward-goal lock, direct-path preference, and A* fallback when needed.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path
@@ -411,9 +411,9 @@ export default function Haven() {
       ),
     },
     {
-      title: "Five-point haptic guidance",
+      title: "Directional haptic guidance",
       description:
-        "A five-tactor array on a torso or head mount turns heading corrections into weighted motor intensities so the user feels where to move next without relying on audio cues.",
+        "A five-tactor array on a torso or head mount turns heading corrections into weighted motor intensities, plus special patterns for cases such as doors or no valid path ahead.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <rect x="3" y="10" width="2.4" height="4" rx="1.2" fill="currentColor" />
@@ -425,9 +425,9 @@ export default function Haven() {
       ),
     },
     {
-      title: "Prototype-ready hardware",
+      title: "Prototype wearable hardware",
       description:
-        "The full build combines an Arduino Uno R4 WiFi, DRV2605L haptic drivers, an I2C multiplexer, 3D-printed housings, and a repositionable wearable harness.",
+        "The prototype combines an Arduino Uno R4 WiFi, DRV2605L haptic drivers, an I2C multiplexer, 3D-printed clips, and a torso or head-mounted harness.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path
@@ -453,22 +453,22 @@ export default function Haven() {
     {
       title: "Microcontroller interface",
       description:
-        "Wireless communication, motor control, and the haptic driver stack were built around the Arduino Uno R4 WiFi and QWIIC-based integration.",
+        "Wireless communication, motor control, and the haptic driver stack were built around the Arduino Uno R4 WiFi, QWIIC connectivity, and a multiplexer to independently drive all five tactors.",
     },
     {
       title: "Wearable belt system",
       description:
-        "The haptic belt and clip system were designed so tactors could be positioned consistently across users while still being easy to replace and adjust.",
+        "The haptic belt, clips, and electronics housing were designed so tactors stay aligned across users while remaining easy to reposition, replace, and protect from damage.",
     },
     {
       title: "Computer vision and routing",
       description:
-        "The sensing pipeline explored both custom stereo depth work and a native iOS ARKit path, ultimately favoring on-device LiDAR-assisted mapping.",
+        "The sensing pipeline explored both a custom stereo-camera C++ prototype and a native Swift implementation, ultimately favoring ARKit-based LiDAR mapping on the iPhone.",
     },
     {
       title: "Environment-to-haptics translation",
       description:
-        "Directional vectors are converted into proportional motor intensities so a discrete five-motor system can still express smooth steering cues.",
+        "Mapped space and path vectors are translated into proportional motor intensities so a discrete five-motor system can still express smooth steering cues.",
     },
   ];
 
@@ -476,17 +476,17 @@ export default function Haven() {
     {
       title: "Object-aware navigation",
       description:
-        "Future versions can distinguish passable structures such as doors, stairs, and grass from true hazards, then assign clearer haptic patterns for each case.",
+        "Future versions can classify passable structures such as doors, stairs, and grass, then communicate each case through clearer haptic patterns and smarter path planning.",
     },
     {
-      title: "Map app integration",
+      title: "Mobile navigation integration",
       description:
-        "HAVEN can pair local obstacle avoidance with route planning from mobile navigation systems, combining GPS guidance with close-range spatial awareness.",
+        "HAVEN can pair local obstacle avoidance with tools such as Google Maps, combining GPS-level route planning with close-range environmental awareness.",
     },
     {
-      title: "Lighter, tougher hardware",
+      title: "Component optimization",
       description:
-        "Further work focuses on weatherproofing, longer battery life, cleaner packaging, and lower-profile mounting components for everyday wear.",
+        "Further work focuses on weatherproofing, longer battery life, lighter packaging, and lower-profile mounting components that better support daily wear.",
     },
   ];
 
@@ -495,10 +495,21 @@ export default function Haven() {
     "    rawPath = line",
     "} else if let star = NavigationEngine.astar(grid: grid, from: startGrid, to: goal) {",
     "    rawPath = star",
+    "} else {",
+    "    self.triggerNoPathAlert(now: CACurrentMediaTime())",
+    "    return",
     "}",
     "",
     "storedDesiredYaw = NavigationEngine.desiredYaw(path: rawPath, from: startGrid)",
-    "let haptics = NavigationEngine.hapticValues(desiredYaw: d, currentYaw: currentYaw)",
+    "",
+    "let haptics: [Int] = {",
+    "    if let d = desiredYaw {",
+    "        return NavigationEngine.hapticValues(desiredYaw: d, currentYaw: currentYaw)",
+    "    }",
+    "    return [0, 0, 0, 0, 0]",
+    "}()",
+    "let command = haptics.map { String(min(100, max(0, $0))) }.joined(separator: \",\")",
+    "bleManager.sendCommand(command)",
   ].join("\n");
 
   return (
@@ -655,9 +666,9 @@ export default function Haven() {
                     maxWidth: 760,
                   }}
                 >
-                  Haptic and vision-guided
+                  Haptics and Vision for
                   <br />
-                  environmental navigation.
+                  Environmental Navigation.
                 </h1>
 
                 <p
@@ -669,11 +680,12 @@ export default function Haven() {
                     color: "rgba(255,255,255,0.6)",
                   }}
                 >
-                  HAVEN is a wearable assistive navigation prototype designed for
+                  HAVEN is a wearable assistive navigation system designed for
                   visually impaired users. It combines smartphone-based computer
-                  vision, LiDAR-assisted spatial mapping, and directional haptic
-                  feedback so the user can detect obstacles and follow a safe
-                  path through unfamiliar spaces.
+                  vision, LiDAR-assisted mapping, and directional haptic
+                  feedback so the wearer can detect obstacles, interpret safer
+                  walking directions, and move more confidently through
+                  unfamiliar spaces.
                 </p>
 
                 <div
@@ -685,11 +697,11 @@ export default function Haven() {
                   }}
                 >
                   <GlassPill>UC San Diego Senior Design 2025</GlassPill>
-                  <GlassPill>iPhone + LiDAR</GlassPill>
+                  <GlassPill>Group 9</GlassPill>
+                  <GlassPill>Smartphone CV + LiDAR</GlassPill>
                   <GlassPill>ARKit + Swift</GlassPill>
                   <GlassPill>Arduino Uno R4 WiFi</GlassPill>
                   <GlassPill>5 haptic tactors</GlassPill>
-                  <GlassPill>Torso or head mount</GlassPill>
                 </div>
 
                 <div
@@ -755,9 +767,10 @@ export default function Haven() {
                     color: "rgba(255,255,255,0.58)",
                   }}
                 >
-                  The phone captures 3D scene data, the navigation engine finds a
-                  walkable route, and a five-motor belt communicates direction
-                  through proportional vibration patterns.
+                  The phone captures camera, LiDAR, and motion data, the
+                  navigation engine builds a local map and selects a walkable
+                  route, and a five-motor belt communicates direction through
+                  proportional vibration patterns.
                 </p>
 
                 <div
@@ -772,25 +785,25 @@ export default function Haven() {
                   <SystemStage
                     eyebrow="Perceive"
                     title="Camera + LiDAR capture"
-                    description="A LiDAR-equipped iPhone continuously observes the environment while staying aligned with the user's walking direction."
+                    description="A LiDAR-equipped iPhone mounted on the torso or head observes the environment while staying aligned with the user's walking direction."
                     accent="#ffbf5f"
                   />
                   <SystemStage
                     eyebrow="Map"
                     title="ARKit spatial understanding"
-                    description="ARKit and RealityKit handle SLAM, scene reconstruction, and door-aware environment interpretation."
+                    description="ARKit and RealityKit handle SLAM, scene reconstruction, and environment interpretation for obstacles, floor regions, and door-aware cues."
                     accent="#53c5ff"
                   />
                   <SystemStage
                     eyebrow="Plan"
                     title="Path generation"
-                    description="The software locks a feasible forward goal, prefers a straight corridor, and falls back to A* when direct travel is blocked."
+                    description="The software locks a feasible forward goal, prefers a straight corridor, and falls back to A* when direct travel is blocked or the scene becomes more complex."
                     accent="#90f4ae"
                   />
                   <SystemStage
                     eyebrow="Guide"
                     title="Weighted haptic output"
-                    description="Five tactors translate heading error into continuous directional guidance without overloading the user's hearing."
+                    description="Five tactors, driven over Bluetooth through the Arduino stack, translate heading error into continuous directional guidance without overloading the user's hearing."
                     accent="#ff8e73"
                   />
                 </div>
@@ -803,10 +816,10 @@ export default function Haven() {
                     gap: "0.9rem",
                   }}
                 >
-                  <InfoCard label="Status" value="Proof-of-concept prototype complete" />
+                  <InfoCard label="Status" value="Prototype complete, broader testing ongoing" />
                   <InfoCard label="Prototype weight" value="250g excluding phone" />
+                  <InfoCard label="Battery target" value="More than 4 hours" />
                   <InfoCard label="Primary audience" value="Visually impaired users" />
-                  <InfoCard label="Feedback channel" value="Non-audio tactile guidance" />
                 </div>
               </div>
             </div>
@@ -895,9 +908,10 @@ export default function Haven() {
               }}
             >
               HAVEN started as a stereo-camera-and-laptop concept, then evolved
-              into a more practical smartphone-centered architecture. The final
-              design reduced weight and complexity while improving real-time
-              spatial awareness, portability, and comfort.
+              into a more practical smartphone-centered architecture. That shift
+              reduced weight and component complexity while improving real-time
+              spatial awareness, portability, comfort, and integration with the
+              final haptic hardware stack.
             </p>
 
             <div
@@ -988,9 +1002,10 @@ export default function Haven() {
             >
               The project prioritized reliable obstacle awareness, intuitive
               tactile guidance, low wearable mass, and fast response to changing
-              scenes. Testing is still expanding, so the current page reflects a
-              completed prototype with ongoing validation rather than a finished
-              product.
+              scenes. The report also tied the design to IEC 60601, IEC 62304,
+              ISO 14971, ISO 9241-920, and ISO/IEC 27001, so safety,
+              ergonomics, and data handling stayed part of the design story from
+              the start.
             </p>
 
             <div
@@ -1003,9 +1018,9 @@ export default function Haven() {
               }}
             >
               <MetricCard
-                label="Guidance array"
-                value="5 tactors"
-                description="Five laterally spaced haptic motors are used to encode steering direction with weighted intensities."
+                label="Detection target"
+                value="Up to 5m"
+                description="The system was designed to reliably detect static and dynamic obstacles at distances up to five meters."
               />
               <MetricCard
                 label="Wearability"
@@ -1034,8 +1049,8 @@ export default function Haven() {
             >
               <InfoCard label="Institution" value="UC San Diego" />
               <InfoCard label="Program" value="Bioengineering Senior Design 2025" />
-              <InfoCard label="Principal investigator" value="Gert Cauwenberghs" />
-              <InfoCard label="Advisor" value="Adyant Balaji" />
+              <InfoCard label="Team" value="Alexander Lange, Nick Monell, Peilin Pan, Suraj Laddagiri" />
+              <InfoCard label="Leadership" value="Gert Cauwenberghs and Adyant Balaji" />
             </div>
           </div>
         </div>
@@ -1092,9 +1107,10 @@ export default function Haven() {
                 color: "rgba(255,255,255,0.58)",
               }}
             >
-              The project code uses a straight-line path when a clear corridor
-              exists, falls back to A* for more constrained scenes, and then
-              converts heading difference into a five-motor haptic distribution.
+              The Swift pipeline you shared prioritizes a straight corridor when
+              it is safe, falls back to A* in tighter scenes, then serializes
+              the resulting five-motor haptic values for Bluetooth delivery to
+              the Arduino.
             </p>
 
             <pre
@@ -1158,9 +1174,9 @@ export default function Haven() {
                 color: "rgba(255,255,255,0.58)",
               }}
             >
-              The strongest next steps are broader user validation, richer scene
-              understanding, and tighter integration with real-world navigation
-              tools for long-distance travel.
+              The strongest next steps from the report are broader user
+              validation, richer scene understanding, and tighter integration
+              with long-distance mobile navigation tools.
             </p>
 
             <div

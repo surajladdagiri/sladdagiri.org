@@ -578,7 +578,7 @@ export default function Portfolio() {
                     maxWidth: 760,
                   }}
                 >
-                  Haptics and Vision for Environmental Navigation
+                  Haptics and Vision for Environmental Navigation (HAVEN)
                 </h2>
 
                 <p
@@ -590,10 +590,10 @@ export default function Portfolio() {
                     maxWidth: 740,
                   }}
                 >
-                  A wearable assistive navigation prototype that uses an iPhone's
-                  camera and LiDAR sensors to map nearby space, detect obstacles,
-                  generate a safe walking path, and deliver direction through a
-                  five-point haptic feedback system.
+                  A wearable navigation system for visually impaired users that
+                  combines smartphone-based computer vision, LiDAR-assisted
+                  spatial mapping, and a five-point haptic belt to detect
+                  obstacles and guide safer movement through unfamiliar spaces.
                 </p>
 
                 <div
@@ -604,12 +604,12 @@ export default function Portfolio() {
                     marginBottom: "1.6rem",
                   }}
                 >
-                  <FeaturePill>iPhone + LiDAR</FeaturePill>
-                  <FeaturePill>ARKit spatial mapping</FeaturePill>
+                  <FeaturePill>Smartphone CV + LiDAR</FeaturePill>
+                  <FeaturePill>ARKit SLAM</FeaturePill>
+                  <FeaturePill>Real-time path planning</FeaturePill>
                   <FeaturePill>5 tactors</FeaturePill>
                   <FeaturePill>Arduino + Bluetooth</FeaturePill>
-                  <FeaturePill>Wearable navigation aid</FeaturePill>
-                  <FeaturePill>Proof-of-concept prototype</FeaturePill>
+                  <FeaturePill>Proof-of-concept trials</FeaturePill>
                 </div>
 
                 <div
@@ -646,10 +646,10 @@ export default function Portfolio() {
                   gap: "1rem",
                 }}
               >
-                <StatCard label="Platform" value="iPhone + Arduino" />
-                <StatCard label="Sensors" value="Camera + LiDAR" />
+                <StatCard label="Platform" value="iPhone Pro + Arduino" />
+                <StatCard label="Sensors" value="Camera + LiDAR + IMU" />
                 <StatCard label="Output" value="5 haptic tactors" />
-                <StatCard label="Focus" value="Assistive navigation" />
+                <StatCard label="Focus" value="Collision-free navigation" />
               </div>
 
               <div
@@ -685,22 +685,22 @@ export default function Portfolio() {
                     {
                       label: "Perceive",
                       title: "Live spatial sensing",
-                      text: "The phone captures scene depth and orientation in the user's walking direction.",
+                      text: "A LiDAR-equipped iPhone captures camera, depth, and motion data from a torso or head-mounted viewpoint.",
                     },
                     {
                       label: "Plan",
                       title: "Walkable path generation",
-                      text: "The navigation logic selects a forward-safe route and adapts to new obstructions.",
+                      text: "The navigation logic finds a feasible forward route, then updates when obstacles or dead ends appear.",
                     },
                     {
                       label: "Guide",
                       title: "Haptic translation",
-                      text: "Weighted motor intensities tell the wearer where to move without audio overload.",
+                      text: "Five tactors translate heading corrections into directional vibration without covering up ambient sound.",
                     },
                     {
-                      label: "Status",
-                      title: "Testing in progress",
-                      text: "The prototype is built and validated at proof-of-concept level, with broader evaluation still underway.",
+                      label: "Validate",
+                      title: "Prototype and testing",
+                      text: "The proof-of-concept system is complete and has been trialed in controlled, blindfolded-user scenarios with broader testing still underway.",
                     },
                   ].map((item) => (
                     <div
