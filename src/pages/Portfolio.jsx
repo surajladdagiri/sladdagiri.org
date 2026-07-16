@@ -41,45 +41,71 @@ function SectionLabel({ children }) {
   );
 }
 
-function ActionButton({ children, onClick, primary = false }) {
+function ActionButton({ children, onClick, href, primary = false, download = false }) {
+  const sharedStyle = {
+    appearance: "none",
+    border: primary
+      ? "1px solid transparent"
+      : "1px solid rgba(255,255,255,0.12)",
+    background: primary ? "#f5f5f7" : "rgba(255,255,255,0.04)",
+    color: primary ? "#111214" : "#f5f5f7",
+    padding: "12px 18px",
+    borderRadius: 999,
+    fontSize: 14,
+    fontWeight: 600,
+    letterSpacing: "-0.01em",
+    cursor: "pointer",
+    transition: "transform 180ms ease, background 180ms ease, border 180ms ease",
+    backdropFilter: "blur(10px)",
+    WebkitBackdropFilter: "blur(10px)",
+    textDecoration: "none",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+  };
+
+  const handleEnter = (e) => {
+    e.currentTarget.style.transform = "translateY(-2px)";
+    e.currentTarget.style.background = primary
+      ? "#e8e8ec"
+      : "rgba(255,255,255,0.08)";
+    e.currentTarget.style.border = primary
+      ? "1px solid transparent"
+      : "1px solid rgba(255,255,255,0.18)";
+  };
+
+  const handleLeave = (e) => {
+    e.currentTarget.style.transform = "translateY(0)";
+    e.currentTarget.style.background = primary
+      ? "#f5f5f7"
+      : "rgba(255,255,255,0.04)";
+    e.currentTarget.style.border = primary
+      ? "1px solid transparent"
+      : "1px solid rgba(255,255,255,0.12)";
+  };
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        download={download || undefined}
+        target={href.startsWith("http") ? "_blank" : undefined}
+        rel={href.startsWith("http") ? "noreferrer" : undefined}
+        style={sharedStyle}
+        onMouseEnter={handleEnter}
+        onMouseLeave={handleLeave}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button
       onClick={onClick}
-      style={{
-        appearance: "none",
-        border: primary
-          ? "1px solid transparent"
-          : "1px solid rgba(255,255,255,0.12)",
-        background: primary ? "#f5f5f7" : "rgba(255,255,255,0.04)",
-        color: primary ? "#111214" : "#f5f5f7",
-        padding: "12px 18px",
-        borderRadius: 999,
-        fontSize: 14,
-        fontWeight: 600,
-        letterSpacing: "-0.01em",
-        cursor: "pointer",
-        transition: "transform 180ms ease, background 180ms ease, border 180ms ease",
-        backdropFilter: "blur(10px)",
-        WebkitBackdropFilter: "blur(10px)",
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "translateY(-2px)";
-        e.currentTarget.style.background = primary
-          ? "#e8e8ec"
-          : "rgba(255,255,255,0.08)";
-        e.currentTarget.style.border = primary
-          ? "1px solid transparent"
-          : "1px solid rgba(255,255,255,0.18)";
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.background = primary
-          ? "#f5f5f7"
-          : "rgba(255,255,255,0.04)";
-        e.currentTarget.style.border = primary
-          ? "1px solid transparent"
-          : "1px solid rgba(255,255,255,0.12)";
-      }}
+      style={sharedStyle}
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
     >
       {children}
     </button>
@@ -250,6 +276,8 @@ export default function Portfolio() {
   );
 
   const iconUrl = `${baseUrl}1024.png`;
+  const havenArduinoUrl = `${baseUrl}haven_uno_r4_haptics.ino`;
+  const havenViewerUrl = `${baseUrl}haven_viewer_v3.py`;
 
   return (
     <div
@@ -619,10 +647,11 @@ export default function Portfolio() {
                     maxWidth: 740,
                   }}
                 >
-                  A wearable navigation system for visually impaired users that
-                  combines smartphone-based computer vision, LiDAR-assisted
-                  spatial mapping, and a five-point haptic belt to detect
-                  obstacles and guide safer movement through unfamiliar spaces.
+                  A head-mounted wearable navigation prototype for visually
+                  impaired users that combines smartphone-based computer vision,
+                  LiDAR-assisted mapping, and five-point haptic guidance to
+                  detect obstacles and suggest safer movement through unfamiliar
+                  spaces.
                 </p>
 
                 <div
@@ -633,12 +662,13 @@ export default function Portfolio() {
                     marginBottom: "1.6rem",
                   }}
                 >
+                  <FeaturePill>Head-mounted prototype</FeaturePill>
                   <FeaturePill>Smartphone CV + LiDAR</FeaturePill>
                   <FeaturePill>ARKit SLAM</FeaturePill>
                   <FeaturePill>Real-time path planning</FeaturePill>
                   <FeaturePill>5 tactors</FeaturePill>
-                  <FeaturePill>Arduino + Bluetooth</FeaturePill>
-                  <FeaturePill>Proof-of-concept trials</FeaturePill>
+                  <FeaturePill>Bluetooth haptics</FeaturePill>
+                  <FeaturePill>Local-only streaming</FeaturePill>
                 </div>
 
                 <div
@@ -650,6 +680,18 @@ export default function Portfolio() {
                 >
                   <ActionButton primary onClick={() => navigate("/haven")}>
                     View HAVEN
+                  </ActionButton>
+
+                  <ActionButton href={havenArduinoUrl} download>
+                    Arduino Code
+                  </ActionButton>
+
+                  <ActionButton href={havenViewerUrl} download>
+                    Python Viewer
+                  </ActionButton>
+
+                  <ActionButton onClick={() => navigate("/haven/privacy")}>
+                    Privacy Policy
                   </ActionButton>
                 </div>
               </div>
@@ -675,10 +717,10 @@ export default function Portfolio() {
                   gap: "1rem",
                 }}
               >
-                <StatCard label="Platform" value="iPhone Pro + Arduino" />
-                <StatCard label="Sensors" value="Camera + LiDAR" />
+                <StatCard label="Platform" value="iPhone Pro + Arduino Uno R4" />
+                <StatCard label="Sensors" value="Camera + LiDAR + IMU" />
                 <StatCard label="Output" value="5 haptic tactors" />
-                <StatCard label="Focus" value="Collision-free navigation" />
+                <StatCard label="Runtime" value="About 6 hours" />
               </div>
 
               <div
@@ -714,22 +756,22 @@ export default function Portfolio() {
                     {
                       label: "Perceive",
                       title: "Live spatial sensing",
-                      text: "A LiDAR-equipped iPhone captures camera, depth, and motion data from a torso or head-mounted viewpoint.",
+                      text: "A LiDAR-equipped iPhone captures camera, depth, and motion data from a head-mounted viewpoint.",
                     },
                     {
                       label: "Plan",
                       title: "Walkable path generation",
-                      text: "The navigation logic finds a feasible forward route, then updates when obstacles or dead ends appear.",
+                      text: "The navigation logic prefers straight-line travel, falls back to A*, and refreshes around dynamic obstructions in about 0.86 seconds.",
                     },
                     {
                       label: "Guide",
                       title: "Haptic translation",
-                      text: "Five tactors translate heading corrections into directional vibration without covering up ambient sound.",
+                      text: "Five tactors translate heading corrections into directional vibration while commands stream locally over Bluetooth to the Arduino.",
                     },
                     {
-                      label: "Validate",
-                      title: "Prototype and testing",
-                      text: "The proof-of-concept system is complete and has been trialed in controlled, blindfolded-user scenarios with broader testing still underway.",
+                      label: "Test",
+                      title: "Prototype and evaluation",
+                      text: "The proof-of-concept system is complete, shows strong false-negative performance, and keeps all streaming on personal devices without cloud upload.",
                     },
                   ].map((item) => (
                     <div

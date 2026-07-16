@@ -6,6 +6,7 @@ import Demos from "./pages/Demos";
 import MusicStrip from "./pages/MusicStrip";
 import MusicStripPrivacy from "./pages/MusicStripPrivacy";
 import Haven from "./pages/Haven";
+import HavenPrivacy from "./pages/HavenPrivacy";
 
 const NAV_LINKS = [
   { label: "Portfolio", path: "/portfolio" },
@@ -21,6 +22,7 @@ function getDocumentTitle(pathname) {
     return "Music Strip Privacy | Suraj Laddagiri";
   }
   if (pathname === "/haven") return "HAVEN | Suraj Laddagiri";
+  if (pathname === "/haven/privacy") return "HAVEN Privacy | Suraj Laddagiri";
 
   return "Suraj Laddagiri | Portfolio";
 }
@@ -223,6 +225,7 @@ export default function App() {
         <Route path="musicstrip" element={<MusicStrip />} />
         <Route path="musicstrip/privacy" element={<MusicStripPrivacy />} />
         <Route path="haven" element={<Haven />} />
+        <Route path="haven/privacy" element={<HavenPrivacy />} />
       </Route>
     </Routes>
   );

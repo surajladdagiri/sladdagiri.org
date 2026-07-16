@@ -25,7 +25,7 @@ function GlassPill({ children }) {
   );
 }
 
-function CTAButton({ children, href, onClick, primary = false }) {
+function CTAButton({ children, href, onClick, primary = false, download = false }) {
   const sharedStyle = {
     display: "inline-flex",
     alignItems: "center",
@@ -73,6 +73,7 @@ function CTAButton({ children, href, onClick, primary = false }) {
     return (
       <a
         href={href}
+        download={download || undefined}
         target={href.startsWith("http") ? "_blank" : undefined}
         rel={href.startsWith("http") ? "noreferrer" : undefined}
         style={sharedStyle}
@@ -355,6 +356,10 @@ function HavenMark() {
 export default function Haven() {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
+  const baseUrl = import.meta.env.BASE_URL || "/";
+  const arduinoUrl = `${baseUrl}haven_uno_r4_haptics.ino`;
+  const viewerUrl = `${baseUrl}haven_viewer_v3.py`;
+  const teamPhotoUrl = `${baseUrl}haven_team.jpg`;
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 80);
@@ -365,7 +370,7 @@ export default function Haven() {
     {
       title: "Smartphone-based sensing",
       description:
-        "HAVEN uses a LiDAR-equipped iPhone as the perception and compute layer, combining the camera, depth sensor, and IMU into a low-cost wearable navigation stack.",
+        "HAVEN uses a LiDAR-equipped iPhone as the perception and compute layer, combining the camera, LiDAR sensor, and IMU into a low-cost wearable navigation stack.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <rect
@@ -390,7 +395,7 @@ export default function Haven() {
     {
       title: "SLAM-backed path planning",
       description:
-        "The software converts live spatial data into a walkable route, using ARKit scene understanding, a forward-goal lock, direct-path preference, and A* fallback when needed.",
+        "The software converts live spatial data into a walkable route using ARKit scene understanding, straight-line preference, and A* fallback when direct travel is blocked.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path
@@ -413,7 +418,7 @@ export default function Haven() {
     {
       title: "Directional haptic guidance",
       description:
-        "A five-tactor array on a torso or head mount turns heading corrections into weighted motor intensities, plus special patterns for cases such as doors or no valid path ahead.",
+        "A five-tactor array turns heading corrections into weighted motor intensities, with special patterns for doors and no-valid-path situations.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <rect x="3" y="10" width="2.4" height="4" rx="1.2" fill="currentColor" />
@@ -425,9 +430,9 @@ export default function Haven() {
       ),
     },
     {
-      title: "Prototype wearable hardware",
+      title: "Head-mounted prototype",
       description:
-        "The prototype combines an Arduino Uno R4 WiFi, DRV2605L haptic drivers, an I2C multiplexer, 3D-printed clips, and a torso or head-mounted harness.",
+        "The final prototype combines an Arduino Uno R4 WiFi, DRV2605L haptic drivers, a Qwiic multiplexer, 3D-printed clips, and a head-mounted harness.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path
@@ -453,22 +458,22 @@ export default function Haven() {
     {
       title: "Microcontroller interface",
       description:
-        "Wireless communication, motor control, and the haptic driver stack were built around the Arduino Uno R4 WiFi, QWIIC connectivity, and a multiplexer to independently drive all five tactors.",
+        "The Arduino Uno R4 WiFi handles Bluetooth communication and routes commands through a TCA9548A multiplexer so all five DRV2605L haptic drivers can be controlled independently.",
     },
     {
-      title: "Wearable belt system",
+      title: "Wearable mounting system",
       description:
-        "The haptic belt, clips, and electronics housing were designed so tactors stay aligned across users while remaining easy to reposition, replace, and protect from damage.",
+        "A low-cost head mount was adapted to hold the phone, battery, tactors, and electronics while keeping the haptics aligned, replaceable, and comfortable to wear.",
     },
     {
       title: "Computer vision and routing",
       description:
-        "The sensing pipeline explored both a custom stereo-camera C++ prototype and a native Swift implementation, ultimately favoring ARKit-based LiDAR mapping on the iPhone.",
+        "The team explored both a custom stereo-camera C++ pipeline and a native Swift implementation, ultimately favoring ARKit- and RealityKit-based LiDAR mapping on the iPhone.",
     },
     {
       title: "Environment-to-haptics translation",
       description:
-        "Mapped space and path vectors are translated into proportional motor intensities so a discrete five-motor system can still express smooth steering cues.",
+        "Mapped space and path vectors are translated into proportional motor intensities so a discrete five-motor system can still express smooth steering cues from a continuous direction error.",
     },
   ];
 
@@ -508,7 +513,8 @@ export default function Haven() {
 
         @media (max-width: 1080px) {
           .haven-hero-grid,
-          .haven-detail-grid {
+          .haven-detail-grid,
+          .haven-resource-grid {
             grid-template-columns: 1fr !important;
           }
 
@@ -525,7 +531,8 @@ export default function Haven() {
           .haven-subproject-grid,
           .haven-metric-grid,
           .haven-info-grid,
-          .haven-stage-grid {
+          .haven-stage-grid,
+          .haven-team-meta-grid {
             grid-template-columns: 1fr !important;
           }
         }
@@ -639,11 +646,12 @@ export default function Haven() {
                   }}
                 >
                   HAVEN is a wearable assistive navigation system designed for
-                  visually impaired users. It combines smartphone-based computer
-                  vision, LiDAR-assisted mapping, and directional haptic
-                  feedback so the wearer can detect obstacles, interpret safer
-                  walking directions, and move more confidently through
-                  unfamiliar spaces.
+                  visually impaired users that is meant to support and work
+                  alongside existing aids. It combines smartphone-based
+                  computer vision, LiDAR-assisted mapping, and directional
+                  haptic feedback so the wearer can detect obstacles,
+                  interpret safer walking directions, and move more confidently
+                  through unfamiliar spaces.
                 </p>
 
                 <div
@@ -656,10 +664,10 @@ export default function Haven() {
                 >
                   <GlassPill>UC San Diego Senior Design 2025</GlassPill>
                   <GlassPill>Group 9</GlassPill>
+                  <GlassPill>Head-mounted prototype</GlassPill>
                   <GlassPill>Smartphone CV + LiDAR</GlassPill>
                   <GlassPill>ARKit + Swift</GlassPill>
-                  <GlassPill>Arduino Uno R4 WiFi</GlassPill>
-                  <GlassPill>5 haptic tactors</GlassPill>
+                  <GlassPill>Local-only streaming</GlassPill>
                 </div>
 
                 <div
@@ -670,8 +678,16 @@ export default function Haven() {
                     marginTop: "1.6rem",
                   }}
                 >
-                  <CTAButton primary onClick={() => navigate("/portfolio")}>
-                    Back to Portfolio
+                  <CTAButton href={arduinoUrl} primary download>
+                    Download Arduino Code
+                  </CTAButton>
+
+                  <CTAButton href={viewerUrl} download>
+                    Download Python Viewer
+                  </CTAButton>
+
+                  <CTAButton onClick={() => navigate("/haven/privacy")}>
+                    Privacy Policy
                   </CTAButton>
 
                   <CTAButton href="mailto:suraj@sladdagiri.org">
@@ -723,8 +739,8 @@ export default function Haven() {
                 >
                   The phone captures camera, LiDAR, and motion data, the
                   navigation engine builds a local map and selects a walkable
-                  route, and a five-motor belt communicates direction through
-                  proportional vibration patterns.
+                  route, and a five-motor haptic array communicates direction
+                  through proportional vibration patterns.
                 </p>
 
                 <div
@@ -739,7 +755,7 @@ export default function Haven() {
                   <SystemStage
                     eyebrow="Perceive"
                     title="Camera + LiDAR capture"
-                    description="A LiDAR-equipped iPhone mounted on the torso or head observes the environment while staying aligned with the user's walking direction."
+                    description="A LiDAR-equipped iPhone mounted on the head observes the environment while staying aligned with the user's walking direction."
                     accent="#ffbf5f"
                   />
                   <SystemStage
@@ -751,7 +767,7 @@ export default function Haven() {
                   <SystemStage
                     eyebrow="Plan"
                     title="Path generation"
-                    description="The software locks a feasible forward goal, prefers a straight corridor, and falls back to A* when direct travel is blocked or the scene becomes more complex."
+                    description="The software locks a feasible forward goal, prefers a straight corridor, and falls back to A* when direct travel is blocked."
                     accent="#90f4ae"
                   />
                   <SystemStage
@@ -770,10 +786,10 @@ export default function Haven() {
                     gap: "0.9rem",
                   }}
                 >
-                  <InfoCard label="Status" value="Prototype complete, broader testing ongoing" />
+                  <InfoCard label="Status" value="Head-mounted prototype complete" />
                   <InfoCard label="Prototype weight" value="250g excluding phone" />
-                  <InfoCard label="Battery target" value="More than 4 hours" />
-                  <InfoCard label="Primary audience" value="Visually impaired users" />
+                  <InfoCard label="Battery life" value="About 6 hours" />
+                  <InfoCard label="Privacy" value="No cloud upload" />
                 </div>
               </div>
             </div>
@@ -862,10 +878,10 @@ export default function Haven() {
               }}
             >
               HAVEN started as a stereo-camera-and-laptop concept, then evolved
-              into a more practical smartphone-centered architecture. That shift
-              reduced weight and component complexity while improving real-time
-              spatial awareness, portability, comfort, and integration with the
-              final haptic hardware stack.
+              into a more practical smartphone-centered architecture. That
+              shift reduced weight and component complexity while improving
+              real-time spatial awareness, portability, comfort, and
+              integration with the final haptic hardware stack.
             </p>
 
             <div
@@ -931,7 +947,7 @@ export default function Haven() {
                 marginBottom: 10,
               }}
             >
-              Design targets
+              Evaluation snapshot
             </div>
 
             <h2
@@ -943,7 +959,7 @@ export default function Haven() {
                 color: "#f5f5f7",
               }}
             >
-              Safety, accuracy, and wearability drove the prototype.
+              Strong obstacle detection, with clear room to improve routing.
             </h2>
 
             <p
@@ -954,12 +970,11 @@ export default function Haven() {
                 color: "rgba(255,255,255,0.58)",
               }}
             >
-              The project prioritized reliable obstacle awareness, intuitive
-              tactile guidance, low wearable mass, and fast response to changing
-              scenes. The report also tied the design to IEC 60601, IEC 62304,
-              ISO 14971, ISO 9241-920, and ISO/IEC 27001, so safety,
-              ergonomics, and data handling stayed part of the design story from
-              the start.
+              Testing showed strong false-negative performance, sub-second path
+              updates, roughly six hours of battery life, and safe thermal
+              behavior. The biggest remaining issue is false positives,
+              especially in dim lighting, which still causes the route planner
+              to reject too much open space.
             </p>
 
             <div
@@ -972,24 +987,24 @@ export default function Haven() {
               }}
             >
               <MetricCard
-                label="Detection target"
-                value="Up to 5m"
-                description="The system was designed to reliably detect static and dynamic obstacles at distances up to five meters."
+                label="False negatives"
+                value="0 to 2 / 10"
+                description="Across 1 m, 3 m, and 5 m testing, the system stayed within the team's false-negative threshold in bright, indoor, and dim conditions."
               />
               <MetricCard
-                label="Wearability"
-                value="< 300g"
-                description="The prototype target stays under 300 grams excluding the phone, with a documented 250 gram build."
+                label="Path latency"
+                value="0.86 s"
+                description="Average time to generate a new path after obstruction stayed below the 1 second goal."
               />
               <MetricCard
-                label="Battery goal"
-                value="> 4 hrs"
-                description="The device was designed around extended operation so users are not stranded mid-navigation."
+                label="Battery life"
+                value="~ 6 hrs"
+                description="Measured power draw projects roughly six hours of continuous use when combining the phone and external battery pack."
               />
               <MetricCard
-                label="Path refresh"
-                value="< 1 sec"
-                description="Dynamic obstructions should trigger a newly generated safe path in under one second."
+                label="Thermal plateau"
+                value="< 104°F"
+                description="Tactor heating remained below the IEC skin-contact threshold during testing, though full-power continuous duty still requires care."
               />
             </div>
 
@@ -1001,10 +1016,198 @@ export default function Haven() {
                 gap: "0.9rem",
               }}
             >
+              <InfoCard label="Total cost" value="$207" />
+              <InfoCard label="Device cost" value="$124 without the stereo camera" />
+              <InfoCard label="Safe path rate" value="89 to 93% in bright-light trials" />
+              <InfoCard label="Standards" value="IEC 62304, IEC 60601, ISO 14971, ISO 9241-920, ISO/IEC 27001" />
             </div>
           </div>
         </div>
 
+        <div
+          className="haven-resource-grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "0.96fr 1.04fr",
+            gap: "1rem",
+            animation: "havenFadeRise 1000ms ease both",
+            animationDelay: "240ms",
+          }}
+        >
+          <div
+            style={{
+              borderRadius: 30,
+              padding: "1.6rem",
+              background: "rgba(255,255,255,0.03)",
+              border: "1px solid rgba(255,255,255,0.08)",
+              boxShadow: "0 16px 46px rgba(0,0,0,0.18)",
+            }}
+          >
+            <div
+              style={{
+                fontSize: 12,
+                textTransform: "uppercase",
+                letterSpacing: "0.14em",
+                color: "rgba(255,255,255,0.34)",
+                marginBottom: 10,
+              }}
+            >
+              Downloads and privacy
+            </div>
+
+            <h2
+              style={{
+                margin: "0 0 0.8rem",
+                fontSize: "clamp(28px, 4vw, 40px)",
+                lineHeight: 1.05,
+                letterSpacing: "-0.04em",
+                color: "#f5f5f7",
+              }}
+            >
+              Flash the Arduino and monitor the live stream locally.
+            </h2>
+
+            <p
+              style={{
+                margin: "0 0 1.1rem",
+                fontSize: 15,
+                lineHeight: 1.8,
+                color: "rgba(255,255,255,0.58)",
+              }}
+            >
+              Commands are streamed over Bluetooth to the Arduino while
+              environment and local-location data are streamed over your local
+              network to a connected laptop. The data stays on your personal
+              devices and is never uploaded to the cloud.
+            </p>
+
+            <div
+              style={{
+                display: "flex",
+                gap: 12,
+                flexWrap: "wrap",
+                marginBottom: "1rem",
+              }}
+            >
+              <CTAButton href={arduinoUrl} primary download>
+                Download Arduino Code
+              </CTAButton>
+              <CTAButton href={viewerUrl} download>
+                Download Viewer Script
+              </CTAButton>
+              <CTAButton onClick={() => navigate("/haven/privacy")}>
+                View Privacy Policy
+              </CTAButton>
+            </div>
+
+            <div
+              style={{
+                borderRadius: 22,
+                padding: "1rem 1.05rem",
+                background: "rgba(4,10,18,0.86)",
+                border: "1px solid rgba(83,197,255,0.18)",
+                color: "#dceeff",
+                fontSize: 13,
+                lineHeight: 1.75,
+                fontFamily:
+                  'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
+                marginBottom: "1rem",
+                overflowX: "auto",
+              }}
+            >
+              python haven_viewer_v3.py {"<Local IP of iPhone>"}
+            </div>
+
+            <div
+              className="haven-info-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                gap: "0.9rem",
+              }}
+            >
+              <InfoCard label="Viewer transport" value="TCP over local Wi-Fi on port 8080" />
+              <InfoCard label="Haptic transport" value="Bluetooth from phone to Arduino Uno R4 WiFi" />
+              <InfoCard label="Supported phones" value="iPhone 12 to 17 Pro or Pro Max" />
+              <InfoCard label="Support" value="suraj@sladdagiri.org" />
+            </div>
+          </div>
+
+          <div
+            style={{
+              borderRadius: 30,
+              padding: "1.6rem",
+              background:
+                "linear-gradient(155deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025))",
+              border: "1px solid rgba(255,255,255,0.08)",
+              boxShadow: "0 16px 46px rgba(0,0,0,0.18)",
+            }}
+          >
+            <div
+              style={{
+                fontSize: 12,
+                textTransform: "uppercase",
+                letterSpacing: "0.14em",
+                color: "rgba(255,255,255,0.34)",
+                marginBottom: 10,
+              }}
+            >
+              Team
+            </div>
+
+            <h2
+              style={{
+                margin: "0 0 0.8rem",
+                fontSize: "clamp(28px, 4vw, 40px)",
+                lineHeight: 1.05,
+                letterSpacing: "-0.04em",
+                color: "#f5f5f7",
+              }}
+            >
+              Group 9 behind HAVEN.
+            </h2>
+
+            <p
+              style={{
+                margin: "0 0 1rem",
+                fontSize: 15,
+                lineHeight: 1.8,
+                color: "rgba(255,255,255,0.58)",
+              }}
+            >
+              The project brought together hardware, mobile perception,
+              path-planning, and haptic interface work under UC San Diego's
+              Bioengineering Senior Design program.
+            </p>
+
+            <img
+              src={teamPhotoUrl}
+              alt="HAVEN team photo"
+              style={{
+                display: "block",
+                width: "100%",
+                borderRadius: 24,
+                border: "1px solid rgba(255,255,255,0.1)",
+                boxShadow: "0 18px 44px rgba(0,0,0,0.28)",
+                marginBottom: "1rem",
+              }}
+            />
+
+            <div
+              className="haven-team-meta-grid"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                gap: "0.9rem",
+              }}
+            >
+              <InfoCard label="Team members" value="Peilin Pan, Suraj Laddagiri, Nick Monell, Alexander Lange" />
+              <InfoCard label="Principal investigator" value="Gert Cauwenberghs" />
+              <InfoCard label="Project advisor" value="Adyant Balaji" />
+              <InfoCard label="Institution" value="UC San Diego Jacobs School of Engineering" />
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
