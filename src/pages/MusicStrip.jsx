@@ -303,6 +303,8 @@ export default function MusicStrip() {
 
   const iconUrl = `${baseUrl}1024.png`;
   const zipUrl = `${baseUrl}musicstrip_esp32_fw.zip`;
+  const appStoreUrl =
+    "https://apps.apple.com/us/app/music-strip/id6761938199";
 
   const screenshots = useMemo(
     () => [
@@ -507,7 +509,11 @@ export default function MusicStrip() {
                     marginTop: "1.6rem",
                   }}
                 >
-                  <CTAButton href={zipUrl} primary download>
+                  <CTAButton href={appStoreUrl} primary>
+                    View on App Store
+                  </CTAButton>
+
+                  <CTAButton href={zipUrl} download>
                     Download ESP32 Firmware
                   </CTAButton>
 
@@ -734,7 +740,10 @@ export default function MusicStrip() {
                 flexWrap: "wrap",
               }}
             >
-              <CTAButton href={zipUrl} primary download>
+              <CTAButton href={appStoreUrl} primary>
+                View on App Store
+              </CTAButton>
+              <CTAButton href={zipUrl} download>
                 Download Firmware
               </CTAButton>
               <CTAButton onClick={() => navigate("/musicstrip/privacy")}>

@@ -187,115 +187,54 @@ function InfoCard({ label, value }) {
   );
 }
 
-function MetricCard({ label, value, description }) {
-  return (
-    <div
-      style={{
-        borderRadius: 24,
-        padding: "1.1rem",
-        background:
-          "linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))",
-        border: "1px solid rgba(255,255,255,0.08)",
-      }}
-    >
-      <div
-        style={{
-          fontSize: 12,
-          textTransform: "uppercase",
-          letterSpacing: "0.13em",
-          color: "rgba(255,255,255,0.34)",
-          marginBottom: 10,
-        }}
-      >
-        {label}
-      </div>
-      <div
-        style={{
-          fontSize: "clamp(24px, 4vw, 34px)",
-          fontWeight: 700,
-          letterSpacing: "-0.05em",
-          color: "#f5f5f7",
-          marginBottom: 8,
-        }}
-      >
-        {value}
-      </div>
-      <p
-        style={{
-          margin: 0,
-          color: "rgba(255,255,255,0.56)",
-          fontSize: 14,
-          lineHeight: 1.7,
-        }}
-      >
-        {description}
-      </p>
-    </div>
-  );
-}
-
-function SystemStage({ eyebrow, title, description, accent }) {
+function HookCard({ symbol, method, effect }) {
   return (
     <div
       style={{
         borderRadius: 24,
         padding: "1rem",
-        background: "rgba(255,255,255,0.03)",
+        background:
+          "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))",
         border: "1px solid rgba(255,255,255,0.08)",
-        boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
       }}
     >
       <div
         style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 8,
-          color: accent,
-          fontSize: 11,
-          fontWeight: 700,
-          letterSpacing: "0.13em",
-          textTransform: "uppercase",
-          marginBottom: 10,
-        }}
-      >
-        <span
-          style={{
-            width: 9,
-            height: 9,
-            borderRadius: "50%",
-            background: accent,
-            boxShadow: `0 0 20px ${accent}`,
-          }}
-        />
-        {eyebrow}
-      </div>
-
-      <h3
-        style={{
-          margin: "0 0 0.55rem",
-          fontSize: 19,
-          letterSpacing: "-0.03em",
+          fontSize: 13,
+          fontWeight: 650,
           color: "#f5f5f7",
+          marginBottom: 4,
+          fontFamily:
+            'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
         }}
       >
-        {title}
-      </h3>
-
-      <p
+        {symbol}
+      </div>
+      <div
         style={{
-          margin: 0,
-          color: "rgba(255,255,255,0.56)",
-          fontSize: 14,
-          lineHeight: 1.75,
+          fontSize: 12,
+          color: "rgba(255,255,255,0.4)",
+          marginBottom: 8,
+          fontFamily:
+            'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
         }}
       >
-        {description}
-      </p>
+        {method}
+      </div>
+      <div
+        style={{
+          fontSize: 14,
+          lineHeight: 1.65,
+          color: "rgba(255,255,255,0.56)",
+        }}
+      >
+        {effect}
+      </div>
     </div>
   );
 }
 
-function HavenMark() {
+function IGAdBlockMark() {
   return (
     <div
       style={{
@@ -310,19 +249,25 @@ function HavenMark() {
           height: 72,
           borderRadius: 22,
           background:
-            "linear-gradient(145deg, rgba(28,154,255,0.9), rgba(255,186,81,0.9))",
+            "linear-gradient(145deg, rgba(255,90,95,0.9), rgba(120,80,255,0.85))",
           border: "1px solid rgba(255,255,255,0.14)",
           boxShadow: "0 18px 40px rgba(0,0,0,0.34)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "#081019",
-          fontSize: 18,
-          fontWeight: 800,
-          letterSpacing: "0.12em",
+          color: "#180a12",
+          flexShrink: 0,
         }}
       >
-        HAVEN
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.8" />
+          <path
+            d="M6.2 6.2L17.8 17.8"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            strokeLinecap="round"
+          />
+        </svg>
       </div>
 
       <div>
@@ -346,21 +291,21 @@ function HavenMark() {
             color: "#f5f5f7",
           }}
         >
-          HAVEN
+          IGAdBlock
         </div>
       </div>
     </div>
   );
 }
 
-export default function Haven() {
+export default function IGAdBlock() {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(false);
-  const baseUrl = import.meta.env.BASE_URL || "/";
-  const arduinoUrl = `${baseUrl}haven_uno_r4_haptics.ino`;
-  const viewerUrl = `${baseUrl}haven_viewer_v3.py`;
-  const teamPhotoUrl = `${baseUrl}haven_team.jpg`;
-  const appStoreUrl = "https://apps.apple.com/us/app/haven-app/id6761937548";
+
+  const githubUrl = "https://github.com/surajladdagiri/IGAdBlock";
+  const releasesUrl = "https://github.com/surajladdagiri/IGAdBlock/releases/latest";
+  const workflowUrl =
+    "https://github.com/surajladdagiri/IGAdBlock/blob/main/.github/workflows/makefile.yml";
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 80);
@@ -369,45 +314,56 @@ export default function Haven() {
 
   const featureCards = [
     {
-      title: "Smartphone-based sensing",
+      title: "Reels feed ad removal",
       description:
-        "HAVEN uses a LiDAR-equipped iPhone as the perception and compute layer, combining the camera, LiDAR sensor, and IMU into a low-cost wearable navigation stack.",
+        "Hooks IGSundialFeedDataSource's objectsForListAdapter: and rebuilds the returned array, dropping any item that is an instance of IGAdItem before the Reels UI ever renders it.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <rect
-            x="7"
-            y="3.5"
-            width="10"
-            height="17"
+            x="6"
+            y="4"
+            width="12"
+            height="16"
             rx="2.5"
             stroke="currentColor"
             strokeWidth="1.8"
           />
-          <circle cx="12" cy="17.2" r="0.9" fill="currentColor" />
           <path
-            d="M4 8.5H2.5M21.5 8.5H20M4 12H1.5M22.5 12H20M4 15.5H2.5M21.5 15.5H20"
+            d="M9.5 9L14.5 12L9.5 15V9Z"
+            fill="currentColor"
+          />
+        </svg>
+      ),
+    },
+    {
+      title: "Main feed ads + Threads suggestions",
+      description:
+        "Hooks IGMainFeedListAdapterDataSource to filter out IGAdItem entries and the Swift-mangled suggestion cards from the main timeline.",
+      icon: (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M4 6.5H20M4 12H20M4 17.5H14"
             stroke="currentColor"
-            strokeWidth="1.6"
+            strokeWidth="1.8"
             strokeLinecap="round"
           />
         </svg>
       ),
     },
     {
-      title: "SLAM-backed path planning",
+      title: "TestFlight nudge suppression",
       description:
-        "The software converts live spatial data into a walkable route using ARKit scene understanding, straight-line preference, and A* fallback when direct travel is blocked.",
+        "Hooks UIViewController's presentViewController to intercept TestFlightUpdateNudgeViewController before it presents, with a backup viewDidAppear: hook that dismisses it immediately if it slips through.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path
-            d="M4 18L9.5 12.5L13 16L20 9"
+            d="M12 3.5L20 7.5V12.2C20 16.4 16.9 19.9 12 20.5C7.1 19.9 4 16.4 4 12.2V7.5L12 3.5Z"
             stroke="currentColor"
             strokeWidth="1.8"
-            strokeLinecap="round"
             strokeLinejoin="round"
           />
           <path
-            d="M16 9H20V13"
+            d="M9 12L11.2 14.2L15.5 9.5"
             stroke="currentColor"
             strokeWidth="1.8"
             strokeLinecap="round"
@@ -417,39 +373,18 @@ export default function Haven() {
       ),
     },
     {
-      title: "Directional haptic guidance",
+      title: "Version-resilient Swift hooking",
       description:
-        "A five-tactor array turns heading corrections into weighted motor intensities, with special patterns for doors and no-valid-path situations.",
-      icon: (
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <rect x="3" y="10" width="2.4" height="4" rx="1.2" fill="currentColor" />
-          <rect x="7.4" y="8.5" width="2.4" height="7" rx="1.2" fill="currentColor" />
-          <rect x="11.8" y="7" width="2.4" height="10" rx="1.2" fill="currentColor" />
-          <rect x="16.2" y="8.5" width="2.4" height="7" rx="1.2" fill="currentColor" />
-          <rect x="20.6" y="10" width="2.4" height="4" rx="1.2" fill="currentColor" />
-        </svg>
-      ),
-    },
-    {
-      title: "Head-mounted prototype",
-      description:
-        "The final prototype combines an Arduino Uno R4 WiFi, DRV2605L haptic drivers, a Qwiic multiplexer, 3D-printed clips, and a head-mounted harness.",
+        "Swift-backed classes like IGSundialFeed. IGSundialFeedDataSource are resolved with objc_getClass at load time and only wired up through Logos %group/%init if found, so a renamed symbol degrades gracefully instead of crashing Instagram.",
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path
-            d="M7 6.5H17L20 10V17.5H4V10L7 6.5Z"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M8.5 12H15.5"
+            d="M12 4V8M12 16V20M4 12H8M16 12H20"
             stroke="currentColor"
             strokeWidth="1.8"
             strokeLinecap="round"
           />
-          <circle cx="8.5" cy="12" r="0.9" fill="currentColor" />
-          <circle cx="15.5" cy="12" r="0.9" fill="currentColor" />
+          <circle cx="12" cy="12" r="3.2" stroke="currentColor" strokeWidth="1.8" />
         </svg>
       ),
     },
@@ -457,24 +392,50 @@ export default function Haven() {
 
   const subprojects = [
     {
-      title: "Microcontroller interface",
+      title: "Feed data interception",
       description:
-        "The Arduino Uno R4 WiFi handles Bluetooth communication and routes commands through a TCA9548A multiplexer so all five DRV2605L haptic drivers can be controlled independently.",
+        "Two Logos hooks target the Objective-C list adapters that back Reels and the main feed, filtering their returned item arrays by class before ListKit ever lays them out.",
     },
     {
-      title: "Wearable mounting system",
+      title: "Dynamic Swift class resolution",
       description:
-        "A low-cost head mount was adapted to hold the phone, battery, tactors, and electronics while keeping the haptics aligned, replaceable, and comfortable to wear.",
+        "A %ctor constructor calls objc_getClass on the mangled Swift Reels data-source and TestFlight nag view controller names, only %init'ing the matching %group hooks when the class is actually present.",
     },
     {
-      title: "Computer vision and routing",
+      title: "System nudge blocking",
       description:
-        "The team explored both a custom stereo-camera C++ pipeline and a native Swift implementation, ultimately favoring ARKit- and RealityKit-based LiDAR mapping on the iPhone.",
+        "A global UIViewController hook inspects every view controller about to be presented app-wide and swallows the TestFlight update nudge specifically, calling through to the original completion block so nothing else breaks.",
     },
     {
-      title: "Environment-to-haptics translation",
+      title: "Universal binary packaging",
       description:
-        "Mapped space and path vectors are translated into proportional motor intensities so a discrete five-motor system can still express smooth steering cues from a continuous direction error.",
+        "Theos compiles the tweak as a MobileSubstrate dylib for arm64 and arm64e targeting iOS 15.0+, filtered at load time to only the com.burbn.instagram bundle via IGAdBlock.plist.",
+    },
+  ];
+
+  const hooks = [
+    {
+      symbol: "IGSundialFeedDataSource",
+      method: "-objectsForListAdapter:",
+      effect: "Strips IGAdItem entries out of the Reels feed's data source.",
+    },
+    {
+      symbol: "IGMainFeedListAdapterDataSource",
+      method: "-objectsForListAdapter:",
+      effect:
+        "Strips IGAdItem and IGThreadsInFeedModels. IGThreadsInFeedModel from the main feed.",
+    },
+    {
+      symbol: "UIViewController",
+      method: "-presentViewController: animated:completion:",
+      effect:
+        "Intercepts and cancels presentation of the TestFlight update nudge view controller.",
+    },
+    {
+      symbol: "IGSundialFeed. IGSundialFeedDataSource (Swift)",
+      method: "-objectsForListAdapter:",
+      effect:
+        "Same ad filter as the Objective-C hook, applied to the Swift reimplementation when present.",
     },
   ];
 
@@ -489,7 +450,7 @@ export default function Haven() {
       }}
     >
       <style>{`
-        @keyframes havenFadeRise {
+        @keyframes igabFadeRise {
           from {
             opacity: 0;
             transform: translateY(24px);
@@ -500,40 +461,38 @@ export default function Haven() {
           }
         }
 
-        @keyframes havenPulse {
+        @keyframes igabPulse {
           0% { transform: scale(1); opacity: 0.2; }
           50% { transform: scale(1.08); opacity: 0.36; }
           100% { transform: scale(1); opacity: 0.2; }
         }
 
-        @keyframes havenShimmer {
+        @keyframes igabShimmer {
           0% { transform: translateX(-16%); opacity: 0.3; }
           50% { transform: translateX(10%); opacity: 0.52; }
           100% { transform: translateX(-16%); opacity: 0.3; }
         }
 
         @media (max-width: 1080px) {
-          .haven-hero-grid,
-          .haven-detail-grid,
-          .haven-resource-grid {
+          .igab-hero-grid,
+          .igab-detail-grid,
+          .igab-resource-grid {
             grid-template-columns: 1fr !important;
           }
 
-          .haven-feature-grid,
-          .haven-subproject-grid,
-          .haven-metric-grid,
-          .haven-info-grid {
+          .igab-feature-grid,
+          .igab-subproject-grid,
+          .igab-hook-grid,
+          .igab-info-grid {
             grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
           }
         }
 
         @media (max-width: 720px) {
-          .haven-feature-grid,
-          .haven-subproject-grid,
-          .haven-metric-grid,
-          .haven-info-grid,
-          .haven-stage-grid,
-          .haven-team-meta-grid {
+          .igab-feature-grid,
+          .igab-subproject-grid,
+          .igab-hook-grid,
+          .igab-info-grid {
             grid-template-columns: 1fr !important;
           }
         }
@@ -555,9 +514,9 @@ export default function Haven() {
             width: 300,
             height: 300,
             borderRadius: "50%",
-            background: "rgba(255,184,77,0.15)",
+            background: "rgba(255,90,95,0.14)",
             filter: "blur(70px)",
-            animation: "havenPulse 5.8s ease-in-out infinite",
+            animation: "igabPulse 5.8s ease-in-out infinite",
             pointerEvents: "none",
           }}
         />
@@ -569,9 +528,9 @@ export default function Haven() {
             width: 340,
             height: 340,
             borderRadius: "50%",
-            background: "rgba(28,154,255,0.15)",
+            background: "rgba(120,80,255,0.14)",
             filter: "blur(80px)",
-            animation: "havenPulse 6.4s ease-in-out infinite",
+            animation: "igabPulse 6.4s ease-in-out infinite",
             pointerEvents: "none",
           }}
         />
@@ -602,13 +561,13 @@ export default function Haven() {
                 inset: 0,
                 background:
                   "linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.05) 24%, transparent 48%)",
-                animation: "havenShimmer 8.5s ease-in-out infinite",
+                animation: "igabShimmer 8.5s ease-in-out infinite",
                 pointerEvents: "none",
               }}
             />
 
             <div
-              className="haven-hero-grid"
+              className="igab-hero-grid"
               style={{
                 position: "relative",
                 zIndex: 2,
@@ -620,21 +579,21 @@ export default function Haven() {
               }}
             >
               <div>
-                <HavenMark />
+                <IGAdBlockMark />
 
                 <h1
                   style={{
                     margin: "1.4rem 0 1rem",
-                    fontSize: "clamp(40px, 7vw, 78px)",
-                    lineHeight: 0.94,
+                    fontSize: "clamp(38px, 6.5vw, 68px)",
+                    lineHeight: 0.96,
                     letterSpacing: "-0.06em",
                     color: "#f5f5f7",
                     maxWidth: 760,
                   }}
                 >
-                  Haptics and Vision for
+                  Ad blocking for Instagram,
                   <br />
-                  Environmental Navigation.
+                  at the runtime layer.
                 </h1>
 
                 <p
@@ -646,13 +605,11 @@ export default function Haven() {
                     color: "rgba(255,255,255,0.6)",
                   }}
                 >
-                  HAVEN is a wearable assistive navigation system designed for
-                  visually impaired users that is meant to support and work
-                  alongside existing aids. It combines smartphone-based
-                  computer vision, LiDAR-assisted mapping, and directional
-                  haptic feedback so the wearer can detect obstacles,
-                  interpret safer walking directions, and move more confidently
-                  through unfamiliar spaces.
+                  IGAdBlock is a MobileSubstrate tweak built with Theos and
+                  Logos for jailbroken or jailed iOS environment. It hooks Instagram's Objective-C
+                  and Swift feed data sources directly, filtering ads,
+                  Threads suggestions, and TestFlight nag screens out of the
+                  data before they ever reach the UI.
                 </p>
 
                 <div
@@ -663,12 +620,11 @@ export default function Haven() {
                     marginTop: "1.4rem",
                   }}
                 >
-                  <GlassPill>UC San Diego Senior Design 2026</GlassPill>
-                  <GlassPill>Group 9</GlassPill>
-                  <GlassPill>Head-mounted prototype</GlassPill>
-                  <GlassPill>Smartphone CV + LiDAR</GlassPill>
-                  <GlassPill>ARKit + Swift</GlassPill>
-                  <GlassPill>Local-only streaming</GlassPill>
+                  <GlassPill>Theos + Logos</GlassPill>
+                  <GlassPill>Objective-C runtime hooking</GlassPill>
+                  <GlassPill>MobileSubstrate</GlassPill>
+                  <GlassPill>arm64 / arm64e</GlassPill>
+                  <GlassPill>GitHub Actions CI</GlassPill>
                 </div>
 
                 <div
@@ -679,21 +635,11 @@ export default function Haven() {
                     marginTop: "1.6rem",
                   }}
                 >
-                  <CTAButton href={appStoreUrl} primary>
-                    View on App Store
+                  <CTAButton href={githubUrl} primary>
+                    View on GitHub
                   </CTAButton>
 
-                  <CTAButton href={arduinoUrl} download>
-                    Download Arduino Code
-                  </CTAButton>
-
-                  <CTAButton href={viewerUrl} download>
-                    Download Python Viewer
-                  </CTAButton>
-
-                  <CTAButton onClick={() => navigate("/haven/privacy")}>
-                    Privacy Policy
-                  </CTAButton>
+                  <CTAButton href={releasesUrl}>Latest Release</CTAButton>
 
                   <CTAButton href="mailto:suraj@sladdagiri.org">
                     Contact
@@ -719,7 +665,7 @@ export default function Haven() {
                     marginBottom: 10,
                   }}
                 >
-                  System pipeline
+                  What gets filtered
                 </div>
 
                 <h2
@@ -731,7 +677,7 @@ export default function Haven() {
                     color: "#f5f5f7",
                   }}
                 >
-                  Sense, map, plan, guide.
+                  Reels, feed, and system nags.
                 </h2>
 
                 <p
@@ -742,59 +688,24 @@ export default function Haven() {
                     color: "rgba(255,255,255,0.58)",
                   }}
                 >
-                  The phone captures camera, LiDAR, and motion data, the
-                  navigation engine builds a local map and selects a walkable
-                  route, and a five-motor haptic array communicates direction
-                  through proportional vibration patterns.
+                  Each hook rebuilds the array Instagram's feed adapters
+                  return, dropping ad and suggestion objects by class before
+                  ListKit ever lays them out, and a separate hook stops the
+                  TestFlight update nudge from being presented at all.
                 </p>
 
                 <div
-                  className="haven-stage-grid"
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-                    gap: "0.9rem",
-                    marginBottom: "0.9rem",
-                  }}
-                >
-                  <SystemStage
-                    eyebrow="Perceive"
-                    title="Camera + LiDAR capture"
-                    description="A LiDAR-equipped iPhone mounted on the head observes the environment while staying aligned with the user's walking direction."
-                    accent="#ffbf5f"
-                  />
-                  <SystemStage
-                    eyebrow="Map"
-                    title="ARKit spatial understanding"
-                    description="ARKit and RealityKit handle SLAM, scene reconstruction, and environment interpretation for obstacles, floor regions, and door-aware cues."
-                    accent="#53c5ff"
-                  />
-                  <SystemStage
-                    eyebrow="Plan"
-                    title="Path generation"
-                    description="The software locks a feasible forward goal, prefers a straight corridor, and falls back to A* when direct travel is blocked."
-                    accent="#90f4ae"
-                  />
-                  <SystemStage
-                    eyebrow="Guide"
-                    title="Weighted haptic output"
-                    description="Five tactors, driven over Bluetooth through the Arduino stack, translate heading error into continuous directional guidance without overloading the user's hearing."
-                    accent="#ff8e73"
-                  />
-                </div>
-
-                <div
-                  className="haven-info-grid"
+                  className="igab-info-grid"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
                     gap: "0.9rem",
                   }}
                 >
-                  <InfoCard label="Status" value="Head-mounted prototype complete" />
-                  <InfoCard label="Prototype weight" value="250g excluding phone" />
-                  <InfoCard label="Battery life" value="About 6 hours" />
-                  <InfoCard label="Privacy" value="No cloud upload" />
+                  <InfoCard label="Reels" value="IGAdItem removed" />
+                  <InfoCard label="Main feed" value="Ads + Threads removed" />
+                  <InfoCard label="System" value="TestFlight nag blocked" />
+                  <InfoCard label="Data collected" value="None, on-device only" />
                 </div>
               </div>
             </div>
@@ -810,13 +721,13 @@ export default function Haven() {
         }}
       >
         <div
-          className="haven-feature-grid"
+          className="igab-feature-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
             gap: "1rem",
             marginBottom: "1rem",
-            animation: "havenFadeRise 900ms ease both",
+            animation: "igabFadeRise 900ms ease both",
             animationDelay: "120ms",
           }}
         >
@@ -831,13 +742,13 @@ export default function Haven() {
         </div>
 
         <div
-          className="haven-detail-grid"
+          className="igab-detail-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1.08fr 0.92fr",
             gap: "1rem",
             marginBottom: "1rem",
-            animation: "havenFadeRise 950ms ease both",
+            animation: "igabFadeRise 950ms ease both",
             animationDelay: "180ms",
           }}
         >
@@ -871,7 +782,7 @@ export default function Haven() {
                 color: "#f5f5f7",
               }}
             >
-              A wearable system across hardware, software, and UX.
+              A single Logos file doing four jobs at once.
             </h2>
 
             <p
@@ -882,15 +793,14 @@ export default function Haven() {
                 color: "rgba(255,255,255,0.58)",
               }}
             >
-              HAVEN started as a stereo-camera-and-laptop concept, then evolved
-              into a more practical smartphone-centered architecture. That
-              shift reduced weight and component complexity while improving
-              real-time spatial awareness, portability, comfort, and
-              integration with the final haptic hardware stack.
+              The entire tweak lives in one Tweak.x, mixing static
+              Objective-C hooks with conditional Logos %group blocks that
+              only activate against Swift classes Instagram actually ships
+              in a given build, so ad blocking survives across app updates.
             </p>
 
             <div
-              className="haven-subproject-grid"
+              className="igab-subproject-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
@@ -952,7 +862,7 @@ export default function Haven() {
                 marginBottom: 10,
               }}
             >
-              Evaluation snapshot
+              Hook map
             </div>
 
             <h2
@@ -964,7 +874,7 @@ export default function Haven() {
                 color: "#f5f5f7",
               }}
             >
-              Strong obstacle detection, with clear room to improve routing.
+              Every class and method the tweak touches.
             </h2>
 
             <p
@@ -975,67 +885,38 @@ export default function Haven() {
                 color: "rgba(255,255,255,0.58)",
               }}
             >
-              Testing showed strong false-negative performance, sub-second path
-              updates, roughly six hours of battery life, and safe thermal
-              behavior. The biggest remaining issue is false positives,
-              especially in dim lighting, which still causes the route planner
-              to reject too much open space.
+              Four %hook blocks cover the full surface area: two Objective-C
+              feed adapters, one app-wide presentation guard, and one
+              runtime-resolved Swift equivalent.
             </p>
 
             <div
-              className="haven-metric-grid"
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-                gap: "0.9rem",
-                marginBottom: "0.9rem",
-              }}
-            >
-              <MetricCard
-                label="False negatives"
-                value="0 to 2 / 10"
-                description="Across 1 m, 3 m, and 5 m testing, the system stayed within the team's false-negative threshold in bright, indoor, and dim conditions."
-              />
-              <MetricCard
-                label="Path latency"
-                value="0.86 s"
-                description="Average time to generate a new path after obstruction stayed below the 1 second goal."
-              />
-              <MetricCard
-                label="Battery life"
-                value="~ 6 hrs"
-                description="Measured power draw projects roughly six hours of continuous use when combining the phone and external battery pack."
-              />
-              <MetricCard
-                label="Thermal plateau"
-                value="< 104°F"
-                description="Tactor heating remained below the IEC skin-contact threshold during testing, though full-power continuous duty still requires care."
-              />
-            </div>
-
-            <div
-              className="haven-info-grid"
+              className="igab-hook-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
                 gap: "0.9rem",
               }}
             >
-              <InfoCard label="Total cost" value="$207" />
-              <InfoCard label="Device cost" value="$124 without the stereo camera" />
-              <InfoCard label="Safe path rate" value="89 to 93% in bright-light trials" />
-              <InfoCard label="Standards" value="IEC 62304, IEC 60601, ISO 14971, ISO 9241-920, ISO/IEC 27001" />
+              {hooks.map((hook) => (
+                <HookCard
+                  key={hook.symbol}
+                  symbol={hook.symbol}
+                  method={hook.method}
+                  effect={hook.effect}
+                />
+              ))}
             </div>
           </div>
         </div>
 
         <div
-          className="haven-resource-grid"
+          className="igab-resource-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "0.96fr 1.04fr",
             gap: "1rem",
-            animation: "havenFadeRise 1000ms ease both",
+            animation: "igabFadeRise 1000ms ease both",
             animationDelay: "240ms",
           }}
         >
@@ -1057,7 +938,7 @@ export default function Haven() {
                 marginBottom: 10,
               }}
             >
-              Downloads and privacy
+              Build and install
             </div>
 
             <h2
@@ -1069,7 +950,7 @@ export default function Haven() {
                 color: "#f5f5f7",
               }}
             >
-              Flash the Arduino and monitor the live stream locally.
+              Grab a release, or build it from source.
             </h2>
 
             <p
@@ -1080,10 +961,11 @@ export default function Haven() {
                 color: "rgba(255,255,255,0.58)",
               }}
             >
-              Commands are streamed over Bluetooth to the Arduino while
-              environment and local-location data are streamed over your local
-              network to a connected laptop. The data stays on your personal
-              devices and is never uploaded to the cloud.
+              Building from source needs Theos and a decrypted Instagram
+              IPA supplied by the user. Prebuilt releases ship a universal
+              dylib that gets injected into a resigned Instagram IPA
+              alongside a keychain-fix tweak, then installed on a jailed
+              device with a signing app.
             </p>
 
             <div
@@ -1094,49 +976,26 @@ export default function Haven() {
                 marginBottom: "1rem",
               }}
             >
-              <CTAButton href={appStoreUrl} primary>
-                View on App Store
+              <CTAButton href={githubUrl} primary>
+                View on GitHub
               </CTAButton>
-              <CTAButton href={arduinoUrl} download>
-                Download Arduino Code
-              </CTAButton>
-              <CTAButton href={viewerUrl} download>
-                Download Viewer Script
-              </CTAButton>
-              <CTAButton onClick={() => navigate("/haven/privacy")}>
-                View Privacy Policy
+              <CTAButton href={releasesUrl}>Latest Release</CTAButton>
+              <CTAButton onClick={() => navigate("/portfolio")}>
+                Back to Portfolio
               </CTAButton>
             </div>
 
             <div
-              style={{
-                borderRadius: 22,
-                padding: "1rem 1.05rem",
-                background: "rgba(4,10,18,0.86)",
-                border: "1px solid rgba(83,197,255,0.18)",
-                color: "#dceeff",
-                fontSize: 13,
-                lineHeight: 1.75,
-                fontFamily:
-                  'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-                marginBottom: "1rem",
-                overflowX: "auto",
-              }}
-            >
-              python haven_viewer_v3.py {"<Local IP of iPhone>"}
-            </div>
-
-            <div
-              className="haven-info-grid"
+              className="igab-info-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
                 gap: "0.9rem",
               }}
             >
-              <InfoCard label="Viewer transport" value="TCP over local Wi-Fi on port 8080" />
-              <InfoCard label="Haptic transport" value="Bluetooth from phone to Arduino Uno R4 WiFi" />
-              <InfoCard label="Supported phones" value="iPhone 12 to 17 Pro or Pro Max" />
+              <InfoCard label="Package ID" value="com.sladdagiri.igadblock" />
+              <InfoCard label="Target bundle" value="com.burbn.instagram" />
+              <InfoCard label="Min iOS" value="15.0" />
               <InfoCard label="Support" value="suraj@sladdagiri.org" />
             </div>
           </div>
@@ -1160,7 +1019,7 @@ export default function Haven() {
                 marginBottom: 10,
               }}
             >
-              Team
+              Continuous integration
             </div>
 
             <h2
@@ -1172,48 +1031,65 @@ export default function Haven() {
                 color: "#f5f5f7",
               }}
             >
-              Group 9 behind HAVEN.
+              Tagging a commit is the whole release process.
             </h2>
 
             <p
               style={{
-                margin: "0 0 1rem",
+                margin: "0 0 1.1rem",
                 fontSize: 15,
                 lineHeight: 1.8,
                 color: "rgba(255,255,255,0.58)",
               }}
             >
-              The project brought together hardware, mobile perception,
-              path-planning, and haptic interface work under UC San Diego's
-              Bioengineering Senior Design program.
+              A GitHub Actions workflow watches for pushed <code>v*</code>{" "}
+              tags, spins up a macOS runner, bootstraps Theos from its
+              official install script, and compiles the tweak with{" "}
+              <code>make FINALPACKAGE=1</code>.
             </p>
 
-            <img
-              src={teamPhotoUrl}
-              alt="HAVEN team photo"
+            <div
               style={{
-                display: "block",
-                width: "100%",
-                borderRadius: 24,
-                border: "1px solid rgba(255,255,255,0.1)",
-                boxShadow: "0 18px 44px rgba(0,0,0,0.28)",
+                borderRadius: 22,
+                padding: "1rem 1.05rem",
+                background: "rgba(4,10,18,0.86)",
+                border: "1px solid rgba(255,90,95,0.18)",
+                color: "#ffe3e5",
+                fontSize: 13,
+                lineHeight: 1.9,
+                fontFamily:
+                  'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
                 marginBottom: "1rem",
+                overflowX: "auto",
               }}
-            />
+            >
+              on: push tags: v*
+              <br />
+              runs-on: macos-latest
+              <br />
+              install-theos → make FINALPACKAGE=1
+              <br />
+              find .theos/obj -name "*.dylib"
+              <br />
+              softprops/action-gh-release → upload dylib
+            </div>
 
             <div
-              className="haven-team-meta-grid"
+              className="igab-info-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
                 gap: "0.9rem",
+                marginBottom: "1rem",
               }}
             >
-              <InfoCard label="Team members" value="Peilin Pan, Suraj Laddagiri, Nick Monell, Alexander Lange" />
-              <InfoCard label="Principal investigator" value="Gert Cauwenberghs" />
-              <InfoCard label="Project advisor" value="Adyant Balaji" />
-              <InfoCard label="Institution" value="UC San Diego Jacobs School of Engineering" />
+              <InfoCard label="Trigger" value="Push of a v* tag" />
+              <InfoCard label="Runner" value="macos-latest" />
+              <InfoCard label="Toolchain" value="Theos, bootstrapped fresh per run" />
+              <InfoCard label="Output" value="Universal arm64 / arm64e dylib" />
             </div>
+
+            <CTAButton href={workflowUrl}>View Workflow File</CTAButton>
           </div>
         </div>
       </section>

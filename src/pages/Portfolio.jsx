@@ -278,6 +278,11 @@ export default function Portfolio() {
   const iconUrl = `${baseUrl}1024.png`;
   const havenArduinoUrl = `${baseUrl}haven_uno_r4_haptics.ino`;
   const havenViewerUrl = `${baseUrl}haven_viewer_v3.py`;
+  const musicStripAppStoreUrl =
+    "https://apps.apple.com/us/app/music-strip/id6761938199";
+  const havenAppStoreUrl =
+    "https://apps.apple.com/us/app/haven-app/id6761937548";
+  const igAdBlockGithubUrl = "https://github.com/surajladdagiri/IGAdBlock";
 
   return (
     <div
@@ -471,7 +476,11 @@ export default function Portfolio() {
                     flexWrap: "wrap",
                   }}
                 >
-                  <ActionButton primary onClick={() => navigate("/musicstrip")}>
+                  <ActionButton primary href={musicStripAppStoreUrl}>
+                    View on App Store
+                  </ActionButton>
+
+                  <ActionButton onClick={() => navigate("/musicstrip")}>
                     View Music Strip
                   </ActionButton>
 
@@ -678,7 +687,11 @@ export default function Portfolio() {
                     flexWrap: "wrap",
                   }}
                 >
-                  <ActionButton primary onClick={() => navigate("/haven")}>
+                  <ActionButton primary href={havenAppStoreUrl}>
+                    View on App Store
+                  </ActionButton>
+
+                  <ActionButton onClick={() => navigate("/haven")}>
                     View HAVEN
                   </ActionButton>
 
@@ -826,6 +839,264 @@ export default function Portfolio() {
           style={{
             animation: visible ? "portfolioFadeUp 900ms ease both" : "none",
             animationDelay: "180ms",
+            marginBottom: "1.5rem",
+          }}
+        >
+          <div
+            className="portfolio-project-grid"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "0.98fr 1.02fr",
+              gap: "1rem",
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                borderRadius: 32,
+                padding: "2rem",
+                border: "1px solid rgba(255,255,255,0.08)",
+                background:
+                  "linear-gradient(150deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025))",
+                boxShadow: "0 22px 58px rgba(0,0,0,0.26)",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "radial-gradient(circle at top left, rgba(255,90,95,0.1), transparent 38%)",
+                  pointerEvents: "none",
+                }}
+              />
+
+              <div style={{ position: "relative", zIndex: 2 }}>
+                <div
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: "10px 16px",
+                    borderRadius: 999,
+                    border: "1px solid rgba(255,255,255,0.12)",
+                    background:
+                      "linear-gradient(145deg, rgba(255,90,95,0.22), rgba(120,80,255,0.18))",
+                    color: "#f5f5f7",
+                    fontSize: 12,
+                    fontWeight: 700,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    marginBottom: "1.1rem",
+                  }}
+                >
+                  IGAdBlock
+                </div>
+
+                <div
+                  style={{
+                    fontSize: 12,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.14em",
+                    color: "rgba(255,255,255,0.34)",
+                    marginBottom: 10,
+                  }}
+                >
+                  Jailbreak Tweak &middot; Theos + Logos
+                </div>
+
+                <h2
+                  style={{
+                    margin: 0,
+                    fontSize: "clamp(32px, 5vw, 56px)",
+                    lineHeight: 0.98,
+                    letterSpacing: "-0.05em",
+                    color: "#f5f5f7",
+                    maxWidth: 760,
+                  }}
+                >
+                  Ad blocking for Instagram
+                </h2>
+
+                <p
+                  style={{
+                    margin: "1rem 0 1.5rem",
+                    fontSize: "clamp(16px, 2vw, 18px)",
+                    lineHeight: 1.75,
+                    color: "rgba(255,255,255,0.62)",
+                    maxWidth: 740,
+                  }}
+                >
+                  A MobileSubstrate tweak for jailbroken or jailed iOS environment that hooks
+                  Instagram's Objective-C and Swift feed data sources at
+                  runtime, stripping ads, Threads suggestions, and TestFlight
+                  nag screens out of the data before they ever reach the UI.
+                </p>
+
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: 10,
+                    marginBottom: "1.6rem",
+                  }}
+                >
+                  <FeaturePill>Runtime hooking</FeaturePill>
+                  <FeaturePill>Reels ad removal</FeaturePill>
+                  <FeaturePill>Main feed ad removal</FeaturePill>
+                  <FeaturePill>Threads suggestions removed</FeaturePill>
+                  <FeaturePill>Swift class resolution</FeaturePill>
+                  <FeaturePill>GitHub Actions CI</FeaturePill>
+                </div>
+
+                <div
+                  style={{
+                    display: "flex",
+                    gap: 12,
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <ActionButton primary href={igAdBlockGithubUrl}>
+                    View on GitHub
+                  </ActionButton>
+
+                  <ActionButton onClick={() => navigate("/igadblock")}>
+                    View IGAdBlock
+                  </ActionButton>
+                </div>
+              </div>
+            </div>
+
+            <div
+              style={{
+                borderRadius: 32,
+                padding: "1.3rem",
+                border: "1px solid rgba(255,255,255,0.08)",
+                background: "rgba(255,255,255,0.03)",
+                boxShadow: "0 24px 60px rgba(0,0,0,0.24)",
+                display: "grid",
+                gridTemplateRows: "auto auto",
+                gap: "1rem",
+              }}
+            >
+              <div
+                className="portfolio-stats-grid"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "1rem",
+                }}
+              >
+                <StatCard label="Platform" value="Jailbroken iOS 15+" />
+                <StatCard label="Toolchain" value="Theos + Logos" />
+                <StatCard label="Binary" value="Universal arm64 / arm64e" />
+                <StatCard label="Distribution" value="GitHub Releases" />
+              </div>
+
+              <div
+                style={{
+                  borderRadius: 26,
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  background:
+                    "linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02))",
+                  padding: "1.1rem",
+                }}
+              >
+                <div
+                  style={{
+                    fontSize: 12,
+                    textTransform: "uppercase",
+                    letterSpacing: "0.13em",
+                    color: "rgba(255,255,255,0.34)",
+                    marginBottom: 14,
+                  }}
+                >
+                  Hook map
+                </div>
+
+                <div
+                  className="portfolio-signal-grid"
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: "0.9rem",
+                  }}
+                >
+                  {[
+                    {
+                      label: "Reels",
+                      title: "IGSundialFeedDataSource",
+                      text: "Filters IGAdItem out of the reel feed's -objectsForListAdapter: return value.",
+                    },
+                    {
+                      label: "Main feed",
+                      title: "IGMainFeedListAdapterDataSource",
+                      text: "Filters IGAdItem and Threads suggestion cards out of the main timeline.",
+                    },
+                    {
+                      label: "System",
+                      title: "UIViewController",
+                      text: "Intercepts -presentViewController:animated:completion: to block the TestFlight update nudge.",
+                    },
+                    {
+                      label: "Swift",
+                      title: "Dynamic class resolution",
+                      text: "Resolves Swift-backed classes via objc_getClass at load time and conditionally %inits the matching hook group.",
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.title}
+                      style={{
+                        borderRadius: 22,
+                        padding: "0.95rem",
+                        background: "rgba(255,255,255,0.03)",
+                        border: "1px solid rgba(255,255,255,0.08)",
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: 11,
+                          textTransform: "uppercase",
+                          letterSpacing: "0.13em",
+                          color: "rgba(255,255,255,0.36)",
+                          marginBottom: 8,
+                        }}
+                      >
+                        {item.label}
+                      </div>
+                      <div
+                        style={{
+                          fontSize: 17,
+                          fontWeight: 650,
+                          color: "#f5f5f7",
+                          lineHeight: 1.25,
+                          marginBottom: 8,
+                        }}
+                      >
+                        {item.title}
+                      </div>
+                      <div
+                        style={{
+                          fontSize: 14,
+                          lineHeight: 1.65,
+                          color: "rgba(255,255,255,0.56)",
+                        }}
+                      >
+                        {item.text}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          style={{
+            animation: visible ? "portfolioFadeUp 900ms ease both" : "none",
+            animationDelay: "220ms",
           }}
         >
           <div
