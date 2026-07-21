@@ -1,0 +1,63 @@
+name: Atlas daily refresh
+
+on:
+  schedule:
+    # 08:00 America/Los_Angeles. GitHub cron is UTC and does NOT observe DST,
+    # so both are listed; the script is idempotent, and the second run of the
+    # day finds nothing new and exits cheaply.
+    - cron: "0 15 * * *"   # 08:00 PDT (Mar–Nov)
+    - cron: "0 16 * * *"   # 08:00 PST (Nov–Mar)
+  workflow_dispatch:        # lets you trigger it by hand from the Actions tab
+
+concurrency:
+  group: atlas-daily
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install scrapers
+        run: pip install --quiet python-jobspy
+
+      - name: Run pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          MAX_ANALYZE: "12"
+          SCORE_FLOOR: "68"
+          USE_JOBSPY: "1"
+        run: python scripts/pipeline/run.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name  "atlas-bot"
+          git config user.email "atlas-bot@users.noreply.github.com"
+          if git diff --quiet -- src/data/atlas.js; then
+            echo "No change — nothing to commit."
+          else
+            git add src/data/atlas.js
+            git commit -m "atlas: daily refresh $(date -u +%Y-%m-%d)"
+            git push
+          fi
+
+      - name: Nudge Vercel (fallback)
+        # Vercel normally redeploys from the push above. This is a belt-and-braces
+        # trigger for projects with an Ignored Build Step or a paused Git integration.
+        # Skipped automatically if the secret isn't set.
+        if: ${{ success() && env.HOOK != '' }}
+        env:
+          HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: curl -sS -X POST "$HOOK" -o /dev/null -w "vercel hook: %{http_code}\n"

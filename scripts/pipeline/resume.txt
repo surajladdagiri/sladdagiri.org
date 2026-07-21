@@ -1,0 +1,41 @@
+Surajkumar Laddagiri
+suraj@sladdagiri.org  |  portfolio.sladdagiri.org  |  github.com/surajladdagiri  |  San Diego, CA
+ENGINEERING EXPERIENCE
+Independent iOS Developer	Aug 2025 – Present
+Music Strip — published to the Apple App Store
+Designed, built, and shipped a native iOS application (Swift, SwiftUI, UIKit) to the App Store controlling custom WS2812B LED hardware over Core Bluetooth, with state-driven navigation.
+Architected a custom BLE command protocol synchronizing in-app state with hardware modes, brightness, and animation parameters at imperceptible latency.
+Engineered companion multi-threaded ESP32 firmware (C++/FreeRTOS) scheduling concurrent lighting, BLE advertising, and serial tasks as independent prioritized threads.
+Integrated the Spotify API with live album-art color extraction to drive lighting synchronized to the currently playing track.
+Software Lead & Software Engineer — HAVEN	Jun 2025 – Jun 2026
+UC San Diego Senior Design (Advisor: Dr. Gert Cauwenberghs) — published to the Apple App Store
+Led a 4-person team to design, build, and ship a head-mounted iOS navigation aid for visually impaired users, released on the App Store.
+Implemented real-time SLAM and scene reconstruction with ARKit and RealityKit on a LiDAR-equipped iPhone, fusing camera, depth, and IMU data to detect floors, walls, and doors.
+Developed path planning that prefers straight-line travel and falls back to A*, regenerating routes around dynamic obstacles in under 1 second.
+Designed the directional haptic guidance layer: translated heading corrections from the perception stack into weighted per-tactor intensity commands with distinct patterns for doors and no-valid-path states, streamed over Core Bluetooth to the wearable tactor array.
+Validated with blind and low-vision testers at 1/3/5 m across bright, indoor, and dim conditions; tactor heating below the IEC skin-contact threshold, all processing on-device with no cloud upload.
+Built a real-time telemetry viewer (Python, stdlib only) streaming live mesh and pose data over TCP, designed the binary wire protocol with magic-header framing and length-prefixed payloads, wrote a resynchronizing parser tolerant of malformed packets, and rendered a semantically colored top-down map on a background thread.
+Instructional Assistant, Bioengineering (BENG 1)	Jan 2024 – Mar 2024
+UC San Diego — La Jolla, CA
+Led a class of 30+ students and designed hands-on lab activities across biomechanics, bioelectricity, bioinformatics, and 3D modeling with Dr. Robert Sah.
+SELECTED PROJECTS
+IGAdBlock — iOS Runtime Engineering (Objective-C, Theos/Logos)	Feb 2026 - Present
+Reverse-engineered Instagram's internal class hierarchy and undocumented feed data structures at runtime using FLEX, mapping the private model objects and list-adapter data sources that the hooks target.
+Built a MobileSubstrate tweak hooking Instagram's Objective-C and Swift feed data sources at runtime to filter ad and suggestion items before they reach the UI.
+Shipped a universal arm64/arm64e binary targeting iOS 15+ with automated GitHub Actions CI/CD and GitHub Releases distribution.
+Congressional Vote Prediction — NLP / Deep Learning (Python, PyTorch, Flask)	Summer 2024
+Trained 535 DistilBERT-backed neural classifiers (one per member of Congress) predicting yea/nay votes from bill text, achieving 86.4% mean accuracy. Selected DistilBERT over BERT after benchmarking the accuracy/compute tradeoff across 535 models.
+Built the Flask/SocketIO web application delivering live prediction progress and sortable per-legislator results
+Identified and documented a 0.91 vs 0.64 recall gap driven by class imbalance.
+Self-Hosted Linux Service Infrastructure	Aug 2024 – Present
+Architected and operate a containerized Linux service stack: Nginx Proxy Manager for reverse-proxy routing and automated TLS, Apache Guacamole as a browser-based remote-access gateway, and Cloudflare Tunnel for zero-trust ingress with no ports exposed to the public internet.
+EDUCATION
+University of California, San Diego	Sep 2022 – Sep 2026
+B.S. Mathematics & Computer Science  •  B.S. Bioengineering: Biotechnology  •  B.A. Political Science
+Relevant coursework: Algorithms, Data Structures, Computer Organization, Computer Vision, Machine Learning, Natural Language Processing, Bioinformatic Algorithms, Biological Databases, Linear Algebra, Numerical Analysis, Statistical Methods.
+TECHNICAL SKILLS
+Languages: Swift, Objective-C, Python, C, C++, Java, JavaScript, SQL, ARM Assembly
+iOS & Mobile: SwiftUI, UIKit, ARKit, RealityKit, Core Bluetooth, HealthKit, Xcode, Swift Package Manager, App Store release, FLEX runtime inspection, reverse engineering
+Embedded & Hardware: ESP32, FreeRTOS, Arduino, BLE/GATT, I2C, multi-threaded firmware, TCP sockets, binary protocol design
+ML & Data: PyTorch, TensorFlow, scikit-learn, Transformers, NumPy, pandas
+Infrastructure: Git, GitHub Actions CI/CD, Docker, Linux, Nginx, Cloudflare

@@ -8,6 +8,7 @@ import MusicStripPrivacy from "./pages/MusicStripPrivacy";
 import Haven from "./pages/Haven";
 import HavenPrivacy from "./pages/HavenPrivacy";
 import IGAdBlock from "./pages/IGAdBlock";
+import Atlas from "./pages/Atlas";
 
 const NAV_LINKS = [
   { label: "Portfolio", path: "/portfolio" },
@@ -230,6 +231,8 @@ export default function App() {
         <Route path="haven/privacy" element={<HavenPrivacy />} />
         <Route path="igadblock" element={<IGAdBlock />} />
       </Route>
+      {/* unlisted */}
+      <Route path="/atlas" element={<Atlas />} />
     </Routes>
   );
 }
