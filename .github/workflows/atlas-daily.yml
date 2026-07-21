@@ -56,8 +56,14 @@ jobs:
       - name: Nudge Vercel (fallback)
         # Vercel normally redeploys from the push above. This is a belt-and-braces
         # trigger for projects with an Ignored Build Step or a paused Git integration.
-        # Skipped automatically if the secret isn't set.
-        if: ${{ success() && env.HOOK != '' }}
+        # No-ops when the secret isn't set.
+        if: success()
         env:
           HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
-        run: curl -sS -X POST "$HOOK" -o /dev/null -w "vercel hook: %{http_code}\n"
+        run: |
+          if [ -n "$HOOK" ]; then
+            code=$(curl -sS -X POST "$HOOK" -o /dev/null -w '%{http_code}')
+            echo "vercel deploy hook -> $code"
+          else
+            echo "No deploy hook configured; relying on the git push webhook."
+          fi
