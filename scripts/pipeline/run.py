@@ -279,15 +279,71 @@ def emit(roles, labs, pass_hash, digest):
     DATA_JS.write_text("\n".join(body), encoding="utf-8")
 
 
+def _extract(src: str, name: str, default):
+    """Pull `export const NAME = <json>;` out of the generated module.
+
+    Uses balanced-delimiter scanning rather than a regex: the emitted file has
+    blank lines between exports, which trivially defeats lookahead patterns and
+    silently concatenates two values into one (JSONDecodeError: Extra data).
+    String literals are tracked so brackets inside descriptions don't confuse
+    the depth counter.
+    """
+    m = re.search(rf"export\s+const\s+{name}\s*=\s*", src)
+    if not m:
+        return default
+    i = m.end()
+    if i >= len(src):
+        return default
+
+    open_ch = src[i]
+    if open_ch == '"':                       # plain string export (PASS_HASH)
+        j, esc = i + 1, False
+        while j < len(src):
+            c = src[j]
+            if esc:
+                esc = False
+            elif c == "\\":
+                esc = True
+            elif c == '"':
+                return json.loads(src[i:j + 1])
+            j += 1
+        return default
+
+    close_ch = {"[": "]", "{": "}"}.get(open_ch)
+    if not close_ch:
+        return default
+
+    depth, j, in_str, esc = 0, i, False, False
+    while j < len(src):
+        c = src[j]
+        if in_str:
+            if esc:
+                esc = False
+            elif c == "\\":
+                esc = True
+            elif c == '"':
+                in_str = False
+        else:
+            if c == '"':
+                in_str = True
+            elif c == open_ch:
+                depth += 1
+            elif c == close_ch:
+                depth -= 1
+                if depth == 0:
+                    return json.loads(src[i:j + 1])
+        j += 1
+    return default
+
+
 def read_existing():
-    """Pull current ROLES / LABS / PASS_HASH out of the generated module."""
+    """Current ROLES / LABS / PASS_HASH from the generated module."""
+    if not DATA_JS.exists():
+        return [], [], ""
     src = DATA_JS.read_text(encoding="utf-8")
-
-    def grab(name):
-        m = re.search(rf"export const {name} = (.*?);\n(?:export|//|$)", src, re.S)
-        return json.loads(m.group(1)) if m else ([] if name != "PASS_HASH" else "")
-
-    return grab("ROLES"), grab("LABS"), grab("PASS_HASH")
+    return (_extract(src, "ROLES", []),
+            _extract(src, "LABS", []),
+            _extract(src, "PASS_HASH", ""))
 
 
 def main():

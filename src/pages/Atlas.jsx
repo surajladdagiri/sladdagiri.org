@@ -539,6 +539,8 @@ function Card({ item, kind, onOpen, applied, saved, toggle, still, index }) {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       onClick={() => onOpen(item, kind)}
+      whileHover={still ? undefined : { y: -3 }}
+      whileTap={{ scale: 0.995 }}
       style={{
         position: "relative",
         cursor: "pointer",
@@ -550,10 +552,9 @@ function Card({ item, kind, onOpen, applied, saved, toggle, still, index }) {
           : "rgba(255,255,255,0.042)",
         backdropFilter: "blur(30px)",
         WebkitBackdropFilter: "blur(30px)",
-        transform: hover && !still ? "translateY(-3px)" : "translateY(0)",
         boxShadow: hover ? "0 22px 60px rgba(0,0,0,0.45)" : "none",
         transition:
-          "background 260ms ease, border-color 260ms ease, transform 260ms cubic-bezier(0.22,0.61,0.36,1), box-shadow 260ms ease",
+          "background 260ms ease, border-color 260ms ease, box-shadow 260ms ease",
         overflow: "hidden",
       }}
     >
@@ -700,8 +701,10 @@ function Sheet({ open, item, kind, onClose, notes, setNote, still }) {
             transition={still ? { duration: 0.2 } : { type: "spring", stiffness: 300, damping: 34 }}
             style={{
               position: "fixed",
-              left: "50%",
-              transform: "translateX(-50%)",
+              left: 0,
+              right: 0,
+              marginLeft: "auto",
+              marginRight: "auto",
               bottom: 0,
               zIndex: 2001,
               width: "min(860px, 100vw)",
