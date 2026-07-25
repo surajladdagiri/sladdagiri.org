@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-07-25",
- "total_new": 572,
+ "total_new": 160,
  "analyzed": 0,
  "counts": {
-  "San Diego": 28,
-  "Los Angeles": 44,
-  "Bay Area": 123,
-  "Remote": 116,
-  "Out of state": 261
+  "San Diego": 11,
+  "Los Angeles": 20,
+  "Bay Area": 38,
+  "Remote": 29,
+  "Out of state": 62
  }
 };
 
@@ -31,7 +31,7 @@ export const ROLES = [
   "score": 97,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444966000",
@@ -47,7 +47,7 @@ export const ROLES = [
   "score": 93,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4434143949",
@@ -63,7 +63,7 @@ export const ROLES = [
   "score": 93,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4427615346",
@@ -127,7 +127,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk92b2b82fa8da55f2",
@@ -143,7 +143,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd412790a6f338556",
@@ -159,7 +159,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkdf28c173f4e5e57e",
@@ -175,7 +175,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk804713bda24afcdd",
@@ -191,7 +191,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk2c7e3ce7ee20a82e",
@@ -207,7 +207,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk38edf36f87c33c0d",
@@ -223,7 +223,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7d8ef81782bd612f",
@@ -239,7 +239,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk1b604bf9aeff6795",
@@ -255,7 +255,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkfea1bdf45b83d0e5",
@@ -271,7 +271,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk621c140f6410b8df",
@@ -287,7 +287,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka3d672e5e633c0c1",
@@ -303,7 +303,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk35b352f9b57ee573",
@@ -319,7 +319,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk37c29c0202b89174",
@@ -895,7 +895,7 @@ export const ROLES = [
   "score": 89,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke4510dfc68382614",
@@ -1010,6 +1010,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4444972878",
+  "title": "Embedded Software Engineer II",
+  "company": "Wabtec Corporation",
+  "loc": "Germantown, MD",
+  "url": "https://www.linkedin.com/jobs/view/4444972878",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 88,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "resmed-assoc-ios",
   "title": "Associate iOS Developer",
   "company": "ResMed",
@@ -1049,6 +1065,22 @@ export const ROLES = [
   },
   "geo": "sd",
   "new": false
+ },
+ {
+  "id": "auto-jobsview4436421804",
+  "title": "Machine Learning/Deep Learning Engineer(PhD, New Grad)",
+  "company": "Bot Auto",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4436421804",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 87,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
  },
  {
   "id": "auto-jkc03ba02a1db7f9a9",
@@ -1832,7 +1864,7 @@ export const ROLES = [
   "score": 84,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444612499",
@@ -1848,7 +1880,7 @@ export const ROLES = [
   "score": 84,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444394879",
@@ -1864,7 +1896,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4387461820",
@@ -1880,7 +1912,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4436709229",
@@ -2507,6 +2539,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4445227151",
+  "title": "iOS/macOS Swift Full-Stack Engineer (Start Up Background, AI)",
+  "company": "PTR Global",
+  "loc": "Cupertino, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445227151",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 81,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4444394337",
   "title": "Mobile Application DevOps Engineer",
   "company": "Highbrow Technology Inc",
@@ -2520,7 +2568,7 @@ export const ROLES = [
   "score": 81,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445256918",
@@ -2536,7 +2584,7 @@ export const ROLES = [
   "score": 81,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4427634109",
@@ -2552,7 +2600,7 @@ export const ROLES = [
   "score": 81,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444991679",
@@ -3112,7 +3160,7 @@ export const ROLES = [
   "score": 80,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk0584c0a67059248a",
@@ -3128,7 +3176,7 @@ export const ROLES = [
   "score": 80,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4440500189",
@@ -3144,7 +3192,7 @@ export const ROLES = [
   "score": 80,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk1c8f2e9da1b9c00c",
@@ -3160,7 +3208,7 @@ export const ROLES = [
   "score": 80,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441873998",
@@ -3176,7 +3224,7 @@ export const ROLES = [
   "score": 80,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkc08c049090dc8612",
@@ -3353,6 +3401,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4444701249",
+  "title": "Data Scientist II, ML Infrastructure",
+  "company": "Pinterest",
+  "loc": "Palo Alto, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444701249",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": 114297.0,
+  "smax": 235319.0,
+  "track": "Auto",
+  "score": 78,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4444913115",
   "title": "Data Scientist II, ML Infrastructure",
   "company": "Job-scouts.com",
@@ -3433,6 +3497,134 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4445280607",
+  "title": "Machine Learning Data Engineer",
+  "company": "Bright Vision Technologies",
+  "loc": "Sunnyvale, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445280607",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 100000.0,
+  "smax": 150000.0,
+  "track": "Auto",
+  "score": 77,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4407560363",
+  "title": "iOS Engineer",
+  "company": "Garmin",
+  "loc": "Olathe, KS",
+  "url": "https://www.linkedin.com/jobs/view/4407560363",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 77,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444351162",
+  "title": "Software Engineer III, Mobile, iOS, XR",
+  "company": "Google",
+  "loc": "Seattle, WA",
+  "url": "https://www.linkedin.com/jobs/view/4444351162",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 77,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4334619191",
+  "title": "Mobile Application Developer (Android) - AI Trainer",
+  "company": "DataAnnotation",
+  "loc": "Colorado, United States",
+  "url": "https://www.linkedin.com/jobs/view/4334619191",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 77,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4334720155",
+  "title": "Mobile Software Engineer - AI Trainer",
+  "company": "DataAnnotation",
+  "loc": "Arizona, United States",
+  "url": "https://www.linkedin.com/jobs/view/4334720155",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 77,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4334640908",
+  "title": "Mobile Software Engineer - AI Trainer",
+  "company": "DataAnnotation",
+  "loc": "Alabama, United States",
+  "url": "https://www.linkedin.com/jobs/view/4334640908",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 77,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4334559910",
+  "title": "Mobile Application Developer (Android) - AI Trainer",
+  "company": "DataAnnotation",
+  "loc": "Georgia, United States",
+  "url": "https://www.linkedin.com/jobs/view/4334559910",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 77,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4334680334",
+  "title": "Mobile Application Developer (Android) - AI Trainer",
+  "company": "DataAnnotation",
+  "loc": "Virginia, United States",
+  "url": "https://www.linkedin.com/jobs/view/4334680334",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 77,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jk00f23c09646c2658",
   "title": "Embedded Software Engineer",
   "company": "Quest Defense",
@@ -3446,7 +3638,7 @@ export const ROLES = [
   "score": 77,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445240190",
@@ -3462,7 +3654,7 @@ export const ROLES = [
   "score": 77,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4286624825",
@@ -3478,7 +3670,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jked77f166a2d37f91",
@@ -3494,7 +3686,7 @@ export const ROLES = [
   "score": 77,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4426943979",
@@ -3510,7 +3702,7 @@ export const ROLES = [
   "score": 77,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4426955868",
@@ -3526,7 +3718,7 @@ export const ROLES = [
   "score": 77,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4436490185",
@@ -3542,7 +3734,7 @@ export const ROLES = [
   "score": 77,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4442304338",
@@ -3558,7 +3750,7 @@ export const ROLES = [
   "score": 77,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk2fcc7ba9ecd21fb9",
@@ -3574,7 +3766,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6d135e5d239415e4",
@@ -3590,7 +3782,7 @@ export const ROLES = [
   "score": 77,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkf8aef939a612eb9e",
@@ -3606,7 +3798,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk549dee88c0471bae",
@@ -3622,7 +3814,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4250027542",
@@ -3638,7 +3830,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4442309401",
@@ -3654,7 +3846,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444609156",
@@ -3670,7 +3862,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4442303560",
@@ -3686,7 +3878,7 @@ export const ROLES = [
   "score": 77,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4313063940",
@@ -3702,7 +3894,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334599638",
@@ -3718,7 +3910,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334760058",
@@ -3734,7 +3926,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334690258",
@@ -3750,7 +3942,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334720158",
@@ -3766,7 +3958,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445309712",
@@ -3782,7 +3974,7 @@ export const ROLES = [
   "score": 77,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445343358",
@@ -3798,7 +3990,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6c4f58234dfe2c3e",
@@ -3814,7 +4006,7 @@ export const ROLES = [
   "score": 77,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445227598",
@@ -3830,7 +4022,7 @@ export const ROLES = [
   "score": 77,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4436478656",
@@ -7449,6 +7641,54 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4387611736",
+  "title": "Software Engineer, Embedded",
+  "company": "Boom Supersonic",
+  "loc": "Englewood, CO",
+  "url": "https://www.linkedin.com/jobs/view/4387611736",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 76,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444000718",
+  "title": "Firmware Engineer",
+  "company": "Cindavi",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4444000718",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 76,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445223051",
+  "title": "Embedded Software Engineer (Remote)",
+  "company": "Fuse Energy",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4445223051",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 76,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4445203523",
   "title": "Embedded Software Engineer",
   "company": "BioTalent",
@@ -7462,7 +7702,7 @@ export const ROLES = [
   "score": 76,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4434142076",
@@ -7478,7 +7718,7 @@ export const ROLES = [
   "score": 76,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4434121976",
@@ -7494,7 +7734,7 @@ export const ROLES = [
   "score": 76,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444747288",
@@ -8007,6 +8247,102 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4445245423",
+  "title": "Machine Learning Engineer",
+  "company": "Pyramid Consulting, Inc",
+  "loc": "Pleasanton, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445245423",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 75,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444684458",
+  "title": "Machine Learning Engineer: LLM Interpretability & Systems ($175K – $250K + Equity) at CTGT, Inc.",
+  "company": "Jack & Jill",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444684458",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 175000.0,
+  "smax": 250000.0,
+  "track": "Auto",
+  "score": 75,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4427233433",
+  "title": "Front End Web and Mobile Software Developer (Remote)",
+  "company": "Comfort Medical, LLC",
+  "loc": "Coral Springs, FL",
+  "url": "https://www.linkedin.com/jobs/view/4427233433",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 75,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4408503712",
+  "title": "Machine Learning Engineer, Ads Personalization",
+  "company": "Paramount",
+  "loc": "New York, NY",
+  "url": "https://www.linkedin.com/jobs/view/4408503712",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 75,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444628102",
+  "title": "Machine Learning Engineer, AI Safety",
+  "company": "NVIDIA",
+  "loc": "California, United States",
+  "url": "https://www.linkedin.com/jobs/view/4444628102",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 75,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445330624",
+  "title": "Machine Learning Engineer - AI (Remote)",
+  "company": "Hire Feed",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4445330624",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 75,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jk88e96e06d6a5d0ee",
   "title": "Labeling Process Engineer II - Irvine",
   "company": "Medtronic",
@@ -8020,7 +8356,7 @@ export const ROLES = [
   "score": 75,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8c82fde06bf47d7b",
@@ -8036,7 +8372,7 @@ export const ROLES = [
   "score": 75,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4361173628",
@@ -8052,7 +8388,7 @@ export const ROLES = [
   "score": 75,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk3731c9ff2d748678",
@@ -8068,7 +8404,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkae434c07c33f9a0f",
@@ -8084,7 +8420,7 @@ export const ROLES = [
   "score": 75,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445284597",
@@ -8100,7 +8436,7 @@ export const ROLES = [
   "score": 75,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4275844846",
@@ -8116,7 +8452,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445338049",
@@ -8132,7 +8468,7 @@ export const ROLES = [
   "score": 75,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4362406858",
@@ -8148,7 +8484,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4417159976",
@@ -8164,7 +8500,7 @@ export const ROLES = [
   "score": 75,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444690018",
@@ -8180,7 +8516,7 @@ export const ROLES = [
   "score": 75,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4442302003",
@@ -8196,7 +8532,7 @@ export const ROLES = [
   "score": 75,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4418025105",
@@ -8212,7 +8548,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk5ea408ae2302e1c3",
@@ -8228,7 +8564,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk073fd6a51bf349d8",
@@ -8244,7 +8580,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk50c0db1d63bf05e0",
@@ -8260,7 +8596,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk3a46e1b35d6567e6",
@@ -8276,7 +8612,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444378176",
@@ -8292,7 +8628,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444376346",
@@ -8308,7 +8644,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445254494",
@@ -8324,7 +8660,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445231538",
@@ -8340,7 +8676,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441855099",
@@ -8356,7 +8692,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkb0f835a3b6e2974f",
@@ -8372,7 +8708,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkbd9e52e1315cac11",
@@ -8388,7 +8724,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkebe116f7b1358247",
@@ -8404,7 +8740,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4435836134",
@@ -8420,7 +8756,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444614514",
@@ -8436,7 +8772,7 @@ export const ROLES = [
   "score": 75,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445324612",
@@ -8452,7 +8788,7 @@ export const ROLES = [
   "score": 75,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441807954",
@@ -11406,6 +11742,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4445267258",
+  "title": "Applied Scientist II",
+  "company": "Microsoft AI",
+  "loc": "Sunnyvale, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445267258",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 73,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4386998726",
   "title": "Data Engineer II",
   "company": "IEHP",
@@ -11419,7 +11771,7 @@ export const ROLES = [
   "score": 73,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk3a77d6af80b729d8",
@@ -11916,6 +12268,246 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4416702737",
+  "title": "Machine Learning Engineer",
+  "company": "Neuralink",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4416702737",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4435288123",
+  "title": "Embedded Validation & Tools Engineer - OTA",
+  "company": "ALSO.",
+  "loc": "Palo Alto, CA",
+  "url": "https://www.linkedin.com/jobs/view/4435288123",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444604509",
+  "title": "Mobile App Developer",
+  "company": "RemoteHunter",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4444604509",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4436411717",
+  "title": "Artificial Intelligence and Machine Learning (AI/ML) Engineer",
+  "company": "General Dynamics Information Technology",
+  "loc": "Springfield, VA",
+  "url": "https://www.linkedin.com/jobs/view/4436411717",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4418048851",
+  "title": "Embedded Software Engineer 2",
+  "company": "Garmin",
+  "loc": "Chandler, AZ",
+  "url": "https://www.linkedin.com/jobs/view/4418048851",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4417404115",
+  "title": "Embedded Systems Emulation Engineer",
+  "company": "STR",
+  "loc": "Woburn, MA",
+  "url": "https://www.linkedin.com/jobs/view/4417404115",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444350276",
+  "title": "Embedded Controls Software Engineer",
+  "company": "HTC Global Services",
+  "loc": "Allen Park, MI",
+  "url": "https://www.linkedin.com/jobs/view/4444350276",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4408007669",
+  "title": "Firmware Engineer 2 - Outdoor team",
+  "company": "Garmin",
+  "loc": "Olathe, KS",
+  "url": "https://www.linkedin.com/jobs/view/4408007669",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4441568244",
+  "title": "Embedded Software Engineer",
+  "company": "CTC",
+  "loc": "Cary, NC",
+  "url": "https://www.linkedin.com/jobs/view/4441568244",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4441552295",
+  "title": "Firmware Engineer",
+  "company": "CyberCoders",
+  "loc": "Walpole, MA",
+  "url": "https://www.linkedin.com/jobs/view/4441552295",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445236399",
+  "title": "Embedded Software Engineer",
+  "company": "Caterpillar Inc.",
+  "loc": "Mossville, IL",
+  "url": "https://www.linkedin.com/jobs/view/4445236399",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4434693182",
+  "title": "Embedded Engineer",
+  "company": "Eka Robotics",
+  "loc": "Cambridge, MA",
+  "url": "https://www.linkedin.com/jobs/view/4434693182",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445234067",
+  "title": "Embedded Software Development Engineer",
+  "company": "INSPYR Solutions",
+  "loc": "Redmond, WA",
+  "url": "https://www.linkedin.com/jobs/view/4445234067",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445292018",
+  "title": "Embedded Software Engineer",
+  "company": "Actalent",
+  "loc": "Phoenix, AZ",
+  "url": "https://www.linkedin.com/jobs/view/4445292018",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4441548519",
+  "title": "MACHINE LEARNING ENGINEER\nNEW YORK, FULL-TIME",
+  "company": "Pantheon Technologies",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4441548519",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 72,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jk370bb0ecdf474cfb",
   "title": "Machine Learning Researcher",
   "company": "Rainmaker Technology",
@@ -11929,7 +12521,7 @@ export const ROLES = [
   "score": 72,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4408558038",
@@ -11945,7 +12537,7 @@ export const ROLES = [
   "score": 72,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444947396",
@@ -11961,7 +12553,7 @@ export const ROLES = [
   "score": 72,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4426692076",
@@ -11977,7 +12569,7 @@ export const ROLES = [
   "score": 72,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445236488",
@@ -11993,7 +12585,7 @@ export const ROLES = [
   "score": 72,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4409038846",
@@ -12009,7 +12601,7 @@ export const ROLES = [
   "score": 72,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444392011",
@@ -12025,7 +12617,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4426938990",
@@ -12041,7 +12633,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4426937970",
@@ -12057,7 +12649,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4303121966",
@@ -12073,7 +12665,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445261055",
@@ -12089,7 +12681,7 @@ export const ROLES = [
   "score": 72,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416711209",
@@ -12105,7 +12697,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444044592",
@@ -12121,7 +12713,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441570136",
@@ -12137,7 +12729,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4395474500",
@@ -12153,7 +12745,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444398664",
@@ -12169,7 +12761,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4417161434",
@@ -12185,7 +12777,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4395491089",
@@ -12201,7 +12793,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416596338",
@@ -12217,7 +12809,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416702306",
@@ -12233,7 +12825,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444682355",
@@ -12249,7 +12841,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4436372220",
@@ -12265,7 +12857,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4386778609",
@@ -12281,7 +12873,7 @@ export const ROLES = [
   "score": 72,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416716600",
@@ -12297,7 +12889,7 @@ export const ROLES = [
   "score": 72,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkad4c1cca2fb2b189",
@@ -12313,7 +12905,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk071a50795b485193",
@@ -12329,7 +12921,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkb3c01edd7df0b2c9",
@@ -12345,7 +12937,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk2fd37cc71c456e47",
@@ -12361,7 +12953,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk2e1ff8a1388b8352",
@@ -12377,7 +12969,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445342071",
@@ -12393,7 +12985,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444993151",
@@ -12409,7 +13001,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444356661",
@@ -12425,7 +13017,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444707754",
@@ -12441,7 +13033,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4413905933",
@@ -12457,7 +13049,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4440569441",
@@ -12473,7 +13065,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4435267073",
@@ -12489,7 +13081,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416597306",
@@ -12505,7 +13097,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444662010",
@@ -12521,7 +13113,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4417476736",
@@ -12537,7 +13129,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444605546",
@@ -12553,7 +13145,7 @@ export const ROLES = [
   "score": 72,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4427915085",
@@ -12569,7 +13161,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444602615",
@@ -12585,7 +13177,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416702255",
@@ -12601,7 +13193,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444025716",
@@ -12617,7 +13209,7 @@ export const ROLES = [
   "score": 72,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4386955202",
@@ -12633,7 +13225,7 @@ export const ROLES = [
   "score": 72,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4399423445",
@@ -18760,6 +19352,246 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4445348257",
+  "title": "Entry Level Data/AI Engineer",
+  "company": "CCS Global Tech",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445348257",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "sd",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445266539",
+  "title": "Software Engineer II- Full-stack Developer",
+  "company": "Deloitte",
+  "loc": "Costa Mesa, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445266539",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445300907",
+  "title": "Software Engineer II- Full-stack Developer",
+  "company": "Deloitte",
+  "loc": "Los Angeles, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445300907",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444304376",
+  "title": "AI Design Facilitator and Forward-Deployed Engineer II",
+  "company": "Deloitte",
+  "loc": "Los Angeles, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444304376",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4384783444",
+  "title": "Data Scientist II",
+  "company": "Oscar Health",
+  "loc": "Los Angeles, CA",
+  "url": "https://www.linkedin.com/jobs/view/4384783444",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4376769139",
+  "title": "Engineer I",
+  "company": "FNS, Inc.",
+  "loc": "Torrance, CA",
+  "url": "https://www.linkedin.com/jobs/view/4376769139",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445247576",
+  "title": "Systems Test Engineer I",
+  "company": "AV",
+  "loc": "Moorpark, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445247576",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445260782",
+  "title": "Software Engineer II- Full-stack Developer",
+  "company": "Deloitte",
+  "loc": "San Jose, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445260782",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444672355",
+  "title": "Software Engineer II - Data Transformation",
+  "company": "The Walt Disney Company",
+  "loc": "New York, NY",
+  "url": "https://www.linkedin.com/jobs/view/4444672355",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445297774",
+  "title": "Software Engineer I, Streamer Monetization at Repovive, Inc.",
+  "company": "Direct-Calls.com",
+  "loc": "Seattle, WA",
+  "url": "https://www.linkedin.com/jobs/view/4445297774",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4442300878",
+  "title": "Junior Software Engineer",
+  "company": "Haystack",
+  "loc": "Washington, DC",
+  "url": "https://www.linkedin.com/jobs/view/4442300878",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445223530",
+  "title": "Associate Wireless Software Engineer",
+  "company": "Flock",
+  "loc": "Atlanta, GA",
+  "url": "https://www.linkedin.com/jobs/view/4445223530",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4441577280",
+  "title": "Data Scientist II",
+  "company": "Mastercard",
+  "loc": "New York, NY",
+  "url": "https://www.linkedin.com/jobs/view/4441577280",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444692091",
+  "title": "Junior Data Scientist",
+  "company": "Haystack",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4444692091",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4441849368",
+  "title": "Data Scientist I",
+  "company": "Fanatics",
+  "loc": "Denver, CO",
+  "url": "https://www.linkedin.com/jobs/view/4441849368",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 70,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jk96a69bdf9d34897f",
   "title": "QA Software Engineer I",
   "company": "Family Health Centers of San Diego",
@@ -18773,7 +19605,7 @@ export const ROLES = [
   "score": 70,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444645774",
@@ -18789,7 +19621,7 @@ export const ROLES = [
   "score": 70,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444628118",
@@ -18805,7 +19637,7 @@ export const ROLES = [
   "score": 70,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445261143",
@@ -18821,7 +19653,7 @@ export const ROLES = [
   "score": 70,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444655045",
@@ -18837,7 +19669,7 @@ export const ROLES = [
   "score": 70,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk24dd92d20b8fcb64",
@@ -18853,7 +19685,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8ced3924a2bf56f4",
@@ -18869,7 +19701,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444618038",
@@ -18885,7 +19717,7 @@ export const ROLES = [
   "score": 70,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4375773802",
@@ -18901,7 +19733,7 @@ export const ROLES = [
   "score": 70,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4316418794",
@@ -18917,7 +19749,7 @@ export const ROLES = [
   "score": 70,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4414985647",
@@ -18933,7 +19765,7 @@ export const ROLES = [
   "score": 70,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4436668203",
@@ -18949,7 +19781,7 @@ export const ROLES = [
   "score": 70,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk5117c0159fa5b324",
@@ -18965,7 +19797,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk5033a522570649df",
@@ -18981,7 +19813,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk2593d94edbae8454",
@@ -18997,7 +19829,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk292b16555f18b424",
@@ -19013,7 +19845,7 @@ export const ROLES = [
   "score": 70,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk2350eef383871112",
@@ -19029,7 +19861,7 @@ export const ROLES = [
   "score": 70,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk0af3716201bc7a08",
@@ -19045,7 +19877,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkacaba6dea7a55f9e",
@@ -19061,7 +19893,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444963172",
@@ -19077,7 +19909,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444954675",
@@ -19093,7 +19925,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444951743",
@@ -19109,7 +19941,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444045079",
@@ -19125,7 +19957,7 @@ export const ROLES = [
   "score": 70,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd0c1af4260d18b4a",
@@ -19141,7 +19973,7 @@ export const ROLES = [
   "score": 70,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkcf18759343d4c309",
@@ -19157,7 +19989,7 @@ export const ROLES = [
   "score": 70,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7baa6bc26ace6c9b",
@@ -19173,7 +20005,7 @@ export const ROLES = [
   "score": 70,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4399411553",
@@ -19189,7 +20021,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441830869",
@@ -19205,7 +20037,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk36ba1931dbc32c7e",
@@ -19221,7 +20053,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444718182",
@@ -19237,7 +20069,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441899963",
@@ -19253,7 +20085,7 @@ export const ROLES = [
   "score": 70,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-leaijobs4717974005",
@@ -29558,6 +30390,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4444371394",
+  "title": "Principal iOS Engineer",
+  "company": "Lab49",
+  "loc": "New York, United States",
+  "url": "https://www.linkedin.com/jobs/view/4444371394",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 67,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jk3881658b6e668cce",
   "title": "Senior iOS Developer",
   "company": "Apple",
@@ -29571,7 +30419,7 @@ export const ROLES = [
   "score": 67,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445330641",
@@ -29587,7 +30435,7 @@ export const ROLES = [
   "score": 67,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4443981064",
@@ -29990,6 +30838,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4445295017",
+  "title": "AI Scientist",
+  "company": "Bright Vision Technologies",
+  "loc": "Sunnyvale, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445295017",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 100000.0,
+  "smax": 150000.0,
+  "track": "Auto",
+  "score": 66,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4416352476",
   "title": "Senior Mobile Engineer",
   "company": "Canary Technologies",
@@ -30003,7 +30867,7 @@ export const ROLES = [
   "score": 66,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk89dbd9b912c7d5b0",
@@ -30625,7 +31489,7 @@ export const ROLES = [
   "score": 65,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd47dced2a0689832",
@@ -30641,7 +31505,7 @@ export const ROLES = [
   "score": 65,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4415973341",
@@ -30962,6 +31826,182 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4444398698",
+  "title": "Software Engineer (C#/.NET)",
+  "company": "Rockstar Games",
+  "loc": "Carlsbad, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444398698",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 101100.0,
+  "smax": 134300.0,
+  "track": "Auto",
+  "score": 63,
+  "geo": "sd",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4416754220",
+  "title": "AI/ML Scientist, Planetary Science",
+  "company": "Relativity Space",
+  "loc": "Long Beach, CA",
+  "url": "https://www.linkedin.com/jobs/view/4416754220",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 115000.0,
+  "smax": 173000.0,
+  "track": "Auto",
+  "score": 63,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445205566",
+  "title": "Backend Engineer - Connectivity",
+  "company": "Verkada",
+  "loc": "San Mateo, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445205566",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 125000.0,
+  "smax": 160000.0,
+  "track": "Auto",
+  "score": 63,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4441893877",
+  "title": "Forward Deployed Engineer (Redwood City)",
+  "company": "C3 AI",
+  "loc": "Redwood City, CA",
+  "url": "https://www.linkedin.com/jobs/view/4441893877",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 120000.0,
+  "smax": 158000.0,
+  "track": "Auto",
+  "score": 63,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4334559915",
+  "title": "Android Software Engineer - AI Trainer",
+  "company": "DataAnnotation",
+  "loc": "Montana, United States",
+  "url": "https://www.linkedin.com/jobs/view/4334559915",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 63,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4334609305",
+  "title": "Android Developer - AI Trainer",
+  "company": "DataAnnotation",
+  "loc": "North Dakota, United States",
+  "url": "https://www.linkedin.com/jobs/view/4334609305",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 63,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445241091",
+  "title": "AI/ML Developer",
+  "company": "TalentAlly",
+  "loc": "Redmond, WA",
+  "url": "https://www.linkedin.com/jobs/view/4445241091",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 63,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4334631044",
+  "title": "Android Developer - AI Trainer",
+  "company": "DataAnnotation",
+  "loc": "Colorado, United States",
+  "url": "https://www.linkedin.com/jobs/view/4334631044",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 63,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4334579991",
+  "title": "Android Developer - AI Trainer",
+  "company": "DataAnnotation",
+  "loc": "Georgia, United States",
+  "url": "https://www.linkedin.com/jobs/view/4334579991",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 63,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4334670491",
+  "title": "Kotlin Developer - AI Trainer",
+  "company": "DataAnnotation",
+  "loc": "Florida, United States",
+  "url": "https://www.linkedin.com/jobs/view/4334670491",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 63,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4334740115",
+  "title": "Android Software Engineer - AI Trainer",
+  "company": "DataAnnotation",
+  "loc": "Hawaii, United States",
+  "url": "https://www.linkedin.com/jobs/view/4334740115",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 63,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jk676e78e56a4bb386",
   "title": "Cyber Software Engineer (TG)",
   "company": "Northrop Grumman",
@@ -30975,7 +32015,7 @@ export const ROLES = [
   "score": 63,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8b700bdb93bb011d",
@@ -30991,7 +32031,7 @@ export const ROLES = [
   "score": 63,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkfe9d144a4b3ee8ae",
@@ -31007,7 +32047,7 @@ export const ROLES = [
   "score": 63,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke03973ca8f987e3c",
@@ -31023,7 +32063,7 @@ export const ROLES = [
   "score": 63,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk0e978e8bd4454d24",
@@ -31039,7 +32079,7 @@ export const ROLES = [
   "score": 63,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444010806",
@@ -31055,7 +32095,7 @@ export const ROLES = [
   "score": 63,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkce0a754c159c17b5",
@@ -31071,7 +32111,7 @@ export const ROLES = [
   "score": 63,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk59ece4c598bcbf41",
@@ -31087,7 +32127,7 @@ export const ROLES = [
   "score": 63,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke94600a641f4312a",
@@ -31103,7 +32143,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk18ce04c01ddee9fa",
@@ -31119,7 +32159,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkca872fcede7303a3",
@@ -31135,7 +32175,7 @@ export const ROLES = [
   "score": 63,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd3e9cd854b2e1d5b",
@@ -31151,7 +32191,7 @@ export const ROLES = [
   "score": 63,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441839425",
@@ -31167,7 +32207,7 @@ export const ROLES = [
   "score": 63,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4432005995",
@@ -31183,7 +32223,7 @@ export const ROLES = [
   "score": 63,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8f39678dc4431cfa",
@@ -31199,7 +32239,7 @@ export const ROLES = [
   "score": 63,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk230c8561f7db8c80",
@@ -31215,7 +32255,7 @@ export const ROLES = [
   "score": 63,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6ce621f0fee5529a",
@@ -31231,7 +32271,7 @@ export const ROLES = [
   "score": 63,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444771980",
@@ -31247,7 +32287,7 @@ export const ROLES = [
   "score": 63,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444609699",
@@ -31263,7 +32303,7 @@ export const ROLES = [
   "score": 63,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk0815d9d5a9a01be6",
@@ -31279,7 +32319,7 @@ export const ROLES = [
   "score": 63,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk26ac8e996e1bb5d6",
@@ -31295,7 +32335,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka0de5308032f7fcd",
@@ -31311,7 +32351,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk075446adc2b21344",
@@ -31327,7 +32367,7 @@ export const ROLES = [
   "score": 63,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk074626964b88e80a",
@@ -31343,7 +32383,7 @@ export const ROLES = [
   "score": 63,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke1fedd61e1888fda",
@@ -31359,7 +32399,7 @@ export const ROLES = [
   "score": 63,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4427206957",
@@ -31375,7 +32415,7 @@ export const ROLES = [
   "score": 63,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444948810",
@@ -31391,7 +32431,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334680326",
@@ -31407,7 +32447,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334619203",
@@ -31423,7 +32463,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334529931",
@@ -31439,7 +32479,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334710192",
@@ -31455,7 +32495,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334670498",
@@ -31471,7 +32511,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334650798",
@@ -31487,7 +32527,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334529935",
@@ -31503,7 +32543,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334760069",
@@ -31519,7 +32559,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334619209",
@@ -31535,7 +32575,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334670495",
@@ -31551,7 +32591,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk1347f31ba7aa29cb",
@@ -31567,7 +32607,7 @@ export const ROLES = [
   "score": 63,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkaee62862c2d9a7ae",
@@ -31583,7 +32623,7 @@ export const ROLES = [
   "score": 63,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk97d8d42a99f1a6ae",
@@ -31599,7 +32639,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334609310",
@@ -31615,7 +32655,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445331124",
@@ -31631,7 +32671,7 @@ export const ROLES = [
   "score": 63,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkad042f8efcccf8e4",
@@ -31647,7 +32687,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6a818491989490a7",
@@ -31663,7 +32703,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8920bb6dfac08cbc",
@@ -31679,7 +32719,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd93525645b182736",
@@ -31695,7 +32735,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk96a332b1a15ba20a",
@@ -31711,7 +32751,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk4f162efd0b8abd68",
@@ -31727,7 +32767,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka19d413b6cf40816",
@@ -31743,7 +32783,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444601435",
@@ -31759,7 +32799,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444399489",
@@ -31775,7 +32815,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk731443ca3763e876",
@@ -31791,7 +32831,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk047b466eeab952aa",
@@ -31807,7 +32847,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkaa5486e8fca495b0",
@@ -31823,7 +32863,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk597f0352f24a2f69",
@@ -31839,7 +32879,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkaeaa0b9c1f713b6f",
@@ -31855,7 +32895,7 @@ export const ROLES = [
   "score": 63,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk21fddf5e2fabd0b5",
@@ -31871,7 +32911,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk31ef0c33fd7db12d",
@@ -31887,7 +32927,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk787f79cf857f1214",
@@ -31903,7 +32943,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkf3e4c60201f6634e",
@@ -31919,7 +32959,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd02f737fbc86bf34",
@@ -31935,7 +32975,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk4e7d0837142465ac",
@@ -31951,7 +32991,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk9e32509c021b87a0",
@@ -31967,7 +33007,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka63d37f5abdaeb3d",
@@ -31983,7 +33023,7 @@ export const ROLES = [
   "score": 63,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk4807af5e80989152",
@@ -41136,6 +42176,38 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4416730210",
+  "title": "Firmware Engineer Intern, Robotics and Surgery Engineering",
+  "company": "Neuralink",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4416730210",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 62,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444677438",
+  "title": "Founding Engineer ($120k-$300k + Equity) at Y/n",
+  "company": "Jack & Jill",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444677438",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 62,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4444468578",
   "title": "Digital Experience Analyst",
   "company": "First Entertainment Credit Union",
@@ -41149,7 +42221,7 @@ export const ROLES = [
   "score": 62,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416595271",
@@ -41165,7 +42237,7 @@ export const ROLES = [
   "score": 62,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416594316",
@@ -41181,7 +42253,7 @@ export const ROLES = [
   "score": 62,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444317688",
@@ -41197,7 +42269,7 @@ export const ROLES = [
   "score": 62,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkcfc399b0a1c916cb",
@@ -41398,6 +42470,118 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4445305830",
+  "title": "Guidance, Navigation & Control (GNC) Software Engineer",
+  "company": "Eagle-X",
+  "loc": "El Segundo, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445305830",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 61,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4426683713",
+  "title": "Research Engineer, Code RL (Reinforcement Learning)",
+  "company": "Anthropic",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4426683713",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 61,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4442765452",
+  "title": "Full Stack Engineer",
+  "company": "Anblicks",
+  "loc": "Dallas, TX",
+  "url": "https://www.linkedin.com/jobs/view/4442765452",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 61,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444055059",
+  "title": "AI and ML Infra Software Engineer, GPU Clusters - New College Grad 2026",
+  "company": "NVIDIA",
+  "loc": "Redmond, WA",
+  "url": "https://www.linkedin.com/jobs/view/4444055059",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 61,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4417171135",
+  "title": "Software Engineer, Model Inference",
+  "company": "OpenAI",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4417171135",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 61,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444009721",
+  "title": "Data Scientist",
+  "company": "NextGenPros Inc",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4444009721",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 61,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4441862223",
+  "title": "Research Engineer, Robot Intelligence",
+  "company": "Samsung Research America (SRA)",
+  "loc": "Mountain View, CA",
+  "url": "https://www.linkedin.com/jobs/view/4441862223",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 61,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4444931778",
   "title": "Full Stack Engineer",
   "company": "USA Tech Recruit",
@@ -41411,7 +42595,7 @@ export const ROLES = [
   "score": 61,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444392605",
@@ -41427,7 +42611,7 @@ export const ROLES = [
   "score": 61,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444391754",
@@ -41443,7 +42627,7 @@ export const ROLES = [
   "score": 61,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk0924b02db9b45cb6",
@@ -41459,7 +42643,7 @@ export const ROLES = [
   "score": 61,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445305138",
@@ -41475,7 +42659,7 @@ export const ROLES = [
   "score": 61,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444390896",
@@ -41491,7 +42675,7 @@ export const ROLES = [
   "score": 61,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444380855",
@@ -41507,7 +42691,7 @@ export const ROLES = [
   "score": 61,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4395480204",
@@ -41523,7 +42707,7 @@ export const ROLES = [
   "score": 61,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445239811",
@@ -41539,7 +42723,7 @@ export const ROLES = [
   "score": 61,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441842245",
@@ -41555,7 +42739,7 @@ export const ROLES = [
   "score": 61,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416598983",
@@ -41571,7 +42755,7 @@ export const ROLES = [
   "score": 61,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444609110",
@@ -41587,7 +42771,7 @@ export const ROLES = [
   "score": 61,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444039930",
@@ -44655,7 +45839,7 @@ export const ROLES = [
   "score": 59,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke05e92140c64947a",
@@ -44671,7 +45855,7 @@ export const ROLES = [
   "score": 59,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4426952893",
@@ -44687,7 +45871,7 @@ export const ROLES = [
   "score": 59,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4426955869",
@@ -44703,7 +45887,7 @@ export const ROLES = [
   "score": 59,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4417391631",
@@ -45186,6 +46370,1094 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4442320076",
+  "title": "QA Engineer",
+  "company": "Haystack",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4442320076",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "sd",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4408715008",
+  "title": "Software Developer",
+  "company": "General Atomics Aeronautical Systems",
+  "loc": "Poway, CA",
+  "url": "https://www.linkedin.com/jobs/view/4408715008",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445303275",
+  "title": "Cyber Software Engineer (TG)",
+  "company": "Northrop Grumman",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445303275",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "sd",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4324583946",
+  "title": "Firmware Development Engineer, Sr. Staff",
+  "company": "Qualcomm",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4324583946",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "sd",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444684508",
+  "title": "Engineer",
+  "company": "Qualcomm",
+  "loc": "Tijuana, Baja California, Mexico",
+  "url": "https://www.linkedin.com/jobs/view/4444684508",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445340108",
+  "title": "Software Developer with Security Clearance",
+  "company": "ODME SOLUTIONS, LLC",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445340108",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "sd",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444772036",
+  "title": "Google Forward Deployed Engineer - GPS",
+  "company": "Deloitte",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444772036",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "sd",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445240716",
+  "title": "Forward Deployed Engineer - FDE - Remote",
+  "company": "Optum",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445240716",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4439472626",
+  "title": "Product Performance Engineer",
+  "company": "Brain Corp",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4439472626",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "sd",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444690476",
+  "title": "Modem Integration & Test Engineer",
+  "company": "Qualcomm",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444690476",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "sd",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445233419",
+  "title": "C4I Requirements Management Engineer",
+  "company": "Booz Allen Hamilton",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445233419",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4414057163",
+  "title": "Forward Deployed Hardware Engineer",
+  "company": "Saronic Technologies",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4414057163",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "sd",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4408733513",
+  "title": "Systems Test Engineer",
+  "company": "Leidos",
+  "loc": "Vista, CA",
+  "url": "https://www.linkedin.com/jobs/view/4408733513",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "sd",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4427022641",
+  "title": "Software Engineer, Sensor Simulation",
+  "company": "Anduril Industries",
+  "loc": "Costa Mesa, CA",
+  "url": "https://www.linkedin.com/jobs/view/4427022641",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": 166000.0,
+  "smax": 220000.0,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4260461495",
+  "title": "Mission Software Engineer, Air Vehicle Autonomy, Frontend",
+  "company": "Anduril Industries",
+  "loc": "Costa Mesa, CA",
+  "url": "https://www.linkedin.com/jobs/view/4260461495",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": 166000.0,
+  "smax": 220000.0,
+  "track": "Auto",
+  "score": 58,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4385425898",
+  "title": "Computational Geometry Software Engineer",
+  "company": "Hadrian",
+  "loc": "Los Angeles, CA",
+  "url": "https://www.linkedin.com/jobs/view/4385425898",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4436375759",
+  "title": "Software Engineer, Full Stack, Level 4",
+  "company": "Snap Inc.",
+  "loc": "Los Angeles, CA",
+  "url": "https://www.linkedin.com/jobs/view/4436375759",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4368615520",
+  "title": "Software Engineer, Collision Avoidance (Starshield)",
+  "company": "SpaceX",
+  "loc": "Hawthorne, CA",
+  "url": "https://www.linkedin.com/jobs/view/4368615520",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4416350849",
+  "title": "Software Engineer, Engineering Simulation & Automation (Vehicle Engineering)",
+  "company": "SpaceX",
+  "loc": "Hawthorne, CA",
+  "url": "https://www.linkedin.com/jobs/view/4416350849",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4436404868",
+  "title": "Data Security Engineer",
+  "company": "Skechers",
+  "loc": "Manhattan Beach, CA",
+  "url": "https://www.linkedin.com/jobs/view/4436404868",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445230977",
+  "title": "Data Engineer (On-Site)",
+  "company": "Acuity Eye Group",
+  "loc": "Santa Ana, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445230977",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4441013475",
+  "title": "Metrology Programmer",
+  "company": "Divergent",
+  "loc": "Los Angeles, CA",
+  "url": "https://www.linkedin.com/jobs/view/4441013475",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4368614536",
+  "title": "Software Engineer, Data - Top Secret Clearance",
+  "company": "SpaceX",
+  "loc": "Hawthorne, CA",
+  "url": "https://www.linkedin.com/jobs/view/4368614536",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4436389221",
+  "title": "Software Engineer - Audio, Level 5",
+  "company": "Snap Inc.",
+  "loc": "Los Angeles, CA",
+  "url": "https://www.linkedin.com/jobs/view/4436389221",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4426182218",
+  "title": "Software Engineer - Guidance, Navigation, and Controls",
+  "company": "CHAOS Industries",
+  "loc": "Hawthorne, CA",
+  "url": "https://www.linkedin.com/jobs/view/4426182218",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444385808",
+  "title": "Software Engineer - Airtable Integrations & Backend Development",
+  "company": "Beacon Hill",
+  "loc": "Los Angeles County, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444385808",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4417429132",
+  "title": "Software Engineer, Spectacles C++, Level 4",
+  "company": "Snap Inc.",
+  "loc": "Los Angeles, CA",
+  "url": "https://www.linkedin.com/jobs/view/4417429132",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4408571990",
+  "title": "Forward Deployed Data Engineer (Data Platform & Solutions)",
+  "company": "FloQast",
+  "loc": "Los Angeles, CA",
+  "url": "https://www.linkedin.com/jobs/view/4408571990",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4418055255",
+  "title": "Cyber Full-Stack Software Engineer",
+  "company": "Deloitte",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4418055255",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445244684",
+  "title": "Full Stack Engineer (AI Systems)",
+  "company": "MeeBoss",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445244684",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445238079",
+  "title": "Full Stack Engineer",
+  "company": "BY Recruiting",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4445238079",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444373819",
+  "title": "Full Stack Engineer",
+  "company": "Hire Hangar",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4444373819",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4417161415",
+  "title": "Backend Software Engineer, GTM Innovation",
+  "company": "OpenAI",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4417161415",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4416582679",
+  "title": "Software Engineer III, Infrastructure, Google Cloud Platforms",
+  "company": "Google",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4416582679",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445280529",
+  "title": "Backend Engineer, Onboard Diagnostics, Vehicle Software",
+  "company": "Tesla",
+  "loc": "Palo Alto, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445280529",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4379421092",
+  "title": "Backend-Engineer",
+  "company": "Crossing Hurdles",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4379421092",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 160000.0,
+  "smax": 220000.0,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4416350819",
+  "title": "Software Engineer (Platform Team)",
+  "company": "SpaceX",
+  "loc": "Palo Alto, CA",
+  "url": "https://www.linkedin.com/jobs/view/4416350819",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444672474",
+  "title": "Software Engineer, Platform ($200k-$250k + Equity) at Duckbill",
+  "company": "Jack & Jill",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444672474",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4416327114",
+  "title": "Software Engineer, Agents",
+  "company": "Mercor",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4416327114",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4443892254",
+  "title": "Data Scientist, Research, Search Platforms",
+  "company": "Google",
+  "loc": "Mountain View, CA",
+  "url": "https://www.linkedin.com/jobs/view/4443892254",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4428188052",
+  "title": "ML Engineer - Instawork Robotics",
+  "company": "Instawork",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4428188052",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444376880",
+  "title": "Data Scientist (QuickSight & Generative AI)",
+  "company": "Biztec Global",
+  "loc": "Santa Clara, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444376880",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4417549176",
+  "title": "Software Engineer, RL Training Infra",
+  "company": "OpenAI",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4417549176",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445284468",
+  "title": "Software Engineer, Product",
+  "company": "Eventual",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445284468",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445330504",
+  "title": "Software Engineer - AI Agentic Product Dev Team (US)",
+  "company": "Eightfold AI",
+  "loc": "Santa Clara, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445330504",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4417162351",
+  "title": "Research Engineer/Research Scientist, RL/Reasoning",
+  "company": "OpenAI",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4417162351",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444371698",
+  "title": "Python QA Engineer",
+  "company": "Staffing Spot, Inc.",
+  "loc": "San Jose, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444371698",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445287806",
+  "title": "Research Engineer - LLM Efficiency & Inference",
+  "company": "RoShay Services",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445287806",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4372050817",
+  "title": "Product Engineer (Full Stack)",
+  "company": "Crossing Hurdles",
+  "loc": "New York, United States",
+  "url": "https://www.linkedin.com/jobs/view/4372050817",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444684469",
+  "title": "Full-Stack Engineer at early-stage NYC tech startup",
+  "company": "Jack & Jill",
+  "loc": "New York, NY",
+  "url": "https://www.linkedin.com/jobs/view/4444684469",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4416732100",
+  "title": "Backend Engineeer",
+  "company": "Vorto",
+  "loc": "Denver, CO",
+  "url": "https://www.linkedin.com/jobs/view/4416732100",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444701741",
+  "title": "Software Engineer(Backend/Frontend)",
+  "company": "Supersonic",
+  "loc": "Florida, United States",
+  "url": "https://www.linkedin.com/jobs/view/4444701741",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445339096",
+  "title": "Android Developer",
+  "company": "Netrolynx AI",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4445339096",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4426951311",
+  "title": "Software Engineer III, Search Platforms Infrastructure",
+  "company": "Google",
+  "loc": "Mountain View, CA",
+  "url": "https://www.linkedin.com/jobs/view/4426951311",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444354364",
+  "title": "AI/ML Engineer",
+  "company": "Wise Equation Solutions Inc.",
+  "loc": "Plano, TX",
+  "url": "https://www.linkedin.com/jobs/view/4444354364",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4333129648",
+  "title": "Software Engineer, AI Agents",
+  "company": "Hightouch",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4333129648",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4408576269",
+  "title": "AI/ML and Data Engineer",
+  "company": "SME",
+  "loc": "Southfield, MI",
+  "url": "https://www.linkedin.com/jobs/view/4408576269",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4428301050",
+  "title": "AI/ML Engineer",
+  "company": "GovCIO",
+  "loc": "Air Force Academy, CO",
+  "url": "https://www.linkedin.com/jobs/view/4428301050",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4416711272",
+  "title": "Software Engineer, Robotics",
+  "company": "Neuralink",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4416711272",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444929845",
+  "title": "AI Engineer",
+  "company": "Cadogan Solutions",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4444929845",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4286961888",
+  "title": "Software Engineer - All Levels",
+  "company": "Genius AI",
+  "loc": "New York, NY",
+  "url": "https://www.linkedin.com/jobs/view/4286961888",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445304161",
+  "title": "AI/ML Platform Engineer",
+  "company": "DevExplore",
+  "loc": "Santa Clara, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445304161",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4444364975",
+  "title": "Data Scientist",
+  "company": "Clear Resolution Consulting, LLC",
+  "loc": "Springfield, VA",
+  "url": "https://www.linkedin.com/jobs/view/4444364975",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445211010",
+  "title": "Research Engineer",
+  "company": "talentpluto",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4445211010",
+  "site": "Linkedin",
+  "posted": "2026-07-24",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4442303982",
+  "title": "Data Scientist, RIS",
+  "company": "City of New York",
+  "loc": "Manhattan, NY",
+  "url": "https://www.linkedin.com/jobs/view/4442303982",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4374780460",
+  "title": "Programmer",
+  "company": "Harvard T.H. Chan School of Public Health",
+  "loc": "Boston, MA",
+  "url": "https://www.linkedin.com/jobs/view/4374780460",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4315270496",
+  "title": "Applied AI Researcher, AI Systems",
+  "company": "Distyl",
+  "loc": "New York, NY",
+  "url": "https://www.linkedin.com/jobs/view/4315270496",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 150000.0,
+  "smax": 250000.0,
+  "track": "Auto",
+  "score": 58,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445251414",
+  "title": "Bioinformatics Scientist/Biostatistician Contractor",
+  "company": "MyOme",
+  "loc": "Menlo Park, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445251414",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 58,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-opicjobs5370555008",
   "title": "IT Support Engineer, Executive Support",
   "company": "Anthropic",
@@ -45199,7 +47471,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-opicjobs5115051008",
@@ -45215,7 +47487,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-opicjobs4017544008",
@@ -45231,7 +47503,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-opicjobs5370669008",
@@ -45247,7 +47519,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-opicjobs5370615008",
@@ -45263,7 +47535,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-kadajobs5195281007",
@@ -45279,7 +47551,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-68215gh_jid8068215",
@@ -45295,7 +47567,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-03gh_jid7816091003",
@@ -45311,7 +47583,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-nitedstates2091074",
@@ -45327,7 +47599,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-ckblaubeuren468440",
@@ -45343,7 +47615,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-gendermunich296006",
@@ -45359,7 +47631,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-ratersiegburg87771",
@@ -45375,7 +47647,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-inoberbayern484837",
@@ -45391,7 +47663,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-eringolstadt388927",
@@ -45407,7 +47679,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-tens90000eur341444",
@@ -45423,7 +47695,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-tens90000eur263149",
@@ -45439,7 +47711,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-tens90000eur118924",
@@ -45455,7 +47727,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-stens90000eur46134",
@@ -45471,7 +47743,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-tens90000eur297995",
@@ -45487,7 +47759,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-tens90000eur205468",
@@ -45503,7 +47775,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-tens90000eur293734",
@@ -45519,7 +47791,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-tens90000eur385738",
@@ -45535,7 +47807,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-mitkidresden367316",
@@ -45551,7 +47823,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-eigerdresden312689",
@@ -45567,7 +47839,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-ayrollberlin201583",
@@ -45583,7 +47855,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-eilzeiteching90085",
@@ -45599,7 +47871,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-iterobersulm444242",
@@ -45615,7 +47887,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-nbeifreising384948",
@@ -45631,7 +47903,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-beitermunich193187",
@@ -45647,7 +47919,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-eratermunich456004",
@@ -45663,7 +47935,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-igungdresden150659",
@@ -45679,7 +47951,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-lanungmunich146365",
@@ -45695,7 +47967,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-ngenimallgau481672",
@@ -45711,7 +47983,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-ndlevelmunich94691",
@@ -45727,7 +47999,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-gementmunich456374",
@@ -45743,7 +48015,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-cklungmunich221009",
@@ -45759,7 +48031,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-artnermunich329294",
@@ -45775,7 +48047,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-lercqtmunich283807",
@@ -45791,7 +48063,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-assungmunich106564",
@@ -45807,7 +48079,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-ferentmunich453120",
@@ -45823,7 +48095,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-altungmunich489538",
@@ -45839,7 +48111,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-echnikmunich268332",
@@ -45855,7 +48127,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-nanzenmunich342026",
@@ -45871,7 +48143,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-gementdresden59643",
@@ -45887,7 +48159,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-nalysemunich235841",
@@ -45903,7 +48175,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-reuungmunich372781",
@@ -45919,7 +48191,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-tersapmunich273907",
@@ -45935,7 +48207,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-ositionmunich55428",
@@ -45951,7 +48223,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-beitermunich146326",
@@ -45967,7 +48239,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-endienstmunich7852",
@@ -45983,7 +48255,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-ierungmunich473689",
@@ -45999,7 +48271,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-ystememunich337836",
@@ -46015,7 +48287,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-eibungmunich255294",
@@ -46031,7 +48303,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-gementmunich189973",
@@ -46047,7 +48319,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-gementminden387182",
@@ -46063,7 +48335,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-gementmunich297407",
@@ -46079,7 +48351,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-terstuttgart163478",
@@ -46095,7 +48367,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-gementmunich356398",
@@ -46111,7 +48383,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-rollermunich478468",
@@ -46127,7 +48399,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-nkfurtammain274626",
@@ -46143,7 +48415,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-icklererfurt391923",
@@ -46159,7 +48431,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-hkraftmunich205195",
@@ -46175,7 +48447,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-dinatormunich16110",
@@ -46191,7 +48463,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-oreskonstanz275672",
@@ -46207,7 +48479,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4409415785",
@@ -46223,7 +48495,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4435739948",
@@ -46239,7 +48511,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444674364",
@@ -46255,7 +48527,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke5354ad2692433ad",
@@ -46271,7 +48543,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkb6b343112de43923",
@@ -46287,7 +48559,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk5b119e32c9625fdd",
@@ -46303,7 +48575,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka361262eca9a5055",
@@ -46319,7 +48591,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk4296297eea64859a",
@@ -46335,7 +48607,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4417070475",
@@ -46351,7 +48623,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4426957976",
@@ -46367,7 +48639,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4435453599",
@@ -46383,7 +48655,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4368242497",
@@ -46399,7 +48671,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445218676",
@@ -46415,7 +48687,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4427668784",
@@ -46431,7 +48703,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4418053291",
@@ -46447,7 +48719,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444756092",
@@ -46463,7 +48735,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444005876",
@@ -46479,7 +48751,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441880728",
@@ -46495,7 +48767,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4395990776",
@@ -46511,7 +48783,7 @@ export const ROLES = [
   "score": 58,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4438743481",
@@ -46527,7 +48799,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444675654",
@@ -46543,7 +48815,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4418055257",
@@ -46559,7 +48831,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444986669",
@@ -46575,7 +48847,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk60df5aa99ebafc86",
@@ -46591,7 +48863,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkbeb625441fab9cb3",
@@ -46607,7 +48879,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4414028510",
@@ -46623,7 +48895,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444652467",
@@ -46639,7 +48911,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkdd8184462b57bb3b",
@@ -46655,7 +48927,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444061381",
@@ -46671,7 +48943,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444766765",
@@ -46687,7 +48959,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444750131",
@@ -46703,7 +48975,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4408294802",
@@ -46719,7 +48991,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445229065",
@@ -46735,7 +49007,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444607346",
@@ -46751,7 +49023,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7263eed7173e3c64",
@@ -46767,7 +49039,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444915607",
@@ -46783,7 +49055,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4443892775",
@@ -46799,7 +49071,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445332777",
@@ -46815,7 +49087,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4427044959",
@@ -46831,7 +49103,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444331625",
@@ -46847,7 +49119,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445342050",
@@ -46863,7 +49135,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4427050941",
@@ -46879,7 +49151,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4436374699",
@@ -46895,7 +49167,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441550205",
@@ -46911,7 +49183,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4436768473",
@@ -46927,7 +49199,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441855524",
@@ -46943,7 +49215,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445211215",
@@ -46959,7 +49231,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444644497",
@@ -46975,7 +49247,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416784845",
@@ -46991,7 +49263,7 @@ export const ROLES = [
   "score": 58,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk3e9d84dfefc58644",
@@ -47007,7 +49279,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444312145",
@@ -47023,7 +49295,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4417170172",
@@ -47039,7 +49311,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4382410515",
@@ -47055,7 +49327,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444686460",
@@ -47071,7 +49343,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445258015",
@@ -47087,7 +49359,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445240401",
@@ -47103,7 +49375,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8ad25281567358b5",
@@ -47119,7 +49391,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk78ecc26bfec38efd",
@@ -47135,7 +49407,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkba50c189e426bb85",
@@ -47151,7 +49423,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444901632",
@@ -47167,7 +49439,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445299490",
@@ -47183,7 +49455,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4417168161",
@@ -47199,7 +49471,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkdfc94fcc7aef0bdb",
@@ -47215,7 +49487,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4423621718",
@@ -47231,7 +49503,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445291740",
@@ -47247,7 +49519,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4436435652",
@@ -47263,7 +49535,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka3a1dee4b93ef4b8",
@@ -47279,7 +49551,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk90343cd9349237cd",
@@ -47295,7 +49567,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk97073b6ce2c541d3",
@@ -47311,7 +49583,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkc0e24e9beaa18f2e",
@@ -47327,7 +49599,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4380554358",
@@ -47343,7 +49615,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4435438186",
@@ -47359,7 +49631,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444680461",
@@ -47375,7 +49647,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4286968047",
@@ -47391,7 +49663,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444995987",
@@ -47407,7 +49679,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444690417",
@@ -47423,7 +49695,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444669500",
@@ -47439,7 +49711,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444206700",
@@ -47455,7 +49727,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7f46024167a7455f",
@@ -47471,7 +49743,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk2c6bf9d66f9c59b6",
@@ -47487,7 +49759,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6627ff8b093d14d8",
@@ -47503,7 +49775,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk12edf7a02fb18700",
@@ -47519,7 +49791,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkbac76883f517ee40",
@@ -47535,7 +49807,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6c99f7730cf3309e",
@@ -47551,7 +49823,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk64d6a61e53a317d1",
@@ -47567,7 +49839,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444651666",
@@ -47583,7 +49855,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4417180042",
@@ -47599,7 +49871,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkf162821e4fd46c88",
@@ -47615,7 +49887,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd94cae6531d85725",
@@ -47631,7 +49903,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk30b09d38b86db58d",
@@ -47647,7 +49919,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkf4d51a2db7f84e5d",
@@ -47663,7 +49935,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd41bb4e19e00bf22",
@@ -47679,7 +49951,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441580856",
@@ -47695,7 +49967,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444366726",
@@ -47711,7 +49983,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445332216",
@@ -47727,7 +49999,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4359462015",
@@ -47743,7 +50015,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4417182004",
@@ -47759,7 +50031,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444755726",
@@ -47775,7 +50047,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4440973577",
@@ -47791,7 +50063,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4440964897",
@@ -47807,7 +50079,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441596653",
@@ -47823,7 +50095,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444319675",
@@ -47839,7 +50111,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4418071451",
@@ -47855,7 +50127,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445302472",
@@ -47871,7 +50143,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445210572",
@@ -47887,7 +50159,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4417182007",
@@ -47903,7 +50175,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4426915187",
@@ -47919,7 +50191,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444677432",
@@ -47935,7 +50207,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4442312123",
@@ -47951,7 +50223,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444662196",
@@ -47967,7 +50239,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4345613726",
@@ -47983,7 +50255,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444675456",
@@ -47999,7 +50271,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4442736033",
@@ -48015,7 +50287,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4418059153",
@@ -48031,7 +50303,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4418046861",
@@ -48047,7 +50319,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4418045898",
@@ -48063,7 +50335,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416732485",
@@ -48079,7 +50351,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4372074346",
@@ -48095,7 +50367,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke7b2c4d6ba85bd67",
@@ -48111,7 +50383,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk34ec53358175d2c4",
@@ -48127,7 +50399,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd58a516b18f45361",
@@ -48143,7 +50415,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8bae3f10edb226cc",
@@ -48159,7 +50431,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444918493",
@@ -48175,7 +50447,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4405583264",
@@ -48191,7 +50463,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444005778",
@@ -48207,7 +50479,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445317549",
@@ -48223,7 +50495,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4406471228",
@@ -48239,7 +50511,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7971445584f6146f",
@@ -48255,7 +50527,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk14ff564e89a8c161",
@@ -48271,7 +50543,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk516d8e06dc8a2642",
@@ -48287,7 +50559,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk332c7f19f40d0f3b",
@@ -48303,7 +50575,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk3bb209e2b5c4d5af",
@@ -48319,7 +50591,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk4ae8274dbf4cca95",
@@ -48335,7 +50607,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk046e0f4b56f92f8d",
@@ -48351,7 +50623,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8d4cff0e3c1e2d2a",
@@ -48367,7 +50639,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk56c52963a16056be",
@@ -48383,7 +50655,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke43527acd64e7dc6",
@@ -48399,7 +50671,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk06b6460a89e33375",
@@ -48415,7 +50687,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8d73a1b72f95c4ca",
@@ -48431,7 +50703,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk897e7b0e6833aae5",
@@ -48447,7 +50719,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk249a3fce772bee32",
@@ -48463,7 +50735,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkceaf791f5ecf1e3f",
@@ -48479,7 +50751,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk226c2c197dcab585",
@@ -48495,7 +50767,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkead6bbf03e364009",
@@ -48511,7 +50783,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk5851ab9c34a52a51",
@@ -48527,7 +50799,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4398320770",
@@ -48543,7 +50815,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4368445060",
@@ -48559,7 +50831,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk3217b94831882ad4",
@@ -48575,7 +50847,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkdf4c47ae7bf5db9d",
@@ -48591,7 +50863,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke9f77e921161d6b9",
@@ -48607,7 +50879,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk82c7efbe62a62a2f",
@@ -48623,7 +50895,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7de073cdf650e61a",
@@ -48639,7 +50911,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkaeb9536af51f34f0",
@@ -48655,7 +50927,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445277210",
@@ -48671,7 +50943,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444022475",
@@ -48687,7 +50959,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445207916",
@@ -48703,7 +50975,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4376900213",
@@ -48719,7 +50991,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444685433",
@@ -48735,7 +51007,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444630121",
@@ -48751,7 +51023,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445330287",
@@ -48767,7 +51039,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkde3e6f3d4c930547",
@@ -48783,7 +51055,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk91d503b326696896",
@@ -48799,7 +51071,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk657a1e1079933e8f",
@@ -48815,7 +51087,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk5e12105acc5fc788",
@@ -48831,7 +51103,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4400796303",
@@ -48847,7 +51119,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8c0670fed720eca5",
@@ -48863,7 +51135,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk767e076ec50dcf73",
@@ -48879,7 +51151,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk228e9f34d127de63",
@@ -48895,7 +51167,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8e35636f884e54d4",
@@ -48911,7 +51183,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4414050306",
@@ -48927,7 +51199,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444041939",
@@ -48943,7 +51215,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444657444",
@@ -48959,7 +51231,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4379412483",
@@ -48975,7 +51247,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4379426554",
@@ -48991,7 +51263,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444396001",
@@ -49007,7 +51279,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445204014",
@@ -49023,7 +51295,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444365287",
@@ -49039,7 +51311,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444022760",
@@ -49055,7 +51327,7 @@ export const ROLES = [
   "score": 58,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4334772124",
@@ -49071,7 +51343,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4416573534",
@@ -49087,7 +51359,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445331250",
@@ -49103,7 +51375,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444384940",
@@ -49119,7 +51391,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445275982",
@@ -49135,7 +51407,7 @@ export const ROLES = [
   "score": 58,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444369875",
@@ -49151,7 +51423,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445329960",
@@ -49167,7 +51439,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4398462870",
@@ -49183,7 +51455,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444672659",
@@ -49199,7 +51471,7 @@ export const ROLES = [
   "score": 58,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-kadajobs5194598007",
@@ -90834,6 +93106,38 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4444011462",
+  "title": "Senior Machine Learning Engineer, Features",
+  "company": "Cognitiv",
+  "loc": "San Mateo, CA",
+  "url": "https://www.linkedin.com/jobs/view/4444011462",
+  "site": "Linkedin",
+  "posted": "2026-07-23",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 57,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4245634447",
+  "title": "Senior/Staff Engineer, Machine Learning - Online Mapping",
+  "company": "Nuro",
+  "loc": "Mountain View, CA",
+  "url": "https://www.linkedin.com/jobs/view/4245634447",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 57,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-leaijobs4631848005",
   "title": "Senior Machine Learning Engineer, Public Sector",
   "company": "Scaleai",
@@ -90847,7 +93151,7 @@ export const ROLES = [
   "score": 57,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkf6d558e6f9cbc0b0",
@@ -90863,7 +93167,7 @@ export const ROLES = [
   "score": 57,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk528531e485caf5c4",
@@ -90879,7 +93183,7 @@ export const ROLES = [
   "score": 57,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6ccb8228515f889f",
@@ -90895,7 +93199,7 @@ export const ROLES = [
   "score": 57,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445287616",
@@ -90911,7 +93215,7 @@ export const ROLES = [
   "score": 57,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444931790",
@@ -90927,7 +93231,7 @@ export const ROLES = [
   "score": 57,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4427677634",
@@ -90943,7 +93247,7 @@ export const ROLES = [
   "score": 57,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444942408",
@@ -90959,7 +93263,7 @@ export const ROLES = [
   "score": 57,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4386743438",
@@ -90975,7 +93279,7 @@ export const ROLES = [
   "score": 57,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441684349",
@@ -90991,7 +93295,7 @@ export const ROLES = [
   "score": 57,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444968102",
@@ -91007,7 +93311,7 @@ export const ROLES = [
   "score": 57,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkf6e49ec570b74454",
@@ -91023,7 +93327,7 @@ export const ROLES = [
   "score": 57,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4399431130",
@@ -92169,7 +94473,7 @@ export const ROLES = [
   "score": 55,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkff61ca5cb809e4be",
@@ -92185,7 +94489,7 @@ export const ROLES = [
   "score": 55,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk421256c26d5482f1",
@@ -92201,7 +94505,7 @@ export const ROLES = [
   "score": 55,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke8596c88afae9c42",
@@ -92217,7 +94521,7 @@ export const ROLES = [
   "score": 55,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4433481281",
@@ -92348,6 +94652,182 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4399411988",
+  "title": "Senior Embedded Software Engineer",
+  "company": "General Atomics",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4399411988",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 54,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4259924381",
+  "title": "Senior Embedded CUDA Software Engineer",
+  "company": "CHAOS Industries",
+  "loc": "Hawthorne, CA",
+  "url": "https://www.linkedin.com/jobs/view/4259924381",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 54,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4377030025",
+  "title": "Senior Firmware Test Engineer",
+  "company": "Motorola Solutions",
+  "loc": "Culver City, CA",
+  "url": "https://www.linkedin.com/jobs/view/4377030025",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 54,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4445283983",
+  "title": "Principal/Sr. Principal Embedded Software Engineer (Active Secret)",
+  "company": "Northrop Grumman",
+  "loc": "Redondo Beach, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445283983",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 54,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4426638832",
+  "title": "Senior Software Engineer, Mobile (Android)",
+  "company": "Google",
+  "loc": "Sunnyvale, CA",
+  "url": "https://www.linkedin.com/jobs/view/4426638832",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 54,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4436761429",
+  "title": "Staff Embedded Controls Engineer, Vehicle Motion",
+  "company": "Ford Motor Company",
+  "loc": "Palo Alto, CA",
+  "url": "https://www.linkedin.com/jobs/view/4436761429",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 54,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4418011692",
+  "title": "Senior Embedded Software Engineer",
+  "company": "Tarana Wireless",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4418011692",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 54,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4416336607",
+  "title": "Senior Firmware Engineer - Memory Subsystem",
+  "company": "NVIDIA",
+  "loc": "Santa Clara, CA",
+  "url": "https://www.linkedin.com/jobs/view/4416336607",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 54,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4407087323",
+  "title": "Senior Machine Learning Engineer",
+  "company": "Atoms",
+  "loc": "Mountain View, CA",
+  "url": "https://www.linkedin.com/jobs/view/4407087323",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 54,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4408576215",
+  "title": "Staff Software Engineer - iOS",
+  "company": "PayPal",
+  "loc": "Austin, TX",
+  "url": "https://www.linkedin.com/jobs/view/4408576215",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 54,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4427628227",
+  "title": "Senior Embedded Software Engineer",
+  "company": "CNH",
+  "loc": "Tempe, AZ",
+  "url": "https://www.linkedin.com/jobs/view/4427628227",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 54,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4407005161",
   "title": "Staff Software Engineer, Core AI Software (Mobile BU Focus) _ Onsite",
   "company": "Qualcomm",
@@ -92361,7 +94841,7 @@ export const ROLES = [
   "score": 54,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444395484",
@@ -92377,7 +94857,7 @@ export const ROLES = [
   "score": 54,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4428150839",
@@ -92393,7 +94873,7 @@ export const ROLES = [
   "score": 54,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4433716503",
@@ -92409,7 +94889,7 @@ export const ROLES = [
   "score": 54,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4433714543",
@@ -92425,7 +94905,7 @@ export const ROLES = [
   "score": 54,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4435454244",
@@ -92441,7 +94921,7 @@ export const ROLES = [
   "score": 54,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkcd4f877a67901d29",
@@ -92457,7 +94937,7 @@ export const ROLES = [
   "score": 54,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4377516601",
@@ -92473,7 +94953,7 @@ export const ROLES = [
   "score": 54,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4408545820",
@@ -92489,7 +94969,7 @@ export const ROLES = [
   "score": 54,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4428170364",
@@ -92505,7 +94985,7 @@ export const ROLES = [
   "score": 54,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4408545817",
@@ -92521,7 +95001,7 @@ export const ROLES = [
   "score": 54,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4393234699",
@@ -92537,7 +95017,7 @@ export const ROLES = [
   "score": 54,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4395925068",
@@ -92553,7 +95033,7 @@ export const ROLES = [
   "score": 54,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445224963",
@@ -92569,7 +95049,7 @@ export const ROLES = [
   "score": 54,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444370480",
@@ -92585,7 +95065,7 @@ export const ROLES = [
   "score": 54,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4426641723",
@@ -92601,7 +95081,7 @@ export const ROLES = [
   "score": 54,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk840331a220a95999",
@@ -92617,7 +95097,7 @@ export const ROLES = [
   "score": 54,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444663063",
@@ -92633,7 +95113,7 @@ export const ROLES = [
   "score": 54,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk9a3f4bc669fb2941",
@@ -92649,7 +95129,7 @@ export const ROLES = [
   "score": 54,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444090198",
@@ -92665,7 +95145,7 @@ export const ROLES = [
   "score": 54,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4395474868",
@@ -92681,7 +95161,7 @@ export const ROLES = [
   "score": 54,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441867900",
@@ -92697,7 +95177,7 @@ export const ROLES = [
   "score": 54,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4395476369",
@@ -92713,7 +95193,7 @@ export const ROLES = [
   "score": 54,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4445301582",
@@ -92729,7 +95209,7 @@ export const ROLES = [
   "score": 54,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4376078454",
@@ -92745,7 +95225,7 @@ export const ROLES = [
   "score": 54,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444935794",
@@ -92761,7 +95241,7 @@ export const ROLES = [
   "score": 54,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4426633838",
@@ -92777,7 +95257,7 @@ export const ROLES = [
   "score": 54,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444635492",
@@ -92793,7 +95273,7 @@ export const ROLES = [
   "score": 54,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4444385682",
@@ -92809,7 +95289,7 @@ export const ROLES = [
   "score": 54,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4399425432",
@@ -97048,6 +99528,54 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4445283518",
+  "title": "Senior Data Science Engineer I, Claims",
+  "company": "Turquoise",
+  "loc": "San Diego, CA",
+  "url": "https://www.linkedin.com/jobs/view/4445283518",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 52,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4441819882",
+  "title": "Senior Flight Software Engineer I - Secret Clearance",
+  "company": "Rocket Lab",
+  "loc": "Long Beach, CA",
+  "url": "https://www.linkedin.com/jobs/view/4441819882",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 52,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4441834283",
+  "title": "Senior Flight Software Engineer II - Secret Clearance",
+  "company": "Rocket Lab",
+  "loc": "Long Beach, CA",
+  "url": "https://www.linkedin.com/jobs/view/4441834283",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 52,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-55217gh_jid8055217",
   "title": "Senior Software Engineer II - Web Experience",
   "company": "Samsara",
@@ -97061,7 +99589,7 @@ export const ROLES = [
   "score": 52,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-50373gh_jid8050373",
@@ -97077,7 +99605,7 @@ export const ROLES = [
   "score": 52,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-rectorberlin444845",
@@ -97093,7 +99621,7 @@ export const ROLES = [
   "score": 52,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk4bfa0c5526f99318",
@@ -97109,7 +99637,7 @@ export const ROLES = [
   "score": 52,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk668f6c1124ad8c6c",
@@ -97125,7 +99653,7 @@ export const ROLES = [
   "score": 52,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkbbe3500ba276131f",
@@ -97141,7 +99669,7 @@ export const ROLES = [
   "score": 52,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkf26c9ba3a236f2ec",
@@ -97157,7 +99685,7 @@ export const ROLES = [
   "score": 52,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkdfcae02c103df55e",
@@ -97173,7 +99701,7 @@ export const ROLES = [
   "score": 52,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441554981",
@@ -97189,7 +99717,7 @@ export const ROLES = [
   "score": 52,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8bd5d95f6a0f7a03",
@@ -97205,7 +99733,7 @@ export const ROLES = [
   "score": 52,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk0966e75fffb25348",
@@ -97221,7 +99749,7 @@ export const ROLES = [
   "score": 52,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk078ecdb79aef1151",
@@ -97237,7 +99765,7 @@ export const ROLES = [
   "score": 52,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk782f1526a34ab33c",
@@ -97253,7 +99781,7 @@ export const ROLES = [
   "score": 52,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7b7ff5d72ee4eafa",
@@ -97269,7 +99797,7 @@ export const ROLES = [
   "score": 52,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8af33acc459b35d0",
@@ -97285,7 +99813,7 @@ export const ROLES = [
   "score": 52,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke7760efe962e2a95",
@@ -97301,7 +99829,7 @@ export const ROLES = [
   "score": 52,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk424e19068defcab0",
@@ -97317,7 +99845,7 @@ export const ROLES = [
   "score": 52,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-63736gh_jid8063736",
@@ -98648,6 +101176,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4426999957",
+  "title": "Research Intern, Inference (Fall 2026)",
+  "company": "Together AI",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4426999957",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 51,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jk8a323734e1a4a09c",
   "title": "Senior Staff Software Engineer, Mobile",
   "company": "ServiceTitan",
@@ -98728,6 +101272,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4399280847",
+  "title": "Flight Software Engineer",
+  "company": "Anduril Industries",
+  "loc": "Costa Mesa, CA",
+  "url": "https://www.linkedin.com/jobs/view/4399280847",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 191000.0,
+  "smax": 253000.0,
+  "track": "Auto",
+  "score": 50,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4418482055",
   "title": "Robotics Software Engineer, Verification & Validation",
   "company": "Anduril Industries",
@@ -98741,7 +101301,7 @@ export const ROLES = [
   "score": 50,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441836493",
@@ -98757,7 +101317,7 @@ export const ROLES = [
   "score": 50,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkb7a21be93108e1cb",
@@ -98773,7 +101333,7 @@ export const ROLES = [
   "score": 50,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk4418636c0d3707cb",
@@ -98789,7 +101349,7 @@ export const ROLES = [
   "score": 50,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk16357134315af920",
@@ -98805,7 +101365,7 @@ export const ROLES = [
   "score": 50,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd0d17cd095a919f6",
@@ -98821,7 +101381,7 @@ export const ROLES = [
   "score": 50,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4435493023",
@@ -98837,7 +101397,7 @@ export const ROLES = [
   "score": 50,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7a388a9cb2e22244",
@@ -98853,7 +101413,7 @@ export const ROLES = [
   "score": 50,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk03c9f6b1465dd5a8",
