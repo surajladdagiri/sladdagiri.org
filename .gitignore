@@ -12,6 +12,18 @@ dist
 dist-ssr
 *.local
 
+# Theater — R2 credentials and prepared media never get committed.
+# /out/ is anchored to the repo root so it can't accidentally match src/out or
+# similar; *.mp4 already covers the big file, but the manifest and .vtt beside
+# it would otherwise be committed.
+scripts/theater/.env
+scripts/theater/out/
+/out/
+workers/*/node_modules
+workers/*/.wrangler
+*.mkv
+*.mp4
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
@@ -22,3 +34,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+workers/*/.dev.vars

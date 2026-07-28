@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import { Routes, Route, Outlet, useNavigate, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Portfolio from "./pages/Portfolio";
@@ -9,6 +9,9 @@ import Haven from "./pages/Haven";
 import HavenPrivacy from "./pages/HavenPrivacy";
 import IGAdBlock from "./pages/IGAdBlock";
 import Atlas from "./pages/Atlas";
+
+const Theater = lazy(() => import("./pages/Theater"));
+const Upload = lazy(() => import("./pages/Upload"));
 
 const NAV_LINKS = [
   { label: "Portfolio", path: "/portfolio" },
@@ -233,6 +236,24 @@ export default function App() {
       </Route>
       {/* unlisted */}
       <Route path="/atlas" element={<Atlas />} />
+      {/* Lazy on purpose: code-splitting keeps this out of the main bundle, so
+          someone reading the site's JS never sees it referenced at all. */}
+      <Route
+        path="/t"
+        element={
+          <Suspense fallback={<div style={{ minHeight: "100vh", background: "#050506" }} />}>
+            <Theater />
+          </Suspense>
+        }
+      />
+      <Route
+        path="/u"
+        element={
+          <Suspense fallback={<div style={{ minHeight: "100vh", background: "#050506" }} />}>
+            <Upload />
+          </Suspense>
+        }
+      />
     </Routes>
   );
 }

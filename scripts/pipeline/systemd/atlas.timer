@@ -1,0 +1,13 @@
+[Unit]
+Description=Run Atlas refresh every morning at 08:00 local time
+
+[Timer]
+OnCalendar=*-*-* 08:00:00
+# If the machine was asleep/off at 08:00, run once it's back.
+Persistent=true
+# Small jitter so we're not hammering job boards at an exact round minute.
+RandomizedDelaySec=180
+Unit=atlas.service
+
+[Install]
+WantedBy=timers.target

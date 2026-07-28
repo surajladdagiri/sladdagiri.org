@@ -1,0 +1,37 @@
+name = "theater"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# Where the movie lives. Egress from R2 is free and unmetered, which is the
+# entire reason this architecture works without a bill.
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "theater"
+
+# The sync room. One Durable Object instance per movie slug, so the two of you
+# land in the same object and it can hold authoritative playback state.
+[[durable_objects.bindings]]
+name = "ROOM"
+class_name = "Room"
+
+# new_sqlite_classes (not new_classes) is required on the Workers free plan.
+# Getting this wrong is the single most common reason a first deploy fails.
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Room"]
+
+[vars]
+# Must match the live origin exactly — scheme and host. A mismatch here fails
+# every request with an opaque CORS error rather than anything informative.
+ALLOWED_ORIGIN = "https://portfolio.sladdagiri.org"
+R2_BUCKET = "theater"
+THEATER_SLUG = "movie"   # default when the URL has no ?m=
+
+# Secrets — set these with `wrangler secret put NAME`, never in this file:
+#   PASS_HASH      PBKDF2-SHA256 hash of the passphrase (see scripts/theater/hash-pass.mjs)
+#   PASS_SALT      the salt that goes with it
+#   TOKEN_SECRET   random 32+ bytes, signs session tokens
+#   R2_ACCOUNT_ID
+#   R2_ACCESS_KEY_ID
+#   R2_SECRET_ACCESS_KEY

@@ -1,0 +1,18 @@
+[Unit]
+Description=Atlas daily job-board refresh
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/atlas/sladdagiri.org/scripts/pipeline/atlas-refresh.sh
+TimeoutStartSec=3600
+# Journal gets stdout/stderr; view with: journalctl --user -u atlas -n 200
+StandardOutput=journal
+StandardError=journal
+
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=default.target
