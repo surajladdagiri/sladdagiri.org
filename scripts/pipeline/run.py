@@ -36,6 +36,13 @@ import sources
 MAX_ANALYZE = int(os.environ.get("MAX_ANALYZE", "12"))
 SCORE_FLOOR = int(os.environ.get("SCORE_FLOOR", "68"))
 USE_JOBSPY = os.environ.get("USE_JOBSPY", "1") != "0"
+# Retention cap. Without this, every run appended fresh roles to the full
+# existing pile forever, which grew atlas.js to ~7,500 roles / 2.8 MB and made
+# the page load the entire blob into memory. We now keep a bounded working set.
+MAX_ROLES = int(os.environ.get("MAX_ROLES", "400"))
+# Non-analyzed roles older than this (by posting date) are dropped. Analyzed
+# roles are always retained regardless of age, since they cost model tokens.
+MAX_AGE_DAYS = int(os.environ.get("MAX_AGE_DAYS", "45"))
 
 # Region hubs — first match wins, checked in this order.
 SD = ["san diego", "la jolla", "carlsbad", "del mar", "encinitas", "oceanside",
@@ -346,6 +353,43 @@ def read_existing():
             _extract(src, "PASS_HASH", ""))
 
 
+def retain(roles):
+    """Bounded working set. De-dupes by URL, then keeps:
+      1. every analyzed role (they cost model tokens — never dropped),
+      2. the highest-scoring recent roles up to MAX_ROLES.
+    Non-analyzed roles with a parseable posting date older than MAX_AGE_DAYS are
+    dropped first. This is what stops atlas.js from growing without bound.
+    """
+    today = datetime.date.today()
+
+    def too_old(r):
+        if r.get("analyzed"):
+            return False
+        p = (r.get("posted") or "").strip()
+        try:
+            age = (today - datetime.date.fromisoformat(p[:10])).days
+        except ValueError:
+            return False  # no/unparseable date -> keep, let the count cap decide
+        return age > MAX_AGE_DAYS
+
+    seen, deduped = set(), []
+    for r in sorted(roles, key=lambda x: -x.get("score", 0)):
+        u = r.get("url")
+        if u and u in seen:
+            continue
+        if u:
+            seen.add(u)
+        if too_old(r):
+            continue
+        deduped.append(r)
+
+    analyzed = [r for r in deduped if r.get("analyzed")]
+    rest = [r for r in deduped if not r.get("analyzed")]
+    keep_rest = max(0, MAX_ROLES - len(analyzed))
+    kept = analyzed + rest[:keep_rest]
+    return sorted(kept, key=lambda x: -x.get("score", 0))
+
+
 def main():
     roles, labs, pass_hash = read_existing()
     known = {r.get("url") for r in roles if r.get("url")}
@@ -404,7 +448,7 @@ def main():
     for r in roles:
         r["new"] = False
 
-    allroles = sorted(fresh + roles, key=lambda x: -x.get("score", 0))
+    allroles = retain(fresh + roles)
 
     counts = {k: 0 for k in GEOS}
     for f in fresh:

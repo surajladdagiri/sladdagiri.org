@@ -11,6 +11,13 @@ import {
 } from "framer-motion";
 import { ROLES, LABS, PASS_HASH, DIGEST } from "../data/atlas";
 
+// Combined view built once at module load rather than re-spread ([...ROLES,
+// ...LABS]) on every render, which allocated two fresh arrays per keystroke.
+const ALL_ITEMS = [...ROLES, ...LABS];
+// How many cards to mount at once. The list is windowed: we render this many and
+// grow on scroll, so RAM/DOM stay flat no matter how large ROLES gets.
+const PAGE = 36;
+
 /* ------------------------------------------------------------------ */
 /*  tokens                                                             */
 /* ------------------------------------------------------------------ */
@@ -531,7 +538,6 @@ function Card({ item, kind, onOpen, applied, saved, toggle, still, index }) {
 
   return (
     <motion.div
-      layout
       initial={{ opacity: 0, y: still ? 0 : 26 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
@@ -1089,6 +1095,8 @@ export default function Atlas() {
   const [saved, setSaved] = useState(() => load(STORE.saved, {}));
   const [notes, setNotes] = useState(() => load(STORE.notes, {}));
   const [sheet, setSheet] = useState({ open: false, item: null, kind: "role" });
+  const [visible, setVisible] = useState(PAGE); // windowed render count
+  const moreRef = useRef(null);
 
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 420], [0, still ? 0 : 70]);
@@ -1126,11 +1134,11 @@ export default function Atlas() {
       tab === "labs"
         ? LABS
         : tab === "applied"
-        ? [...ROLES, ...LABS].filter((x) => applied[x.id])
+        ? ALL_ITEMS.filter((x) => applied[x.id])
         : tab === "saved"
-        ? [...ROLES, ...LABS].filter((x) => saved[x.id])
+        ? ALL_ITEMS.filter((x) => saved[x.id])
         : tab === "top"
-        ? [...ROLES, ...LABS].filter((x) => x.score >= 78)
+        ? ALL_ITEMS.filter((x) => x.score >= 78)
         : ROLES;
     const geoFiltered =
       region === "all" ? base : base.filter((x) => !x.geo || x.geo === region);
@@ -1145,14 +1153,45 @@ export default function Atlas() {
     return [...f].sort((a, b) => b.score - a.score);
   }, [tab, q, applied, saved, region]);
 
+  // Reset the window whenever the filtered list changes, so a new filter starts
+  // from the top instead of keeping thousands of cards mounted from a prior view.
+  useEffect(() => {
+    setVisible(PAGE);
+  }, [tab, q, region]);
+
+  // Grow the window when the sentinel scrolls into view (infinite scroll).
+  useEffect(() => {
+    const el = moreRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setVisible((v) => Math.min(v + PAGE, list.length));
+        }
+      },
+      { rootMargin: "600px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [list.length]);
+
+  const shown = list.slice(0, visible);
+
   const kindOf = (x) => (x.pi ? "lab" : "role");
 
-  const stats = [
-    { n: ROLES.length, l: "Roles" },
-    { n: LABS.length, l: "Labs" },
-    { n: [...ROLES, ...LABS].filter((x) => x.score >= 78).length, l: "Strong" },
-    { n: Object.values(applied).filter(Boolean).length, l: "Sent" },
-  ];
+  const strongCount = useMemo(
+    () => ALL_ITEMS.reduce((n, x) => n + (x.score >= 78 ? 1 : 0), 0),
+    []
+  );
+  const stats = useMemo(
+    () => [
+      { n: ROLES.length, l: "Roles" },
+      { n: LABS.length, l: "Labs" },
+      { n: strongCount, l: "Strong" },
+      { n: Object.values(applied).filter(Boolean).length, l: "Sent" },
+    ],
+    [strongCount, applied]
+  );
 
   return (
     <div style={{ background: C.bg, minHeight: "100vh", fontFamily: FONT, color: C.text }}>
@@ -1366,30 +1405,39 @@ export default function Atlas() {
                 padding: "1.7rem 1.5rem 6rem",
               }}
             >
-              <motion.div
-                layout
+              {/* Plain grid: dropping `layout` + AnimatePresence popLayout here
+                  removes per-child layout tracking, which was the dominant cost
+                  when the list held thousands of cards. Only `shown` is mounted. */}
+              <div
                 style={{
                   display: "grid",
                   gridTemplateColumns: "repeat(auto-fill,minmax(330px,1fr))",
                   gap: 14,
                 }}
               >
-                <AnimatePresence mode="popLayout">
-                  {list.map((item, i) => (
-                    <Card
-                      key={item.id}
-                      index={i}
-                      item={item}
-                      kind={kindOf(item)}
-                      still={still}
-                      applied={!!applied[item.id]}
-                      saved={!!saved[item.id]}
-                      toggle={toggle}
-                      onOpen={(it, k) => setSheet({ open: true, item: it, kind: k })}
-                    />
-                  ))}
-                </AnimatePresence>
-              </motion.div>
+                {shown.map((item, i) => (
+                  <Card
+                    key={item.id}
+                    index={i}
+                    item={item}
+                    kind={kindOf(item)}
+                    still={still}
+                    applied={!!applied[item.id]}
+                    saved={!!saved[item.id]}
+                    toggle={toggle}
+                    onOpen={(it, k) => setSheet({ open: true, item: it, kind: k })}
+                  />
+                ))}
+              </div>
+
+              {/* sentinel: when this scrolls near, we mount the next PAGE */}
+              {visible < list.length && (
+                <div
+                  ref={moreRef}
+                  style={{ height: 1, width: "100%" }}
+                  aria-hidden
+                />
+              )}
 
               {list.length === 0 && (
                 <motion.p

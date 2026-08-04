@@ -44,6 +44,8 @@ ACODEC=$(jq -r '[.streams[]|select(.codec_type=="audio")][0].codec_name // "none
 ACHAN=$( jq -r '[.streams[]|select(.codec_type=="audio")][0].channels  // 2'      <<<"$INFO")
 WIDTH=$( jq -r '[.streams[]|select(.codec_type=="video")][0].width     // 0'      <<<"$INFO")
 HEIGHT=$(jq -r '[.streams[]|select(.codec_type=="video")][0].height    // 0'      <<<"$INFO")
+PIXFMT=$(jq -r '[.streams[]|select(.codec_type=="video")][0].pix_fmt   // ""'     <<<"$INFO")
+TRC=$(   jq -r '[.streams[]|select(.codec_type=="video")][0].color_transfer // ""' <<<"$INFO")
 DUR=$(   jq -r '.format.duration // 0' <<<"$INFO")
 
 echo "source : ${WIDTH}x${HEIGHT}  video=$VCODEC  audio=$ACODEC (${ACHAN}ch)  $(printf '%.0f' "$DUR")s"

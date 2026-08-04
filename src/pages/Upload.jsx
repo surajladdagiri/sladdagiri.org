@@ -18,6 +18,7 @@ import { C, FONT, api, bytes, btnStyle, inputStyle, readAuth } from "../lib/thea
 
 const CONCURRENCY = 4;
 const RETRIES = 4;
+const RATE_WINDOW_MS = 15000; // trailing window for the speed readout
 
 const sluggify = (s) =>
   String(s || "")
@@ -98,6 +99,7 @@ function Uploader({ token }) {
   const abortRef = useRef(null);
   const loadedRef = useRef(new Map()); // partNumber -> bytes uploaded
   const baseRef = useRef(0); // bytes from parts finished before this run
+  const samplesRef = useRef([]); // [{t, b}] for the windowed rate
 
   const movie = files.find((f) => f.name === "movie.mp4");
   const manifest = files.find((f) => f.name === "manifest.json");
@@ -199,13 +201,27 @@ function Uploader({ token }) {
         });
       save();
 
-      const t0 = Date.now();
+      // Rate over a trailing window, not since-start.
+      //
+      // Dividing by total elapsed time decays toward zero by construction and
+      // makes a perfectly healthy upload look like it's dying. A window also
+      // reflects reality better: cable uplinks burst then settle, so the number
+      // people actually want is "how fast right now", not a lifetime average.
+      samplesRef.current = [];
       const tick = setInterval(() => {
         const live = [...loadedRef.current.values()].reduce((a, b) => a + b, 0);
         const now = baseRef.current + live;
         setSent(now);
-        setRate((now - baseRef.current) / Math.max(0.001, (Date.now() - t0) / 1000));
-      }, 400);
+
+        const s = samplesRef.current;
+        s.push({ t: Date.now(), b: now });
+        const cutoff = Date.now() - RATE_WINDOW_MS;
+        while (s.length > 2 && s[0].t < cutoff) s.shift();
+
+        const dt = (s[s.length - 1].t - s[0].t) / 1000;
+        const db = s[s.length - 1].b - s[0].b;
+        if (dt >= 1) setRate(Math.max(0, db / dt));
+      }, 500);
 
       // Fixed-size worker pool pulling from a shared cursor. Simpler than
       // chunking the list up front and it self-balances when one part is slow.
