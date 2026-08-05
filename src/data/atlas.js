@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-05",
- "total_new": 2357,
+ "total_new": 2327,
  "analyzed": 0,
  "counts": {
-  "San Diego": 73,
-  "Los Angeles": 122,
-  "Bay Area": 497,
-  "Remote": 439,
-  "Out of state": 1226
+  "San Diego": 72,
+  "Los Angeles": 120,
+  "Bay Area": 477,
+  "Remote": 421,
+  "Out of state": 1237
  }
 };
 
@@ -82,6 +82,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jkda1ee3e32781dfc5",
+  "title": "Mobile Application Developer",
+  "company": "Blu Omega LLC",
+  "loc": "Ashburn, VA, US",
+  "url": "https://www.indeed.com/viewjob?jk=da1ee3e32781dfc5",
+  "site": "Indeed",
+  "posted": "2026-08-05",
+  "smin": 100000.0,
+  "smax": 110000.0,
+  "track": "Auto",
+  "score": 93,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jk78c38859981caf0f",
   "title": "Mobile Application Developer",
   "company": "Blu Omega LLC",
@@ -95,7 +111,7 @@ export const ROLES = [
   "score": 93,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4432827930",
@@ -1471,7 +1487,7 @@ export const ROLES = [
   "score": 89,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkb9cebf41b7408a04",
@@ -1752,7 +1768,7 @@ export const ROLES = [
   "score": 88,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448504964",
@@ -1883,6 +1899,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4448991682",
+  "title": "Software Engineer, Machine Learning (SWE II & SWE I)",
+  "company": "H1BConnect",
+  "loc": "San Francisco County, CA",
+  "url": "https://www.linkedin.com/jobs/view/4448991682",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 87,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4449427048",
   "title": "Software Engineer, Machine Learning (SWE II & SWE I)",
   "company": "Salesforce",
@@ -1896,7 +1928,7 @@ export const ROLES = [
   "score": 87,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk1fd79cd3ce5eb56e",
@@ -1912,7 +1944,7 @@ export const ROLES = [
   "score": 87,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449077431",
@@ -1928,7 +1960,7 @@ export const ROLES = [
   "score": 87,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449095429",
@@ -1944,7 +1976,7 @@ export const ROLES = [
   "score": 87,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4421242744",
@@ -2267,6 +2299,118 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4448560859",
+  "title": "iOS Developer",
+  "company": "Cubit Capital",
+  "loc": "Lockhart, TX",
+  "url": "https://www.linkedin.com/jobs/view/4448560859",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4449481108",
+  "title": "Freelance Mobile App Developer (iOS / Android)",
+  "company": "Mindrift",
+  "loc": "Minnesota, United States",
+  "url": "https://www.linkedin.com/jobs/view/4449481108",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4449481086",
+  "title": "Freelance Mobile App Developer (iOS / Android)",
+  "company": "Mindrift",
+  "loc": "Houston, TX",
+  "url": "https://www.linkedin.com/jobs/view/4449481086",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4449469779",
+  "title": "Freelance Mobile App Developer (iOS / Android)",
+  "company": "Mindrift",
+  "loc": "Iowa, United States",
+  "url": "https://www.linkedin.com/jobs/view/4449469779",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4449461995",
+  "title": "Freelance Mobile App Developer (iOS / Android)",
+  "company": "Mindrift",
+  "loc": "Mississippi, United States",
+  "url": "https://www.linkedin.com/jobs/view/4449461995",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4449486002",
+  "title": "Freelance Mobile App Developer (iOS / Android)",
+  "company": "Mindrift",
+  "loc": "Alabama, United States",
+  "url": "https://www.linkedin.com/jobs/view/4449486002",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4449478193",
+  "title": "Freelance Mobile App Developer (iOS / Android)",
+  "company": "Mindrift",
+  "loc": "San Antonio, TX",
+  "url": "https://www.linkedin.com/jobs/view/4449478193",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4449466913",
   "title": "Freelance Mobile App Developer (iOS / Android)",
   "company": "Mindrift",
@@ -2280,7 +2424,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449479163",
@@ -2296,7 +2440,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449476258",
@@ -2312,7 +2456,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449477213",
@@ -2328,7 +2472,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449476217",
@@ -2344,7 +2488,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449472582",
@@ -2360,7 +2504,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449477245",
@@ -2376,7 +2520,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449458984",
@@ -2392,7 +2536,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449482087",
@@ -2408,7 +2552,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449472634",
@@ -2424,7 +2568,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449483014",
@@ -2440,7 +2584,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449472585",
@@ -2456,7 +2600,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449466922",
@@ -2472,7 +2616,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449479155",
@@ -2488,7 +2632,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449480115",
@@ -2504,7 +2648,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449470666",
@@ -2520,7 +2664,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449471724",
@@ -2536,7 +2680,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4446294475",
@@ -4011,6 +4155,86 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4448586180",
+  "title": "iOS Developers",
+  "company": "Delta System & Software, Inc.",
+  "loc": "Pittsburgh, PA",
+  "url": "https://www.linkedin.com/jobs/view/4448586180",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 84,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4449476928",
+  "title": "Ios Mobile Developer",
+  "company": "TEKsystems",
+  "loc": "Dallas, TX",
+  "url": "https://www.linkedin.com/jobs/view/4449476928",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 84,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4432414707",
+  "title": "Software Engineer II - Mobile",
+  "company": "Western Governors University",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4432414707",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 84,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4426376065",
+  "title": "Embedded Software Engineer I",
+  "company": "Gentex Corporation",
+  "loc": "Grand Rapids, MI",
+  "url": "https://www.linkedin.com/jobs/view/4426376065",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 84,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4426374142",
+  "title": "Embedded Software Engineer I",
+  "company": "Gentex Corporation",
+  "loc": "Zeeland, MI",
+  "url": "https://www.linkedin.com/jobs/view/4426374142",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 84,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4449644795",
   "title": "iOS Engineer",
   "company": "New York Technology Partners",
@@ -4024,7 +4248,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449088177",
@@ -4040,7 +4264,7 @@ export const ROLES = [
   "score": 84,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449088176",
@@ -4056,7 +4280,7 @@ export const ROLES = [
   "score": 84,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449454056",
@@ -4072,7 +4296,7 @@ export const ROLES = [
   "score": 84,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7f5d4ec7bf74feaa",
@@ -5880,7 +6104,7 @@ export const ROLES = [
   "score": 82,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk78ff59f107e7a2e6",
@@ -6011,6 +6235,54 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4448989466",
+  "title": "iOS Developer",
+  "company": "BJAK",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4448989466",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 81,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4440551439",
+  "title": "Mobile Application Developer",
+  "company": "Family Dollar",
+  "loc": "Chesapeake, VA",
+  "url": "https://www.linkedin.com/jobs/view/4440551439",
+  "site": "Linkedin",
+  "posted": "2026-08-03",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 81,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4449135384",
+  "title": "Mobile Application Developer",
+  "company": "SRI Tech Solutions Inc.",
+  "loc": "Madison, WI",
+  "url": "https://www.linkedin.com/jobs/view/4449135384",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 81,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4449652601",
   "title": "Developer, Mobile",
   "company": "Herbalife",
@@ -6024,7 +6296,7 @@ export const ROLES = [
   "score": 81,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4418776605",
@@ -6040,7 +6312,7 @@ export const ROLES = [
   "score": 81,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449491530",
@@ -6056,7 +6328,7 @@ export const ROLES = [
   "score": 81,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4438300216",
@@ -6072,7 +6344,7 @@ export const ROLES = [
   "score": 81,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448984615",
@@ -6088,7 +6360,7 @@ export const ROLES = [
   "score": 81,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448866788",
@@ -6112,278 +6384,6 @@ export const ROLES = [
   "company": "Hire Feed",
   "loc": "",
   "url": "https://www.linkedin.com/jobs/view/4448876198",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jk05184a41b61f9238",
-  "title": "Mobile App Release Engineer",
-  "company": "MiniMed",
-  "loc": "Northridge, CA, US",
-  "url": "https://www.indeed.com/viewjob?jk=05184a41b61f9238",
-  "site": "Indeed",
-  "posted": "2026-08-03",
-  "smin": 71000.0,
-  "smax": 135000.0,
-  "track": "Auto",
-  "score": 81,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4448643308",
-  "title": "Mobile App Release Engineer",
-  "company": "MiniMed",
-  "loc": "Los Angeles, CA",
-  "url": "https://www.linkedin.com/jobs/view/4448643308",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "la",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4448525458",
-  "title": "Founding iOS Engineer at well-funded consumer AI startup",
-  "company": "Jack & Jill",
-  "loc": "San Francisco, CA",
-  "url": "https://www.linkedin.com/jobs/view/4448525458",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "bay",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4448621520",
-  "title": "iOS Developer",
-  "company": "NOCD",
-  "loc": "Chicago, IL",
-  "url": "https://www.linkedin.com/jobs/view/4448621520",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4446606759",
-  "title": "iOS Developer - AI Finance Agent",
-  "company": "Kira",
-  "loc": "",
-  "url": "https://www.linkedin.com/jobs/view/4446606759",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4448870916",
-  "title": "iOS Developer",
-  "company": "Net2Source (N2S)",
-  "loc": "Alpharetta, GA",
-  "url": "https://www.linkedin.com/jobs/view/4448870916",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4448553142",
-  "title": "Mobile Application Developer",
-  "company": "SRI Tech Solutions Inc.",
-  "loc": "Madison, WI",
-  "url": "https://www.linkedin.com/jobs/view/4448553142",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4448605665",
-  "title": "Embedded Software Engineer",
-  "company": "Bright Vision Technologies",
-  "loc": "Carrollton, TX",
-  "url": "https://www.linkedin.com/jobs/view/4448605665",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": 130000.0,
-  "smax": 195000.0,
-  "track": "Auto",
-  "score": 81,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jka5c732633bba18a5",
-  "title": "Embedded Software Engineer",
-  "company": "BV Teck",
-  "loc": "Remote, US",
-  "url": "https://www.indeed.com/viewjob?jk=a5c732633bba18a5",
-  "site": "Indeed",
-  "posted": "2026-08-03",
-  "smin": 130000.0,
-  "smax": 195000.0,
-  "track": "Auto",
-  "score": 81,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4447998158",
-  "title": "Founding iOS Engineer at well-funded consumer AI startup",
-  "company": "Jack & Jill",
-  "loc": "San Francisco, CA",
-  "url": "https://www.linkedin.com/jobs/view/4447998158",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "bay",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4448188482",
-  "title": "Remote iOS Developer",
-  "company": "Netrolynx AI",
-  "loc": "",
-  "url": "https://www.linkedin.com/jobs/view/4448188482",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4448177224",
-  "title": "iOS Developer (Remote)",
-  "company": "Jobs Ai",
-  "loc": "",
-  "url": "https://www.linkedin.com/jobs/view/4448177224",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4448195203",
-  "title": "Mobile Developer",
-  "company": "AgileGrid Solutions",
-  "loc": "",
-  "url": "https://www.linkedin.com/jobs/view/4448195203",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4447883792",
-  "title": "iOS Developer (Remote)",
-  "company": "Jobs Ai",
-  "loc": "",
-  "url": "https://www.linkedin.com/jobs/view/4447883792",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4447654167",
-  "title": "Founding iOS Engineer at well-funded consumer AI startup",
-  "company": "Jack & Jill",
-  "loc": "San Francisco, CA",
-  "url": "https://www.linkedin.com/jobs/view/4447654167",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "bay",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4445830328",
-  "title": "iOS Developer",
-  "company": "STRAVEXA",
-  "loc": "",
-  "url": "https://www.linkedin.com/jobs/view/4445830328",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 81,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4447892750",
-  "title": "Remote iOS Developer",
-  "company": "AgileGrid Solutions",
-  "loc": "",
-  "url": "https://www.linkedin.com/jobs/view/4447892750",
   "site": "Linkedin",
   "posted": "",
   "smin": null,
