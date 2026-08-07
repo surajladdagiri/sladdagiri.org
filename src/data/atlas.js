@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-07",
- "total_new": 2405,
+ "total_new": 2384,
  "analyzed": 0,
  "counts": {
-  "San Diego": 84,
-  "Los Angeles": 119,
-  "Bay Area": 455,
-  "Remote": 446,
-  "Out of state": 1301
+  "San Diego": 85,
+  "Los Angeles": 116,
+  "Bay Area": 462,
+  "Remote": 427,
+  "Out of state": 1294
  }
 };
 
@@ -79,7 +79,7 @@ export const ROLES = [
   "score": 94,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4437097683",
@@ -111,7 +111,7 @@ export const ROLES = [
   "score": 93,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkda1ee3e32781dfc5",
@@ -303,7 +303,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkca48ff3509a1c142",
@@ -319,7 +319,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk313eaef5fcd94e18",
@@ -335,7 +335,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk82c6abcd0076c4fe",
@@ -351,7 +351,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk67c2934dbd69a473",
@@ -367,7 +367,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk748ddd26f7be941a",
@@ -383,7 +383,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7294cbcb2bcd0e5c",
@@ -399,7 +399,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk391dcc9b5f84c205",
@@ -415,7 +415,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk9e7d18f2c5c0b77a",
@@ -431,7 +431,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkfa07e608e94686d1",
@@ -447,7 +447,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd66c58e1ad6e1720",
@@ -463,7 +463,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkf46afddeb6981d38",
@@ -479,7 +479,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk656381ceb7c9a7d1",
@@ -495,7 +495,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk12f46b3aa1ce2420",
@@ -511,7 +511,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk3b282fde6797c6bb",
@@ -527,7 +527,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk24509a2491c24d0d",
@@ -543,7 +543,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6c6f565f5f026e5e",
@@ -559,7 +559,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk11d6fffedbb29e8e",
@@ -575,7 +575,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkb0d099bbb060af9c",
@@ -591,7 +591,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk45858079420e1343",
@@ -607,7 +607,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk25e694f7754e16ec",
@@ -623,7 +623,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkba167f23f5328c00",
@@ -1855,7 +1855,7 @@ export const ROLES = [
   "score": 89,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk505ac596bd64d623",
@@ -1871,7 +1871,7 @@ export const ROLES = [
   "score": 89,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd3e3ffb3a3a04d8e",
@@ -1887,7 +1887,7 @@ export const ROLES = [
   "score": 89,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4248376628",
@@ -2328,7 +2328,7 @@ export const ROLES = [
   "score": 87,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448991682",
@@ -2744,7 +2744,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448469620",
@@ -2760,7 +2760,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448461862",
@@ -2776,7 +2776,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448478380",
@@ -2792,7 +2792,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448477441",
@@ -2808,7 +2808,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449719810",
@@ -2824,7 +2824,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449714955",
@@ -2840,7 +2840,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448560859",
@@ -4699,6 +4699,38 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-2489a29a1487eb5034",
+  "title": "iOS Engineer I - Subscriptions",
+  "company": "Spotify",
+  "loc": "London",
+  "url": "https://jobs.lever.co/spotify/5089cbe3-5e62-4c24-89a2-9a1487eb5034",
+  "site": "Lever",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 84,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4441692890",
+  "title": "Embedded Software Engineer II",
+  "company": "CNH",
+  "loc": "Tempe, AZ",
+  "url": "https://www.linkedin.com/jobs/view/4441692890",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 84,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4441100891",
   "title": "Embedded Software Engineer II, Charging & Energy",
   "company": "Rivian",
@@ -4712,7 +4744,7 @@ export const ROLES = [
   "score": 84,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4440799929",
@@ -4728,7 +4760,7 @@ export const ROLES = [
   "score": 84,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4372409764",
@@ -4744,7 +4776,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4450707220",
@@ -4760,7 +4792,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448468191",
@@ -4776,7 +4808,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4450700298",
@@ -4792,7 +4824,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6351474af0ec2849",
@@ -4808,7 +4840,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449655828",
@@ -4824,7 +4856,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441118704",
@@ -4840,7 +4872,7 @@ export const ROLES = [
   "score": 84,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449772787",
@@ -4856,7 +4888,7 @@ export const ROLES = [
   "score": 84,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448586180",
@@ -6359,38 +6391,6 @@ export const ROLES = [
   "track": "Auto",
   "score": 84,
   "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4443894319",
-  "title": "Junior Mobile App Developer",
-  "company": "DOJO Air",
-  "loc": "San Diego, CA",
-  "url": "https://www.linkedin.com/jobs/view/4443894319",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 84,
-  "geo": "sd",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4439131687",
-  "title": "Junior Operating Systems Engineer (Embedded Linux / Yocto)",
-  "company": "Lyntris",
-  "loc": "San Diego, CA",
-  "url": "https://www.linkedin.com/jobs/view/4439131687",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 84,
-  "geo": "sd",
   "analyzed": false,
   "new": false
  },
