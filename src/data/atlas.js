@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-08",
- "total_new": 2346,
+ "total_new": 2291,
  "analyzed": 0,
  "counts": {
-  "San Diego": 82,
-  "Los Angeles": 121,
-  "Bay Area": 450,
-  "Remote": 428,
-  "Out of state": 1265
+  "San Diego": 81,
+  "Los Angeles": 118,
+  "Bay Area": 439,
+  "Remote": 418,
+  "Out of state": 1235
  }
 };
 
@@ -79,7 +79,7 @@ export const ROLES = [
   "score": 94,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441933664",
@@ -1871,7 +1871,7 @@ export const ROLES = [
   "score": 89,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6ed889a9e92951ba",
@@ -1887,7 +1887,7 @@ export const ROLES = [
   "score": 89,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4451016451",
@@ -1903,7 +1903,7 @@ export const ROLES = [
   "score": 89,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4451012618",
@@ -1919,7 +1919,7 @@ export const ROLES = [
   "score": 89,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4451029377",
@@ -1935,7 +1935,7 @@ export const ROLES = [
   "score": 89,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka1b8fccc1a0c6451",
@@ -2280,7 +2280,7 @@ export const ROLES = [
   "score": 88,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4448378397",
@@ -2440,7 +2440,7 @@ export const ROLES = [
   "score": 87,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449794204",
@@ -2456,7 +2456,7 @@ export const ROLES = [
   "score": 87,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4450774343",
@@ -2472,7 +2472,7 @@ export const ROLES = [
   "score": 87,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449774971",
@@ -2488,7 +2488,7 @@ export const ROLES = [
   "score": 87,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449791240",
@@ -2504,7 +2504,7 @@ export const ROLES = [
   "score": 87,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4414647437",
@@ -2520,7 +2520,7 @@ export const ROLES = [
   "score": 87,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449927473",
@@ -2952,7 +2952,7 @@ export const ROLES = [
   "score": 85,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449752014",
@@ -4936,7 +4936,7 @@ export const ROLES = [
   "score": 84,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4450764552",
@@ -4952,7 +4952,7 @@ export const ROLES = [
   "score": 84,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4450522151",
@@ -4968,7 +4968,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4439275562",
@@ -4984,7 +4984,7 @@ export const ROLES = [
   "score": 84,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4432912002",
@@ -5000,7 +5000,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-2489a29a1487eb5034",
