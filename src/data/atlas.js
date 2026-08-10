@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-10",
- "total_new": 2047,
+ "total_new": 2057,
  "analyzed": 0,
  "counts": {
   "San Diego": 48,
-  "Los Angeles": 95,
-  "Bay Area": 365,
+  "Los Angeles": 93,
+  "Bay Area": 369,
   "Remote": 350,
-  "Out of state": 1189
+  "Out of state": 1197
  }
 };
 
@@ -3112,7 +3112,7 @@ export const ROLES = [
   "score": 85,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4441729293",
@@ -3128,7 +3128,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4412465919",
@@ -5144,7 +5144,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkbefd90cc9bb912f9",
@@ -5160,7 +5160,7 @@ export const ROLES = [
   "score": 84,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4411553667",
@@ -5176,7 +5176,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4414655184",
