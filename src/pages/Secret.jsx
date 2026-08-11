@@ -56,6 +56,28 @@ function Stat({ label, value }) {
   );
 }
 
+function Chips({ title, rows, keyName }) {
+  return (
+    <div style={{ marginBottom: 20 }}>
+      <Eyebrow style={{ display: "block", marginBottom: 10 }}>{title}</Eyebrow>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+        {rows.length === 0 && (
+          <span style={{ fontFamily: T.body, fontSize: 13, color: T.faint }}>No data yet.</span>
+        )}
+        {rows.map((r) => (
+          <span
+            key={r[keyName]}
+            style={{ display: "inline-flex", alignItems: "center", gap: 8, border: `1px solid ${T.rule}`, borderRadius: T.radius, padding: "7px 12px", fontFamily: T.body, fontSize: 13, color: T.ink }}
+          >
+            {r[keyName]}
+            <span style={{ fontFamily: T.mono, fontSize: 12, color: T.dim }}>{r.n}</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function BarList({ title, rows, label }) {
   const max = Math.max(1, ...rows.map((r) => r.n));
   return (
@@ -289,8 +311,13 @@ export default function Secret() {
               ))}
             </div>
 
-            {/* three bar lists */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 30, marginBottom: 40 }}>
+            {/* device / os / browser */}
+            <Chips title="Devices" rows={d.devices || []} keyName="device" />
+            <Chips title="Operating systems" rows={d.oses || []} keyName="os" />
+            <Chips title="Browsers" rows={d.browsers || []} keyName="browser" />
+
+            {/* bar lists */}
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 30, marginTop: 14, marginBottom: 40 }}>
               <BarList title="Top pages" rows={d.topPaths} label={(r) => r.path} />
               <BarList title="Top locations" rows={d.topCities} label={(r) => [r.city, r.region, r.country].filter(Boolean).join(", ")} />
               <BarList title="Top ISPs / networks" rows={d.topNetworks || []} label={(r) => r.org} />
@@ -300,12 +327,12 @@ export default function Secret() {
             {/* recent visits */}
             <Eyebrow style={{ display: "block", marginBottom: 14 }}>Recent visits</Eyebrow>
             <div style={{ border: `1px solid ${T.rule}`, borderRadius: T.radius, overflow: "hidden" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "120px 130px 1fr 110px 1fr", gap: 0, fontFamily: T.mono, fontSize: 10.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.dim, padding: "10px 14px", borderBottom: `1px solid ${T.rule}` }}>
-                <div>When</div><div>IP</div><div>Location</div><div>Network</div><div>ISP / org</div>
+              <div style={{ display: "grid", gridTemplateColumns: "100px 116px 1fr 84px 1fr 128px", gap: 0, fontFamily: T.mono, fontSize: 10.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.dim, padding: "10px 14px", borderBottom: `1px solid ${T.rule}` }}>
+                <div>When</div><div>IP</div><div>Location</div><div>Network</div><div>ISP / org</div><div>Device</div>
               </div>
               <div style={{ maxHeight: 460, overflowY: "auto" }}>
                 {d.recent.map((v, i) => (
-                  <div key={i} style={{ display: "grid", gridTemplateColumns: "120px 130px 1fr 110px 1fr", gap: 0, fontSize: 12.5, padding: "10px 14px", borderTop: i === 0 ? "none" : `1px solid ${T.rule}`, alignItems: "center" }}>
+                  <div key={i} style={{ display: "grid", gridTemplateColumns: "100px 116px 1fr 84px 1fr 128px", gap: 0, fontSize: 12.5, padding: "10px 14px", borderTop: i === 0 ? "none" : `1px solid ${T.rule}`, alignItems: "center" }}>
                     <div style={{ fontFamily: T.mono, color: T.dim }}>{fmtTime(v.ts)}</div>
                     <div style={{ fontFamily: T.mono, color: T.ink, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{v.ip || "—"}</div>
                     <div style={{ fontFamily: T.body, color: T.dim, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
@@ -314,6 +341,9 @@ export default function Secret() {
                     <div><Badge type={v.net_type} /></div>
                     <div style={{ fontFamily: T.body, color: T.dim, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={v.path || ""}>
                       {v.org || v.path || "—"}
+                    </div>
+                    <div style={{ fontFamily: T.body, color: T.dim, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {v.device === "bot" ? "Bot" : [v.os, v.browser].filter(Boolean).join(" · ") || "—"}
                     </div>
                   </div>
                 ))}

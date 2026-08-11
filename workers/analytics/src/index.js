@@ -133,6 +133,41 @@ function classifyNet(org) {
   return "unknown";
 }
 
+/* --------------------------------------------------- user-agent parsing */
+
+// Small hand-rolled UA parser. Order matters: Edge's UA contains "Chrome",
+// Chrome's contains "Safari", so the more specific tokens are checked first.
+function parseUA(ua) {
+  const u = ua || "";
+  if (
+    /bot|crawler|spider|crawl|slurp|bingpreview|facebookexternalhit|headless|preview|monitor|python-requests|curl|wget|axios|go-http|okhttp/i.test(u)
+  ) {
+    return { device: "bot", os: null, browser: "Bot" };
+  }
+
+  let device = "desktop";
+  if (/ipad|playbook|silk|(android(?!.*mobi))|tablet/i.test(u)) device = "tablet";
+  else if (/mobi|iphone|ipod|android.*mobi|windows phone|blackberry|bb10|opera mini/i.test(u)) device = "mobile";
+
+  let os = null;
+  if (/iphone|ipad|ipod/i.test(u)) os = "iOS";
+  else if (/android/i.test(u)) os = "Android";
+  else if (/windows nt/i.test(u)) os = "Windows";
+  else if (/mac os x/i.test(u)) os = "macOS";
+  else if (/cros/i.test(u)) os = "ChromeOS";
+  else if (/linux/i.test(u)) os = "Linux";
+
+  let browser = null;
+  if (/edg(a|ios|)\//i.test(u)) browser = "Edge";
+  else if (/opr\/|opera/i.test(u)) browser = "Opera";
+  else if (/samsungbrowser/i.test(u)) browser = "Samsung Internet";
+  else if (/crios/i.test(u) || (/chrome\//i.test(u) && !/edg/i.test(u))) browser = "Chrome";
+  else if (/firefox\/|fxios/i.test(u)) browser = "Firefox";
+  else if (/safari/i.test(u)) browser = "Safari";
+
+  return { device, os, browser };
+}
+
 /* ------------------------------------------------------------------- CORS */
 
 // ALLOWED_ORIGIN may be a comma-separated list. We echo back the request's
@@ -174,6 +209,8 @@ async function collect(req, env) {
     /* beacon may be sent with sendBeacon and no parseable body */
   }
   const org = cf.asOrganization || null;
+  const ua = req.headers.get("User-Agent") || "";
+  const dev = parseUA(ua);
   const row = {
     ts: Date.now(),
     ip: req.headers.get("CF-Connecting-IP") || null,
@@ -188,16 +225,20 @@ async function collect(req, env) {
     net_type: classifyNet(org),
     path: (body.path || "").slice(0, 300) || null,
     referrer: (body.referrer || "").slice(0, 500) || null,
-    ua: (req.headers.get("User-Agent") || "").slice(0, 400) || null,
+    ua: ua.slice(0, 400) || null,
+    device: dev.device,
+    os: dev.os,
+    browser: dev.browser,
   };
 
   await env.DB.prepare(
-    `INSERT INTO visits (ts, ip, country, region, city, lat, lon, timezone, asn, org, net_type, path, referrer, ua)
-     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
+    `INSERT INTO visits (ts, ip, country, region, city, lat, lon, timezone, asn, org, net_type, path, referrer, ua, device, os, browser)
+     VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)`
   )
     .bind(
       row.ts, row.ip, row.country, row.region, row.city, row.lat, row.lon,
-      row.timezone, row.asn, row.org, row.net_type, row.path, row.referrer, row.ua
+      row.timezone, row.asn, row.org, row.net_type, row.path, row.referrer,
+      row.ua, row.device, row.os, row.browser
     )
     .run();
 
@@ -244,7 +285,7 @@ async function stats(req, env) {
 
   const [
     total, uniqueIps, today, byDay, topPaths, topCountries, topCities,
-    topOrgs, topNetworks, netTypes, recent,
+    topOrgs, topNetworks, netTypes, devices, oses, browsers, recent,
   ] = await Promise.all([
     one(`SELECT COUNT(*) FROM visits`),
     one(`SELECT COUNT(DISTINCT ip) FROM visits`),
@@ -259,14 +300,17 @@ async function stats(req, env) {
     many(`SELECT org, net_type, COUNT(*) AS n FROM visits WHERE net_type != 'residential' AND org IS NOT NULL GROUP BY org ORDER BY n DESC LIMIT 12`),
     many(`SELECT org, net_type, COUNT(*) AS n FROM visits WHERE org IS NOT NULL GROUP BY org ORDER BY n DESC LIMIT 12`),
     many(`SELECT net_type, COUNT(*) AS n FROM visits GROUP BY net_type ORDER BY n DESC`),
+    many(`SELECT device, COUNT(*) AS n FROM visits WHERE device IS NOT NULL GROUP BY device ORDER BY n DESC`),
+    many(`SELECT os, COUNT(*) AS n FROM visits WHERE os IS NOT NULL GROUP BY os ORDER BY n DESC LIMIT 8`),
+    many(`SELECT browser, COUNT(*) AS n FROM visits WHERE browser IS NOT NULL GROUP BY browser ORDER BY n DESC LIMIT 8`),
     many(
-      `SELECT ts, ip, city, region, country, org, net_type, asn, path
+      `SELECT ts, ip, city, region, country, org, net_type, asn, path, device, os, browser
        FROM visits ORDER BY ts DESC LIMIT 120`
     ),
   ]);
 
   return json(
-    { total, uniqueIps, today, byDay, topPaths, topCountries, topCities, topOrgs, topNetworks, netTypes, recent },
+    { total, uniqueIps, today, byDay, topPaths, topCountries, topCities, topOrgs, topNetworks, netTypes, devices, oses, browsers, recent },
     env,
     200,
     req

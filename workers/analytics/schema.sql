@@ -16,7 +16,10 @@ CREATE TABLE IF NOT EXISTS visits (
   net_type  TEXT,               -- residential | datacenter | mobile | education | corporate | unknown
   path      TEXT,
   referrer  TEXT,
-  ua        TEXT
+  ua        TEXT,
+  device    TEXT,               -- desktop | mobile | tablet | bot
+  os        TEXT,               -- iOS | Android | Windows | macOS | Linux | ChromeOS
+  browser   TEXT                -- Chrome | Safari | Firefox | Edge | ...
 );
 
 CREATE INDEX IF NOT EXISTS idx_visits_ts ON visits(ts);
