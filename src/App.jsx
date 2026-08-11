@@ -11,9 +11,22 @@ import IGAdBlock from "./pages/IGAdBlock";
 import CongressML from "./pages/CongressML";
 import Atlas from "./pages/Atlas";
 import { T } from "./theme";
+import { sendBeacon } from "./analytics";
 
 const Theater = lazy(() => import("./pages/Theater"));
 const Upload = lazy(() => import("./pages/Upload"));
+const Secret = lazy(() => import("./pages/Secret"));
+
+// Logs a page view on every route change. The admin dashboard itself is not
+// logged. Fails silently and never blocks rendering.
+function VisitBeacon() {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname.startsWith("/secret")) return;
+    sendBeacon(location.pathname);
+  }, [location.pathname]);
+  return null;
+}
 
 const NAV_LINKS = [
   { label: "Work", path: "/portfolio" },
@@ -172,7 +185,9 @@ function Layout() {
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <VisitBeacon />
+      <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="portfolio" element={<Portfolio />} />
@@ -204,6 +219,15 @@ export default function App() {
           </Suspense>
         }
       />
-    </Routes>
+      <Route
+        path="/secret"
+        element={
+          <Suspense fallback={<div style={{ minHeight: "100vh", background: "#0d0d0e" }} />}>
+            <Secret />
+          </Suspense>
+        }
+      />
+      </Routes>
+    </>
   );
 }

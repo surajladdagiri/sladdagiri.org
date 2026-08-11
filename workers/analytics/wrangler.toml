@@ -1,0 +1,25 @@
+name = "analytics"
+main = "src/index.js"
+compatibility_date = "2025-06-01"
+
+# The visitor log. Create it once with:
+#   npx wrangler d1 create analytics
+# then paste the printed database_id below.
+[[d1_databases]]
+binding = "DB"
+database_name = "analytics"
+database_id = "2b300139-e30a-45e4-bdbc-26708b97e76e"
+
+[vars]
+# Must match the live site origin exactly (scheme + host), or the browser
+# beacon fails CORS silently.
+# Comma-separated. The Worker echoes back whichever one the request came from,
+# so all your domains work. Add or remove hosts as needed.
+ALLOWED_ORIGIN = "https://portfolio.sladdagiri.org,https://sladdagiri.org,https://www.sladdagiri.org"
+ADMIN_EMAIL = "suraj@sladdagiri.org"
+
+# Secrets — set with `wrangler secret put NAME`, never in this file:
+#   PASS_HASH      PBKDF2-SHA256 hash of the dashboard password
+#   PASS_SALT      the salt that goes with it
+#   TOKEN_SECRET   random 32+ bytes, signs the dashboard session token
+# Generate all three with: node scripts/analytics/hash-pass.mjs "your-password"
