@@ -472,7 +472,7 @@ const Overlay = ({ children, dim }) => (
       display: "grid",
       placeItems: "center",
       background: dim ? "rgba(0,0,0,0.45)" : "rgba(0,0,0,0.72)",
-      backdropFilter: "blur(3px)",
+      backdropFilter: "none",
       textAlign: "center",
     }}
   >

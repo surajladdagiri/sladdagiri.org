@@ -49,7 +49,7 @@ const store = {
 };
 
 /** PUT with progress. fetch() gives no upload progress events; XHR does. */
-function put(url, blob, onLoaded, signal) {
+function put(url, blob, onLoaded, signal, label = "part") {
   return new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.open("PUT", url);
@@ -58,23 +58,36 @@ function put(url, blob, onLoaded, signal) {
       if (xhr.status >= 200 && xhr.status < 300) {
         const etag = xhr.getResponseHeader("ETag");
         if (!etag) {
-          // The single most likely misconfiguration, and it is otherwise
-          // maddening to diagnose: the PUT succeeds, but without ETag exposed
-          // there is no way to complete the multipart upload.
+          // The PUT succeeded but the header is hidden from JS, so there's no
+          // way to finalise the upload. Distinct from a failure, and otherwise
+          // maddening to diagnose.
           reject(
             new Error(
-              "Upload succeeded but ETag header is hidden. Add \"etag\" to " +
-                "ExposeHeaders in the R2 bucket CORS policy.",
+              `${label}: upload succeeded but the ETag header is hidden. ` +
+                'Add "etag" to ExposeHeaders in the R2 bucket CORS policy.',
             ),
           );
           return;
         }
         resolve(etag);
       } else {
-        reject(new Error(`HTTP ${xhr.status}`));
+        reject(new Error(`${label}: HTTP ${xhr.status} ${xhr.statusText || ""}`.trim()));
       }
     };
-    xhr.onerror = () => reject(new Error("network error"));
+    // An XHR that reaches onerror got NO http response — the browser refused to
+    // surface one. Two causes dominate, and they need different fixes, so name
+    // both rather than saying "network error" and leaving them to guess.
+    xhr.onerror = () =>
+      reject(
+        new Error(
+          `${label}: no response from R2. Two likely causes — (1) the file changed ` +
+            "on disk mid-upload, which happens if prepare.sh was still running when " +
+            "you picked the folder; wait for it to finish and re-pick. (2) the bucket " +
+            "CORS policy is missing PUT in AllowedMethods, or this origin " +
+            `(${location.origin}) in AllowedOrigins. Check the Network tab for which.`,
+        ),
+      );
+    xhr.ontimeout = () => reject(new Error(`${label}: timed out`));
     xhr.onabort = () => reject(new Error("aborted"));
     signal?.addEventListener("abort", () => xhr.abort());
     xhr.send(blob);
@@ -166,12 +179,35 @@ function Uploader({ token }) {
     setTotal(movie.size + smallTotal);
 
     try {
+      // Fail fast if the file is still being written.
+      //
+      // Comparing File.size wouldn't work — that's a snapshot taken when the
+      // file was picked and never updates. The actual signal is that reading
+      // throws once the file on disk no longer matches that snapshot, so read
+      // the tail and let it throw here rather than 40 minutes in.
+      try {
+        await movie.slice(Math.max(0, movie.size - 1024)).arrayBuffer();
+      } catch {
+        throw new Error(
+          "movie.mp4 changed on disk since you picked it — prepare.sh is probably " +
+            'still running. Wait for it to print "done.", then re-pick the folder.',
+        );
+      }
+
       // 1. Small files first — if these fail, fail before spending an hour.
       setMsg("uploading manifest and subtitles…");
       let smallSent = 0;
       for (const f of [manifest, ...subs]) {
         const { url } = await api("/upload/simple", token, { slug, name: f.name });
-        await put(url, f, () => {}, ac.signal);
+        // Re-wrap as a typeless Blob so XHR sends no Content-Type.
+        //
+        // A File from the folder picker carries a type ("application/json",
+        // "text/vtt"), and those are not CORS-safelisted content types, so the
+        // browser preflights asking permission for the content-type header.
+        // The movie parts avoid this by accident — file.slice() yields an empty
+        // type — which is why a failure here hits the manifest first. R2 infers
+        // content type from the key anyway, so nothing is lost.
+        await put(url, new Blob([f]), () => {}, ac.signal, f.name);
         smallSent += f.size;
         setSent(smallSent);
       }
@@ -246,6 +282,7 @@ function Uploader({ token }) {
                 blob,
                 (l) => loadedRef.current.set(n, l),
                 ac.signal,
+                `part ${n}/${plan.partCount}`,
               );
               done.set(n, etag);
               loadedRef.current.delete(n);

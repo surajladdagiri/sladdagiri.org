@@ -22,23 +22,30 @@ const PAGE = 36;
 /*  tokens                                                             */
 /* ------------------------------------------------------------------ */
 
+// Refined-dark palette. `glass` is now a SOLID matte surface (no translucency),
+// and the accent is the site's amber. Score colors stay semantic.
 const C = {
-  bg: "#050506",
-  text: "#f5f5f7",
-  dim: "rgba(245,245,247,0.60)",
-  dim2: "rgba(245,245,247,0.36)",
-  line: "rgba(255,255,255,0.09)",
-  line2: "rgba(255,255,255,0.16)",
-  glass: "rgba(255,255,255,0.045)",
-  blue: "#0a84ff",
-  green: "#30d158",
-  amber: "#ffd60a",
-  red: "#ff453a",
-  purple: "#bf5af2",
+  bg: "#0d0d0e",
+  text: "#ececec",
+  dim: "rgba(236,236,236,0.56)",
+  dim2: "rgba(236,236,236,0.34)",
+  line: "rgba(255,255,255,0.10)",
+  line2: "rgba(255,255,255,0.18)",
+  glass: "#151517",
+  // Score tiers must stay visually distinct: green > blue > amber > red.
+  // `amber` doubles as the site accent; blue is a muted slate that reads on matte.
+  blue: "#5b93d6",
+  green: "#7bbf6a",
+  amber: "#e9b64a",
+  red: "#e06a5a",
+  purple: "#c58be0",
 };
 
 const FONT =
-  '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", system-ui, sans-serif';
+  '"Inter", ui-sans-serif, system-ui, -apple-system, sans-serif';
+const FONT_DISPLAY =
+  '"Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif';
+const FONT_MONO = '"Space Mono", ui-monospace, "SF Mono", Menlo, monospace';
 
 const EASE = [0.22, 0.61, 0.36, 1];
 const SPRING = { type: "spring", stiffness: 380, damping: 34, mass: 0.9 };
@@ -64,7 +71,7 @@ const save = (k, v) => {
   try {
     localStorage.setItem(k, JSON.stringify(v));
   } catch {
-    /* quota / private mode — non-fatal */
+    /* quota / private mode, non-fatal */
   }
 };
 
@@ -90,7 +97,12 @@ const money = (r) =>
 /*  ambient background                                                 */
 /* ------------------------------------------------------------------ */
 
-function Aurora({ still }) {
+function Aurora() {
+  // Glow blobs removed in the refined-dark theme, matte background only.
+  return null;
+}
+
+function _AuroraLegacy({ still }) {
   const blobs = [
     { c: "rgba(10,132,255,0.30)", s: 620, x: "-12%", y: "-14%", d: 0 },
     { c: "rgba(191,90,242,0.22)", s: 520, x: "68%", y: "6%", d: 3 },
@@ -198,11 +210,11 @@ function Lock({ onUnlock, still }) {
         style={{
           width: 74,
           height: 74,
-          borderRadius: 24,
+          borderRadius: 8,
           border: `1px solid ${C.line2}`,
-          background: "rgba(255,255,255,0.06)",
-          backdropFilter: "blur(30px)",
-          WebkitBackdropFilter: "blur(30px)",
+          background: C.glass,
+          backdropFilter: "none",
+          WebkitBackdropFilter: "none",
           display: "grid",
           placeItems: "center",
           marginBottom: 26,
@@ -288,11 +300,11 @@ function Lock({ onUnlock, still }) {
             style={{
               width: "100%",
               padding: "16px 54px 16px 20px",
-              borderRadius: 999,
+              borderRadius: 6,
               border: `1px solid ${state === "bad" ? C.red : C.line2}`,
-              background: "rgba(255,255,255,0.05)",
-              backdropFilter: "blur(24px)",
-              WebkitBackdropFilter: "blur(24px)",
+              background: C.glass,
+              backdropFilter: "none",
+              WebkitBackdropFilter: "none",
               color: C.text,
               fontSize: 16,
               fontFamily: FONT,
@@ -311,7 +323,7 @@ function Lock({ onUnlock, still }) {
               top: 7,
               width: 40,
               height: 40,
-              borderRadius: 999,
+              borderRadius: 6,
               border: "none",
               background: val ? C.blue : "rgba(255,255,255,0.10)",
               color: "#fff",
@@ -443,12 +455,10 @@ function Segmented({ options, value, onChange }) {
     <div
       style={{
         display: "inline-flex",
-        padding: 4,
-        borderRadius: 999,
-        background: "rgba(255,255,255,0.055)",
+        padding: 3,
+        borderRadius: 6,
+        background: "transparent",
         border: `1px solid ${C.line}`,
-        backdropFilter: "blur(24px)",
-        WebkitBackdropFilter: "blur(24px)",
         gap: 2,
         flexWrap: "wrap",
       }}
@@ -463,14 +473,15 @@ function Segmented({ options, value, onChange }) {
               position: "relative",
               border: "none",
               background: "transparent",
-              color: on ? "#0b0b0c" : C.dim,
-              padding: "9px 17px",
-              borderRadius: 999,
-              fontSize: 13.5,
-              fontWeight: 600,
+              color: on ? C.text : C.dim,
+              padding: "8px 15px",
+              borderRadius: 4,
+              fontFamily: FONT_MONO,
+              fontSize: 12,
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
               cursor: "pointer",
-              fontFamily: FONT,
-              transition: "color 220ms ease",
+              transition: "color 200ms ease",
               whiteSpace: "nowrap",
             }}
           >
@@ -481,15 +492,16 @@ function Segmented({ options, value, onChange }) {
                 style={{
                   position: "absolute",
                   inset: 0,
-                  borderRadius: 999,
-                  background: "#f5f5f7",
+                  borderRadius: 4,
+                  background: "#1f2022",
+                  border: `1px solid ${C.line2}`,
                   zIndex: -1,
                 }}
               />
             )}
             {o.label}
             {o.count != null && (
-              <span style={{ opacity: 0.5, marginLeft: 6, fontSize: 12 }}>
+              <span style={{ color: on ? C.amber : C.dim2, marginLeft: 7 }}>
                 {o.count}
               </span>
             )}
@@ -502,20 +514,22 @@ function Segmented({ options, value, onChange }) {
 
 function Pill({ children, tone }) {
   const map = {
-    money: { c: "#a7f3b4", b: "rgba(48,209,88,0.30)", bg: "rgba(48,209,88,0.10)" },
-    info: { c: "#bcdcff", b: "rgba(10,132,255,0.36)", bg: "rgba(10,132,255,0.12)" },
-    plain: { c: C.dim, b: C.line, bg: "rgba(255,255,255,0.04)" },
+    money: C.green,
+    info: C.amber,
+    plain: C.dim,
   };
-  const s = map[tone] || map.plain;
+  const c = map[tone] || map.plain;
   return (
     <span
       style={{
-        fontSize: 11.5,
-        padding: "4px 10px",
-        borderRadius: 999,
-        color: s.c,
-        border: `1px solid ${s.b}`,
-        background: s.bg,
+        fontFamily: FONT_MONO,
+        fontSize: 11,
+        letterSpacing: "0.03em",
+        padding: "3px 8px",
+        borderRadius: 3,
+        color: c,
+        border: `1px solid ${C.line}`,
+        background: "transparent",
         whiteSpace: "nowrap",
       }}
     >
@@ -550,17 +564,11 @@ function Card({ item, kind, onOpen, applied, saved, toggle, still, index }) {
       style={{
         position: "relative",
         cursor: "pointer",
-        borderRadius: 26,
+        borderRadius: 8,
         padding: "1.25rem 1.35rem",
         border: `1px solid ${hover ? C.line2 : C.line}`,
-        background: hover
-          ? "rgba(255,255,255,0.075)"
-          : "rgba(255,255,255,0.042)",
-        backdropFilter: "blur(30px)",
-        WebkitBackdropFilter: "blur(30px)",
-        boxShadow: hover ? "0 22px 60px rgba(0,0,0,0.45)" : "none",
-        transition:
-          "background 260ms ease, border-color 260ms ease, box-shadow 260ms ease",
+        background: hover ? "#191a1c" : C.glass,
+        transition: "background 200ms ease, border-color 200ms ease",
         overflow: "hidden",
       }}
     >
@@ -643,15 +651,11 @@ function Card({ item, kind, onOpen, applied, saved, toggle, still, index }) {
 
 const btn = (primary, active) => ({
   appearance: "none",
-  border: primary ? "1px solid transparent" : `1px solid ${active ? "rgba(48,209,88,0.45)" : C.line}`,
-  background: primary
-    ? "#f5f5f7"
-    : active
-    ? "rgba(48,209,88,0.16)"
-    : "rgba(255,255,255,0.05)",
-  color: primary ? "#0b0b0c" : active ? "#a7f3b4" : C.text,
-  padding: "7px 14px",
-  borderRadius: 999,
+  border: `1px solid ${primary ? C.amber : active ? "rgba(123,191,106,0.5)" : C.line}`,
+  background: primary ? C.amber : active ? "rgba(123,191,106,0.12)" : "transparent",
+  color: primary ? "#0d0d0e" : active ? C.green : C.text,
+  padding: "7px 13px",
+  borderRadius: 6,
   fontSize: 12.5,
   fontWeight: 600,
   cursor: "pointer",
@@ -696,8 +700,8 @@ function Sheet({ open, item, kind, onClose, notes, setNote, still }) {
               inset: 0,
               zIndex: 2000,
               background: "rgba(3,3,4,0.72)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
+              backdropFilter: "none",
+              WebkitBackdropFilter: "none",
             }}
           />
           <motion.div
@@ -720,8 +724,8 @@ function Sheet({ open, item, kind, onClose, notes, setNote, still }) {
               border: `1px solid ${C.line2}`,
               borderBottom: "none",
               background: "rgba(16,16,19,0.94)",
-              backdropFilter: "blur(46px)",
-              WebkitBackdropFilter: "blur(46px)",
+              backdropFilter: "none",
+              WebkitBackdropFilter: "none",
               padding: "0 1.7rem 3rem",
               fontFamily: FONT,
             }}
@@ -774,9 +778,9 @@ function Sheet({ open, item, kind, onClose, notes, setNote, still }) {
                   style={{
                     width: 34,
                     height: 34,
-                    borderRadius: 999,
+                    borderRadius: 6,
                     border: `1px solid ${C.line}`,
-                    background: "rgba(255,255,255,0.06)",
+                    background: C.glass,
                     color: C.text,
                     fontSize: 17,
                     cursor: "pointer",
@@ -805,7 +809,7 @@ function Sheet({ open, item, kind, onClose, notes, setNote, still }) {
             ) : a ? (
               <>
                 <Verdict text={a.verdict} />
-                <Section t={`Why this score — ${item.score}/100`}>{a.rationale}</Section>
+                <Section t={`Why this score: ${item.score}/100`}>{a.rationale}</Section>
                 {a.keywords?.length > 0 && (
                   <ListSection t="Top 5 missing keywords" items={a.keywords} dot={C.blue} />
                 )}
@@ -813,7 +817,7 @@ function Sheet({ open, item, kind, onClose, notes, setNote, still }) {
                   <ListSection t="Red flags in 10 seconds" items={a.flags} dot={C.red} />
                 )}
                 {a.rewrite?.length > 0 && (
-                  <ListSection t="Rewritten experience — XYZ" items={a.rewrite} dot={C.green} />
+                  <ListSection t="Rewritten experience (XYZ)" items={a.rewrite} dot={C.green} />
                 )}
                 <Section t="ATS filter read" box>{a.ats}</Section>
                 <Section t="Hiring manager, 200 resumes deep" box>{a.scan}</Section>
@@ -821,7 +825,7 @@ function Sheet({ open, item, kind, onClose, notes, setNote, still }) {
             ) : (
               <Section t="Analysis" box>
                 Scored on title, company, level and salary band. The full recruiter
-                breakdown needs the job description pulled from the listing — ask
+                breakdown needs the job description pulled from the listing. Ask
                 Claude to run the deep analysis on this role.
               </Section>
             )}
@@ -834,9 +838,9 @@ function Sheet({ open, item, kind, onClose, notes, setNote, still }) {
               rows={6}
               style={{
                 width: "100%",
-                background: "rgba(255,255,255,0.05)",
+                background: C.glass,
                 border: `1px solid ${C.line}`,
-                borderRadius: 16,
+                borderRadius: 6,
                 color: C.text,
                 padding: "13px 15px",
                 fontSize: 14,
@@ -874,9 +878,9 @@ function Section({ t, children, box, mono }) {
         style={
           box
             ? {
-                background: "rgba(255,255,255,0.04)",
+                background: C.glass,
                 border: `1px solid ${C.line}`,
-                borderRadius: 18,
+                borderRadius: 6,
                 padding: "1rem 1.15rem",
               }
             : undefined
@@ -938,7 +942,7 @@ function Verdict({ text }) {
       style={{
         marginTop: 18,
         padding: "1rem 1.15rem",
-        borderRadius: 18,
+        borderRadius: 6,
         border: "1px solid rgba(10,132,255,0.34)",
         background: "rgba(10,132,255,0.12)",
         color: "#cfe6ff",
@@ -996,11 +1000,11 @@ function DigestCard({ still }) {
             bottom: 20,
             zIndex: 1500,
             width: "min(330px, calc(100vw - 40px))",
-            borderRadius: 26,
+            borderRadius: 8,
             border: `1px solid ${C.line2}`,
             background: "rgba(18,18,21,0.92)",
-            backdropFilter: "blur(40px)",
-            WebkitBackdropFilter: "blur(40px)",
+            backdropFilter: "none",
+            WebkitBackdropFilter: "none",
             boxShadow: "0 28px 70px rgba(0,0,0,0.55)",
             padding: "1.15rem 1.25rem 1.05rem",
             fontFamily: FONT,
@@ -1020,8 +1024,8 @@ function DigestCard({ still }) {
               onClick={dismiss}
               aria-label="Dismiss"
               style={{
-                width: 28, height: 28, borderRadius: 999, flexShrink: 0,
-                border: `1px solid ${C.line}`, background: "rgba(255,255,255,0.06)",
+                width: 28, height: 28, borderRadius: 6, flexShrink: 0,
+                border: `1px solid ${C.line}`, background: C.glass,
                 color: C.dim, fontSize: 15, cursor: "pointer", lineHeight: 1,
               }}
             >
@@ -1047,8 +1051,8 @@ function DigestCard({ still }) {
                 <span
                   style={{
                     fontSize: 13, fontWeight: 650, color: C.text,
-                    background: "rgba(255,255,255,0.08)",
-                    borderRadius: 999, padding: "2px 10px", minWidth: 30, textAlign: "center",
+                    background: C.glass,
+                    borderRadius: 6, padding: "2px 10px", minWidth: 30, textAlign: "center",
                   }}
                 >
                   {n}
@@ -1247,8 +1251,8 @@ export default function Atlas() {
                   marginTop: 16,
                 }}
               >
-                Every role and research group worth your time in San Diego — scored,
-                analyzed, and tracked in one place.
+                Every role and research group worth your time in San Diego, scored
+                and tracked in one place.
               </motion.p>
 
               <div
@@ -1266,12 +1270,12 @@ export default function Atlas() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.6, ease: EASE, delay: 0.22 + i * 0.07 }}
                     style={{
-                      borderRadius: 22,
+                      borderRadius: 8,
                       padding: "1.05rem 1.15rem",
                       border: `1px solid ${C.line}`,
-                      background: "rgba(255,255,255,0.045)",
-                      backdropFilter: "blur(30px)",
-                      WebkitBackdropFilter: "blur(30px)",
+                      background: C.glass,
+                      backdropFilter: "none",
+                      WebkitBackdropFilter: "none",
                     }}
                   >
                     <div
@@ -1307,8 +1311,8 @@ export default function Atlas() {
                 top: 0,
                 zIndex: 50,
                 background: "rgba(5,5,6,0.72)",
-                backdropFilter: "blur(28px)",
-                WebkitBackdropFilter: "blur(28px)",
+                backdropFilter: "none",
+                WebkitBackdropFilter: "none",
                 borderBottom: `1px solid ${C.line}`,
                 padding: "13px 1.5rem",
                 marginTop: 26,
@@ -1343,9 +1347,9 @@ export default function Atlas() {
                     flex: 1,
                     minWidth: 170,
                     padding: "11px 17px",
-                    borderRadius: 999,
+                    borderRadius: 6,
                     border: `1px solid ${C.line}`,
-                    background: "rgba(255,255,255,0.05)",
+                    background: C.glass,
                     color: C.text,
                     fontSize: 14,
                     fontFamily: FONT,
@@ -1379,7 +1383,7 @@ export default function Atlas() {
                         background: on ? "rgba(10,132,255,0.16)" : "rgba(255,255,255,0.04)",
                         color: on ? "#cfe6ff" : C.dim,
                         padding: "6px 13px",
-                        borderRadius: 999,
+                        borderRadius: 6,
                         fontSize: 12.5,
                         fontWeight: 600,
                         cursor: "pointer",

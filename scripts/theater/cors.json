@@ -1,0 +1,17 @@
+[
+  {
+    "AllowedOrigins": [
+      "https://portfolio.sladdagiri.org",
+      "http://localhost:5173"
+    ],
+    "AllowedMethods": ["GET", "HEAD", "PUT", "POST"],
+    "AllowedHeaders": ["*"],
+    "ExposeHeaders": [
+      "etag",
+      "content-length",
+      "content-range",
+      "accept-ranges"
+    ],
+    "MaxAgeSeconds": 3600
+  }
+]

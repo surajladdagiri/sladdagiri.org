@@ -8,13 +8,15 @@ import MusicStripPrivacy from "./pages/MusicStripPrivacy";
 import Haven from "./pages/Haven";
 import HavenPrivacy from "./pages/HavenPrivacy";
 import IGAdBlock from "./pages/IGAdBlock";
+import CongressML from "./pages/CongressML";
 import Atlas from "./pages/Atlas";
+import { T } from "./theme";
 
 const Theater = lazy(() => import("./pages/Theater"));
 const Upload = lazy(() => import("./pages/Upload"));
 
 const NAV_LINKS = [
-  { label: "Portfolio", path: "/portfolio" },
+  { label: "Work", path: "/portfolio" },
   { label: "Demos", path: "/demos" },
 ];
 
@@ -29,35 +31,9 @@ function getDocumentTitle(pathname) {
   if (pathname === "/haven") return "HAVEN | Suraj Laddagiri";
   if (pathname === "/haven/privacy") return "HAVEN Privacy | Suraj Laddagiri";
   if (pathname === "/igadblock") return "IGAdBlock | Suraj Laddagiri";
+  if (pathname === "/congress") return "Congressional Vote Prediction | Suraj Laddagiri";
 
-  return "Suraj Laddagiri | Portfolio";
-}
-
-function HomeIcon() {
-  return (
-    <svg
-      width="18"
-      height="18"
-      viewBox="0 0 24 24"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M3 10.5L12 3L21 10.5"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M5.25 9.75V20.25H18.75V9.75"
-        stroke="currentColor"
-        strokeWidth="1.8"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
+  return "Suraj Laddagiri";
 }
 
 function NavBar() {
@@ -72,10 +48,6 @@ function NavBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navBackground = scrolled
-    ? "rgba(11, 11, 12, 0.86)"
-    : "rgba(11, 11, 12, 0.62)";
-
   return (
     <header
       style={{
@@ -85,21 +57,18 @@ function NavBar() {
         right: 0,
         zIndex: 1000,
         width: "100%",
-        background: navBackground,
-        backdropFilter: "blur(18px)",
-        WebkitBackdropFilter: "blur(18px)",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
-        boxShadow: scrolled ? "0 10px 30px rgba(0,0,0,0.24)" : "none",
-        transition:
-          "background 180ms ease, box-shadow 180ms ease, border-color 180ms ease",
+        // Solid matte bar, no translucency, no backdrop blur.
+        background: T.bg,
+        borderBottom: `1px solid ${scrolled ? T.rule : "transparent"}`,
+        transition: "border-color 200ms ease",
       }}
     >
       <div
         style={{
           width: "100%",
-          maxWidth: 1280,
+          maxWidth: T.maxW,
           margin: "0 auto",
-          padding: "14px 24px",
+          padding: "18px 24px",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -113,43 +82,36 @@ function NavBar() {
           }}
           aria-label="Go to home"
           style={{
-            width: 44,
-            height: 44,
-            borderRadius: 14,
-            border: "1px solid rgba(255,255,255,0.1)",
-            background: "rgba(255,255,255,0.04)",
-            color: "#ffffff",
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
+            border: "none",
+            background: "transparent",
+            color: T.ink,
             cursor: "pointer",
-            transition:
-              "transform 160ms ease, background 160ms ease, border-color 160ms ease",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = "rgba(255,255,255,0.08)";
-            e.currentTarget.style.borderColor = "rgba(255,255,255,0.16)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "rgba(255,255,255,0.04)";
-            e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)";
+            padding: 0,
+            fontFamily: T.display,
+            fontSize: 17,
+            fontWeight: 600,
+            letterSpacing: "-0.02em",
+            display: "inline-flex",
+            alignItems: "baseline",
+            gap: 8,
           }}
         >
-          <HomeIcon />
+          Suraj Laddagiri
+          <span style={{ color: T.accent, fontFamily: T.mono, fontSize: 13 }}>
+            ↗
+          </span>
         </button>
 
         <nav
           style={{
             display: "flex",
             alignItems: "center",
-            gap: 10,
-            flexWrap: "wrap",
+            gap: 4,
             justifyContent: "flex-end",
           }}
         >
           {NAV_LINKS.map((link) => {
             const active = location.pathname === link.path;
-
             return (
               <button
                 key={link.path}
@@ -158,33 +120,26 @@ function NavBar() {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
                 style={{
-                  border: active
-                    ? "1px solid rgba(255,255,255,0.14)"
-                    : "1px solid transparent",
-                  background: active
-                    ? "rgba(255,255,255,0.1)"
-                    : "transparent",
-                  color: active ? "#ffffff" : "rgba(255,255,255,0.68)",
+                  border: "none",
+                  background: "transparent",
+                  color: active ? T.ink : T.dim,
                   cursor: "pointer",
-                  padding: "10px 16px",
-                  borderRadius: 999,
-                  fontSize: 14,
-                  fontWeight: 600,
-                  letterSpacing: "-0.01em",
-                  transition:
-                    "background 160ms ease, color 160ms ease, border-color 160ms ease",
+                  padding: "8px 14px",
+                  fontFamily: T.mono,
+                  fontSize: 13,
+                  letterSpacing: "0.04em",
+                  textTransform: "uppercase",
+                  borderBottom: `1px solid ${active ? T.accent : "transparent"}`,
+                  borderRadius: 0,
+                  transition: "color 160ms ease, border-color 160ms ease",
                 }}
                 onMouseEnter={(e) => {
-                  if (!active) {
-                    e.currentTarget.style.color = "#ffffff";
-                    e.currentTarget.style.background = "rgba(255,255,255,0.05)";
-                  }
+                  e.currentTarget.style.color = T.ink;
+                  if (!active) e.currentTarget.style.borderColor = T.rule;
                 }}
                 onMouseLeave={(e) => {
-                  if (!active) {
-                    e.currentTarget.style.color = "rgba(255,255,255,0.68)";
-                    e.currentTarget.style.background = "transparent";
-                  }
+                  e.currentTarget.style.color = active ? T.ink : T.dim;
+                  if (!active) e.currentTarget.style.borderColor = "transparent";
                 }}
               >
                 {link.label}
@@ -208,13 +163,13 @@ function Layout() {
   return (
     <div
       style={{
-        background: "#0b0b0c",
+        background: T.bg,
         minHeight: "100vh",
-        color: "#ffffff",
+        color: T.ink,
       }}
     >
       <NavBar />
-      <main style={{ paddingTop: 84 }}>
+      <main style={{ paddingTop: 72 }}>
         <Outlet />
       </main>
     </div>
@@ -233,6 +188,7 @@ export default function App() {
         <Route path="haven" element={<Haven />} />
         <Route path="haven/privacy" element={<HavenPrivacy />} />
         <Route path="igadblock" element={<IGAdBlock />} />
+        <Route path="congress" element={<CongressML />} />
       </Route>
       {/* unlisted */}
       <Route path="/atlas" element={<Atlas />} />

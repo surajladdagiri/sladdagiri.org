@@ -6,7 +6,7 @@ function GlowOrb({ style }) {
       style={{
         position: "absolute",
         borderRadius: "50%",
-        filter: "blur(70px)",
+        filter: "none", background: "transparent",
         opacity: 0.24,
         pointerEvents: "none",
         ...style,
@@ -30,8 +30,8 @@ function PolicyPill({ children }) {
         fontSize: 13,
         fontWeight: 500,
         letterSpacing: "-0.01em",
-        backdropFilter: "blur(10px)",
-        WebkitBackdropFilter: "blur(10px)",
+        backdropFilter: "none",
+        WebkitBackdropFilter: "none",
       }}
     >
       {children}
@@ -60,7 +60,7 @@ function SectionCard({ title, children, delay = "0ms" }) {
           fontSize: "clamp(22px, 3vw, 30px)",
           lineHeight: 1.08,
           letterSpacing: "-0.04em",
-          color: "#f5f5f7",
+          color: "#ececec",
         }}
       >
         {title}
@@ -103,7 +103,7 @@ function CheckItem({ children }) {
           justifyContent: "center",
           background: "rgba(255,255,255,0.06)",
           border: "1px solid rgba(255,255,255,0.08)",
-          color: "#f5f5f7",
+          color: "#ececec",
           marginTop: 1,
         }}
       >
@@ -150,8 +150,8 @@ export default function HavenPrivacy() {
       style={{
         minHeight: "100vh",
         background:
-          "radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 22%), #0b0b0c",
-        color: "#f5f5f7",
+          "radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 22%), #0d0d0e",
+        color: "#ececec",
         overflow: "hidden",
       }}
     >
@@ -261,7 +261,7 @@ export default function HavenPrivacy() {
                   fontSize: "clamp(42px, 7vw, 82px)",
                   lineHeight: 0.94,
                   letterSpacing: "-0.06em",
-                  color: "#f5f5f7",
+                  color: "#ececec",
                   maxWidth: 800,
                 }}
               >
@@ -376,7 +376,7 @@ export default function HavenPrivacy() {
                   padding: "12px 16px",
                   borderRadius: 18,
                   textDecoration: "none",
-                  color: "#f5f5f7",
+                  color: "#ececec",
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.12)",
                   fontSize: 15,

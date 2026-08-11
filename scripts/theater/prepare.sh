@@ -24,6 +24,10 @@ OUT="${2:-./out}"
 CRF="${CRF:-18}"          # 18 is visually transparent. 20 for a smaller file.
 PRESET="${PRESET:-slow}"
 AAC_BITRATE="${AAC_BITRATE:-256k}"
+MODE="${MODE:-auto}"              # auto | remux | h264
+MAX_HEIGHT="${MAX_HEIGHT:-1080}"  # 4K sources come down to this. 2160 keeps 4K.
+VBITRATE="${VBITRATE:-10M}"       # only used by the hardware encoder
+HW="${HW:-1}"                     # 1 = use Apple VideoToolbox when available
 
 if [[ -z "$SRC" || ! -f "$SRC" ]]; then
   echo "usage: $0 /path/to/movie.mkv [outdir]" >&2
@@ -40,8 +44,23 @@ probe() { ffprobe -v error -print_format json -show_streams -show_format "$SRC";
 INFO="$(probe)"
 
 VCODEC=$(jq -r '[.streams[]|select(.codec_type=="video")][0].codec_name // "none"' <<<"$INFO")
-ACODEC=$(jq -r '[.streams[]|select(.codec_type=="audio")][0].codec_name // "none"' <<<"$INFO")
-ACHAN=$( jq -r '[.streams[]|select(.codec_type=="audio")][0].channels  // 2'      <<<"$INFO")
+# ------------------------------------------------------- audio track choice
+#
+# Taking audio stream 0 is wrong on any MULTi release: the first track is
+# whichever language the packager put first, which for a French MULTi rip is
+# French. Prefer a language tag instead, and fall back to the first track only
+# when nothing matches.
+AUDIO_LANG="${AUDIO_LANG:-eng}"
+if [[ -n "${AUDIO_TRACK:-}" ]]; then
+  AIDX="$AUDIO_TRACK"
+else
+  AIDX=$(jq -r --arg L "$AUDIO_LANG" \
+    '[.streams[]|select(.codec_type=="audio")] | to_entries
+     | (map(select(.value.tags.language==$L))[0].key) // 0' <<<"$INFO")
+fi
+
+ACODEC=$(jq -r "[.streams[]|select(.codec_type==\"audio\")][$AIDX].codec_name // \"none\"" <<<"$INFO")
+ACHAN=$( jq -r "[.streams[]|select(.codec_type==\"audio\")][$AIDX].channels  // 2"      <<<"$INFO")
 WIDTH=$( jq -r '[.streams[]|select(.codec_type=="video")][0].width     // 0'      <<<"$INFO")
 HEIGHT=$(jq -r '[.streams[]|select(.codec_type=="video")][0].height    // 0'      <<<"$INFO")
 PIXFMT=$(jq -r '[.streams[]|select(.codec_type=="video")][0].pix_fmt   // ""'     <<<"$INFO")
@@ -54,18 +73,147 @@ echo "source : ${WIDTH}x${HEIGHT}  video=$VCODEC  audio=$ACODEC (${ACHAN}ch)  $(
 # H.264 is the only codec every browser decodes. HEVC plays in Safari and in
 # Chrome on some hardware, but "some hardware" is not a plan when the whole
 # point is that it works on her laptop without her thinking about it.
-if [[ "$VCODEC" == "h264" ]]; then
+IS_HDR=0;  case "$TRC"    in smpte2084|arib-std-b67)   IS_HDR=1  ;; esac
+IS_DEEP=0; case "$PIXFMT" in *10le|*10be|*12le|*12be) IS_DEEP=1 ;; esac
+
+# Constrain BOTH dimensions, not just height.
+#
+# A 2.40:1 scope film is something like 3840x2074, so capping only the height
+# yields 2000x1080 — wider than 1080p and needlessly large. Capping both and
+# letting the aspect ratio decide gives 1920x1037, which is what you want.
+MAX_WIDTH=$(( MAX_HEIGHT * 16 / 9 ))
+NEEDS_SCALE=0
+[[ "$HEIGHT" -gt "$MAX_HEIGHT" || "$WIDTH" -gt "$MAX_WIDTH" ]] && NEEDS_SCALE=1
+
+# Which tone-mapping backend does this ffmpeg actually have?
+#
+# libplacebo is preferred: one filter, GPU-accelerated, better algorithms.
+# zscale+tonemap is the widely-available fallback. Plenty of ffmpeg builds ship
+# with neither — notably some Homebrew bottles — so this is checked rather than
+# assumed, because the alternative is discovering it after the probe output has
+# already scrolled past and ffmpeg dies with "No such filter".
+FILTERS="$(ffmpeg -hide_banner -filters 2>/dev/null || true)"
+TONEMAP_BACKEND="none"
+grep -q " zscale "     <<<"$FILTERS" && TONEMAP_BACKEND="zscale"
+grep -q " libplacebo " <<<"$FILTERS" && TONEMAP_BACKEND="libplacebo"
+
+if [[ "$MODE" == "remux" ]]; then
+  # Keep the video bitstream exactly as-is — 4K, HDR, 10-bit, all of it — and
+  # only change the container. Minutes instead of hours, zero quality loss.
+  #
+  # The cost is compatibility. HEVC in MP4 plays in Safari and in Chrome on
+  # Apple silicon, but not in Chrome on most Windows machines and not in
+  # Firefox. HDR will only look right on an HDR-capable display; on an SDR
+  # screen the browser does its own rough tone-mapping, which is usually
+  # acceptable but is out of our hands.
+  VARGS=(-c:v copy)
+  if [[ "$VCODEC" == "hevc" ]]; then
+    # Without the hvc1 tag, ffmpeg writes hev1 and Safari/QuickTime silently
+    # refuse to play the file. This single flag is the difference between
+    # "works" and "black screen with audio".
+    VARGS+=(-tag:v hvc1)
+  fi
+  echo "video  : COPY $VCODEC ${WIDTH}x${HEIGHT}$([[ $IS_HDR -eq 1 ]] && echo ' HDR') untouched  (MODE=remux)"
+  echo "         no scaling, no tone-mapping, no re-encode — container change only"
+  echo "         !! plays in Safari + Chrome-on-Apple-silicon. Test in BOTH of your"
+  echo "            browsers on a short sample before trusting it for a whole film."
+
+elif [[ "$VCODEC" == "h264" && $IS_HDR -eq 0 && $IS_DEEP -eq 0 && $NEEDS_SCALE -eq 0 ]]; then
   VARGS=(-c:v copy)
   echo "video  : copy (lossless remux)"
 else
-  VARGS=(-c:v libx264 -preset "$PRESET" -crf "$CRF" -pix_fmt yuv420p -profile:v high -level 4.1)
-  echo "video  : TRANSCODE $VCODEC -> h264 crf=$CRF preset=$PRESET  (this will take hours)"
+  # Filter ORDER is the single biggest lever on how long this takes.
+  #
+  # Tone-mapping cost is per-pixel, so doing it at 2160p costs four times what
+  # it costs at 1080p. Measured on a 4K HDR sample, tonemap-then-scale was over
+  # 1.5x slower than scale-then-tonemap and didn't even finish in the time the
+  # other one took. Scaling in PQ space first is marginally less correct in
+  # theory and invisible in practice — worth hours of your evening.
+  VF=""
+  if [[ $NEEDS_SCALE -eq 1 ]]; then
+    VF="scale=w=min(iw\,$MAX_WIDTH):h=min(ih\,$MAX_HEIGHT):force_original_aspect_ratio=decrease:force_divisible_by=2"
+  fi
+
+  if [[ $IS_HDR -eq 1 ]]; then
+    # Without this, PQ-encoded HDR gets reinterpreted as if it were SDR gamma
+    # and comes out flat, grey and washed out. This converts to linear light,
+    # compresses 1000+ nit highlights into SDR range, and retags as bt709.
+    case "$TONEMAP_BACKEND" in
+      libplacebo)
+        VF="${VF:+$VF,}libplacebo=tonemapping=bt.2390:colorspace=bt709:color_primaries=bt709:color_trc=bt709:format=yuv420p"
+        ;;
+      zscale)
+        VF="${VF:+$VF,}zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709"
+        VF="$VF,tonemap=tonemap=${TONEMAP_ALGO:-hable}:desat=0"
+        VF="$VF,zscale=t=bt709:m=bt709:r=tv,format=yuv420p"
+        ;;
+      none)
+        cat >&2 <<'EOF'
+
+  !! This is HDR, but your ffmpeg has neither zscale nor libplacebo, so it
+     cannot be tone-mapped. Converting anyway would produce a flat, grey,
+     washed-out picture — so this stops here instead of wasting your time.
+
+     Fix (macOS):   brew reinstall ffmpeg
+                    ffmpeg -filters | grep zscale     # confirm it's there now
+
+     If brew's build still lacks it:
+                    brew tap homebrew-ffmpeg/ffmpeg
+                    brew install homebrew-ffmpeg/ffmpeg/ffmpeg --with-zimg
+
+     To convert anyway and accept the washed-out look:
+                    ALLOW_NO_TONEMAP=1 ./prepare.sh ...
+
+EOF
+        if [[ "${ALLOW_NO_TONEMAP:-0}" != "1" ]]; then exit 1; fi
+        echo "         proceeding WITHOUT tone-mapping — expect a grey picture" >&2
+        VF="${VF:+$VF,}format=yuv420p"
+        ;;
+    esac
+  else
+    # Browsers don't decode H.264 High 10, so anything deeper than 8 bits has
+    # to come down whether or not it's HDR.
+    VF="${VF:+$VF,}format=yuv420p"
+  fi
+
+  # Apple's hardware encoder is roughly an order of magnitude faster than x264
+  # for this. Quality per bit is worse, which is why it runs at a fixed high
+  # bitrate rather than pretending to be CRF — at 10 Mbps for 1080p that
+  # difference isn't visible on a laptop.
+  if [[ "$HW" == "1" ]] && ffmpeg -hide_banner -encoders 2>/dev/null | grep -q h264_videotoolbox; then
+    VARGS=(-vf "$VF" -c:v h264_videotoolbox -b:v "$VBITRATE" -profile:v high)
+    ENC="h264_videotoolbox (Apple hardware) @ $VBITRATE"
+  else
+    VARGS=(-vf "$VF" -c:v libx264 -preset "$PRESET" -crf "$CRF" -profile:v high -level 4.1)
+    ENC="libx264 crf=$CRF preset=$PRESET (software — slow)"
+  fi
+
+  echo "video  : TRANSCODE $VCODEC ${WIDTH}x${HEIGHT}$([[ $IS_HDR -eq 1 ]] && echo ' HDR')$([[ $IS_DEEP -eq 1 ]] && echo ' 10-bit')"
+  echo "         -> $ENC"
+  [[ $NEEDS_SCALE -eq 1 ]] && echo "         scaling to fit ${MAX_WIDTH}x${MAX_HEIGHT}  (MAX_HEIGHT=2160 keeps 4K)"
+  [[ $IS_HDR -eq 1 ]]      && echo "         tone-mapping HDR -> SDR via $TONEMAP_BACKEND (after scaling, so it runs at ${MAX_HEIGHT}p)"
 fi
 
 # ---------------------------------------------------------------- audio path
 # A 5.1 AC3 track downmixed by ffmpeg's default matrix buries the dialogue under
 # the effects channel. The explicit pan below lifts centre (dialogue) and pulls
 # the surrounds back, which is what you want on laptop speakers and headphones.
+# Show every track and mark the chosen one, so a wrong pick is visible here
+# rather than forty minutes into a film.
+NAUD=$(jq -r '[.streams[]|select(.codec_type=="audio")]|length' <<<"$INFO")
+if [[ "$NAUD" -gt 1 ]]; then
+  echo "audio  : $NAUD tracks available"
+  for ai in $(seq 0 $((NAUD - 1))); do
+    al=$( jq -r "[.streams[]|select(.codec_type==\"audio\")][$ai].tags.language // \"und\"" <<<"$INFO")
+    aco=$(jq -r "[.streams[]|select(.codec_type==\"audio\")][$ai].codec_name"              <<<"$INFO")
+    ach=$(jq -r "[.streams[]|select(.codec_type==\"audio\")][$ai].channels // 2"           <<<"$INFO")
+    ati=$(jq -r "[.streams[]|select(.codec_type==\"audio\")][$ai].tags.title // \"\""      <<<"$INFO")
+    mark="   "; [[ "$ai" == "$AIDX" ]] && mark=" ->"
+    echo "        $mark [$ai] $al $aco ${ach}ch $ati"
+  done
+  echo "         (wrong one? AUDIO_LANG=fre or AUDIO_TRACK=1 to override)"
+fi
+
 if [[ "$ACODEC" == "aac" && "$ACHAN" -le 2 ]]; then
   AARGS=(-c:a copy)
   echo "audio  : copy"
@@ -149,10 +297,26 @@ shopt -u nullglob
 # it the browser must download the entire file before it can render frame one,
 # which defeats the whole exercise.
 if [[ "${SKIP_VIDEO:-0}" != "1" ]]; then
+  # Predict the output size before spending an hour producing it. Only the
+  # hardware encoder has a fixed bitrate to predict from; x264's CRF is
+  # content-dependent, so no estimate is offered there rather than a wrong one.
+  if [[ "${ENC:-}" == h264_videotoolbox* ]]; then
+    VB_NUM=$(echo "$VBITRATE" | sed 's/[Mm]$//')
+    EST_GB=$(echo "scale=1; ($VB_NUM * 1000000 + 256000) * $DUR / 8 / 1073741824" | bc)
+    echo
+    echo "estimate: ~${EST_GB} GB output (${VBITRATE} video for $(printf '%.0f' "$DUR")s)"
+    if (( $(echo "$EST_GB > 9.5" | bc -l) )); then
+      echo "  !! That's at or over R2's 10 GB free tier. For a feature-length film,"
+      echo "     VBITRATE=6M is still very good at 1080p and lands near $(echo "scale=1; (6000000+256000)*$DUR/8/1073741824" | bc) GB."
+      echo "     Ctrl-C now and re-run with VBITRATE=6M if you'd rather."
+      sleep 5
+    fi
+  fi
+
   echo
   echo "muxing -> $OUT/movie.mp4"
   ffmpeg -y -stats -v warning -i "$SRC" \
-    -map 0:v:0 -map 0:a:0 \
+    -map 0:v:0 -map "0:a:$AIDX" \
     "${VARGS[@]}" "${AARGS[@]}" \
     -movflags +faststart \
     -max_muxing_queue_size 4096 \
