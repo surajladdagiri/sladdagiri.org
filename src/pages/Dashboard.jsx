@@ -13,12 +13,21 @@ const NET_COLOR = {
   unknown: T.dim,
 };
 
+// Shared column layout for the recent-visits table header and rows, so they
+// always line up. Fixed columns for the short fields, flexible for the rest.
+const ROW = {
+  display: "grid",
+  gridTemplateColumns: "132px 150px minmax(140px,1fr) 112px minmax(150px,1fr) 130px",
+  columnGap: 14,
+  padding: "11px 16px",
+};
+
 function fmtTime(ms) {
   const d = new Date(ms);
   return d.toLocaleString(undefined, {
     month: "short",
     day: "numeric",
-    hour: "2-digit",
+    hour: "numeric",
     minute: "2-digit",
   });
 }
@@ -327,26 +336,30 @@ export default function Dashboard() {
             {/* recent visits */}
             <Eyebrow style={{ display: "block", marginBottom: 14 }}>Recent visits</Eyebrow>
             <div style={{ border: `1px solid ${T.rule}`, borderRadius: T.radius, overflow: "hidden" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "100px 116px 1fr 84px 1fr 128px", gap: 0, fontFamily: T.mono, fontSize: 10.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.dim, padding: "10px 14px", borderBottom: `1px solid ${T.rule}` }}>
-                <div>When</div><div>IP</div><div>Location</div><div>Network</div><div>ISP / org</div><div>Device</div>
-              </div>
-              <div style={{ maxHeight: 460, overflowY: "auto" }}>
-                {d.recent.map((v, i) => (
-                  <div key={i} style={{ display: "grid", gridTemplateColumns: "100px 116px 1fr 84px 1fr 128px", gap: 0, fontSize: 12.5, padding: "10px 14px", borderTop: i === 0 ? "none" : `1px solid ${T.rule}`, alignItems: "center" }}>
-                    <div style={{ fontFamily: T.mono, color: T.dim }}>{fmtTime(v.ts)}</div>
-                    <div style={{ fontFamily: T.mono, color: T.ink, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{v.ip || "—"}</div>
-                    <div style={{ fontFamily: T.body, color: T.dim, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                      {[v.city, v.region, v.country].filter(Boolean).join(", ") || "—"}
-                    </div>
-                    <div><Badge type={v.net_type} /></div>
-                    <div style={{ fontFamily: T.body, color: T.dim, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={v.path || ""}>
-                      {v.org || v.path || "—"}
-                    </div>
-                    <div style={{ fontFamily: T.body, color: T.dim, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                      {v.device === "bot" ? "Bot" : [v.os, v.browser].filter(Boolean).join(" · ") || "—"}
-                    </div>
+              <div style={{ overflowX: "auto" }}>
+                <div style={{ minWidth: 920 }}>
+                  <div style={{ ...ROW, fontFamily: T.mono, fontSize: 10.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.dim, borderBottom: `1px solid ${T.rule}` }}>
+                    <div>When</div><div>IP</div><div>Location</div><div>Network</div><div>ISP / org</div><div>Device</div>
                   </div>
-                ))}
+                  <div style={{ maxHeight: 460, overflowY: "auto" }}>
+                    {d.recent.map((v, i) => (
+                      <div key={i} style={{ ...ROW, fontSize: 12.5, borderTop: i === 0 ? "none" : `1px solid ${T.rule}`, alignItems: "center" }}>
+                        <div style={{ fontFamily: T.mono, color: T.dim, whiteSpace: "nowrap" }}>{fmtTime(v.ts)}</div>
+                        <div style={{ fontFamily: T.mono, color: T.ink, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={v.ip || ""}>{v.ip || "—"}</div>
+                        <div style={{ fontFamily: T.body, color: T.dim, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                          {[v.city, v.region, v.country].filter(Boolean).join(", ") || "—"}
+                        </div>
+                        <div><Badge type={v.net_type} /></div>
+                        <div style={{ fontFamily: T.body, color: T.dim, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={v.path || ""}>
+                          {v.org || v.path || "—"}
+                        </div>
+                        <div style={{ fontFamily: T.body, color: T.dim, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                          {v.device === "bot" ? "Bot" : [v.os, v.browser].filter(Boolean).join(" · ") || "—"}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </>
