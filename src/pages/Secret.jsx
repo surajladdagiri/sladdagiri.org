@@ -293,14 +293,15 @@ export default function Secret() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 30, marginBottom: 40 }}>
               <BarList title="Top pages" rows={d.topPaths} label={(r) => r.path} />
               <BarList title="Top locations" rows={d.topCities} label={(r) => [r.city, r.region, r.country].filter(Boolean).join(", ")} />
-              <BarList title="Non-residential networks" rows={d.topOrgs} label={(r) => r.org} />
+              <BarList title="Top ISPs / networks" rows={d.topNetworks || []} label={(r) => r.org} />
+              <BarList title="Non-residential only" rows={d.topOrgs} label={(r) => r.org} />
             </div>
 
             {/* recent visits */}
             <Eyebrow style={{ display: "block", marginBottom: 14 }}>Recent visits</Eyebrow>
             <div style={{ border: `1px solid ${T.rule}`, borderRadius: T.radius, overflow: "hidden" }}>
               <div style={{ display: "grid", gridTemplateColumns: "120px 130px 1fr 110px 1fr", gap: 0, fontFamily: T.mono, fontSize: 10.5, letterSpacing: "0.06em", textTransform: "uppercase", color: T.dim, padding: "10px 14px", borderBottom: `1px solid ${T.rule}` }}>
-                <div>When</div><div>IP</div><div>Location</div><div>Network</div><div>Org / path</div>
+                <div>When</div><div>IP</div><div>Location</div><div>Network</div><div>ISP / org</div>
               </div>
               <div style={{ maxHeight: 460, overflowY: "auto" }}>
                 {d.recent.map((v, i) => (
@@ -311,8 +312,8 @@ export default function Secret() {
                       {[v.city, v.region, v.country].filter(Boolean).join(", ") || "—"}
                     </div>
                     <div><Badge type={v.net_type} /></div>
-                    <div style={{ fontFamily: T.body, color: T.dim, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                      {v.net_type !== "residential" && v.org ? v.org : v.path || "—"}
+                    <div style={{ fontFamily: T.body, color: T.dim, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }} title={v.path || ""}>
+                      {v.org || v.path || "—"}
                     </div>
                   </div>
                 ))}

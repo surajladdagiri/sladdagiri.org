@@ -244,7 +244,7 @@ async function stats(req, env) {
 
   const [
     total, uniqueIps, today, byDay, topPaths, topCountries, topCities,
-    topOrgs, netTypes, recent,
+    topOrgs, topNetworks, netTypes, recent,
   ] = await Promise.all([
     one(`SELECT COUNT(*) FROM visits`),
     one(`SELECT COUNT(DISTINCT ip) FROM visits`),
@@ -257,6 +257,7 @@ async function stats(req, env) {
     many(`SELECT country, COUNT(*) AS n FROM visits WHERE country IS NOT NULL GROUP BY country ORDER BY n DESC LIMIT 10`),
     many(`SELECT city, region, country, COUNT(*) AS n FROM visits WHERE city IS NOT NULL GROUP BY city, region, country ORDER BY n DESC LIMIT 10`),
     many(`SELECT org, net_type, COUNT(*) AS n FROM visits WHERE net_type != 'residential' AND org IS NOT NULL GROUP BY org ORDER BY n DESC LIMIT 12`),
+    many(`SELECT org, net_type, COUNT(*) AS n FROM visits WHERE org IS NOT NULL GROUP BY org ORDER BY n DESC LIMIT 12`),
     many(`SELECT net_type, COUNT(*) AS n FROM visits GROUP BY net_type ORDER BY n DESC`),
     many(
       `SELECT ts, ip, city, region, country, org, net_type, asn, path
@@ -265,7 +266,7 @@ async function stats(req, env) {
   ]);
 
   return json(
-    { total, uniqueIps, today, byDay, topPaths, topCountries, topCities, topOrgs, netTypes, recent },
+    { total, uniqueIps, today, byDay, topPaths, topCountries, topCities, topOrgs, topNetworks, netTypes, recent },
     env,
     200,
     req
