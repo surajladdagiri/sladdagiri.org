@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { T, Eyebrow, Rule } from "../theme";
 import { ANALYTICS_URL } from "../analytics";
 
-const TOKEN_KEY = "secret.token.v1";
+const TOKEN_KEY = "dashboard.token.v1";
 
 const NET_COLOR = {
   residential: T.green,
@@ -199,7 +199,7 @@ function Login({ onToken }) {
   );
 }
 
-export default function Secret() {
+export default function Dashboard() {
   const [token, setToken] = useState(() => sessionStorage.getItem(TOKEN_KEY));
   const [data, setData] = useState(null);
   const [err, setErr] = useState(null);

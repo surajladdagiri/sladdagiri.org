@@ -15,14 +15,14 @@ import { sendBeacon } from "./analytics";
 
 const Theater = lazy(() => import("./pages/Theater"));
 const Upload = lazy(() => import("./pages/Upload"));
-const Secret = lazy(() => import("./pages/Secret"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
 
 // Logs a page view on every route change. The admin dashboard itself is not
 // logged. Fails silently and never blocks rendering.
 function VisitBeacon() {
   const location = useLocation();
   useEffect(() => {
-    if (location.pathname.startsWith("/secret")) return;
+    if (location.pathname.startsWith("/dashboard")) return;
     sendBeacon(location.pathname);
   }, [location.pathname]);
   return null;
@@ -220,10 +220,10 @@ export default function App() {
         }
       />
       <Route
-        path="/secret"
+        path="/dashboard"
         element={
           <Suspense fallback={<div style={{ minHeight: "100vh", background: "#0d0d0e" }} />}>
-            <Secret />
+            <Dashboard />
           </Suspense>
         }
       />

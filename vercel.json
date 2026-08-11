@@ -27,7 +27,7 @@
       ]
     },
     {
-      "source": "/secret",
+      "source": "/dashboard",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive, nosnippet" },
         { "key": "Cache-Control", "value": "no-store, max-age=0" },
