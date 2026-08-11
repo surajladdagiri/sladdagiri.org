@@ -59,7 +59,7 @@ export default function IGAdBlock() {
         </div>
 
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 30 }}>
-          <Btn href="https://github.com/surajladdagiri/IGAdBlock" target="_blank" variant="solid">GitHub ↗</Btn>
+          <Btn href="https://github.com/surajladdagiri/IGAdBlock" target="_blank" variant="solid">GitHub</Btn>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(160px,1fr))", border: `1px solid ${T.rule}`, borderRadius: T.radius, overflow: "hidden" }}>

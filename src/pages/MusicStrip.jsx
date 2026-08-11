@@ -76,8 +76,8 @@ export default function MusicStrip() {
         </div>
 
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 30 }}>
-          <Btn href="https://apps.apple.com/us/app/music-strip/id6761938199" target="_blank" variant="solid">App Store ↗</Btn>
-          <Btn href="https://github.com/surajladdagiri/music-strip" target="_blank">GitHub ↗</Btn>
+          <Btn href="https://apps.apple.com/us/app/music-strip/id6761938199" target="_blank" variant="solid">App Store</Btn>
+          <Btn href="https://github.com/surajladdagiri/music-strip" target="_blank">GitHub</Btn>
           <Btn onClick={() => navigate("/musicstrip/privacy")}>Privacy</Btn>
         </div>
 

@@ -63,8 +63,8 @@ export default function Haven() {
         </div>
 
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 30 }}>
-          <Btn href="https://apps.apple.com/us/app/haven-app/id6761937548" target="_blank" variant="solid">App Store ↗</Btn>
-          <Btn href="https://github.com/surajladdagiri/HAVEN/tree/cloud" target="_blank">GitHub ↗</Btn>
+          <Btn href="https://apps.apple.com/us/app/haven-app/id6761937548" target="_blank" variant="solid">App Store</Btn>
+          <Btn href="https://github.com/surajladdagiri/HAVEN/tree/cloud" target="_blank">GitHub</Btn>
           <Btn href={`${baseUrl}haven_uno_r4_haptics.ino`} download>Arduino code</Btn>
           <Btn href={`${baseUrl}haven_viewer_v3.py`} download>Python viewer</Btn>
           <Btn onClick={() => navigate("/haven/privacy")}>Privacy</Btn>

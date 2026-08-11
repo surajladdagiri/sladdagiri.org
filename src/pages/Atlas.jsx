@@ -625,7 +625,7 @@ function Card({ item, kind, onOpen, applied, saved, toggle, still, index }) {
             rel="noreferrer"
             style={btn(true)}
           >
-            {isLab ? "Lab site" : "Listing"} ↗
+            {isLab ? "Lab site" : "Listing"}
           </motion.a>
         )}
         <motion.button
@@ -794,7 +794,7 @@ function Sheet({ open, item, kind, onClose, notes, setNote, still }) {
 
             {item.url && (
               <a href={item.url} target="_blank" rel="noreferrer" style={{ ...btn(true), marginBottom: 6 }}>
-                {isLab ? "Open lab site" : "Open listing"} ↗
+                {isLab ? "Open lab site" : "Open listing"}
               </a>
             )}
 

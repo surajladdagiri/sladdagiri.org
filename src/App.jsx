@@ -91,15 +91,9 @@ function NavBar() {
             fontSize: 17,
             fontWeight: 600,
             letterSpacing: "-0.02em",
-            display: "inline-flex",
-            alignItems: "baseline",
-            gap: 8,
           }}
         >
           Suraj Laddagiri
-          <span style={{ color: T.accent, fontFamily: T.mono, fontSize: 13 }}>
-            ↗
-          </span>
         </button>
 
         <nav

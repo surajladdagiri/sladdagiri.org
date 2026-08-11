@@ -163,9 +163,9 @@ export default function Portfolio() {
           { src: `${baseUrl}IMG_1843.PNG`, alt: "Music Strip music sync screen" },
         ],
         links: [
-          { label: "App Store ↗", href: "https://apps.apple.com/us/app/music-strip/id6761938199", primary: true },
+          { label: "App Store", href: "https://apps.apple.com/us/app/music-strip/id6761938199", primary: true },
           { label: "Details", to: "/musicstrip" },
-          { label: "GitHub ↗", href: "https://github.com/surajladdagiri/music-strip" },
+          { label: "GitHub", href: "https://github.com/surajladdagiri/music-strip" },
           { label: "Privacy", to: "/musicstrip/privacy" },
         ],
       },
@@ -183,9 +183,9 @@ export default function Portfolio() {
           { label: "Path refresh", value: "~0.86 s" },
         ],
         links: [
-          { label: "App Store ↗", href: "https://apps.apple.com/us/app/haven-app/id6761937548", primary: true },
+          { label: "App Store", href: "https://apps.apple.com/us/app/haven-app/id6761937548", primary: true },
           { label: "Details", to: "/haven" },
-          { label: "GitHub ↗", href: "https://github.com/surajladdagiri/HAVEN/tree/cloud" },
+          { label: "GitHub", href: "https://github.com/surajladdagiri/HAVEN/tree/cloud" },
           { label: "Arduino code", href: `${baseUrl}haven_uno_r4_haptics.ino`, download: true },
           { label: "Python viewer", href: `${baseUrl}haven_viewer_v3.py`, download: true },
           { label: "Privacy", to: "/haven/privacy" },
@@ -206,7 +206,7 @@ export default function Portfolio() {
         ],
         links: [
           { label: "Case study", to: "/congress", primary: true },
-          { label: "GitHub ↗", href: "https://github.com/therab6it/UCSD_CSE151A-SS1/tree/Milestone-4" },
+          { label: "GitHub", href: "https://github.com/therab6it/UCSD_CSE151A-SS1/tree/Milestone-4" },
         ],
       },
       {
@@ -223,7 +223,7 @@ export default function Portfolio() {
           { label: "Release", value: "GitHub Releases" },
         ],
         links: [
-          { label: "GitHub ↗", href: "https://github.com/surajladdagiri/IGAdBlock", primary: true },
+          { label: "GitHub", href: "https://github.com/surajladdagiri/IGAdBlock", primary: true },
           { label: "Details", to: "/igadblock" },
         ],
       },

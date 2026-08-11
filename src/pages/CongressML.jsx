@@ -71,7 +71,7 @@ export default function CongressML() {
 
         <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginBottom: 30 }}>
           <Btn href="https://github.com/therab6it/UCSD_CSE151A-SS1/tree/Milestone-4" target="_blank" variant="solid">
-            GitHub ↗
+            GitHub
           </Btn>
           <Btn onClick={() => navigate("/portfolio")}>All work</Btn>
         </div>

@@ -225,7 +225,7 @@ export default function Home() {
 
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
             <Btn href={resumeUrl} variant="solid" target="_blank">
-              Résumé ↗
+              Resume
             </Btn>
             <Btn onClick={() => navigate("/portfolio")}>Work</Btn>
             <Btn onClick={() => navigate("/demos")}>Demos</Btn>
