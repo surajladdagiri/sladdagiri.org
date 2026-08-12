@@ -285,7 +285,7 @@ async function stats(req, env) {
 
   const [
     total, uniqueIps, today, byDay, topPaths, topCountries, topCities,
-    topOrgs, topNetworks, netTypes, devices, oses, browsers, recent,
+    topOrgs, topNetworks, netTypes, devices, oses, browsers, visitors,
   ] = await Promise.all([
     one(`SELECT COUNT(*) FROM visits`),
     one(`SELECT COUNT(DISTINCT ip) FROM visits`),
@@ -303,18 +303,94 @@ async function stats(req, env) {
     many(`SELECT device, COUNT(*) AS n FROM visits WHERE device IS NOT NULL GROUP BY device ORDER BY n DESC`),
     many(`SELECT os, COUNT(*) AS n FROM visits WHERE os IS NOT NULL GROUP BY os ORDER BY n DESC LIMIT 8`),
     many(`SELECT browser, COUNT(*) AS n FROM visits WHERE browser IS NOT NULL GROUP BY browser ORDER BY n DESC LIMIT 8`),
+    // One row per unique IP: its latest visit's details, total visit count, and
+    // any saved nickname. Window functions pick the most recent row per IP.
     many(
-      `SELECT ts, ip, city, region, country, org, net_type, asn, path, device, os, browser
-       FROM visits ORDER BY ts DESC LIMIT 120`
+      `SELECT t.ip, t.ts AS last_ts, t.city, t.region, t.country, t.org,
+              t.net_type, t.device, t.os, t.browser, t.visits, l.nickname
+       FROM (
+         SELECT v.*,
+                COUNT(*)     OVER (PARTITION BY v.ip) AS visits,
+                ROW_NUMBER() OVER (PARTITION BY v.ip ORDER BY v.ts DESC) AS rn
+         FROM visits v
+       ) t
+       LEFT JOIN ip_labels l ON l.ip = t.ip
+       WHERE t.rn = 1
+       ORDER BY last_ts DESC
+       LIMIT 500`
     ),
   ]);
 
   return json(
-    { total, uniqueIps, today, byDay, topPaths, topCountries, topCities, topOrgs, topNetworks, netTypes, devices, oses, browsers, recent },
+    { total, uniqueIps, today, byDay, topPaths, topCountries, topCities, topOrgs, topNetworks, netTypes, devices, oses, browsers, visitors },
     env,
     200,
     req
   );
+}
+
+// GET /ip?ip=X — full history for one IP: every visit, the devices seen, and the
+// current nickname. Auth required.
+async function ipDetail(req, env) {
+  if (!(await verifyToken(env, bearer(req)))) {
+    return json({ error: "unauthorized" }, env, 401, req);
+  }
+  const ip = new URL(req.url).searchParams.get("ip");
+  if (!ip) return json({ error: "ip required" }, env, 400, req);
+
+  const many = async (sql, ...args) => {
+    const r = await env.DB.prepare(sql).bind(...args).all();
+    return r.results || [];
+  };
+
+  const [visits, devicesSeen, label] = await Promise.all([
+    many(
+      `SELECT ts, path, referrer, device, os, browser, net_type, city, region, country, org
+       FROM visits WHERE ip = ? ORDER BY ts DESC LIMIT 500`,
+      ip
+    ),
+    many(
+      `SELECT device, os, browser, COUNT(*) AS n, MAX(ts) AS last
+       FROM visits WHERE ip = ? GROUP BY device, os, browser ORDER BY last DESC`,
+      ip
+    ),
+    many(`SELECT nickname FROM ip_labels WHERE ip = ?`, ip),
+  ]);
+
+  return json(
+    { ip, nickname: label[0]?.nickname || "", visits, devices: devicesSeen },
+    env,
+    200,
+    req
+  );
+}
+
+// POST /label — set or clear a nickname for an IP. Auth required.
+async function setLabel(req, env) {
+  if (!(await verifyToken(env, bearer(req)))) {
+    return json({ error: "unauthorized" }, env, 401, req);
+  }
+  let body = {};
+  try {
+    body = await req.json();
+  } catch {
+    return json({ error: "bad request" }, env, 400, req);
+  }
+  const ip = (body.ip || "").trim();
+  const nickname = (body.nickname || "").trim().slice(0, 80);
+  if (!ip) return json({ error: "ip required" }, env, 400, req);
+
+  if (!nickname) {
+    await env.DB.prepare(`DELETE FROM ip_labels WHERE ip = ?`).bind(ip).run();
+  } else {
+    await env.DB.prepare(
+      `INSERT INTO ip_labels (ip, nickname, updated) VALUES (?, ?, ?)
+       ON CONFLICT(ip) DO UPDATE SET nickname = excluded.nickname, updated = excluded.updated`
+    )
+      .bind(ip, nickname, Date.now())
+      .run();
+  }
+  return json({ ok: true, ip, nickname }, env, 200, req);
 }
 
 export default {
@@ -329,6 +405,8 @@ export default {
       if (url.pathname === "/collect" && req.method === "POST") return await collect(req, env);
       if (url.pathname === "/login" && req.method === "POST") return await login(req, env);
       if (url.pathname === "/stats" && req.method === "GET") return await stats(req, env);
+      if (url.pathname === "/ip" && req.method === "GET") return await ipDetail(req, env);
+      if (url.pathname === "/label" && req.method === "POST") return await setLabel(req, env);
     } catch (e) {
       return json({ error: String(e && e.message ? e.message : e) }, env, 500, req);
     }

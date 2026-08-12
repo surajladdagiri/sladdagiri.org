@@ -25,3 +25,10 @@ CREATE TABLE IF NOT EXISTS visits (
 CREATE INDEX IF NOT EXISTS idx_visits_ts ON visits(ts);
 CREATE INDEX IF NOT EXISTS idx_visits_ip ON visits(ip);
 CREATE INDEX IF NOT EXISTS idx_visits_net ON visits(net_type);
+
+-- Optional per-IP nicknames set from the dashboard.
+CREATE TABLE IF NOT EXISTS ip_labels (
+  ip       TEXT PRIMARY KEY,
+  nickname TEXT,
+  updated  INTEGER
+);
