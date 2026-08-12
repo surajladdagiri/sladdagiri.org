@@ -393,6 +393,35 @@ async function setLabel(req, env) {
   return json({ ok: true, ip, nickname }, env, 200, req);
 }
 
+// POST /delete — remove every log (and the nickname) for one IP. Auth required.
+async function deleteIp(req, env) {
+  if (!(await verifyToken(env, bearer(req)))) {
+    return json({ error: "unauthorized" }, env, 401, req);
+  }
+  let body = {};
+  try {
+    body = await req.json();
+  } catch {
+    return json({ error: "bad request" }, env, 400, req);
+  }
+  const ip = (body.ip || "").trim();
+  if (!ip) return json({ error: "ip required" }, env, 400, req);
+
+  const res = await env.DB.prepare(`DELETE FROM visits WHERE ip = ?`).bind(ip).run();
+  await env.DB.prepare(`DELETE FROM ip_labels WHERE ip = ?`).bind(ip).run();
+  return json({ ok: true, ip, deleted: res.meta?.changes ?? null }, env, 200, req);
+}
+
+// POST /clear — wipe all logs and all nicknames. Auth required.
+async function clearAll(req, env) {
+  if (!(await verifyToken(env, bearer(req)))) {
+    return json({ error: "unauthorized" }, env, 401, req);
+  }
+  const res = await env.DB.prepare(`DELETE FROM visits`).run();
+  await env.DB.prepare(`DELETE FROM ip_labels`).run();
+  return json({ ok: true, deleted: res.meta?.changes ?? null }, env, 200, req);
+}
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -407,6 +436,8 @@ export default {
       if (url.pathname === "/stats" && req.method === "GET") return await stats(req, env);
       if (url.pathname === "/ip" && req.method === "GET") return await ipDetail(req, env);
       if (url.pathname === "/label" && req.method === "POST") return await setLabel(req, env);
+      if (url.pathname === "/delete" && req.method === "POST") return await deleteIp(req, env);
+      if (url.pathname === "/clear" && req.method === "POST") return await clearAll(req, env);
     } catch (e) {
       return json({ error: String(e && e.message ? e.message : e) }, env, 500, req);
     }

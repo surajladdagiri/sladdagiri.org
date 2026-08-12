@@ -113,11 +113,12 @@ function BarList({ title, rows, label }) {
   );
 }
 
-function IpModal({ visitor, token, onClose, onSaved }) {
+function IpModal({ visitor, token, onClose, onSaved, onDeleted }) {
   const [detail, setDetail] = useState(null);
   const [loading, setLoading] = useState(true);
   const [nick, setNick] = useState(visitor.nickname || "");
   const [saving, setSaving] = useState(false);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
@@ -166,6 +167,23 @@ function IpModal({ visitor, token, onClose, onSaved }) {
       /* ignore */
     } finally {
       setSaving(false);
+    }
+  };
+
+  const del = async () => {
+    if (!window.confirm(`Delete every log for ${visitor.ip}? This can't be undone.`)) return;
+    setDeleting(true);
+    try {
+      await fetch(`${ANALYTICS_URL}/delete`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
+        body: JSON.stringify({ ip: visitor.ip }),
+      });
+      onDeleted(visitor.ip);
+    } catch {
+      /* ignore */
+    } finally {
+      setDeleting(false);
     }
   };
 
@@ -289,6 +307,17 @@ function IpModal({ visitor, token, onClose, onSaved }) {
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* danger zone */}
+          <div style={{ marginTop: 24, display: "flex", justifyContent: "flex-end" }}>
+            <button
+              onClick={del}
+              disabled={deleting}
+              style={{ background: "transparent", border: `1px solid ${T.red}`, color: T.red, borderRadius: T.radius, fontFamily: T.body, fontSize: 13, fontWeight: 600, padding: "9px 14px", cursor: "pointer" }}
+            >
+              {deleting ? "Deleting…" : "Delete all logs for this IP"}
+            </button>
           </div>
         </div>
       </motion.div>
@@ -424,6 +453,19 @@ export default function Dashboard() {
     }
   };
 
+  const clearAll = async () => {
+    if (!window.confirm("Delete ALL analytics logs and nicknames? This can't be undone.")) return;
+    try {
+      await fetch(`${ANALYTICS_URL}/clear`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      load(token);
+    } catch {
+      /* ignore */
+    }
+  };
+
   useEffect(() => {
     if (token) load(token);
   }, [token]);
@@ -456,6 +498,13 @@ export default function Dashboard() {
               style={{ background: "transparent", border: `1px solid ${T.rule}`, borderRadius: T.radius, color: T.ink, fontFamily: T.mono, fontSize: 12, padding: "8px 12px", cursor: "pointer" }}
             >
               {loading ? "…" : "Refresh"}
+            </button>
+            <button
+              onClick={clearAll}
+              title="Delete all logs"
+              style={{ background: "transparent", border: `1px solid ${T.rule}`, borderRadius: T.radius, color: T.red, fontFamily: T.mono, fontSize: 12, padding: "8px 12px", cursor: "pointer" }}
+            >
+              Clear all
             </button>
             <button
               onClick={() => { sessionStorage.removeItem(TOKEN_KEY); setToken(null); }}
@@ -580,6 +629,7 @@ export default function Dashboard() {
             token={token}
             onClose={() => setOpenVisitor(null)}
             onSaved={(ip, nickname) => setLabelOverrides((prev) => ({ ...prev, [ip]: nickname }))}
+            onDeleted={() => { setOpenVisitor(null); load(token); }}
           />
         )}
       </AnimatePresence>
