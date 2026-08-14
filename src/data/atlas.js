@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-14",
- "total_new": 2368,
+ "total_new": 2359,
  "analyzed": 0,
  "counts": {
-  "San Diego": 86,
-  "Los Angeles": 120,
-  "Bay Area": 448,
-  "Remote": 445,
-  "Out of state": 1269
+  "San Diego": 89,
+  "Los Angeles": 117,
+  "Bay Area": 449,
+  "Remote": 409,
+  "Out of state": 1295
  }
 };
 
@@ -143,7 +143,7 @@ export const ROLES = [
   "score": 93,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk2aedf789e31aefb4",
@@ -415,7 +415,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk014b86671a6cec46",
@@ -431,7 +431,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk4bdf6b16051a47ef",
@@ -447,7 +447,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6cbe8dd3ebfc5619",
@@ -463,7 +463,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk9b4b3901c9878604",
@@ -479,7 +479,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka8051a9e986646cc",
@@ -495,7 +495,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7fe2203a7ff0196e",
@@ -511,7 +511,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd99ab37648668d8c",
@@ -527,7 +527,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6e9a0d10fce45d36",
@@ -543,7 +543,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkba97df84757a2b6f",
@@ -559,7 +559,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke2a34dd87114a48d",
@@ -575,7 +575,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk640e8007e2d9c6b0",
@@ -591,7 +591,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke0269419ae5d782c",
@@ -607,7 +607,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkeca30a1b69da5c5e",
@@ -623,7 +623,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkee9e968ebb54986a",
@@ -639,7 +639,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk73a00f4af25b56d1",
@@ -655,7 +655,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk688e5c3cae85da66",
@@ -671,7 +671,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkc391a0344455b624",
@@ -687,7 +687,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk42c1e9d0ef8b54bd",
@@ -703,7 +703,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6f305efd226bb1bd",
@@ -719,7 +719,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke3eef95af894c876",
@@ -735,7 +735,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk5680031091b58115",
@@ -751,7 +751,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk4ac87bc255a580f5",
@@ -767,7 +767,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk393ec91b3d5c5870",
@@ -783,7 +783,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk9067aedf8177acbe",
@@ -799,7 +799,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke862d1a2bea7df36",
@@ -3995,6 +3995,54 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4454556153",
+  "title": "iOS Developer",
+  "company": "KTek Resourcing",
+  "loc": "Plano, TX",
+  "url": "https://www.linkedin.com/jobs/view/4454556153",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4453707030",
+  "title": "iOS Developer",
+  "company": "Delta System & Software, Inc.",
+  "loc": "Plano, TX",
+  "url": "https://www.linkedin.com/jobs/view/4453707030",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4454519660",
+  "title": "Software Engineer, iOS Core Product - West Lafayette, IN, USA",
+  "company": "Speechify",
+  "loc": "West Lafayette, IN",
+  "url": "https://www.linkedin.com/jobs/view/4454519660",
+  "site": "Linkedin",
+  "posted": "2026-08-13",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4454509863",
   "title": "Software Engineer, iOS Core Product - Anaheim, CA, USA",
   "company": "Speechify",
@@ -4008,7 +4056,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4454528655",
@@ -4024,7 +4072,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4454532645",
@@ -4040,7 +4088,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4453269326",
@@ -4056,7 +4104,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4453228230",
@@ -4072,7 +4120,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4454516673",
@@ -4088,7 +4136,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4451906629",
@@ -6187,6 +6235,38 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4450811962",
+  "title": "AI / Machine Learning Engineer II",
+  "company": "Gen",
+  "loc": "Mountain View, CA",
+  "url": "https://www.linkedin.com/jobs/view/4450811962",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 84,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4451206392",
+  "title": "Firmware Engineer II",
+  "company": "Nice/SpeakerCraft Audio Solutions",
+  "loc": "Kent, WA",
+  "url": "https://www.linkedin.com/jobs/view/4451206392",
+  "site": "Linkedin",
+  "posted": "2026-08-13",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 84,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4444724090",
   "title": "Firmware Engineer I-II",
   "company": "Antares",
@@ -6200,7 +6280,7 @@ export const ROLES = [
   "score": 84,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4453226319",
@@ -6216,7 +6296,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4453520061",
@@ -6232,7 +6312,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4454084145",
@@ -6248,7 +6328,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4453678124",
@@ -6311,86 +6391,6 @@ export const ROLES = [
   "track": "Auto",
   "score": 84,
   "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4452731367",
-  "title": "Mobile Application Developer 107K-122K Base Salary Plus Bonus",
-  "company": "Trajan Wealth LLC",
-  "loc": "Scottsdale, AZ",
-  "url": "https://www.linkedin.com/jobs/view/4452731367",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 84,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4444235254",
-  "title": "SDE II, Perception and SLAM, Autonomous Mobility",
-  "company": "Amazon",
-  "loc": "North Reading, MA",
-  "url": "https://www.linkedin.com/jobs/view/4444235254",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 84,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4448613216",
-  "title": "Firmware Engineer II - CRM",
-  "company": "Medtronic",
-  "loc": "Minneapolis, MN",
-  "url": "https://www.linkedin.com/jobs/view/4448613216",
-  "site": "Linkedin",
-  "posted": "2026-08-12",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 84,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4452307991",
-  "title": "Machine Learning Engineer II",
-  "company": "S&P Global",
-  "loc": "New York, NY",
-  "url": "https://www.linkedin.com/jobs/view/4452307991",
-  "site": "Linkedin",
-  "posted": "2026-08-12",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 84,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4447515589",
-  "title": "iOS Developer",
-  "company": "New York Technology Partners",
-  "loc": "Dallas, TX",
-  "url": "https://www.linkedin.com/jobs/view/4447515589",
-  "site": "Linkedin",
-  "posted": "2026-08-11",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 84,
-  "geo": "remote",
   "analyzed": false,
   "new": false
  },
