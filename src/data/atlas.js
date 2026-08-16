@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-16",
- "total_new": 2186,
+ "total_new": 2244,
  "analyzed": 0,
  "counts": {
-  "San Diego": 72,
-  "Los Angeles": 114,
-  "Bay Area": 435,
-  "Remote": 365,
-  "Out of state": 1200
+  "San Diego": 71,
+  "Los Angeles": 109,
+  "Bay Area": 485,
+  "Remote": 366,
+  "Out of state": 1213
  }
 };
 
@@ -4040,7 +4040,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4454556153",
@@ -6283,6 +6283,38 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jka6dd2bcca4df1ddc",
+  "title": "Software Engineer II - Embedded Linux (Onsite)",
+  "company": "Collins Aerospace",
+  "loc": "Cedar Rapids, IA, US",
+  "url": "https://www.indeed.com/viewjob?jk=a6dd2bcca4df1ddc",
+  "site": "Indeed",
+  "posted": "2026-08-14",
+  "smin": 68900.0,
+  "smax": 131100.0,
+  "track": "Auto",
+  "score": 84,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4454875027",
+  "title": "Software Engineer Embedded/Network Systems II (Full Time) - United States",
+  "company": "Cisco",
+  "loc": "Hillsboro, OR",
+  "url": "https://www.linkedin.com/jobs/view/4454875027",
+  "site": "Linkedin",
+  "posted": "2026-08-15",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 84,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4454805910",
   "title": "New Grads 2027 - Software Engineer - Perception/Computer Vision",
   "company": "WeRide",
@@ -6296,7 +6328,7 @@ export const ROLES = [
   "score": 84,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk70ec75dd6bb2ce60",
@@ -6312,7 +6344,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk3fc0164cc16eda01",
@@ -6328,7 +6360,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4455128445",
@@ -6344,7 +6376,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4408239263",
@@ -6354,38 +6386,6 @@ export const ROLES = [
   "url": "https://www.linkedin.com/jobs/view/4408239263",
   "site": "Linkedin",
   "posted": "2026-08-15",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 84,
-  "geo": "remote",
-  "analyzed": false,
-  "new": true
- },
- {
-  "id": "auto-jobsview4444724090",
-  "title": "Firmware Engineer I-II",
-  "company": "Antares",
-  "loc": "Los Angeles, CA",
-  "url": "https://www.linkedin.com/jobs/view/4444724090",
-  "site": "Linkedin",
-  "posted": "2026-08-14",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 84,
-  "geo": "la",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4436709229",
-  "title": "Software Engineer II [Embedded / Radar], Onsite",
-  "company": "Raytheon",
-  "loc": "El Segundo, CA",
-  "url": "https://www.linkedin.com/jobs/view/4436709229",
-  "site": "Linkedin",
-  "posted": "",
   "smin": null,
   "smax": null,
   "track": "Auto",
