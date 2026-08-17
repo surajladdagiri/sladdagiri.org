@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-17",
- "total_new": 2074,
+ "total_new": 2071,
  "analyzed": 0,
  "counts": {
-  "San Diego": 44,
-  "Los Angeles": 80,
-  "Bay Area": 410,
-  "Remote": 329,
-  "Out of state": 1211
+  "San Diego": 48,
+  "Los Angeles": 76,
+  "Bay Area": 401,
+  "Remote": 337,
+  "Out of state": 1209
  }
 };
 
@@ -6283,6 +6283,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4427656617",
+  "title": "Engineer II - Algorithm Engineer, Perception",
+  "company": "Magna International",
+  "loc": "Lowell, MA",
+  "url": "https://www.linkedin.com/jobs/view/4427656617",
+  "site": "Linkedin",
+  "posted": "2026-08-16",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 84,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4436709229",
   "title": "Software Engineer II [Embedded / Radar], Onsite",
   "company": "Raytheon",
@@ -6296,7 +6312,7 @@ export const ROLES = [
   "score": 84,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4455113653",
@@ -6312,7 +6328,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk171e76abbee88cc9",
@@ -6328,7 +6344,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4417399631",
@@ -6344,7 +6360,7 @@ export const ROLES = [
   "score": 84,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka6dd2bcca4df1ddc",
@@ -6375,22 +6391,6 @@ export const ROLES = [
   "track": "Auto",
   "score": 84,
   "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4454805910",
-  "title": "New Grads 2027 - Software Engineer - Perception/Computer Vision",
-  "company": "WeRide",
-  "loc": "San Jose, CA",
-  "url": "https://www.linkedin.com/jobs/view/4454805910",
-  "site": "Linkedin",
-  "posted": "2026-08-14",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 84,
-  "geo": "bay",
   "analyzed": false,
   "new": false
  },
