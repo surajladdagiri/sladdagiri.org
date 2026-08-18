@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-18",
- "total_new": 2252,
+ "total_new": 2263,
  "analyzed": 0,
  "counts": {
-  "San Diego": 68,
+  "San Diego": 67,
   "Los Angeles": 88,
-  "Bay Area": 438,
-  "Remote": 379,
-  "Out of state": 1279
+  "Bay Area": 435,
+  "Remote": 392,
+  "Out of state": 1281
  }
 };
 
@@ -2674,6 +2674,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4454782516",
+  "title": "Machine Learning Engineer - Associate",
+  "company": "Voyager Technologies",
+  "loc": "El Segundo, CA",
+  "url": "https://www.linkedin.com/jobs/view/4454782516",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 120000.0,
+  "smax": 170000.0,
+  "track": "Auto",
+  "score": 89,
+  "geo": "la",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4454434785",
   "title": "Machine Learning Engineer - Associate",
   "company": "Voyager Technologies",
@@ -2687,7 +2703,7 @@ export const ROLES = [
   "score": 89,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4455734360",
@@ -2703,7 +2719,7 @@ export const ROLES = [
   "score": 89,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkabf46439f579c98b",
@@ -3176,7 +3192,7 @@ export const ROLES = [
   "score": 88,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4453039365",
@@ -4088,7 +4104,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka8b2c0d80b720202",
@@ -4104,7 +4120,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4453940053",
@@ -6363,34 +6379,18 @@ export const ROLES = [
   "new": false
  },
  {
-  "id": "auto-jobsview4445446295",
-  "title": "Embedded Software Applications Engineer II",
-  "company": "Innoflight",
-  "loc": "San Diego, CA",
-  "url": "https://www.linkedin.com/jobs/view/4445446295",
+  "id": "auto-jobsview4455329862",
+  "title": "iOS Engineer",
+  "company": "New York Technology Partners",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4455329862",
   "site": "Linkedin",
   "posted": "",
   "smin": null,
   "smax": null,
   "track": "Auto",
   "score": 84,
-  "geo": "sd",
-  "analyzed": false,
-  "new": true
- },
- {
-  "id": "auto-jobsview4452563784",
-  "title": "Machine Learning Engineer II",
-  "company": "Expedia Group",
-  "loc": "San Jose, CA",
-  "url": "https://www.linkedin.com/jobs/view/4452563784",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 84,
-  "geo": "bay",
+  "geo": "out",
   "analyzed": false,
   "new": true
  },
