@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-20",
- "total_new": 2410,
+ "total_new": 2423,
  "analyzed": 0,
  "counts": {
-  "San Diego": 108,
-  "Los Angeles": 122,
-  "Bay Area": 468,
-  "Remote": 406,
-  "Out of state": 1306
+  "San Diego": 105,
+  "Los Angeles": 115,
+  "Bay Area": 477,
+  "Remote": 413,
+  "Out of state": 1313
  }
 };
 
@@ -447,7 +447,7 @@ export const ROLES = [
   "score": 90,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkc602bb20870749ec",
@@ -3643,6 +3643,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4455795399",
+  "title": "Embedded Software Engineer II",
+  "company": "Wabtec Corporation",
+  "loc": "Germantown, MD",
+  "url": "https://www.linkedin.com/jobs/view/4455795399",
+  "site": "Linkedin",
+  "posted": "2026-08-18",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 88,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4454406592",
   "title": "Associate Embedded Systems Engineer - On Site",
   "company": "Drive Medical",
@@ -3912,7 +3928,7 @@ export const ROLES = [
   "score": 87,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4451932018",
@@ -4603,6 +4619,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4454795734",
+  "title": "Android Mobile Developer",
+  "company": "VOLTO Consulting",
+  "loc": "Dallas, TX",
+  "url": "https://www.linkedin.com/jobs/view/4454795734",
+  "site": "Linkedin",
+  "posted": "2026-08-18",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4454117268",
   "title": "UI Mobile Developer",
   "company": "Q1 Technologies, Inc.",
@@ -4616,7 +4648,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-ankfurtgermany1078",
@@ -6352,38 +6384,6 @@ export const ROLES = [
   "company": "USA Tech Recruit",
   "loc": "",
   "url": "https://www.linkedin.com/jobs/view/4444415906",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4416404062",
-  "title": "Mobile iOS Engineer",
-  "company": "SpaceXAI",
-  "loc": "Palo Alto, CA",
-  "url": "https://www.linkedin.com/jobs/view/4416404062",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "bay",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4443531950",
-  "title": "iOS Developer",
-  "company": "European Tech Recruit",
-  "loc": "San Francisco, CA",
-  "url": "https://www.linkedin.com/jobs/view/4443531950",
   "site": "Linkedin",
   "posted": "",
   "smin": null,
