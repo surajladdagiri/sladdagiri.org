@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-21",
- "total_new": 2389,
+ "total_new": 2401,
  "analyzed": 0,
  "counts": {
-  "San Diego": 108,
-  "Los Angeles": 115,
-  "Bay Area": 463,
-  "Remote": 417,
-  "Out of state": 1286
+  "San Diego": 103,
+  "Los Angeles": 116,
+  "Bay Area": 472,
+  "Remote": 404,
+  "Out of state": 1306
  }
 };
 
@@ -447,7 +447,7 @@ export const ROLES = [
   "score": 90,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4456083063",
@@ -463,7 +463,7 @@ export const ROLES = [
   "score": 90,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkb023cd5a44bbd9ec",
@@ -3960,7 +3960,7 @@ export const ROLES = [
   "score": 87,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4397622858",
@@ -4667,6 +4667,54 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4456046595",
+  "title": "iOS Software Engineer- AI",
+  "company": "TCWGlobal",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4456046595",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4456239314",
+  "title": "iOS/Mobile Full Stack Developer",
+  "company": "Insight Global",
+  "loc": "",
+  "url": "https://www.linkedin.com/jobs/view/4456239314",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4457339211",
+  "title": "iOS Developer",
+  "company": "Varmoda",
+  "loc": "McLean, VA",
+  "url": "https://www.linkedin.com/jobs/view/4457339211",
+  "site": "Linkedin",
+  "posted": "2026-08-20",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4456018936",
   "title": "iOS Developer",
   "company": "Varmoda",
@@ -4680,7 +4728,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4454795734",
@@ -6336,54 +6384,6 @@ export const ROLES = [
   "company": "Scale.jobs",
   "loc": "New York, NY",
   "url": "https://www.linkedin.com/jobs/view/4442837682",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4445360054",
-  "title": "Software Engineer - Mobile, iOS",
-  "company": "Compass",
-  "loc": "Aventura, FL",
-  "url": "https://www.linkedin.com/jobs/view/4445360054",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4387492482",
-  "title": "Mobile Engineer, iOS",
-  "company": "Ramp",
-  "loc": "New York, NY",
-  "url": "https://www.linkedin.com/jobs/view/4387492482",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4444691817",
-  "title": "Mobile Engineer (iOS / Android)",
-  "company": "Evlo AI",
-  "loc": "Seattle, WA",
-  "url": "https://www.linkedin.com/jobs/view/4444691817",
   "site": "Linkedin",
   "posted": "",
   "smin": null,
