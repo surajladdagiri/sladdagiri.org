@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-23",
- "total_new": 2300,
+ "total_new": 2297,
  "analyzed": 0,
  "counts": {
-  "San Diego": 74,
-  "Los Angeles": 102,
-  "Bay Area": 445,
-  "Remote": 401,
-  "Out of state": 1278
+  "San Diego": 75,
+  "Los Angeles": 101,
+  "Bay Area": 449,
+  "Remote": 409,
+  "Out of state": 1263
  }
 };
 
@@ -4792,7 +4792,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4456259544",
