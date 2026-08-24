@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-24",
- "total_new": 2190,
+ "total_new": 2177,
  "analyzed": 0,
  "counts": {
-  "San Diego": 48,
-  "Los Angeles": 84,
-  "Bay Area": 414,
-  "Remote": 396,
-  "Out of state": 1248
+  "San Diego": 51,
+  "Los Angeles": 88,
+  "Bay Area": 423,
+  "Remote": 363,
+  "Out of state": 1252
  }
 };
 
@@ -31,7 +31,7 @@ export const ROLES = [
   "score": 97,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk4c0452fcdc245715",
@@ -415,7 +415,7 @@ export const ROLES = [
   "score": 92,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk608a04687042c5f5",
@@ -431,7 +431,7 @@ export const ROLES = [
   "score": 92,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk105e1d067691586a",
@@ -495,7 +495,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk03ab854a710ffed4",
@@ -511,7 +511,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk1b502e55ae73337b",
@@ -527,7 +527,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkbbbac343b66d89b9",
@@ -543,7 +543,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk08ea527fb83b81ea",
@@ -559,7 +559,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk1196518c5e8d60d5",
@@ -575,7 +575,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkf1322aaa887ec45d",
@@ -591,7 +591,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkb39af359ce15c1e7",
@@ -607,7 +607,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk517ed457a2ac7f0a",
@@ -623,7 +623,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkd06acfb7a0ef159d",
@@ -639,7 +639,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8d8ef333922f7457",
@@ -655,7 +655,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk9dfa7a6eaaab757b",
@@ -671,7 +671,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk432dbe3c20d013de",
@@ -687,7 +687,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jke94e020e8b5f2179",
@@ -703,7 +703,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk76d7505711853863",
@@ -719,7 +719,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6bc7fb647c27eab1",
@@ -735,7 +735,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka8b39f871d6e19a4",
@@ -751,7 +751,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkbf62a5d0446a35cb",
@@ -767,7 +767,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk715adbe5b1f1d280",
@@ -783,7 +783,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk1331e84a42e31ea3",
@@ -799,7 +799,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk00c7b185b788776e",
@@ -4139,6 +4139,54 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4455871893",
+  "title": "Embedded Software Engineer II",
+  "company": "FORT Robotics",
+  "loc": "Pittsburgh, PA",
+  "url": "https://www.linkedin.com/jobs/view/4455871893",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 88,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4455892321",
+  "title": "Embedded Software Engineer II",
+  "company": "FORT Robotics",
+  "loc": "Boston, MA",
+  "url": "https://www.linkedin.com/jobs/view/4455892321",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 88,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4455886679",
+  "title": "Embedded Software Engineer II",
+  "company": "FORT Robotics",
+  "loc": "Philadelphia, PA",
+  "url": "https://www.linkedin.com/jobs/view/4455886679",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 88,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4455795399",
   "title": "Embedded Software Engineer II",
   "company": "Wabtec Corporation",
@@ -4424,7 +4472,7 @@ export const ROLES = [
   "score": 87,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4454109355",
@@ -5160,7 +5208,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4456818611",
@@ -5176,7 +5224,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4456893162",
@@ -5192,7 +5240,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-tgartgermany492226",
@@ -6343,54 +6391,6 @@ export const ROLES = [
   "track": "Auto",
   "score": 85,
   "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4446920866",
-  "title": "UI Mobile Developer",
-  "company": "Envision Technology Solutions",
-  "loc": "Pittsburgh, PA",
-  "url": "https://www.linkedin.com/jobs/view/4446920866",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4278654572",
-  "title": "Mobile Engineer, iOS",
-  "company": "Ramp",
-  "loc": "San Francisco, CA",
-  "url": "https://www.linkedin.com/jobs/view/4278654572",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "bay",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4447145449",
-  "title": "iOS Developer",
-  "company": "Focus GTS",
-  "loc": "",
-  "url": "https://www.linkedin.com/jobs/view/4447145449",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "remote",
   "analyzed": false,
   "new": false
  },
