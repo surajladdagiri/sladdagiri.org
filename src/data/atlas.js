@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-26",
- "total_new": 2342,
+ "total_new": 2375,
  "analyzed": 0,
  "counts": {
-  "San Diego": 85,
-  "Los Angeles": 123,
+  "San Diego": 84,
+  "Los Angeles": 120,
   "Bay Area": 473,
-  "Remote": 398,
-  "Out of state": 1263
+  "Remote": 418,
+  "Out of state": 1280
  }
 };
 
@@ -175,7 +175,7 @@ export const ROLES = [
   "score": 93,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4454957653",
@@ -4488,7 +4488,7 @@ export const ROLES = [
   "score": 87,
   "geo": "la",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4458555223",
@@ -5048,7 +5048,7 @@ export const ROLES = [
   "score": 86,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk38275dc31c708aab",
@@ -5323,6 +5323,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4440063837",
+  "title": "Mobile iOS Engineer",
+  "company": "SpaceXAI",
+  "loc": "New York, NY",
+  "url": "https://www.linkedin.com/jobs/view/4440063837",
+  "site": "Linkedin",
+  "posted": "2026-08-25",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4457607720",
   "title": "Mobile Engineer (iOS / Android)",
   "company": "Evlo AI",
@@ -5336,7 +5352,7 @@ export const ROLES = [
   "score": 85,
   "geo": "sd",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4457494794",
@@ -5352,7 +5368,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4457607721",
@@ -5368,7 +5384,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4456937570",
@@ -6368,22 +6384,6 @@ export const ROLES = [
   "company": "Mindrift",
   "loc": "Austin, TX",
   "url": "https://www.linkedin.com/jobs/view/4449466922",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4449479155",
-  "title": "Freelance Mobile App Developer (iOS / Android)",
-  "company": "Mindrift",
-  "loc": "Arizona, United States",
-  "url": "https://www.linkedin.com/jobs/view/4449479155",
   "site": "Linkedin",
   "posted": "",
   "smin": null,
