@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-27",
- "total_new": 2404,
+ "total_new": 2393,
  "analyzed": 0,
  "counts": {
-  "San Diego": 90,
-  "Los Angeles": 124,
-  "Bay Area": 489,
-  "Remote": 398,
-  "Out of state": 1303
+  "San Diego": 88,
+  "Los Angeles": 120,
+  "Bay Area": 479,
+  "Remote": 395,
+  "Out of state": 1311
  }
 };
 
@@ -3554,6 +3554,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4459868910",
+  "title": "Machine Learning Engineer II, Responsible AI",
+  "company": "Pinterest",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4459868910",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": 138905.0,
+  "smax": 285982.0,
+  "track": "Auto",
+  "score": 89,
+  "geo": "bay",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jk5b5fc23b38c6d19f",
   "title": "Computer Vision Analyst (Level II) - Top Secret clearance",
   "company": "Lockheed Martin",
@@ -3567,7 +3583,7 @@ export const ROLES = [
   "score": 89,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkb45a523d22c6488a",
@@ -5339,6 +5355,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4458007572",
+  "title": "IOS Engineer",
+  "company": "Matlen Silver",
+  "loc": "Charlotte, NC",
+  "url": "https://www.linkedin.com/jobs/view/4458007572",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4459675438",
   "title": "iOS Software Engineer",
   "company": "BJAK",
@@ -5352,7 +5384,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4458012271",
@@ -5368,7 +5400,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4457717001",
@@ -5384,7 +5416,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4440063837",
@@ -6352,38 +6384,6 @@ export const ROLES = [
   "company": "Mindrift",
   "loc": "Michigan, United States",
   "url": "https://www.linkedin.com/jobs/view/4449477245",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4449458984",
-  "title": "Freelance Mobile App Developer (iOS / Android)",
-  "company": "Mindrift",
-  "loc": "Pennsylvania, United States",
-  "url": "https://www.linkedin.com/jobs/view/4449458984",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4449482087",
-  "title": "Freelance Mobile App Developer (iOS / Android)",
-  "company": "Mindrift",
-  "loc": "Wisconsin, United States",
-  "url": "https://www.linkedin.com/jobs/view/4449482087",
   "site": "Linkedin",
   "posted": "",
   "smin": null,
