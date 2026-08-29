@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-29",
- "total_new": 2332,
+ "total_new": 2305,
  "analyzed": 0,
  "counts": {
-  "San Diego": 84,
-  "Los Angeles": 125,
-  "Bay Area": 461,
-  "Remote": 389,
-  "Out of state": 1273
+  "San Diego": 83,
+  "Los Angeles": 128,
+  "Bay Area": 454,
+  "Remote": 384,
+  "Out of state": 1256
  }
 };
 
@@ -31,7 +31,7 @@ export const ROLES = [
   "score": 97,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-oniosmunchen455964",
@@ -4987,6 +4987,70 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4449783514",
+  "title": "Machine Learning Engineer II (Underwriting ML)",
+  "company": "Affirm",
+  "loc": "San Jose, CA",
+  "url": "https://www.linkedin.com/jobs/view/4449783514",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 87,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4449784446",
+  "title": "Machine Learning Engineer II (Underwriting ML)",
+  "company": "Affirm",
+  "loc": "San Francisco, CA",
+  "url": "https://www.linkedin.com/jobs/view/4449784446",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 87,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4449788273",
+  "title": "Machine Learning Engineer II (Underwriting ML)",
+  "company": "Affirm",
+  "loc": "Miami, FL",
+  "url": "https://www.linkedin.com/jobs/view/4449788273",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 87,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
+  "id": "auto-jobsview4449780841",
+  "title": "Machine Learning Engineer II (Underwriting ML)",
+  "company": "Affirm",
+  "loc": "Detroit, MI",
+  "url": "https://www.linkedin.com/jobs/view/4449780841",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 87,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jk046f865cac505c94",
   "title": "Data Analyst / Embedded UAT Tester - (Junior/Mid - Remote - US)",
   "company": "ICF",
@@ -5899,6 +5963,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4459429879",
+  "title": "IOS Developer",
+  "company": "Staffing Spot, Inc.",
+  "loc": "Dallas, TX",
+  "url": "https://www.linkedin.com/jobs/view/4459429879",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 85,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4460179532",
   "title": "Mobile Application Developer",
   "company": "Haystack",
@@ -5912,7 +5992,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4459491697",
@@ -5928,7 +6008,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4459486756",
@@ -5944,7 +6024,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4459422873",
@@ -6306,86 +6386,6 @@ export const ROLES = [
   "url": "https://www.linkedin.com/jobs/view/4454795734",
   "site": "Linkedin",
   "posted": "2026-08-18",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4454117268",
-  "title": "UI Mobile Developer",
-  "company": "Q1 Technologies, Inc.",
-  "loc": "Pittsburgh, PA",
-  "url": "https://www.linkedin.com/jobs/view/4454117268",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-ankfurtgermany1078",
-  "title": "Software Engineer, iOS Core Product - Frankfurt, Germany",
-  "company": "Speechify",
-  "loc": "Frankfurt, Hesse, Germany",
-  "url": "https://www.arbeitnow.com/jobs/companies/speechify/software-engineer-ios-core-product-frankfurt-germany-1078",
-  "site": "Arbeitnow",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-kfurtgermany194786",
-  "title": "Software Engineer, iOS Core Product - Frankfurt, Germany",
-  "company": "speechify",
-  "loc": "Frankfurt",
-  "url": "https://www.arbeitnow.com/jobs/companies/speechify/software-engineer-ios-core-product-frankfurt-germany-194786",
-  "site": "Arbeitnow",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4454910612",
-  "title": "IOS Mobile Developer",
-  "company": "VOLTO Consulting",
-  "loc": "Dallas, TX",
-  "url": "https://www.linkedin.com/jobs/view/4454910612",
-  "site": "Linkedin",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4454290661",
-  "title": "Mobile Engineer (iOS / Android)",
-  "company": "Evlo AI",
-  "loc": "Seattle, WA",
-  "url": "https://www.linkedin.com/jobs/view/4454290661",
-  "site": "Linkedin",
-  "posted": "",
   "smin": null,
   "smax": null,
   "track": "Auto",
