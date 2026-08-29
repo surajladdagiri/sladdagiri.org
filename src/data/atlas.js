@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-28",
- "total_new": 2465,
+ "total_new": 2421,
  "analyzed": 0,
  "counts": {
-  "San Diego": 92,
-  "Los Angeles": 148,
-  "Bay Area": 474,
-  "Remote": 435,
-  "Out of state": 1316
+  "San Diego": 95,
+  "Los Angeles": 139,
+  "Bay Area": 464,
+  "Remote": 402,
+  "Out of state": 1321
  }
 };
 
@@ -511,7 +511,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk9ea1f2814aa8c832",
@@ -527,7 +527,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk04d949485245c818",
@@ -543,7 +543,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk3381613c49793d41",
@@ -559,7 +559,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka2c882197da0bb35",
@@ -575,7 +575,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk9f873066419d9b15",
@@ -591,7 +591,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk895a9d3facb61945",
@@ -607,7 +607,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka578af22535ac9f2",
@@ -623,7 +623,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk906591a876891b0e",
@@ -639,7 +639,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk8f628856f5f6424f",
@@ -655,7 +655,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkde6bc67d80d2bb88",
@@ -671,7 +671,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkfe0e17b19dece585",
@@ -687,7 +687,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkdac799aa46c2634f",
@@ -703,7 +703,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkbc0998bbf82957aa",
@@ -719,7 +719,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk5e23d4f4a5384a69",
@@ -735,7 +735,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk553f7e62cc3619bf",
@@ -751,7 +751,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkcb804e8381d9ca60",
@@ -767,7 +767,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk027a7025c9fca67e",
@@ -783,7 +783,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk02aa4121daf82c30",
@@ -799,7 +799,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk3b03e48c42cfa470",
@@ -815,7 +815,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk50256639b687b5b0",
@@ -831,7 +831,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk0cd69689e7e61f64",
@@ -847,7 +847,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk096c48707c67e2f6",
@@ -863,7 +863,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk768a96c2ed02715c",
@@ -879,7 +879,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk634b31d0f1a262ea",
@@ -895,7 +895,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6a926b254e7a73b5",
@@ -911,7 +911,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jka35a416895ffc179",
@@ -927,7 +927,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk4ad36030900f0455",
@@ -3999,7 +3999,7 @@ export const ROLES = [
   "score": 89,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4459868910",
@@ -4635,6 +4635,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4458364718",
+  "title": "Engineer II - Software Engineering (Firmware) Signaling Division",
+  "company": "Federal Signal",
+  "loc": "University Park, IL",
+  "url": "https://www.linkedin.com/jobs/view/4458364718",
+  "site": "Linkedin",
+  "posted": "",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 88,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4455871893",
   "title": "Embedded Software Engineer II",
   "company": "FORT Robotics",
@@ -4953,6 +4969,22 @@ export const ROLES = [
   "geo": "out",
   "analyzed": false,
   "new": false
+ },
+ {
+  "id": "auto-jk046f865cac505c94",
+  "title": "Data Analyst / Embedded UAT Tester - (Junior/Mid - Remote - US)",
+  "company": "ICF",
+  "loc": "Reston, VA, US",
+  "url": "https://www.indeed.com/viewjob?jk=046f865cac505c94",
+  "site": "Indeed",
+  "posted": "2026-08-28",
+  "smin": 67063.0,
+  "smax": 114008.0,
+  "track": "Auto",
+  "score": 87,
+  "geo": "remote",
+  "analyzed": false,
+  "new": true
  },
  {
   "id": "auto-jobsview4459093793",
@@ -5515,6 +5547,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jke55451d275deb8b8",
+  "title": "Software Engineer III - IOS",
+  "company": "JPMorganChase",
+  "loc": "New York, NY, US",
+  "url": "https://www.indeed.com/viewjob?jk=e55451d275deb8b8",
+  "site": "Indeed",
+  "posted": "2026-08-28",
+  "smin": 137750.0,
+  "smax": 185000.0,
+  "track": "Auto",
+  "score": 86,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jk4bd9ce300683ec8b",
   "title": "Software Engineer, iOS/Mobile - Health Wearable",
   "company": "Unknown",
@@ -5528,7 +5576,7 @@ export const ROLES = [
   "score": 86,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk74d7113865e3ce9d",
@@ -5544,7 +5592,7 @@ export const ROLES = [
   "score": 86,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk6adede90ec98771a",
@@ -5848,7 +5896,7 @@ export const ROLES = [
   "score": 85,
   "geo": "bay",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4458053764",
@@ -5864,7 +5912,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jk7a57253f286942fb",
@@ -5880,7 +5928,7 @@ export const ROLES = [
   "score": 85,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4458007572",
@@ -6343,54 +6391,6 @@ export const ROLES = [
   "track": "Auto",
   "score": 85,
   "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4454519660",
-  "title": "Software Engineer, iOS Core Product - West Lafayette, IN, USA",
-  "company": "Speechify",
-  "loc": "West Lafayette, IN",
-  "url": "https://www.linkedin.com/jobs/view/4454519660",
-  "site": "Linkedin",
-  "posted": "2026-08-13",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4454509863",
-  "title": "Software Engineer, iOS Core Product - Anaheim, CA, USA",
-  "company": "Speechify",
-  "loc": "Anaheim, CA",
-  "url": "https://www.linkedin.com/jobs/view/4454509863",
-  "site": "Linkedin",
-  "posted": "2026-08-13",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "remote",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4454528655",
-  "title": "Software Engineer, iOS Core Product - Cupertino, CA, USA",
-  "company": "Speechify",
-  "loc": "Cupertino, CA",
-  "url": "https://www.linkedin.com/jobs/view/4454528655",
-  "site": "Linkedin",
-  "posted": "2026-08-13",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "remote",
   "analyzed": false,
   "new": false
  },
