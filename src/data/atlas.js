@@ -5,14 +5,14 @@ export const PASS_HASH = "ebbd3eec7ff83b2faf16e61bf0452543fccfa0bdd5304e8fa944a8
 
 export const DIGEST = {
  "date": "2026-08-30",
- "total_new": 2201,
+ "total_new": 2176,
  "analyzed": 0,
  "counts": {
-  "San Diego": 59,
-  "Los Angeles": 107,
-  "Bay Area": 459,
-  "Remote": 366,
-  "Out of state": 1210
+  "San Diego": 53,
+  "Los Angeles": 108,
+  "Bay Area": 442,
+  "Remote": 373,
+  "Out of state": 1200
  }
 };
 
@@ -527,7 +527,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4461010039",
@@ -543,7 +543,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4460895423",
@@ -559,7 +559,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4461004655",
@@ -575,7 +575,7 @@ export const ROLES = [
   "score": 90,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jkf1a985ce9b78035c",
@@ -4715,6 +4715,22 @@ export const ROLES = [
   "new": false
  },
  {
+  "id": "auto-jobsview4458492363",
+  "title": "Embedded Software Engineer II",
+  "company": "Leonardo DRS",
+  "loc": "Melbourne, FL",
+  "url": "https://www.linkedin.com/jobs/view/4458492363",
+  "site": "Linkedin",
+  "posted": "2026-08-29",
+  "smin": null,
+  "smax": null,
+  "track": "Auto",
+  "score": 88,
+  "geo": "out",
+  "analyzed": false,
+  "new": true
+ },
+ {
   "id": "auto-jobsview4458364718",
   "title": "Engineer II - Software Engineering (Firmware) Signaling Division",
   "company": "Federal Signal",
@@ -5064,7 +5080,7 @@ export const ROLES = [
   "score": 87,
   "geo": "remote",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4449783514",
@@ -6056,7 +6072,7 @@ export const ROLES = [
   "score": 85,
   "geo": "out",
   "analyzed": false,
-  "new": true
+  "new": false
  },
  {
   "id": "auto-jobsview4459429879",
@@ -6369,22 +6385,6 @@ export const ROLES = [
   "loc": "Stuttgart",
   "url": "https://www.arbeitnow.com/jobs/companies/speechify/software-engineer-ios-core-product-stuttgart-germany-492226",
   "site": "Arbeitnow",
-  "posted": "",
-  "smin": null,
-  "smax": null,
-  "track": "Auto",
-  "score": 85,
-  "geo": "out",
-  "analyzed": false,
-  "new": false
- },
- {
-  "id": "auto-jobsview4456259544",
-  "title": "Mobile Engineer (iOS / Android)",
-  "company": "Evlo AI",
-  "loc": "Chicago, IL",
-  "url": "https://www.linkedin.com/jobs/view/4456259544",
-  "site": "Linkedin",
   "posted": "",
   "smin": null,
   "smax": null,
