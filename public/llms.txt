@@ -1,0 +1,22 @@
+# Suraj Laddagiri
+
+> Suraj Laddagiri is a software engineer and a senior at UC San Diego (graduating
+> September 2026), with degrees in Mathematics–Computer Science, Bioengineering,
+> and Political Science. He builds iOS apps, embedded and Bluetooth hardware, and
+> machine-learning projects, and he is a certified EMT.
+
+This is his personal portfolio site.
+
+## Pages
+
+- [Home](https://portfolio.sladdagiri.org/): overview and short bio.
+- [Work](https://portfolio.sladdagiri.org/portfolio): all projects.
+- [HAVEN](https://portfolio.sladdagiri.org/haven): a head-mounted navigation aid for blind and low-vision users. iOS app, Core Bluetooth, LiDAR, and five haptic motors, all on-device. Software lead.
+- [Music Strip](https://portfolio.sladdagiri.org/musicstrip): a Bluetooth-controlled LED strip. WS2812B LEDs on an ESP32, controlled by an iOS app with music-reactive modes and album-art colors.
+- [Congressional Vote Prediction](https://portfolio.sladdagiri.org/congress): a machine-learning model that predicts how each of the 535 members of Congress votes on a bill, using DistilBERT embeddings and one network per member. 86.4% mean accuracy.
+- [IGAdBlock](https://portfolio.sladdagiri.org/igadblock): an iOS tweak that removes ads from Instagram's feed by hooking its data sources at runtime, found through reverse engineering with FLEX.
+
+## Contact and code
+
+- GitHub: https://github.com/surajladdagiri
+- LinkedIn: https://www.linkedin.com/in/suraj-laddagiri-903602272/

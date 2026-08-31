@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { T, Eyebrow, Rule, Btn, Tag } from "../theme";
+import Breadcrumbs from "../Breadcrumbs";
 
 function H({ index, label, children }) {
   return (
@@ -39,9 +40,7 @@ export default function Haven() {
   return (
     <div style={{ minHeight: "100vh", background: T.bg, color: T.ink }}>
       <div style={{ maxWidth: 860, margin: "0 auto", padding: "48px 24px 110px" }}>
-        <button onClick={() => navigate("/portfolio")} style={{ border: "none", background: "transparent", color: T.dim, fontFamily: T.mono, fontSize: 13, cursor: "pointer", padding: 0, marginBottom: 30 }}>
-          ← Work
-        </button>
+        <Breadcrumbs trail={[{ label: "Home", to: "/" }, { label: "Work", to: "/portfolio" }, { label: "HAVEN" }]} />
 
         <Eyebrow n="◦" style={{ marginBottom: 18 }}>UC San Diego Senior Design · 2025</Eyebrow>
         <h1 style={{ fontFamily: T.display, fontSize: "clamp(34px,6vw,62px)", fontWeight: 600, letterSpacing: "-0.045em", lineHeight: 0.98, margin: "0 0 22px" }}>

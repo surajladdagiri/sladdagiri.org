@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /atlas
+Disallow: /dashboard
+Disallow: /t
+Disallow: /u
+
+Sitemap: https://portfolio.sladdagiri.org/sitemap.xml

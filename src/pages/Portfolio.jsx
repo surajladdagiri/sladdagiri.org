@@ -234,8 +234,14 @@ export default function Portfolio() {
   return (
     <div style={{ minHeight: "100vh", background: T.bg, color: T.ink }}>
       <div style={{ maxWidth: T.maxW, margin: "0 auto", padding: "56px 24px 100px" }}>
-        <SectionHead index="00" label="Selected work" title="Things I've built" />
-        <p style={{ fontFamily: T.body, fontSize: 16, color: T.dim, maxWidth: 620, margin: "-8px 0 64px" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
+          <Eyebrow n="00">Selected work</Eyebrow>
+          <div style={{ flex: 1, height: 1, background: T.rule }} />
+        </div>
+        <h1 style={{ fontFamily: T.display, fontSize: "clamp(32px, 5vw, 52px)", fontWeight: 600, letterSpacing: "-0.03em", margin: "0 0 20px" }}>
+          Things I&apos;ve built
+        </h1>
+        <p style={{ fontFamily: T.body, fontSize: 16, color: T.dim, maxWidth: 620, margin: "0 0 64px" }}>
           A few things I&apos;ve built. Some are iOS apps, one is hardware, one
           is a machine-learning project. I worked on each of them from the first
           idea to a version people can actually use.
@@ -245,10 +251,6 @@ export default function Portfolio() {
           <ProjectBlock key={p.title} p={p} navigate={navigate} onShot={setShot} />
         ))}
 
-        <Rule />
-        <p style={{ fontFamily: T.mono, fontSize: 12, color: T.faint, marginTop: 24 }}>
-          More in progress.
-        </p>
       </div>
 
       {shot && (

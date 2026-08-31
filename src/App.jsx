@@ -1,18 +1,24 @@
 import { lazy, Suspense, useEffect, useState } from "react";
-import { Routes, Route, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route, Outlet, Link, useNavigate, useLocation } from "react-router-dom";
+// Home and the 404 stay eager: Home is the landing page, and NotFound is the
+// Suspense fallback's fallback. Everything else is code-split by route so the
+// initial download stays small. Atlas in particular pulls in framer-motion and
+// a large data module, which now load only when someone opens /atlas.
 import Home from "./pages/Home";
-import Portfolio from "./pages/Portfolio";
-import Demos from "./pages/Demos";
-import MusicStrip from "./pages/MusicStrip";
-import MusicStripPrivacy from "./pages/MusicStripPrivacy";
-import Haven from "./pages/Haven";
-import HavenPrivacy from "./pages/HavenPrivacy";
-import IGAdBlock from "./pages/IGAdBlock";
-import CongressML from "./pages/CongressML";
-import Atlas from "./pages/Atlas";
+import NotFound from "./pages/NotFound";
 import { T } from "./theme";
 import { sendBeacon } from "./analytics";
+import { applyMeta } from "./seo";
 
+const Portfolio = lazy(() => import("./pages/Portfolio"));
+const Demos = lazy(() => import("./pages/Demos"));
+const MusicStrip = lazy(() => import("./pages/MusicStrip"));
+const MusicStripPrivacy = lazy(() => import("./pages/MusicStripPrivacy"));
+const Haven = lazy(() => import("./pages/Haven"));
+const HavenPrivacy = lazy(() => import("./pages/HavenPrivacy"));
+const IGAdBlock = lazy(() => import("./pages/IGAdBlock"));
+const CongressML = lazy(() => import("./pages/CongressML"));
+const Atlas = lazy(() => import("./pages/Atlas"));
 const Theater = lazy(() => import("./pages/Theater"));
 const Upload = lazy(() => import("./pages/Upload"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
@@ -32,22 +38,6 @@ const NAV_LINKS = [
   { label: "Work", path: "/portfolio" },
   { label: "Demos", path: "/demos" },
 ];
-
-function getDocumentTitle(pathname) {
-  if (pathname === "/") return "Suraj Laddagiri | Portfolio";
-  if (pathname === "/portfolio") return "Portfolio | Suraj Laddagiri";
-  if (pathname === "/demos") return "Demos | Suraj Laddagiri";
-  if (pathname === "/musicstrip") return "Music Strip | Suraj Laddagiri";
-  if (pathname === "/musicstrip/privacy") {
-    return "Music Strip Privacy | Suraj Laddagiri";
-  }
-  if (pathname === "/haven") return "HAVEN | Suraj Laddagiri";
-  if (pathname === "/haven/privacy") return "HAVEN Privacy | Suraj Laddagiri";
-  if (pathname === "/igadblock") return "IGAdBlock | Suraj Laddagiri";
-  if (pathname === "/congress") return "Congressional Vote Prediction | Suraj Laddagiri";
-
-  return "Suraj Laddagiri";
-}
 
 function NavBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -159,12 +149,58 @@ function NavBar() {
   );
 }
 
+const FOOTER_LINKS = [
+  { label: "Home", to: "/" },
+  { label: "Work", to: "/portfolio" },
+  { label: "HAVEN", to: "/haven" },
+  { label: "Music Strip", to: "/musicstrip" },
+  { label: "Congressional Vote Prediction", to: "/congress" },
+  { label: "IGAdBlock", to: "/igadblock" },
+  { label: "Demos", to: "/demos" },
+];
+
+function Footer() {
+  const link = {
+    color: T.dim,
+    textDecoration: "none",
+    fontFamily: T.body,
+    fontSize: 14,
+  };
+  return (
+    <footer style={{ borderTop: `1px solid ${T.rule}`, marginTop: 40 }}>
+      <div style={{ maxWidth: T.maxW, margin: "0 auto", padding: "40px 24px 56px" }}>
+        <div style={{ fontFamily: T.display, fontSize: 16, fontWeight: 600, marginBottom: 18 }}>
+          Suraj Laddagiri
+        </div>
+        <nav style={{ display: "flex", flexWrap: "wrap", gap: "10px 22px", marginBottom: 22 }}>
+          {FOOTER_LINKS.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              style={link}
+              onMouseEnter={(e) => (e.currentTarget.style.color = T.ink)}
+              onMouseLeave={(e) => (e.currentTarget.style.color = T.dim)}
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "10px 22px" }}>
+          <a href="https://github.com/surajladdagiri" target="_blank" rel="noreferrer" style={link}>GitHub</a>
+          <a href="https://www.linkedin.com/in/suraj-laddagiri-903602272/" target="_blank" rel="noreferrer" style={link}>LinkedIn</a>
+          <a href="/Suraj_Laddagiri_Resume.pdf" target="_blank" rel="noreferrer" style={link}>Résumé</a>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 function Layout() {
   const location = useLocation();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-    document.title = getDocumentTitle(location.pathname);
+    applyMeta(location.pathname);
   }, [location.pathname]);
 
   return (
@@ -173,12 +209,17 @@ function Layout() {
         background: T.bg,
         minHeight: "100vh",
         color: T.ink,
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <NavBar />
-      <main style={{ paddingTop: 72 }}>
-        <Outlet />
+      <main style={{ paddingTop: 72, flex: 1 }}>
+        <Suspense fallback={<div style={{ minHeight: "70vh" }} />}>
+          <Outlet />
+        </Suspense>
       </main>
+      <Footer />
     </div>
   );
 }
@@ -198,9 +239,17 @@ export default function App() {
         <Route path="haven/privacy" element={<HavenPrivacy />} />
         <Route path="igadblock" element={<IGAdBlock />} />
         <Route path="congress" element={<CongressML />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
       {/* unlisted */}
-      <Route path="/atlas" element={<Atlas />} />
+      <Route
+        path="/atlas"
+        element={
+          <Suspense fallback={<div style={{ minHeight: "100vh", background: "#0d0d0e" }} />}>
+            <Atlas />
+          </Suspense>
+        }
+      />
       {/* Lazy on purpose: code-splitting keeps this out of the main bundle, so
           someone reading the site's JS never sees it referenced at all. */}
       <Route
