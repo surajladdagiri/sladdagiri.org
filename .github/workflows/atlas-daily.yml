@@ -1,13 +1,15 @@
 name: Atlas daily refresh
 
 on:
-  schedule:
-    # 08:00 America/Los_Angeles. GitHub cron is UTC and does NOT observe DST,
-    # so both are listed; the script is idempotent, and the second run of the
-    # day finds nothing new and exits cheaply.
-    - cron: "0 15 * * *"   # 08:00 PDT (Mar–Nov)
-    - cron: "0 16 * * *"   # 08:00 PST (Nov–Mar)
-  workflow_dispatch:        # lets you trigger it by hand from the Actions tab
+  # DISABLED: Atlas is now a public research-lab explorer, not a scraped job
+  # tracker, so this pipeline is retired. The cron is commented out to stop it
+  # calling the paid AI APIs and committing atlas.js. workflow_dispatch remains
+  # so it can still be run by hand if ever needed. Safe to delete this workflow
+  # and scripts/pipeline + src/data/atlas.js entirely.
+  # schedule:
+  #   - cron: "0 15 * * *"   # 08:00 PDT (Mar–Nov)
+  #   - cron: "0 16 * * *"   # 08:00 PST (Nov–Mar)
+  workflow_dispatch:
 
 concurrency:
   group: atlas-daily

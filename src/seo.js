@@ -47,6 +47,11 @@ export const ROUTE_META = {
     desc: "Live, interactive demos from Suraj Laddagiri.",
     crumb: "Demos",
   },
+  "/atlas": {
+    title: "Atlas: San Diego Research Labs | Suraj Laddagiri",
+    desc: "Atlas is a searchable map of San Diego research labs across UC San Diego, Salk, Scripps, and more, with what each does and where they fit.",
+    crumb: "Atlas",
+  },
   "/haven/privacy": {
     title: "HAVEN Privacy | Suraj Laddagiri",
     desc: "Privacy policy for the HAVEN app.",

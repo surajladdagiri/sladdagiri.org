@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /atlas
 Disallow: /dashboard
 Disallow: /t
 Disallow: /u

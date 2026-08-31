@@ -1,115 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { T, Eyebrow, Rule, SectionHead, Btn, Card } from "../theme";
-
-/* Interactive dot field, a bespoke canvas, kept because it's hand-built
-   personality rather than a generic gradient. Toned to hairline whites. */
-function DotDistortionBackground() {
-  const canvasRef = useRef(null);
-  const wrapperRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const wrapper = wrapperRef.current;
-    if (!canvas || !wrapper) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animationFrame;
-    let width = 0;
-    let height = 0;
-    let dpr = Math.min(window.devicePixelRatio || 1, 2);
-
-    const mouse = { x: -9999, y: -9999 };
-    const smooth = { x: -9999, y: -9999 };
-    const influenceRadius = 160;
-
-    const resize = () => {
-      width = wrapper.offsetWidth;
-      height = wrapper.offsetHeight;
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      canvas.width = width * dpr;
-      canvas.height = height * dpr;
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-      ctx.scale(dpr, dpr);
-    };
-
-    const handlePointerMove = (e) => {
-      const rect = wrapper.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    };
-    const handlePointerLeave = () => {
-      mouse.x = -9999;
-      mouse.y = -9999;
-    };
-
-    const draw = () => {
-      ctx.clearRect(0, 0, width, height);
-      smooth.x += (mouse.x - smooth.x) * 0.08;
-      smooth.y += (mouse.y - smooth.y) * 0.08;
-      const spacing = 30;
-      const time = performance.now() * 0.001;
-
-      for (let x = 0; x <= width + spacing; x += spacing) {
-        for (let y = 0; y <= height + spacing; y += spacing) {
-          const dx = x - smooth.x;
-          const dy = y - smooth.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          const force = Math.max(0, 1 - dist / influenceRadius);
-          const angle = Math.atan2(dy, dx);
-          const offset = force * 16;
-          const offsetX = Math.cos(angle) * offset;
-          const offsetY = Math.sin(angle) * offset;
-          const flicker = Math.sin(x * 0.012 + y * 0.01 + time) * 0.12;
-          const radius = 0.9 + force * 2.0 + flicker * 0.3;
-          // dots turn amber near the cursor, the one accent, used sparingly
-          const alpha = 0.05 + force * 0.16;
-          ctx.beginPath();
-          ctx.arc(x + offsetX, y + offsetY, Math.max(0.5, radius), 0, Math.PI * 2);
-          ctx.fillStyle =
-            force > 0.35
-              ? `rgba(233,182,74,${alpha + 0.05})`
-              : `rgba(236,236,236,${alpha})`;
-          ctx.fill();
-        }
-      }
-      animationFrame = requestAnimationFrame(draw);
-    };
-
-    resize();
-    draw();
-    const resizeObserver = new ResizeObserver(resize);
-    resizeObserver.observe(wrapper);
-    wrapper.addEventListener("pointermove", handlePointerMove);
-    wrapper.addEventListener("pointerleave", handlePointerLeave);
-    window.addEventListener("resize", resize);
-    return () => {
-      cancelAnimationFrame(animationFrame);
-      resizeObserver.disconnect();
-      wrapper.removeEventListener("pointermove", handlePointerMove);
-      wrapper.removeEventListener("pointerleave", handlePointerLeave);
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
-
-  return (
-    <div ref={wrapperRef} style={{ position: "absolute", inset: 0 }}>
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          pointerEvents: "none",
-        }}
-      />
-    </div>
-  );
-}
+import Hero3D from "../Hero3D";
+import Reveal from "../Reveal";
 
 function Social({ href, label, children }) {
   return (
@@ -169,7 +62,7 @@ export default function Home() {
       {/* ---- hero ---- */}
       <section
         style={{
-          minHeight: "88vh",
+          minHeight: "92vh",
           display: "flex",
           alignItems: "center",
           padding: "0 24px",
@@ -177,7 +70,17 @@ export default function Home() {
           overflow: "hidden",
         }}
       >
-        <DotDistortionBackground />
+        <Hero3D />
+        <div
+          aria-hidden
+          style={{
+            position: "absolute",
+            inset: 0,
+            pointerEvents: "none",
+            background:
+              "radial-gradient(70% 60% at 50% 42%, transparent 0%, rgba(8,8,12,0.55) 100%), linear-gradient(to bottom, transparent 62%, #08080c 100%)",
+          }}
+        />
         <div
           style={{
             width: "100%",
@@ -251,6 +154,7 @@ export default function Home() {
             .home-about-grid img { max-height: 320px; }
           }
         `}</style>
+        <Reveal>
         <SectionHead index="01" label="About" title="A bit about me" />
 
         <div
@@ -339,18 +243,7 @@ export default function Home() {
             ))}
           </div>
         </div>
-
-        <div
-          style={{
-            marginTop: "9rem",
-            textAlign: "center",
-            fontFamily: T.mono,
-            fontSize: 12,
-            color: T.faint,
-          }}
-        >
-          i need me a job in this economy bro 😭🙏
-        </div>
+        </Reveal>
       </section>
     </div>
   );

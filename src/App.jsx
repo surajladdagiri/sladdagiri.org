@@ -36,6 +36,7 @@ function VisitBeacon() {
 
 const NAV_LINKS = [
   { label: "Work", path: "/portfolio" },
+  { label: "Labs", path: "/atlas" },
   { label: "Demos", path: "/demos" },
 ];
 
@@ -152,6 +153,7 @@ function NavBar() {
 const FOOTER_LINKS = [
   { label: "Home", to: "/" },
   { label: "Work", to: "/portfolio" },
+  { label: "Labs", to: "/atlas" },
   { label: "HAVEN", to: "/haven" },
   { label: "Music Strip", to: "/musicstrip" },
   { label: "Congressional Vote Prediction", to: "/congress" },
@@ -239,17 +241,9 @@ export default function App() {
         <Route path="haven/privacy" element={<HavenPrivacy />} />
         <Route path="igadblock" element={<IGAdBlock />} />
         <Route path="congress" element={<CongressML />} />
+        <Route path="atlas" element={<Atlas />} />
         <Route path="*" element={<NotFound />} />
       </Route>
-      {/* unlisted */}
-      <Route
-        path="/atlas"
-        element={
-          <Suspense fallback={<div style={{ minHeight: "100vh", background: "#0d0d0e" }} />}>
-            <Atlas />
-          </Suspense>
-        }
-      />
       {/* Lazy on purpose: code-splitting keeps this out of the main bundle, so
           someone reading the site's JS never sees it referenced at all. */}
       <Route

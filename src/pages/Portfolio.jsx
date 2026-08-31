@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { T, Eyebrow, Rule, SectionHead, Btn, Tag } from "../theme";
+import Reveal from "../Reveal";
+import Tilt from "../Tilt";
 
 /* A single phone screenshot, matte frame, no blue glow, no heavy shadow. */
 function Shot({ src, alt, onClick }) {
@@ -103,7 +105,9 @@ function ProjectBlock({ p, navigate, onShot }) {
       {p.shots && (
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 24 }}>
           {p.shots.map((s) => (
-            <Shot key={s.alt} src={s.src} alt={s.alt} onClick={() => onShot(s)} />
+            <Tilt key={s.alt} style={{ width: "100%", maxWidth: 200 }}>
+              <Shot src={s.src} alt={s.alt} onClick={() => onShot(s)} />
+            </Tilt>
           ))}
         </div>
       )}
@@ -248,7 +252,9 @@ export default function Portfolio() {
         </p>
 
         {projects.map((p) => (
-          <ProjectBlock key={p.title} p={p} navigate={navigate} onShot={setShot} />
+          <Reveal key={p.title} y={24}>
+            <ProjectBlock p={p} navigate={navigate} onShot={setShot} />
+          </Reveal>
         ))}
 
       </div>

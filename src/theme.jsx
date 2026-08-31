@@ -6,17 +6,18 @@
 // ------------------------------------------------------------------
 
 export const T = {
-  bg: "#0d0d0e",
-  bg2: "#131315",
-  surface: "#141416",
-  surfaceHover: "#191a1c",
-  ink: "#ececec",
-  dim: "rgba(236,236,236,0.56)",
-  faint: "rgba(236,236,236,0.34)",
-  rule: "rgba(255,255,255,0.10)",
+  bg: "#08080c",
+  bg2: "#0f0f16",
+  surface: "#12121b",
+  surfaceHover: "#191924",
+  ink: "#f3f3f6",
+  dim: "rgba(243,243,246,0.58)",
+  faint: "rgba(243,243,246,0.34)",
+  rule: "rgba(255,255,255,0.09)",
   ruleStrong: "rgba(255,255,255,0.18)",
-  accent: "#e9b64a",
-  accentInk: "#0d0d0e",
+  accent: "#7c6cff",      // violet — the single UI accent
+  accentInk: "#0b0b12",   // text on the accent
+  accent2: "#4dd6c4",     // teal — used only inside the 3D hero
   green: "#7bbf6a",
   red: "#e06a5a",
 
@@ -24,8 +25,7 @@ export const T = {
   body: '"Inter", ui-sans-serif, system-ui, -apple-system, sans-serif',
   mono: '"Space Mono", ui-monospace, "SF Mono", Menlo, monospace',
 
-  // one small radius used everywhere; nothing is a pill
-  radius: 6,
+  radius: 8,
   maxW: 1120,
 };
 

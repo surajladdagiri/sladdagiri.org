@@ -11,6 +11,7 @@ This is his personal portfolio site.
 
 - [Home](https://portfolio.sladdagiri.org/): overview and short bio.
 - [Work](https://portfolio.sladdagiri.org/portfolio): all projects.
+- [Atlas](https://portfolio.sladdagiri.org/atlas): a searchable map of San Diego research labs, filtered to the ones that fit his background, with what each does and how to reach them.
 - [HAVEN](https://portfolio.sladdagiri.org/haven): a head-mounted navigation aid for blind and low-vision users. iOS app, Core Bluetooth, LiDAR, and five haptic motors, all on-device. Software lead.
 - [Music Strip](https://portfolio.sladdagiri.org/musicstrip): a Bluetooth-controlled LED strip. WS2812B LEDs on an ESP32, controlled by an iOS app with music-reactive modes and album-art colors.
 - [Congressional Vote Prediction](https://portfolio.sladdagiri.org/congress): a machine-learning model that predicts how each of the 535 members of Congress votes on a bill, using DistilBERT embeddings and one network per member. 86.4% mean accuracy.
