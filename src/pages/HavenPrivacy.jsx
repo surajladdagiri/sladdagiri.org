@@ -1,429 +1,140 @@
-import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { T, Eyebrow, Card, Tag, Rule } from "../theme";
+import Reveal from "../Reveal";
 
-function GlowOrb({ style }) {
-  return (
-    <div
-      style={{
-        position: "absolute",
-        borderRadius: "50%",
-        filter: "none", background: "transparent",
-        opacity: 0.24,
-        pointerEvents: "none",
-        ...style,
-      }}
-    />
-  );
-}
+const POINTS = [
+  {
+    title: "Overview",
+    body:
+      "HAVEN runs computer vision and path planning directly on the phone. When a companion laptop viewer is used, the phone streams environment and camera data over the same local network the devices are already connected to.",
+  },
+  {
+    title: "How data moves",
+    body:
+      "Haptic commands are sent from the phone to the Arduino over Bluetooth. Environment geometry and local camera-location data are streamed over local Wi-Fi to the connected laptop viewer. Neither path uses a cloud relay.",
+  },
+  {
+    title: "What stays local",
+    body:
+      "Mesh data, pose data, haptic commands, and device-to-device connection details stay on the phone, the Arduino, and the viewer laptop. The system is intended to keep the data inside your own personal devices.",
+  },
+  {
+    title: "Storage and sharing",
+    body:
+      "This project page does not describe any server-side storage, analytics, or third-party sharing for HAVEN navigation data. If you export logs or modify the viewer yourself, you control where those files go.",
+  },
+];
 
-function PolicyPill({ children }) {
-  return (
-    <div
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        padding: "10px 14px",
-        borderRadius: 999,
-        border: "1px solid rgba(255,255,255,0.12)",
-        background: "rgba(255,255,255,0.04)",
-        color: "rgba(255,255,255,0.82)",
-        fontSize: 13,
-        fontWeight: 500,
-        letterSpacing: "-0.01em",
-        backdropFilter: "none",
-        WebkitBackdropFilter: "none",
-      }}
-    >
-      {children}
-    </div>
-  );
-}
+const NOTS = [
+  "Upload environment scans to the cloud",
+  "Upload local location data to external servers",
+  "Relay haptic commands through third-party services",
+  "Require cloud connectivity for the core prototype workflow",
+];
 
-function SectionCard({ title, children, delay = "0ms" }) {
-  return (
-    <div
-      style={{
-        borderRadius: 30,
-        padding: "1.5rem",
-        background:
-          "linear-gradient(155deg, rgba(255,255,255,0.06), rgba(255,255,255,0.025))",
-        border: "1px solid rgba(255,255,255,0.08)",
-        boxShadow:
-          "0 20px 55px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.05)",
-        animation: "fadeRise 900ms ease both",
-        animationDelay: delay,
-      }}
-    >
-      <h2
-        style={{
-          margin: "0 0 0.9rem",
-          fontSize: "clamp(22px, 3vw, 30px)",
-          lineHeight: 1.08,
-          letterSpacing: "-0.04em",
-          color: "#ececec",
-        }}
-      >
-        {title}
-      </h2>
-
-      <div
-        style={{
-          fontSize: 15,
-          lineHeight: 1.85,
-          color: "rgba(255,255,255,0.6)",
-        }}
-      >
-        {children}
-      </div>
-    </div>
-  );
-}
-
-function CheckItem({ children }) {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "flex-start",
-        gap: 12,
-        padding: "0.95rem 1rem",
-        borderRadius: 20,
-        background: "rgba(255,255,255,0.03)",
-        border: "1px solid rgba(255,255,255,0.08)",
-      }}
-    >
-      <div
-        style={{
-          width: 24,
-          height: 24,
-          borderRadius: 999,
-          flexShrink: 0,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "rgba(255,255,255,0.06)",
-          border: "1px solid rgba(255,255,255,0.08)",
-          color: "#ececec",
-          marginTop: 1,
-        }}
-      >
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M5 12.5L9.2 16.7L19 7"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
-
-      <div
-        style={{
-          color: "rgba(255,255,255,0.74)",
-          fontSize: 15,
-          lineHeight: 1.7,
-        }}
-      >
-        {children}
-      </div>
-    </div>
-  );
-}
+const TAGS = ["No cloud upload", "Bluetooth haptics", "Local Wi-Fi only", "Personal devices only"];
 
 export default function HavenPrivacy() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 80);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background:
-          "radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 22%), #0d0d0e",
-        color: "#ececec",
-        overflow: "hidden",
-      }}
-    >
-      <style>{`
-        @keyframes fadeRise {
-          from {
-            opacity: 0;
-            transform: translateY(24px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+    <div style={{ background: T.bg, minHeight: "100vh", color: T.ink }}>
+      <div style={{ maxWidth: T.maxW, margin: "0 auto", padding: "56px 24px 100px" }}>
+        <Reveal>
+          <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 18, flexWrap: "wrap" }}>
+            <Link to="/haven" style={{ color: T.dim, fontFamily: T.mono, fontSize: 12, textDecoration: "none" }}>
+              HAVEN
+            </Link>
+            <span style={{ color: T.faint }}>/</span>
+            <Eyebrow>Privacy</Eyebrow>
+          </div>
 
-        @keyframes pulseGlow {
-          0% { opacity: 0.18; transform: scale(1); }
-          50% { opacity: 0.34; transform: scale(1.08); }
-          100% { opacity: 0.18; transform: scale(1); }
-        }
+          <h1 style={{ fontFamily: T.display, fontSize: "clamp(34px, 6vw, 66px)", fontWeight: 600, letterSpacing: "-0.04em", lineHeight: 1.0, margin: "0 0 18px" }}>
+            Privacy Policy
+          </h1>
+          <p style={{ fontFamily: T.body, fontSize: 17, lineHeight: 1.7, color: T.dim, maxWidth: 640, margin: "0 0 22px" }}>
+            HAVEN is designed so that navigation data stays within your own
+            devices and network. The system does not upload environment scans,
+            location data, or haptic commands to the cloud.
+          </p>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 40 }}>
+            {TAGS.map((t) => (
+              <Tag key={t}>{t}</Tag>
+            ))}
+          </div>
+        </Reveal>
 
-        @media (max-width: 900px) {
-          .haven-privacy-grid {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
-
-      <div
-        style={{
-          position: "relative",
-          maxWidth: 1180,
-          margin: "0 auto",
-          padding: "4rem 1.5rem 5rem",
-        }}
-      >
-        <GlowOrb
-          style={{
-            top: 40,
-            left: -40,
-            width: 280,
-            height: 280,
-            background: "rgba(255,184,77,0.14)",
-            animation: "pulseGlow 5.6s ease-in-out infinite",
-          }}
-        />
-        <GlowOrb
-          style={{
-            top: 180,
-            right: -50,
-            width: 320,
-            height: 320,
-            background: "rgba(28,154,255,0.14)",
-            animation: "pulseGlow 6.4s ease-in-out infinite",
-          }}
-        />
-
-        <section
-          style={{
-            position: "relative",
-            zIndex: 2,
-            opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(20px)",
-            transition: "opacity 900ms ease, transform 900ms ease",
-            marginBottom: "1.2rem",
-          }}
+        <div
+          style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 16, marginBottom: 16 }}
         >
-          <div
-            style={{
-              borderRadius: 34,
-              padding: "2rem",
-              border: "1px solid rgba(255,255,255,0.1)",
-              background:
-                "linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.025))",
-              boxShadow:
-                "0 30px 80px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.06)",
-              overflow: "hidden",
-              position: "relative",
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "radial-gradient(circle at top right, rgba(255,255,255,0.06), transparent 44%)",
-                pointerEvents: "none",
-              }}
-            />
+          {POINTS.map((p, i) => (
+            <Reveal key={p.title} y={16} delay={i * 60}>
+              <Card hover={false} style={{ padding: 24, height: "100%" }}>
+                <h2 style={{ fontFamily: T.display, fontSize: 20, fontWeight: 600, letterSpacing: "-0.02em", margin: "0 0 10px" }}>
+                  {p.title}
+                </h2>
+                <p style={{ fontFamily: T.body, fontSize: 14.5, lineHeight: 1.7, color: T.dim, margin: 0 }}>{p.body}</p>
+              </Card>
+            </Reveal>
+          ))}
+        </div>
 
-            <div style={{ position: "relative", zIndex: 2 }}>
-              <div
-                style={{
-                  fontSize: 12,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.15em",
-                  color: "rgba(255,255,255,0.34)",
-                  marginBottom: 12,
-                }}
-              >
-                HAVEN
-              </div>
-
-              <h1
-                style={{
-                  margin: 0,
-                  fontSize: "clamp(42px, 7vw, 82px)",
-                  lineHeight: 0.94,
-                  letterSpacing: "-0.06em",
-                  color: "#ececec",
-                  maxWidth: 800,
-                }}
-              >
-                Privacy Policy
-              </h1>
-
-              <p
-                style={{
-                  margin: "1rem 0 1.35rem",
-                  maxWidth: 760,
-                  fontSize: "clamp(16px, 2vw, 19px)",
-                  lineHeight: 1.8,
-                  color: "rgba(255,255,255,0.62)",
-                }}
-              >
-                HAVEN is designed so that navigation data stays within your own
-                devices and network. The system does not upload environment
-                scans, location data, or haptic commands to the cloud.
-              </p>
-
-              <div
-                style={{
-                  display: "flex",
-                  gap: 10,
-                  flexWrap: "wrap",
-                }}
-              >
-                <PolicyPill>No cloud upload</PolicyPill>
-                <PolicyPill>Bluetooth haptic commands</PolicyPill>
-                <PolicyPill>Local Wi-Fi streaming only</PolicyPill>
-                <PolicyPill>Personal devices only</PolicyPill>
-              </div>
+        <Reveal y={16}>
+          <Card hover={false} style={{ padding: 24, marginBottom: 16 }}>
+            <h2 style={{ fontFamily: T.display, fontSize: 20, fontWeight: 600, letterSpacing: "-0.02em", margin: "0 0 16px" }}>
+              HAVEN does not
+            </h2>
+            <div style={{ display: "grid", gap: 10 }}>
+              {NOTS.map((n) => (
+                <div key={n} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
+                  <span style={{ color: T.accent, fontFamily: T.mono, fontSize: 14, marginTop: 1 }}>×</span>
+                  <span style={{ fontFamily: T.body, fontSize: 14.5, lineHeight: 1.6, color: T.dim }}>{n}</span>
+                </div>
+              ))}
             </div>
-          </div>
-        </section>
+          </Card>
+        </Reveal>
 
-        <section
-          className="haven-privacy-grid"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1.05fr 0.95fr",
-            gap: "1rem",
-            position: "relative",
-            zIndex: 2,
-          }}
-        >
-          <div style={{ display: "grid", gap: "1rem" }}>
-            <SectionCard title="Overview" delay="80ms">
-              <p style={{ margin: 0 }}>
-                HAVEN runs computer vision and path planning directly on the
-                phone. When a companion laptop viewer is used, the phone streams
-                environment and camera data over the same local network the
-                devices are already connected to.
-              </p>
-            </SectionCard>
+        <Reveal y={16}>
+          <Card hover={false} style={{ padding: 24 }}>
+            <h2 style={{ fontFamily: T.display, fontSize: 20, fontWeight: 600, letterSpacing: "-0.02em", margin: "0 0 10px" }}>
+              Contact
+            </h2>
+            <p style={{ fontFamily: T.body, fontSize: 14.5, lineHeight: 1.7, color: T.dim, margin: "0 0 16px" }}>
+              Questions about HAVEN privacy or data handling? Reach me at:
+            </p>
+            <a
+              href="mailto:suraj@sladdagiri.org"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                padding: "11px 16px",
+                borderRadius: T.radius,
+                textDecoration: "none",
+                color: T.ink,
+                background: "transparent",
+                border: `1px solid ${T.rule}`,
+                fontFamily: T.mono,
+                fontSize: 14,
+                transition: "border-color 160ms ease, color 160ms ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = T.accent;
+                e.currentTarget.style.color = T.accent2;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = T.rule;
+                e.currentTarget.style.color = T.ink;
+              }}
+            >
+              suraj@sladdagiri.org
+            </a>
+          </Card>
+        </Reveal>
 
-            <SectionCard title="How data moves" delay="140ms">
-              <p style={{ margin: 0 }}>
-                Haptic commands are sent from the phone to the Arduino over
-                Bluetooth. Environment geometry and local camera-location data
-                are streamed over local Wi-Fi to the connected laptop viewer.
-                Neither path uses a cloud relay.
-              </p>
-            </SectionCard>
-
-            <SectionCard title="What stays local" delay="200ms">
-              <p style={{ margin: 0 }}>
-                Mesh data, pose data, haptic commands, and device-to-device
-                connection details stay on the phone, the Arduino, and the
-                viewer laptop. The system is intended to keep the data inside
-                your own personal devices.
-              </p>
-            </SectionCard>
-
-            <SectionCard title="Storage and sharing" delay="260ms">
-              <p style={{ margin: 0 }}>
-                This project page does not describe any server-side storage,
-                analytics, or third-party sharing for HAVEN navigation data. If
-                you export logs or modify the viewer yourself, you control where
-                those files go.
-              </p>
-            </SectionCard>
-          </div>
-
-          <div style={{ display: "grid", gap: "1rem" }}>
-            <SectionCard title="HAVEN does not" delay="120ms">
-              <div
-                style={{
-                  display: "grid",
-                  gap: 12,
-                }}
-              >
-                <CheckItem>Upload environment scans to the cloud</CheckItem>
-                <CheckItem>Upload local location data to external servers</CheckItem>
-                <CheckItem>Relay haptic commands through third-party services</CheckItem>
-                <CheckItem>Require cloud connectivity for the core prototype workflow</CheckItem>
-              </div>
-            </SectionCard>
-
-            <SectionCard title="Contact" delay="220ms">
-              <p style={{ margin: "0 0 0.8rem" }}>
-                If you have questions about HAVEN privacy or data handling, you
-                can contact me at:
-              </p>
-
-              <a
-                href="mailto:suraj@sladdagiri.org"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 10,
-                  padding: "12px 16px",
-                  borderRadius: 18,
-                  textDecoration: "none",
-                  color: "#ececec",
-                  background: "rgba(255,255,255,0.04)",
-                  border: "1px solid rgba(255,255,255,0.12)",
-                  fontSize: 15,
-                  fontWeight: 600,
-                  transition: "transform 180ms ease, background 180ms ease",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-2px)";
-                  e.currentTarget.style.background = "rgba(255,255,255,0.08)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.background = "rgba(255,255,255,0.04)";
-                }}
-              >
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M4 6.5H20"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                  />
-                  <path
-                    d="M4.5 6.5H19.5V17.5H4.5V6.5Z"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M5.5 7.5L12 12.5L18.5 7.5"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                suraj@sladdagiri.org
-              </a>
-            </SectionCard>
-          </div>
-        </section>
+        <Rule style={{ margin: "40px 0 20px" }} />
+        <Link to="/haven" style={{ color: T.dim, fontFamily: T.mono, fontSize: 13, textDecoration: "none" }}>
+          Back to HAVEN
+        </Link>
       </div>
     </div>
   );

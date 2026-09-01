@@ -4,16 +4,16 @@
 /* ------------------------------------------------------------------ */
 
 :root {
-  --bg: #08080c;
-  --bg-2: #0f0f16;
-  --surface: #12121b;
-  --ink: #f3f3f6;
-  --ink-dim: rgba(243, 243, 246, 0.58);
-  --ink-faint: rgba(243, 243, 246, 0.34);
-  --rule: rgba(255, 255, 255, 0.09);
-  --rule-strong: rgba(255, 255, 255, 0.18);
-  --accent: #7c6cff;      /* violet, the single accent */
-  --accent-ink: #0b0b12;  /* text on accent */
+  --bg: #0a0a0f;
+  --bg-2: #101019;
+  --surface: #12121a;
+  --ink: #f6f3ec;
+  --ink-dim: rgba(246, 243, 236, 0.64);
+  --ink-faint: rgba(246, 243, 236, 0.40);
+  --rule: rgba(246, 243, 236, 0.14);
+  --rule-strong: rgba(246, 243, 236, 0.26);
+  --accent: #ff6b35;      /* coral, the single accent */
+  --accent-ink: #160a04;  /* text on accent */
 
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
@@ -30,7 +30,9 @@ html, body, #root {
   width: 100%;
   min-height: 100vh;
   background: var(--bg);
-  overflow-x: hidden;
+  /* clip (not hidden) so horizontal overflow is contained WITHOUT turning
+     these into scroll containers, which would break position: sticky. */
+  overflow-x: clip;
 }
 
 body {

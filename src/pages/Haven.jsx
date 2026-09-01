@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { T, Eyebrow, Rule, Btn, Tag } from "../theme";
 import Breadcrumbs from "../Breadcrumbs";
+import PhoneShowcase from "../PhoneShowcase";
 
 function H({ index, label, children }) {
   return (
@@ -78,7 +79,15 @@ export default function Haven() {
           ))}
         </div>
 
-        <H index="01" label="The problem">Why we built it</H>
+        <H index="01" label="Screens">A look at the app</H>
+        <p style={{ fontFamily: T.mono, fontSize: 12, color: T.faint, margin: "0 0 4px" }}>
+          Scroll to flip through the screens.
+        </p>
+        <PhoneShowcase
+          screenshots={[`${baseUrl}h_1.PNG`, `${baseUrl}h_2.PNG`, `${baseUrl}h_3.PNG`]}
+        />
+
+        <H index="02" label="The problem">Why we built it</H>
         <P>
           Most navigation aids for blind users work through audio. The problem is
           that audio competes with hearing, which is the sense those users depend
@@ -87,7 +96,7 @@ export default function Haven() {
           many people already own.
         </P>
 
-        <H index="02" label="How it works">The steps</H>
+        <H index="03" label="How it works">The steps</H>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(240px,1fr))", gap: 12, marginTop: 6 }}>
           {PHASES.map((p) => (
             <div key={p.k} style={{ border: `1px solid ${T.rule}`, borderRadius: T.radius, padding: 18, background: T.surface }}>
@@ -98,7 +107,7 @@ export default function Haven() {
           ))}
         </div>
 
-        <H index="03" label="My role">What I did</H>
+        <H index="04" label="My role">What I did</H>
         <P>
           I wrote all the software. That is the iOS app and the Core Bluetooth
           code that connects the phone to the wearable and keeps the link fast

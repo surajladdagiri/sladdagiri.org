@@ -48,9 +48,9 @@ export const ROUTE_META = {
     crumb: "Demos",
   },
   "/atlas": {
-    title: "Atlas: San Diego Research Labs | Suraj Laddagiri",
-    desc: "Atlas is a searchable map of San Diego research labs across UC San Diego, Salk, Scripps, and more, with what each does and where they fit.",
-    crumb: "Atlas",
+    title: "Atlas | Suraj Laddagiri",
+    desc: "A private working list.",
+    noindex: true,
   },
   "/haven/privacy": {
     title: "HAVEN Privacy | Suraj Laddagiri",
@@ -107,6 +107,7 @@ export function applyMeta(pathname) {
 
   document.title = m.title;
   upsertMeta("description", m.desc);
+  upsertMeta("robots", m.noindex ? "noindex, nofollow" : "index, follow");
   upsertLink("canonical", url);
 
   upsertMeta("og:title", m.title, "property");

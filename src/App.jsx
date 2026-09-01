@@ -36,7 +36,6 @@ function VisitBeacon() {
 
 const NAV_LINKS = [
   { label: "Work", path: "/portfolio" },
-  { label: "Labs", path: "/atlas" },
   { label: "Demos", path: "/demos" },
 ];
 
@@ -153,7 +152,6 @@ function NavBar() {
 const FOOTER_LINKS = [
   { label: "Home", to: "/" },
   { label: "Work", to: "/portfolio" },
-  { label: "Labs", to: "/atlas" },
   { label: "HAVEN", to: "/haven" },
   { label: "Music Strip", to: "/musicstrip" },
   { label: "Congressional Vote Prediction", to: "/congress" },

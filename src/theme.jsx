@@ -6,18 +6,18 @@
 // ------------------------------------------------------------------
 
 export const T = {
-  bg: "#08080c",
-  bg2: "#0f0f16",
-  surface: "#12121b",
-  surfaceHover: "#191924",
-  ink: "#f3f3f6",
-  dim: "rgba(243,243,246,0.58)",
-  faint: "rgba(243,243,246,0.34)",
-  rule: "rgba(255,255,255,0.09)",
-  ruleStrong: "rgba(255,255,255,0.18)",
-  accent: "#7c6cff",      // violet — the single UI accent
-  accentInk: "#0b0b12",   // text on the accent
-  accent2: "#4dd6c4",     // teal — used only inside the 3D hero
+  bg: "#0a0a0f",
+  bg2: "#101019",
+  surface: "#12121a",
+  surfaceHover: "#1a1822",
+  ink: "#f6f3ec",
+  dim: "rgba(246,243,236,0.64)",
+  faint: "rgba(246,243,236,0.40)",
+  rule: "rgba(246,243,236,0.14)",
+  ruleStrong: "rgba(246,243,236,0.26)",
+  accent: "#ff6b35",      // coral — the single UI accent
+  accentInk: "#160a04",   // text on the accent
+  accent2: "#ffc93c",     // amber — secondary accent
   green: "#7bbf6a",
   red: "#e06a5a",
 
@@ -125,7 +125,7 @@ export function Btn({
   };
   const enter = (e) => {
     if (solid) {
-      e.currentTarget.style.background = "#f0c65e";
+      e.currentTarget.style.background = "#ff8355";
     } else {
       e.currentTarget.style.borderColor = T.ruleStrong;
       e.currentTarget.style.background = "rgba(255,255,255,0.04)";

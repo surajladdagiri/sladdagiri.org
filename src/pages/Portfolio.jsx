@@ -162,9 +162,10 @@ export default function Portfolio() {
           { label: "Focus", value: "Music-reactive" },
         ],
         shots: [
-          { src: `${baseUrl}IMG_1841.PNG`, alt: "Music Strip animations screen" },
-          { src: `${baseUrl}IMG_1844.PNG`, alt: "Music Strip controls screen" },
-          { src: `${baseUrl}IMG_1843.PNG`, alt: "Music Strip music sync screen" },
+          { src: `${baseUrl}ms_1.PNG`, alt: "Music Strip screen 1" },
+          { src: `${baseUrl}ms_2.PNG`, alt: "Music Strip screen 2" },
+          { src: `${baseUrl}ms_3.PNG`, alt: "Music Strip screen 3" },
+          { src: `${baseUrl}ms_4.PNG`, alt: "Music Strip screen 4" },
         ],
         links: [
           { label: "App Store", href: "https://apps.apple.com/us/app/music-strip/id6761938199", primary: true },
@@ -185,6 +186,11 @@ export default function Portfolio() {
           { label: "Sensors", value: "Camera · LiDAR · IMU" },
           { label: "Output", value: "5 haptic tactors" },
           { label: "Path refresh", value: "~0.86 s" },
+        ],
+        shots: [
+          { src: `${baseUrl}h_1.PNG`, alt: "HAVEN screen 1" },
+          { src: `${baseUrl}h_2.PNG`, alt: "HAVEN screen 2" },
+          { src: `${baseUrl}h_3.PNG`, alt: "HAVEN screen 3" },
         ],
         links: [
           { label: "App Store", href: "https://apps.apple.com/us/app/haven-app/id6761937548", primary: true },

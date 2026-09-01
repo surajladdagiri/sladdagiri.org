@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { T, Eyebrow, Rule, Btn, Tag } from "../theme";
 import Breadcrumbs from "../Breadcrumbs";
+import PhoneShowcase from "../PhoneShowcase";
 
 function H({ index, label, children }) {
   return (
@@ -40,9 +41,10 @@ export default function MusicStrip() {
   const [shot, setShot] = useState(null);
 
   const shots = [
-    { src: `${baseUrl}IMG_1841.PNG`, alt: "Animations screen" },
-    { src: `${baseUrl}IMG_1844.PNG`, alt: "Controls screen" },
-    { src: `${baseUrl}IMG_1843.PNG`, alt: "Music sync screen" },
+    { src: `${baseUrl}ms_1.PNG`, alt: "Music Strip screen 1" },
+    { src: `${baseUrl}ms_2.PNG`, alt: "Music Strip screen 2" },
+    { src: `${baseUrl}ms_3.PNG`, alt: "Music Strip screen 3" },
+    { src: `${baseUrl}ms_4.PNG`, alt: "Music Strip screen 4" },
   ];
 
   useEffect(() => {
@@ -90,14 +92,10 @@ export default function MusicStrip() {
         </div>
 
         <H index="01" label="Screens">A look at the app</H>
-        <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-          {shots.map((s) => (
-            <button key={s.alt} type="button" onClick={() => setShot(s)} aria-label={`Zoom ${s.alt}`}
-              style={{ appearance: "none", padding: 0, border: `1px solid ${T.rule}`, borderRadius: T.radius, overflow: "hidden", background: T.bg2, cursor: "zoom-in", width: "100%", maxWidth: 200 }}>
-              <img src={s.src} alt={s.alt} style={{ display: "block", width: "100%", height: "auto" }} />
-            </button>
-          ))}
-        </div>
+        <p style={{ fontFamily: T.mono, fontSize: 12, color: T.faint, margin: "0 0 4px" }}>
+          Scroll to flip through the screens.
+        </p>
+        <PhoneShowcase screenshots={shots.map((s) => s.src)} />
 
         <H index="02" label="Features">What it does</H>
         <div style={{ border: `1px solid ${T.rule}`, borderRadius: T.radius, overflow: "hidden" }}>

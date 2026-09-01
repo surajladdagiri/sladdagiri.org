@@ -20,7 +20,7 @@ function Chip({ active, onClick, children }) {
         cursor: "pointer",
         whiteSpace: "nowrap",
         border: `1px solid ${active ? T.accent : T.rule}`,
-        background: active ? "rgba(124,108,255,0.14)" : "transparent",
+        background: active ? "rgba(255,107,53,0.14)" : "transparent",
         color: active ? T.ink : T.dim,
         transition: "border-color 140ms ease, color 140ms ease, background 140ms ease",
       }}
@@ -72,7 +72,7 @@ function LabCard({ lab }) {
           {STAFF_RA.has(lab.id) && (
             <span
               title="Estimated to hire full-time (non-student) research associates"
-              style={{ fontFamily: T.mono, fontSize: 11, letterSpacing: "0.03em", color: T.accent2 || "#4dd6c4", border: `1px solid ${T.rule}`, borderRadius: 3, padding: "3px 8px" }}
+              style={{ fontFamily: T.mono, fontSize: 11, letterSpacing: "0.03em", color: T.accent2, border: `1px solid ${T.rule}`, borderRadius: 3, padding: "3px 8px" }}
             >
               Hires RAs
             </span>

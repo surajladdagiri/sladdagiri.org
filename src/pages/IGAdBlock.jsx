@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { T, Eyebrow, Rule, Btn, Tag } from "../theme";
 import Breadcrumbs from "../Breadcrumbs";
+import Phone3D from "../Phone3D";
 
 function H({ index, label, children }) {
   return (
@@ -68,6 +69,10 @@ export default function IGAdBlock() {
               <div style={{ fontFamily: T.display, fontSize: 15, fontWeight: 500 }}>{s.value}</div>
             </div>
           ))}
+        </div>
+
+        <div style={{ position: "relative", height: 440, margin: "8px 0 4px" }}>
+          <Phone3D label="IGAdBlock" sub="Ad-free feed" />
         </div>
 
         <H index="01" label="Approach">How it works</H>
