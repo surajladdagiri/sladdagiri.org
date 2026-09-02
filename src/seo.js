@@ -52,6 +52,21 @@ export const ROUTE_META = {
     desc: "A private working list.",
     noindex: true,
   },
+  "/privacy": {
+    title: "Privacy Policy | Suraj Laddagiri",
+    desc: "How sladdagiri.org handles visitor data: limited, private analytics only, no advertising cookies, no third-party trackers, and nothing sold or shared.",
+    crumb: "Privacy",
+  },
+  "/terms": {
+    title: "Terms of Use | Suraj Laddagiri",
+    desc: "Terms of use for sladdagiri.org, the personal portfolio of Suraj Laddagiri.",
+    crumb: "Terms",
+  },
+  "/accessibility": {
+    title: "Accessibility | Suraj Laddagiri",
+    desc: "Accessibility statement for sladdagiri.org: WCAG 2.1 AA target, keyboard support, alt text, and reduced-motion fallbacks.",
+    crumb: "Accessibility",
+  },
   "/haven/privacy": {
     title: "HAVEN Privacy | Suraj Laddagiri",
     desc: "Privacy policy for the HAVEN app.",

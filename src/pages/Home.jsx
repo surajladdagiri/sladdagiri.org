@@ -205,18 +205,79 @@ export default function Home() {
   const portraitUrl = `${import.meta.env.BASE_URL || "/"}IMG_8647.jpeg`;
   const resumeUrl = `${import.meta.env.BASE_URL || "/"}Suraj_Laddagiri_Resume.pdf`;
   const majors = [
-    { major: "Mathematics–Computer Science", degree: "B.S." },
-    { major: "Bioengineering: Biotechnology", degree: "B.S." },
-    { major: "Political Science", degree: "B.A." },
+    {
+      major: "Bioengineering: Biotechnology",
+      degree: "B.S.",
+      courses: [
+        { code: "BENG 100", title: "Intro to Probability & Statistics for Bioengineers" },
+        { code: "BENG 103B", title: "Bioengineering Mass Transfer" },
+        { code: "BENG 123", title: "Dynamic Simulation in Bioengineering" },
+        { code: "BENG 125", title: "Modeling & Computation in Bioengineering" },
+        { code: "BENG 130", title: "Biotechnology Thermodynamics & Kinetics" },
+        { code: "BENG 160", title: "Chemical & Molecular Bioengineering Techniques" },
+        { code: "BENG 161A", title: "Bioreactor Engineering" },
+        { code: "BENG 161B", title: "Biochemical Engineering" },
+        { code: "BENG 162", title: "Biotechnology Laboratory" },
+        { code: "BENG 166A", title: "Cell and Tissue Engineering" },
+        { code: "BENG 168", title: "Biomolecular Engineering" },
+        { code: "BENG 186A", title: "Principles of Biomaterials Design" },
+        { code: "BICD 100", title: "Genetics" },
+        { code: "CENG 101A", title: "Introductory Fluid Mechanics" },
+        { code: "MAE 170", title: "Experimental Techniques" },
+        { code: "BENG 202", title: "Bioinformatics II: Bioinformatics Algorithms", grad: true },
+        { code: "BENG 221", title: "Mathematical Methods for Bioengineering", grad: true },
+      ],
+    },
+    {
+      major: "Mathematics–Computer Science",
+      degree: "B.S.",
+      courses: [
+        { code: "CSE 100", title: "Advanced Data Structures" },
+        { code: "CSE 101", title: "Design and Analysis of Algorithms" },
+        { code: "CSE 105", title: "Theory of Computation" },
+        { code: "CSE 140", title: "Components and Design Techniques for Digital Systems" },
+        { code: "CSE 151A", title: "Machine Learning: Learning Algorithms" },
+        { code: "CSE 152A", title: "Introduction to Computer Vision I" },
+        { code: "CSE 156", title: "Statistical Natural Language Processing" },
+        { code: "CSE 182", title: "Biological Databases" },
+        { code: "MATH 109", title: "Mathematical Reasoning" },
+        { code: "MATH 103A", title: "Modern Algebra I" },
+        { code: "MATH 103B", title: "Modern Algebra II" },
+        { code: "MATH 170A", title: "Introduction to Numerical Analysis: Linear Algebra" },
+        { code: "MATH 183", title: "Statistical Methods" },
+        { code: "MATH 184", title: "Enumerative Combinatorics" },
+        { code: "MATH 194", title: "The Mathematics of Finance" },
+        { code: "CSE 282", title: "Bioinformatics II: Sequence and Structure Analysis", grad: true },
+      ],
+    },
+    {
+      major: "Political Science",
+      degree: "B.A.",
+      courses: [
+        { code: "POLI 100B", title: "The U.S. Congress" },
+        { code: "POLI 100G", title: "How to Win or Lose an Election" },
+        { code: "POLI 100W", title: "Politics, Policy, and Education Inequality" },
+        { code: "POLI 101A", title: "Black Politics in the U.S." },
+        { code: "POLI 113BR", title: "Chinese and Japanese Political Thought I" },
+        { code: "POLI 114BR", title: "Marxist Political Thought" },
+        { code: "POLI 117R", title: "Bending the Curve: Solutions to Climate Change" },
+        { code: "POLI 131CR", title: "The Chinese Revolution" },
+        { code: "POLI 145", title: "Theories, Technology, and National Security" },
+        { code: "POLI 149", title: "Spies, Intelligence, and US National Security" },
+        { code: "POLI 150A", title: "Politics of Immigration" },
+        { code: "POLI 153", title: "The European Union in World Politics" },
+      ],
+    },
   ];
 
   return (
-    <div style={{ background: C.bg, color: C.ink }}>
-      {/* fixed warm wash so no section is ever flat black */}
+    <div style={{ background: C.bg, color: C.ink, position: "relative" }}>
+      {/* warm wash so no section is ever flat black (scoped to Home, so it
+          never paints over the site footer that Layout renders below) */}
       <div
         aria-hidden
         style={{
-          position: "fixed",
+          position: "absolute",
           inset: 0,
           zIndex: 0,
           pointerEvents: "none",
@@ -384,6 +445,28 @@ export default function Home() {
               .home-about-grid { grid-template-columns: 1fr !important; }
               .home-about-grid .portrait { max-width: 340px; }
             }
+            .major-acc { border-bottom: 1px solid ${C.line}; }
+            .major-acc > summary {
+              list-style: none;
+              cursor: pointer;
+              display: flex;
+              align-items: baseline;
+              gap: 16px;
+              padding: 18px 0;
+              outline: none;
+            }
+            .major-acc > summary::-webkit-details-marker { display: none; }
+            .major-acc > summary:hover span:nth-child(2) { color: ${C.accent2}; }
+            .major-acc .chev { align-self: center; transition: transform 220ms ease; flex-shrink: 0; }
+            .major-acc[open] .chev { transform: rotate(180deg); }
+            .major-panel { padding: 2px 0 18px 34px; display: flex; flex-direction: column; }
+            .major-acc .course-row {
+              display: flex; align-items: baseline; gap: 14px; padding: 7px 0;
+            }
+            @media (max-width: 560px) {
+              .major-acc > summary { flex-wrap: wrap; gap: 8px 14px; }
+              .major-panel { padding-left: 0; }
+            }
           `}</style>
           <Reveal>
             <div style={{ fontFamily: T.mono, fontSize: 12, letterSpacing: "0.16em", textTransform: "uppercase", color: C.accent2, marginBottom: 18, display: "flex", alignItems: "center", gap: 12 }}>
@@ -418,16 +501,41 @@ export default function Home() {
                 </p>
 
                 <div style={{ height: 1, background: C.line }} />
-                {majors.map((m, i) => (
-                  <div key={m.major}>
-                    <div style={{ display: "flex", alignItems: "baseline", gap: 18, padding: "18px 0" }}>
-                      <span style={{ fontFamily: T.mono, fontSize: 13, color: C.accent }}>{String(i + 1).padStart(2, "0")}</span>
-                      <span style={{ fontFamily: T.display, fontSize: 19, fontWeight: 500, color: C.ink, flex: 1 }}>{m.major}</span>
-                      <span style={{ fontFamily: T.mono, fontSize: 13, color: C.dim }}>{m.degree}</span>
-                    </div>
-                    <div style={{ height: 1, background: C.line }} />
-                  </div>
-                ))}
+                {majors.map((m, i) => {
+                  const gradCount = m.courses.filter((c) => c.grad).length;
+                  const ud = m.courses.length - gradCount;
+                  return (
+                    <details key={m.major} className="major-acc">
+                      <summary>
+                        <span style={{ fontFamily: T.mono, fontSize: 13, color: C.accent }}>{String(i + 1).padStart(2, "0")}</span>
+                        <span style={{ fontFamily: T.display, fontSize: 19, fontWeight: 500, color: C.ink, flex: 1 }}>{m.major}</span>
+                        <span style={{ fontFamily: T.mono, fontSize: 12, color: C.faint, whiteSpace: "nowrap" }}>
+                          {ud} courses{gradCount ? ` · ${gradCount} grad` : ""}
+                        </span>
+                        <span style={{ fontFamily: T.mono, fontSize: 13, color: C.dim }}>{m.degree}</span>
+                        <svg className="chev" width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                          <path d="M6 9l6 6 6-6" stroke={C.dim} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </summary>
+                      <div className="major-panel">
+                        {m.courses.map((c) => (
+                          <div key={c.code} className="course-row">
+                            <span style={{ fontFamily: T.mono, fontSize: 12.5, color: C.accent2, minWidth: 92, whiteSpace: "nowrap" }}>{c.code}</span>
+                            <span style={{ fontFamily: T.body, fontSize: 14.5, color: C.dim, flex: 1 }}>{c.title}</span>
+                            {c.grad && (
+                              <span
+                                title="Graduate-level course"
+                                style={{ fontFamily: T.mono, fontSize: 10.5, letterSpacing: "0.06em", textTransform: "uppercase", color: C.accent, border: `1px solid ${C.accent}`, borderRadius: 3, padding: "2px 6px", whiteSpace: "nowrap" }}
+                              >
+                                Grad
+                              </span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </details>
+                  );
+                })}
               </div>
             </div>
           </Reveal>

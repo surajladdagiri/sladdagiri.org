@@ -17,6 +17,9 @@ const MusicStripPrivacy = lazy(() => import("./pages/MusicStripPrivacy"));
 const Haven = lazy(() => import("./pages/Haven"));
 const HavenPrivacy = lazy(() => import("./pages/HavenPrivacy"));
 const IGAdBlock = lazy(() => import("./pages/IGAdBlock"));
+const SitePrivacy = lazy(() => import("./pages/SitePrivacy"));
+const Terms = lazy(() => import("./pages/Terms"));
+const Accessibility = lazy(() => import("./pages/Accessibility"));
 const CongressML = lazy(() => import("./pages/CongressML"));
 const Atlas = lazy(() => import("./pages/Atlas"));
 const Theater = lazy(() => import("./pages/Theater"));
@@ -189,6 +192,12 @@ function Footer() {
           <a href="https://github.com/surajladdagiri" target="_blank" rel="noreferrer" style={link}>GitHub</a>
           <a href="https://www.linkedin.com/in/suraj-laddagiri-903602272/" target="_blank" rel="noreferrer" style={link}>LinkedIn</a>
           <a href="/Suraj_Laddagiri_Resume.pdf" target="_blank" rel="noreferrer" style={link}>Résumé</a>
+          <Link to="/privacy" style={link} onMouseEnter={(e) => (e.currentTarget.style.color = T.ink)} onMouseLeave={(e) => (e.currentTarget.style.color = T.dim)}>Privacy</Link>
+          <Link to="/terms" style={link} onMouseEnter={(e) => (e.currentTarget.style.color = T.ink)} onMouseLeave={(e) => (e.currentTarget.style.color = T.dim)}>Terms</Link>
+          <Link to="/accessibility" style={link} onMouseEnter={(e) => (e.currentTarget.style.color = T.ink)} onMouseLeave={(e) => (e.currentTarget.style.color = T.dim)}>Accessibility</Link>
+        </div>
+        <div style={{ marginTop: 22, fontFamily: T.mono, fontSize: 12, color: T.faint }}>
+          © {new Date().getFullYear()} Suraj Laddagiri. All rights reserved.
         </div>
       </div>
     </footer>
@@ -240,6 +249,9 @@ export default function App() {
         <Route path="igadblock" element={<IGAdBlock />} />
         <Route path="congress" element={<CongressML />} />
         <Route path="atlas" element={<Atlas />} />
+        <Route path="privacy" element={<SitePrivacy />} />
+        <Route path="terms" element={<Terms />} />
+        <Route path="accessibility" element={<Accessibility />} />
         <Route path="*" element={<NotFound />} />
       </Route>
       {/* Lazy on purpose: code-splitting keeps this out of the main bundle, so
