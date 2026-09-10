@@ -422,6 +422,61 @@ async function clearAll(req, env) {
   return json({ ok: true, deleted: res.meta?.changes ?? null }, env, 200, req);
 }
 
+/* ---------------------------------------------------- application tracker */
+
+// The tracker stores one row per entry: the whole entry as a JSON blob so any
+// fields can be added without a migration. Created on first use.
+async function ensureTracker(env) {
+  await env.DB.prepare(
+    `CREATE TABLE IF NOT EXISTS tracker (id TEXT PRIMARY KEY, data TEXT NOT NULL, updated INTEGER)`
+  ).run();
+}
+
+const slugify = (s) =>
+  (s || "").toString().toLowerCase().trim().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60);
+
+// GET /tracker — list every entry. Auth required (holds contacts + drafts).
+async function trackerList(req, env) {
+  if (!(await verifyToken(env, bearer(req)))) return json({ error: "unauthorized" }, env, 401, req);
+  await ensureTracker(env);
+  const r = await env.DB.prepare(`SELECT data FROM tracker ORDER BY updated DESC`).all();
+  const entries = (r.results || []).map((row) => {
+    try { return JSON.parse(row.data); } catch { return null; }
+  }).filter(Boolean);
+  return json({ entries }, env, 200, req);
+}
+
+// POST /tracker — create or update one entry. Auth required.
+async function trackerUpsert(req, env) {
+  if (!(await verifyToken(env, bearer(req)))) return json({ error: "unauthorized" }, env, 401, req);
+  await ensureTracker(env);
+  let entry = {};
+  try { entry = await req.json(); } catch { return json({ error: "bad request" }, env, 400, req); }
+  if (!entry || typeof entry !== "object") return json({ error: "bad entry" }, env, 400, req);
+  if (!entry.name) return json({ error: "name required" }, env, 400, req);
+  let id = (entry.id || "").toString().trim();
+  if (!id) id = `${slugify(entry.name)}-${Date.now().toString(36)}`;
+  entry.id = id;
+  entry.updated = Date.now();
+  await env.DB.prepare(
+    `INSERT INTO tracker (id, data, updated) VALUES (?, ?, ?)
+     ON CONFLICT(id) DO UPDATE SET data = excluded.data, updated = excluded.updated`
+  ).bind(id, JSON.stringify(entry), entry.updated).run();
+  return json({ ok: true, entry }, env, 200, req);
+}
+
+// POST /tracker/delete — remove one entry by id. Auth required.
+async function trackerDelete(req, env) {
+  if (!(await verifyToken(env, bearer(req)))) return json({ error: "unauthorized" }, env, 401, req);
+  await ensureTracker(env);
+  let body = {};
+  try { body = await req.json(); } catch { return json({ error: "bad request" }, env, 400, req); }
+  const id = (body.id || "").toString().trim();
+  if (!id) return json({ error: "id required" }, env, 400, req);
+  const res = await env.DB.prepare(`DELETE FROM tracker WHERE id = ?`).bind(id).run();
+  return json({ ok: true, id, deleted: res.meta?.changes ?? null }, env, 200, req);
+}
+
 export default {
   async fetch(req, env) {
     const url = new URL(req.url);
@@ -438,6 +493,9 @@ export default {
       if (url.pathname === "/label" && req.method === "POST") return await setLabel(req, env);
       if (url.pathname === "/delete" && req.method === "POST") return await deleteIp(req, env);
       if (url.pathname === "/clear" && req.method === "POST") return await clearAll(req, env);
+      if (url.pathname === "/tracker" && req.method === "GET") return await trackerList(req, env);
+      if (url.pathname === "/tracker" && req.method === "POST") return await trackerUpsert(req, env);
+      if (url.pathname === "/tracker/delete" && req.method === "POST") return await trackerDelete(req, env);
     } catch (e) {
       return json({ error: String(e && e.message ? e.message : e) }, env, 500, req);
     }
