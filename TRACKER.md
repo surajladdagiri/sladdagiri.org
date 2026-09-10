@@ -1,82 +1,66 @@
-# Atlas — application tracker data
+# Atlas — application tracker
 
-Atlas (`/atlas`) is a **private** page that tracks jobs and research labs Suraj
-has applied to, plans to apply to, or is interested in. It is not linked from the
-site, not in the nav or footer, not in the sitemap, and is set to `noindex` — you
-can only reach it by knowing the URL (`/atlas`).
+Atlas (`/atlas`) is a **private** page for tracking jobs and research labs Suraj
+has applied to, plans to apply to, or wants to reach out to. It is not linked from
+the site, not in the nav/footer, not in the sitemap, and is `noindex` — reachable
+only by knowing the URL. It is also sign-in protected because it holds real
+contacts and draft emails.
 
-## How to update it (humans and AI agents)
+## For a person
 
-**All data lives in one file:** `public/tracker.json`. Edit that file — nothing
-else. The page loads it at runtime, so a change appears on the next deploy (or
-immediately on refresh in local dev). You do **not** need to touch any React code
-to add, edit, or remove entries.
+Go to `/atlas`, sign in with the admin email + password (same as the dashboard),
+then use the UI: **Add entry**, **Edit**, and **Delete** on each card, plus
+search and type/status filters. **Export** downloads all entries as JSON.
+Data is saved to the D1 database behind the analytics Worker, so it syncs across
+devices and browsers.
 
-`public/tracker.json` is a single JSON object:
+## For an AI agent
 
-```json
-{ "entries": [ /* array of entry objects, newest or highest priority first */ ] }
-```
+Data lives in the Worker (`workers/analytics`), table `tracker` (one row per
+entry, the entry stored as a JSON blob in the `data` column). Manage it through
+the Worker's HTTP API. All tracker endpoints require a bearer token.
 
-Keep it **valid JSON** (double-quoted keys and strings, no comments, no trailing
-commas). If the JSON is malformed the page shows an error instead of the list.
+1. `POST {WORKER_URL}/login` with `{ "email", "password" }` → `{ "token" }`.
+2. `GET  {WORKER_URL}/tracker`  (Authorization: Bearer <token>) → `{ "entries": [...] }`.
+3. `POST {WORKER_URL}/tracker`  (Bearer) with an entry object → upserts it
+   (matched by `id`; a new `id` is generated from the name if omitted).
+4. `POST {WORKER_URL}/tracker/delete` (Bearer) with `{ "id" }` → removes it.
+
+`WORKER_URL` is the analytics Worker (default `https://analytics.sladdagiri.workers.dev`).
 
 ## Entry schema
 
-Every field except `id`, `type`, `name`, and `status` is optional — include only
-what you have. Unknown/empty fields are simply not shown.
+Only `name` is required; everything else is optional.
 
 | Field | Type | Notes |
 |-------|------|-------|
-| `id` | string | Unique slug, e.g. `"salk-talmo-lab"`. Required. |
-| `type` | string | `"job"` or `"lab"`. Required. |
-| `name` | string | Company or lab name. Required. |
-| `org` | string | Parent organization / institution, e.g. `"UC San Diego"`. |
-| `role` | string | Role or position, e.g. `"iOS Engineer"`, `"Research Associate"`. |
-| `location` | string | e.g. `"San Diego, CA"` or `"Remote"`. |
-| `status` | string | One of: `interested`, `to_apply`, `applied`, `interviewing`, `offer`, `rejected`, `closed`. Required. |
-| `priority` | string | `high`, `medium`, or `low`. Controls sort order. |
-| `fit` | number | 1–3, self-assessed fit (3 = strongest). |
+| `id` | string | Stable id; generated from `name` if omitted. |
+| `type` | string | `"job"` or `"lab"`. |
+| `name` | string | Company or lab name. **Required.** |
+| `org` | string | Parent organization / institution. |
+| `role` | string | Role or position. |
+| `location` | string | e.g. `"San Diego, CA"`. |
+| `status` | string | `interested`, `to_apply`, `applied`, `interviewing`, `offer`, `rejected`, `closed`. |
+| `priority` | string | `high`, `medium`, `low` (drives sort order). |
+| `fit` | number | 0–3 self-assessed fit. |
 | `link` | string | URL to the posting or lab site. |
-| `appliedDate` | string | `YYYY-MM-DD`. |
-| `deadline` | string | `YYYY-MM-DD`. |
-| `angle` | string | One or two sentences: why you fit / your pitch. |
-| `projects` | string[] | Projects or demos you can build/show to prove fit. |
-| `contacts` | object[] | People to reach: `{ "name", "role", "email", "linkedin", "note" }`. |
-| `outreach` | object[] | Messages sent/planned: `{ "channel", "date", "status", "message" }`. `channel` e.g. `email`/`linkedin`; `status` e.g. `sent`/`replied`/`draft`. |
-| `draftEmail` | string | A ready-to-send email you can copy. |
-| `tags` | string[] | Free-form tags, e.g. `["iOS", "wearables"]`. |
+| `appliedDate` / `deadline` | string | `YYYY-MM-DD`. |
+| `angle` | string | Why you fit / your pitch. |
+| `projects` | string[] | Projects/demos to prove fit. |
+| `contacts` | object[] | `{ name, role, email, linkedin, note }`. |
+| `outreach` | object[] | `{ channel, date, status, message }`. |
+| `draftEmail` | string | A ready-to-send email. |
+| `tags` | string[] | Free-form tags. |
 | `notes` | string | Anything else. |
 
-## Example entry
+## Deploy note
 
-```json
-{
-  "id": "example-lab",
-  "type": "lab",
-  "name": "Example Lab",
-  "org": "UC San Diego",
-  "role": "Research Associate",
-  "location": "La Jolla, CA",
-  "status": "to_apply",
-  "priority": "high",
-  "fit": 3,
-  "link": "https://example.edu/lab",
-  "appliedDate": "",
-  "deadline": "2026-10-01",
-  "angle": "Their on-device ML + wearables work maps directly onto HAVEN.",
-  "projects": ["A SLEAP-style pose-tracking demo", "A BLE sensor logger app"],
-  "contacts": [
-    { "name": "Dr. Jane Doe", "role": "PI", "email": "jane@example.edu", "linkedin": "", "note": "Advised a related project." }
-  ],
-  "outreach": [
-    { "channel": "email", "date": "", "status": "draft", "message": "" }
-  ],
-  "draftEmail": "Hi Dr. Doe, I'm a UC San Diego senior who ships iOS + on-device ML ...",
-  "tags": ["on-device ML", "wearables"],
-  "notes": "Check whether they hire post-bacc RAs."
-}
+The Worker auto-creates the `tracker` table on first use — no migration needed.
+After pulling these changes, redeploy the Worker:
+
+```
+cd workers/analytics && npx wrangler deploy
 ```
 
-To add an entry, append an object like this to the `entries` array in
-`public/tracker.json`. To edit or remove one, change or delete its object.
+`public/tracker.json` is no longer read by the app; it only exists as an optional
+seed/backup target for the Export button.
