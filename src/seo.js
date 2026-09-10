@@ -49,7 +49,7 @@ export const ROUTE_META = {
   },
   "/atlas": {
     title: "Atlas | Suraj Laddagiri",
-    desc: "A private working list.",
+    desc: "A private application tracker.",
     noindex: true,
   },
   "/privacy": {
