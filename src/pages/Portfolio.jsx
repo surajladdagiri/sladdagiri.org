@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { T, Eyebrow, Rule, SectionHead, Btn, Tag } from "../theme";
 import Reveal from "../Reveal";
 import Tilt from "../Tilt";
+import { SLEAP_SHOTS, SLEAP_REPO, SLEAP_TESTFLIGHT, SLEAP_NOTEBOOK } from "../data/sleap";
 
 /* A single phone screenshot, matte frame, no blue glow, no heavy shadow. */
 function Shot({ src, alt, onClick }) {
@@ -27,7 +28,7 @@ function Shot({ src, alt, onClick }) {
       onMouseEnter={() => setH(true)}
       onMouseLeave={() => setH(false)}
     >
-      <img src={src} alt={alt} style={{ display: "block", width: "100%", height: "auto" }} />
+      <img src={src} alt={alt} loading="lazy" decoding="async" style={{ display: "block", width: "100%", height: "auto" }} />
     </button>
   );
 }
@@ -150,32 +151,6 @@ export default function Portfolio() {
     () => [
       {
         index: "01",
-        eyebrow: "iOS · ESP32 · Bluetooth",
-        title: "Music Strip",
-        blurb:
-          "A Bluetooth-controlled LED strip. The lights are WS2812B LEDs driven by an ESP32, and an iOS app controls them. It can react to music, and it pulls colors from the album art of whatever song is playing.",
-        tags: ["Bluetooth", "WS2812B", "ESP32", "Album-art sync", "Animations", "Swift"],
-        stats: [
-          { label: "Platform", value: "iOS + ESP32" },
-          { label: "Protocol", value: "Bluetooth" },
-          { label: "Lighting", value: "WS2812B LEDs" },
-          { label: "Focus", value: "Music-reactive" },
-        ],
-        shots: [
-          { src: `${baseUrl}ms_1.PNG`, alt: "Music Strip screen 1" },
-          { src: `${baseUrl}ms_2.PNG`, alt: "Music Strip screen 2" },
-          { src: `${baseUrl}ms_3.PNG`, alt: "Music Strip screen 3" },
-          { src: `${baseUrl}ms_4.PNG`, alt: "Music Strip screen 4" },
-        ],
-        links: [
-          { label: "App Store", href: "https://apps.apple.com/us/app/music-strip/id6761938199", primary: true },
-          { label: "Details", to: "/musicstrip" },
-          { label: "GitHub", href: "https://github.com/surajladdagiri/music-strip" },
-          { label: "Privacy", to: "/musicstrip/privacy" },
-        ],
-      },
-      {
-        index: "02",
         eyebrow: "UC San Diego Senior Design · 2025",
         title: "HAVEN: Haptics & Vision for Environmental Navigation",
         blurb:
@@ -202,11 +177,58 @@ export default function Portfolio() {
         ],
       },
       {
+        index: "02",
+        eyebrow: "iOS · On-device ML · SLEAP",
+        title: "SLEAP iOS",
+        blurb:
+          "Animal pose estimation on iPhone and iPad. A SwiftUI app runs a fly pose model trained with SLEAP entirely on the device, using ONNX Runtime with Core ML acceleration. It locates each fly and draws a 13-point skeleton over images or video at up to 17 FPS. I trained and exported the model in Python with SLEAP-NN and then wrote the app around it.",
+        tags: ["SwiftUI", "ONNX Runtime", "Core ML", "SLEAP-NN", "PyTorch", "AVFoundation", "GitHub Actions"],
+        stats: [
+          { label: "Model", value: "Two-stage top-down U-Net" },
+          { label: "Output", value: "13 keypoints · 2 flies" },
+          { label: "Speed", value: "17 FPS · iPhone 15 Pro Max" },
+          { label: "Runtime", value: "ONNX Runtime + Core ML" },
+        ],
+        shots: SLEAP_SHOTS.map((s) => ({ src: s.src, alt: s.alt })),
+        links: [
+          { label: "Details", to: "/sleap-ios", primary: true },
+          { label: "TestFlight", href: SLEAP_TESTFLIGHT },
+          { label: "GitHub", href: SLEAP_REPO },
+          { label: "Training notebook", href: SLEAP_NOTEBOOK },
+        ],
+      },
+      {
         index: "03",
+        eyebrow: "iOS · ESP32 · Bluetooth",
+        title: "Music Strip",
+        blurb:
+          "A Bluetooth-controlled LED strip. The lights are WS2812B LEDs driven by an ESP32, and an iOS app controls them. It can pulse along with the music or match its colors to the album art of whatever's playing.",
+        tags: ["Bluetooth", "WS2812B", "ESP32", "Album-art sync", "Animations", "Swift"],
+        stats: [
+          { label: "Platform", value: "iOS + ESP32" },
+          { label: "Protocol", value: "Bluetooth" },
+          { label: "Lighting", value: "WS2812B LEDs" },
+          { label: "Focus", value: "Music-reactive" },
+        ],
+        shots: [
+          { src: `${baseUrl}ms_1.PNG`, alt: "Music Strip screen 1" },
+          { src: `${baseUrl}ms_2.PNG`, alt: "Music Strip screen 2" },
+          { src: `${baseUrl}ms_3.PNG`, alt: "Music Strip screen 3" },
+          { src: `${baseUrl}ms_4.PNG`, alt: "Music Strip screen 4" },
+        ],
+        links: [
+          { label: "App Store", href: "https://apps.apple.com/us/app/music-strip/id6761938199", primary: true },
+          { label: "Details", to: "/musicstrip" },
+          { label: "GitHub", href: "https://github.com/surajladdagiri/music-strip" },
+          { label: "Privacy", to: "/musicstrip/privacy" },
+        ],
+      },
+      {
+        index: "04",
         eyebrow: "Machine Learning · UCSD CSE 151A",
         title: "Congressional Vote Prediction",
         blurb:
-          "A model that predicts how each of the 535 members of Congress will vote on a bill, using the bill's text and metadata. It embeds the bill text with DistilBERT, adds one-hot features, and runs everything through 535 separate neural networks, one per member. Mean accuracy is 86.4%. A Flask app serves the predictions live. I built the model, trained it, and wrote the web interface.",
+          "A model that predicts how each of the 535 members of Congress will vote on a bill, using the bill's text and metadata. It embeds the bill text with DistilBERT, adds one-hot features, and runs everything through 535 separate neural networks, one per member. Mean accuracy is 86.4%. A Flask app shows the predictions live. On our four-person team, I built and trained the model and wrote the web app.",
         tags: ["DistilBERT", "PyTorch", "NLP embeddings", "535 models", "Flask + SocketIO", "TF-IDF baseline"],
         stats: [
           { label: "Model", value: "DistilBERT + NN" },
@@ -215,12 +237,30 @@ export default function Portfolio() {
           { label: "Serving", value: "Flask · real-time" },
         ],
         links: [
-          { label: "Case study", to: "/congress", primary: true },
+          { label: "Details", to: "/congress", primary: true },
           { label: "GitHub", href: "https://github.com/therab6it/UCSD_CSE151A-SS1/tree/Milestone-4" },
         ],
       },
       {
-        index: "04",
+        index: "05",
+        eyebrow: "Web · Three.js · Cloudflare",
+        title: "sladdagiri.org",
+        blurb:
+          "The site you're on. It's a React 19 single-page app, and the 3D (the point cloud on the home page and the iPhones on the app pages) is written directly in Three.js. A small Cloudflare backend keeps a visitor log for an admin dashboard and holds a private tracker for my job applications. It also runs a hidden theater where two people in different places can watch the same movie in sync. None of it costs anything to run.",
+        tags: ["React 19", "Three.js", "Cloudflare Workers", "Durable Objects", "D1 + R2", "WebSockets", "SEO"],
+        stats: [
+          { label: "Frontend", value: "React 19 + Vite" },
+          { label: "3D", value: "Hand-written Three.js" },
+          { label: "Backend", value: "2 Workers · D1 · R2" },
+          { label: "Sync", value: "Durable Object + clock sync" },
+        ],
+        links: [
+          { label: "Details", to: "/website", primary: true },
+          { label: "GitHub", href: "https://github.com/surajladdagiri/sladdagiri.org" },
+        ],
+      },
+      {
+        index: "06",
         eyebrow: "Jailbreak tweak · Theos + Logos",
         title: "IGAdBlock",
         blurb:
@@ -252,9 +292,7 @@ export default function Portfolio() {
           Things I&apos;ve built
         </h1>
         <p style={{ fontFamily: T.body, fontSize: 16, color: T.dim, maxWidth: 620, margin: "0 0 64px" }}>
-          A few things I&apos;ve built. Some are iOS apps, one is hardware, one
-          is a machine-learning project. I worked on each of them from the first
-          idea to a version people can actually use.
+          Here&apos;s most of what I&apos;ve built. There are a few iOS apps (two are on the App Store), some Bluetooth hardware, a couple of machine-learning projects, and the site you&apos;re reading. Each one went from an idea to something that runs.
         </p>
 
         {projects.map((p) => (

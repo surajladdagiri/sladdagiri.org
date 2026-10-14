@@ -6,12 +6,12 @@ const SECTIONS = [
   {
     title: "About this site",
     body:
-      "sladdagiri.org is the personal portfolio of Suraj Laddagiri. It exists to share projects, writing, and background. By using the site you agree to these terms. If you do not agree, please do not use the site.",
+      "sladdagiri.org is my personal site. By using it you agree to these terms; if you don't agree, please don't use it.",
   },
   {
     title: "Use of the site",
     body:
-      "You may browse, read, and share links to the site freely. Please do not attempt to disrupt the site, access non-public areas, scrape it at a scale that degrades service, or use it to break any law.",
+      "Browse and share links as much as you like. Please don't try to break the site or get into the private parts of it, and don't scrape it hard enough to slow it down or use it for anything illegal.",
   },
   {
     title: "Intellectual property",
@@ -21,12 +21,12 @@ const SECTIONS = [
   {
     title: "External links",
     body:
-      "The site links to other websites (GitHub, LinkedIn, the App Store, research labs, and more). Those sites are not under my control, and I am not responsible for their content, policies, or availability.",
+      "The site links to other websites, like GitHub, LinkedIn, and the App Store. I don't control those sites and I'm not responsible for what's on them.",
   },
   {
     title: "No warranty",
     body:
-      "The site and its contents are provided “as is,” without warranties of any kind. Information here may be incomplete or out of date, and nothing on the site is professional, legal, medical, or financial advice.",
+      "The site and everything on it is provided \"as is,\" with no warranty of any kind. Some of it may be out of date or incomplete, and none of it is professional, legal, medical, or financial advice.",
   },
   {
     title: "Limitation of liability",
@@ -36,7 +36,7 @@ const SECTIONS = [
   {
     title: "Changes",
     body:
-      "These terms may change over time. Continued use of the site after an update means you accept the current version. These terms are governed by the laws of the State of California.",
+      "I may update these terms. If you keep using the site after a change, you're agreeing to the new version. California law governs them.",
   },
 ];
 

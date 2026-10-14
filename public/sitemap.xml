@@ -26,6 +26,16 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://portfolio.sladdagiri.org/website</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://portfolio.sladdagiri.org/sleap-ios</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://portfolio.sladdagiri.org/igadblock</loc>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>

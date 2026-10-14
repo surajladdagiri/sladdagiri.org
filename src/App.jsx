@@ -21,6 +21,8 @@ const SitePrivacy = lazy(() => import("./pages/SitePrivacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Accessibility = lazy(() => import("./pages/Accessibility"));
 const CongressML = lazy(() => import("./pages/CongressML"));
+const SleapIOS = lazy(() => import("./pages/SleapIOS"));
+const Website = lazy(() => import("./pages/Website"));
 const Atlas = lazy(() => import("./pages/Atlas"));
 const Theater = lazy(() => import("./pages/Theater"));
 const Upload = lazy(() => import("./pages/Upload"));
@@ -156,8 +158,10 @@ const FOOTER_LINKS = [
   { label: "Home", to: "/" },
   { label: "Work", to: "/portfolio" },
   { label: "HAVEN", to: "/haven" },
+  { label: "SLEAP iOS", to: "/sleap-ios" },
   { label: "Music Strip", to: "/musicstrip" },
   { label: "Congressional Vote Prediction", to: "/congress" },
+  { label: "sladdagiri.org", to: "/website" },
   { label: "IGAdBlock", to: "/igadblock" },
   { label: "Demos", to: "/demos" },
 ];
@@ -248,6 +252,8 @@ export default function App() {
         <Route path="haven/privacy" element={<HavenPrivacy />} />
         <Route path="igadblock" element={<IGAdBlock />} />
         <Route path="congress" element={<CongressML />} />
+        <Route path="sleap-ios" element={<SleapIOS />} />
+        <Route path="website" element={<Website />} />
         <Route path="atlas" element={<Atlas />} />
         <Route path="privacy" element={<SitePrivacy />} />
         <Route path="terms" element={<Terms />} />

@@ -15,6 +15,8 @@ This is his personal portfolio site.
 - [Music Strip](https://portfolio.sladdagiri.org/musicstrip): a Bluetooth-controlled LED strip. WS2812B LEDs on an ESP32, controlled by an iOS app with music-reactive modes and album-art colors.
 - [Congressional Vote Prediction](https://portfolio.sladdagiri.org/congress): a machine-learning model that predicts how each of the 535 members of Congress votes on a bill, using DistilBERT embeddings and one network per member. 86.4% mean accuracy.
 - [IGAdBlock](https://portfolio.sladdagiri.org/igadblock): an iOS tweak that removes ads from Instagram's feed by hooking its data sources at runtime, found through reverse engineering with FLEX.
+- [SLEAP iOS](https://portfolio.sladdagiri.org/sleap-ios): on-device animal pose estimation on iPhone and iPad. A SLEAP-NN model (two-stage top-down U-Net, 13 keypoints per fly) runs through ONNX Runtime with Core ML acceleration at up to 17 FPS.
+- [sladdagiri.org](https://portfolio.sladdagiri.org/website): how this site is built (source: https://github.com/surajladdagiri/sladdagiri.org). React 19, hand-written Three.js, and Cloudflare Workers with D1, R2, and Durable Objects.
 
 ## Contact and code
 

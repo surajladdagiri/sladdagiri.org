@@ -80,9 +80,7 @@ export default function IGAdBlock() {
           IGAdBlock works at the data source, one step before anything renders.
           It hooks the methods that hand feed items to Instagram&apos;s list
           adapters and drops the ad and suggestion objects from the arrays they
-          return. Because the ads are gone from the data, they never reach the
-          render step, and there are no blank gaps left where an ad would have
-          been.
+          return. Because the ads are removed from the data itself, the feed closes up around them as if they were never there.
         </P>
 
         <H index="02" label="Hook map">What gets intercepted</H>

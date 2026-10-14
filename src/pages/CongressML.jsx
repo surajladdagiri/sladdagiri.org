@@ -93,10 +93,7 @@ export default function CongressML() {
         <P>
           The bill text is most of the size. It is about 442&nbsp;MB, against
           roughly 50&nbsp;MB for the vote records, because the summaries and full
-          text are long. Instead of pre-joining all of that into 535 huge files,
-          the pipeline merges each member&apos;s history with the bill data at
-          training time. That costs a bit of compute but saves a lot of
-          duplicate storage.
+          text are long. The pipeline joins each member&apos;s history to the bill data at training time. That costs a bit of compute and saves a lot of duplicate storage.
         </P>
 
         <H index="02" label="Preprocessing">Cleaning and encoding</H>
@@ -111,8 +108,7 @@ export default function CongressML() {
           word embeddings. Embeddings were much better, so the real choice was
           which pretrained encoder to use. We compared BERT and DistilBERT. BERT
           was a little more accurate but heavier. DistilBERT was almost as good
-          and much cheaper to run. Since the encoder had to run across 535
-          separate pipelines, DistilBERT was the practical pick.
+          and much cheaper to run. The encoder had to run in 535 separate pipelines, so we went with DistilBERT.
         </P>
 
         <H index="03" label="The model">One network per member</H>
@@ -124,7 +120,7 @@ export default function CongressML() {
           size of 32.
         </P>
         <P>
-          We chose 535 separate models instead of one shared model. That let each
+          We trained a separate model for each of the 535 members. That let each
           model fit its own member&apos;s voting patterns, which helped accuracy.
           The downside was cost: it was heavy to run and took around
           200&nbsp;GB of working storage over the full training run.
@@ -172,14 +168,10 @@ export default function CongressML() {
 
         <H index="06" label="My role">What I did</H>
         <P>
-          This was a four-person project. I built the model, ran the training
-          across the 535 networks, and wrote the web app that serves and shows
-          the predictions.
+          This was a four-person project. I built the model and ran training for all 535 networks, and I wrote the web app that shows the predictions.
         </P>
         <P>
-          If I came back to it, the first thing I would try is one shared model
-          instead of 535 separate ones, so it could learn patterns across
-          members. I would also add more features about each member, like tenure
+          If I came back to it, the first thing I would try is a single shared model for all members, so it could learn patterns across them. I would also add more features about each member, like tenure
           and state, to help with the harder &quot;nay&quot; votes.
         </P>
 

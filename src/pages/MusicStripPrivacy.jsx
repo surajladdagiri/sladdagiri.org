@@ -5,12 +5,12 @@ import Reveal from "../Reveal";
 const POINTS = [
   {
     title: "Overview",
-    body: "This app does not collect, store, or share any personal user data.",
+    body: "The app doesn't collect personal data of any kind.",
   },
   {
     title: "Spotify integration",
     body:
-      "The app uses the Spotify SDK provided by Spotify to let users connect their Spotify account and display currently playing music information such as track title and album artwork.",
+      "The app uses Spotify's SDK so you can connect your Spotify account and see what's playing, including the track name and album art.",
   },
   {
     title: "How music data is handled",
@@ -20,7 +20,7 @@ const POINTS = [
   {
     title: "Compliance",
     body:
-      "This app complies with Spotify's developer policies and uses Spotify's authentication system for login.",
+      "You sign in through Spotify's own login, and the app follows Spotify's developer policies.",
   },
 ];
 
@@ -50,8 +50,7 @@ export default function MusicStripPrivacy() {
             Privacy Policy
           </h1>
           <p style={{ fontFamily: T.body, fontSize: 17, lineHeight: 1.7, color: T.dim, maxWidth: 640, margin: "0 0 22px" }}>
-            Music Strip is designed to be simple and privacy-conscious. It does
-            not collect, store, or share any personal user data.
+            Music Strip doesn&apos;t collect any personal data, so there&apos;s nothing for it to store or share.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 40 }}>
             {TAGS.map((t) => (

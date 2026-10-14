@@ -31,7 +31,7 @@ const PHASES = [
   { k: "Sense", t: "See the space", d: "A LiDAR iPhone, worn on the head, captures camera, depth, and motion data. From that it builds a live picture of what is ahead." },
   { k: "Plan", t: "Find a path", d: "The navigation code tries to go in a straight line. When something is in the way it switches to A*. It re-plans around moving obstacles about every 0.86 seconds." },
   { k: "Guide", t: "Steer with touch", d: "Five small motors turn heading corrections into directional buzzes. The commands go to the Arduino over Core Bluetooth, and it all runs on-device." },
-  { k: "Test", t: "The prototype", d: "The prototype works. It does well at not missing obstacles, and all the sensor data stays on the phone. Nothing goes to the cloud." },
+  { k: "Test", t: "The prototype", d: "The prototype works, and it's good at not missing obstacles. All the sensor data stays on the phone." },
 ];
 
 export default function Haven() {
@@ -49,9 +49,7 @@ export default function Haven() {
         </h1>
         <P>
           A head-mounted device that helps blind and low-vision people move
-          through places they do not know. It uses the phone&apos;s camera and
-          LiDAR to build a picture of what is ahead, finds obstacles, and steers
-          the wearer with five small vibrating motors. None of the sensor data
+          through places they do not know. It uses the phone&apos;s camera and LiDAR to map what&apos;s ahead, then steers the wearer around obstacles with five small vibrating motors. None of the sensor data
           leaves the device. I was the software lead. I wrote the iOS app and the
           Core Bluetooth code that runs the motors in real time.
         </P>
@@ -91,8 +89,7 @@ export default function Haven() {
         <P>
           Most navigation aids for blind users work through audio. The problem is
           that audio competes with hearing, which is the sense those users depend
-          on most to stay aware of what is around them. HAVEN uses touch instead,
-          so it leaves the ears free. It also does the sensing with a phone that
+          on most to stay aware of what is around them. HAVEN uses touch, which leaves the ears free. It also does the sensing with a phone that
           many people already own.
         </P>
 
@@ -112,17 +109,10 @@ export default function Haven() {
           I wrote all the software. That is the iOS app and the Core Bluetooth
           code that connects the phone to the wearable and keeps the link fast
           and stable. I also wrote the part that turns the phone&apos;s live
-          heading into vibration strength for each motor, so the feeling moves
-          smoothly with your orientation instead of jumping between a few fixed
-          directions.
+          heading into vibration strength for each motor, so the feeling shifts smoothly as you turn your head.
         </P>
         <P>
-          The hardest part was tuning that mapping so the vibrations make sense
-          with no training at all. You should feel &quot;go that way&quot; right
-          away. Since someone is trusting it to get around, I cared more about it
-          being reliable in bad conditions than about it being clever, so the
-          whole thing runs on the device with no cloud. The project was advised
-          by Dr. Gert Cauwenberghs.
+          The hardest part was tuning that mapping so the buzzing makes sense without any training. You should just feel &quot;go that way.&quot; Someone is trusting this thing to get around, so everything runs on the phone, where a bad connection can&apos;t break it. Dr. Gert Cauwenberghs advised the project.
         </P>
 
         <div style={{ marginTop: 48 }}>

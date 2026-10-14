@@ -15,6 +15,7 @@ export default function Phone3D({
   screenshot,
   screenshots = [],
   showcase = false,
+  autoCycle = false,
   label = "",
   sub = "",
   accent = "#ff6b35",
@@ -335,6 +336,24 @@ export default function Phone3D({
         const t = clock.getElapsedTime();
         if (showcase) {
           driveShowcase(trackProgress());
+        } else if (autoCycle && texList.length > 1) {
+          // hold each screen, then a full 360 turn that swaps to the next
+          // screenshot while the phone faces away
+          const HOLD = 3.2, SPIN = 1.5, period = HOLD + SPIN;
+          const n = texList.length;
+          const k = Math.floor(t / period);
+          const local = t - k * period;
+          const idx = k % n;
+          if (local < HOLD) {
+            setTex(idx);
+            phone.rotation.y = Math.sin(t * 0.5) * 0.08 + mouse.x * 0.15;
+          } else {
+            const f = smooth((local - HOLD) / SPIN);
+            setTex(f < 0.5 ? idx : (idx + 1) % n);
+            phone.rotation.y = f * Math.PI * 2;
+          }
+          phone.rotation.x = mouse.y * 0.06;
+          phone.position.y = Math.sin(t * 0.7) * 0.03;
         } else {
           // face straight ahead, only a subtle sway + mouse parallax
           phone.rotation.y = Math.sin(t * 0.5) * 0.1 + mouse.x * 0.18;
@@ -365,7 +384,7 @@ export default function Phone3D({
       cancelAnimationFrame(raf);
       cleanups.forEach((fn) => fn());
     };
-  }, [screenshot, JSON.stringify(screenshots), showcase, label, sub, accent, accent2]);
+  }, [screenshot, JSON.stringify(screenshots), showcase, autoCycle, label, sub, accent, accent2]);
 
   return (
     <div ref={wrapRef} aria-hidden style={{ position: "absolute", inset: 0, pointerEvents: "none" }} />

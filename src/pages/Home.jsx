@@ -25,29 +25,29 @@ const PROJECTS = [
     title: "HAVEN",
     path: "/haven",
     blurb:
-      "Head-mounted navigation aid for blind and low-vision users. iOS, Core Bluetooth, LiDAR, and five haptic motors, all running on-device.",
+      "A head-mounted navigation aid for blind and low-vision users. The phone's LiDAR maps what's ahead, and five small motors buzz to steer you around it. Nothing goes to the cloud.",
     tags: ["iOS", "Bluetooth", "Hardware"],
   },
   {
-    title: "Congressional Vote Prediction",
-    path: "/congress",
+    title: "SLEAP iOS",
+    path: "/sleap-ios",
     blurb:
-      "A model that predicts how all 535 members of Congress vote on a bill. DistilBERT embeddings, one network per member, 86.4% mean accuracy.",
-    tags: ["Machine learning", "NLP"],
+      "Animal pose estimation that runs entirely on an iPhone. A model I trained with SLEAP finds each fly in a video and draws a 13-point skeleton on it at up to 17 FPS.",
+    tags: ["iOS", "On-device ML", "Core ML"],
   },
   {
     title: "Music Strip",
     path: "/musicstrip",
     blurb:
-      "Bluetooth LED strip controller. WS2812B lights on an ESP32, driven by an iOS app with music-reactive modes and album-art colors.",
+      "An LED strip on an ESP32 that you control from an iPhone over Bluetooth. It can move with the music or take its colors from the album art of whatever's playing.",
     tags: ["iOS", "ESP32", "Bluetooth"],
   },
   {
-    title: "IGAdBlock",
-    path: "/igadblock",
+    title: "Congressional Vote Prediction",
+    path: "/congress",
     blurb:
-      "An iOS tweak that strips ads from Instagram's feed by hooking its data sources at runtime, found through reverse engineering with FLEX.",
-    tags: ["Reverse engineering", "iOS"],
+      "Predicts how each of the 535 members of Congress will vote on a bill. Every member gets their own small network on top of DistilBERT embeddings of the bill text; mean accuracy was 86.4%.",
+    tags: ["Machine learning", "NLP"],
   },
 ];
 
@@ -355,8 +355,7 @@ export default function Home() {
               margin: "28px 0 34px",
             }}
           >
-            I build iOS apps, Bluetooth hardware, and machine-learning systems,
-            and I graduate from UC San Diego in September 2026.
+            Mostly I write iOS apps. Some of them talk to Bluetooth hardware I built, and lately a couple run machine-learning models right on the phone. I graduate from UC San Diego in September 2026.
           </p>
 
           <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center", marginBottom: 44 }}>
@@ -475,7 +474,7 @@ export default function Home() {
               About
             </div>
             <h2 style={{ fontFamily: T.display, fontSize: "clamp(30px, 4.5vw, 52px)", fontWeight: 600, letterSpacing: "-0.03em", margin: "0 0 44px", maxWidth: 720 }}>
-              Software, biology, and a bit of policy.
+              A bit about me
             </h2>
 
             <div
@@ -491,13 +490,7 @@ export default function Home() {
 
               <div>
                 <p style={{ fontFamily: T.body, fontSize: 18, lineHeight: 1.72, color: C.dim, margin: "0 0 36px", maxWidth: 620 }}>
-                  I&apos;m a senior at UC San Diego with three majors: math and
-                  computer science, bioengineering, and political science. I&apos;m
-                  also a certified EMT. Most of what I do is iOS and machine-learning
-                  work, but the mix of degrees means I like problems that sit between
-                  software, biology, and policy. I grew up around Los Angeles and I
-                  live in San Diego now. Outside of work I play a lot of basketball
-                  and mess around with drones and cars.
+                  I&apos;m a senior at UC San Diego, majoring in math-CS, bioengineering, and political science (yes, all three). I&apos;m also a certified EMT. Most of my time goes into iOS and machine learning, though the bioengineering side keeps pulling me toward health and lab software. I grew up near Los Angeles and live in San Diego now. When I&apos;m not coding I&apos;m usually playing basketball or flying a drone, and I spend more time than I should working on cars.
                 </p>
 
                 <div style={{ height: 1, background: C.line }} />

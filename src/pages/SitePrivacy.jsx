@@ -6,32 +6,32 @@ const COLLECTED = [
   {
     title: "What this site records",
     body:
-      "When you open a page, the site logs the page path, a timestamp, your IP address, a coarse location (country, region, and city) and network/ISP derived from that IP at the edge, and basic device and browser information from your user-agent string. That is the full extent of it.",
+      "When you open a page, the site records which page it was, the time, your IP address, and your browser's user-agent string. From the IP, Cloudflare also supplies a rough location (country, region, city) and the name of your internet provider.",
   },
   {
     title: "Why",
     body:
-      "This is a personal portfolio. The logs exist only so I can see basic traffic — which pages get visited and roughly where visitors are. There is no advertising, no profiling, and no automated decisions made about you.",
+      "This is a personal site, and I look at the logs to see which pages people visit and roughly where they're coming from. I don't run ads, and I don't build profiles of visitors.",
   },
   {
     title: "Where it is stored",
     body:
-      "Visit records are kept in a private database (Cloudflare D1) that only I can access, behind a password-protected admin page. The data is never sold, rented, or shared with third parties.",
+      "Visit records sit in a private Cloudflare D1 database behind a password-protected admin page, and I'm the only one with access. I don't sell or share the data with anyone.",
   },
   {
     title: "Cookies and tracking",
     body:
-      "The public site sets no advertising or tracking cookies and loads no third-party analytics or trackers. The only browser storage used anywhere is a login token on the private admin page, which regular visitors never touch.",
+      "The public site doesn't set cookies or load any third-party analytics. The only thing kept in a browser is a login token for my private admin pages, which visitors never see.",
   },
   {
     title: "Retention",
     body:
-      "Records are kept until I clear them. I periodically remove old entries. You can ask me to delete any data associated with your IP address at any time.",
+      "I keep records until I clear them, which I do every so often. If you want the records for your IP address deleted, just ask.",
   },
   {
     title: "Your choices",
     body:
-      "You can browse without accounts or sign-ups. If you would like to know what, if anything, is stored for your IP address, or want it removed, email me and I will handle it.",
+      "You never need an account to use the site. If you want to know what's stored for your IP address, email me and I'll tell you, or delete it.",
   },
 ];
 

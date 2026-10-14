@@ -80,7 +80,7 @@ function put(url, blob, onLoaded, signal, label = "part") {
     xhr.onerror = () =>
       reject(
         new Error(
-          `${label}: no response from R2. Two likely causes — (1) the file changed ` +
+          `${label}: no response from R2. There are two likely causes. (1) The file changed ` +
             "on disk mid-upload, which happens if prepare.sh was still running when " +
             "you picked the folder; wait for it to finish and re-pick. (2) the bucket " +
             "CORS policy is missing PUT in AllowedMethods, or this origin " +
@@ -189,7 +189,7 @@ function Uploader({ token }) {
         await movie.slice(Math.max(0, movie.size - 1024)).arrayBuffer();
       } catch {
         throw new Error(
-          "movie.mp4 changed on disk since you picked it — prepare.sh is probably " +
+          "movie.mp4 changed on disk after you picked it, so prepare.sh is probably " +
             'still running. Wait for it to print "done.", then re-pick the folder.',
         );
       }
@@ -436,7 +436,7 @@ function Uploader({ token }) {
                 </button>
                 {resumable && (
                   <div style={{ fontSize: 12.5, color: C.amber, marginTop: 10 }}>
-                    An unfinished upload of this file was found — resuming skips what already
+                    There's an unfinished upload of this file. Resuming skips the parts that already
                     landed.{" "}
                     <button
                       onClick={() => {

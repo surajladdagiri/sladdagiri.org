@@ -16,12 +16,12 @@ const POINTS = [
   {
     title: "What stays local",
     body:
-      "Mesh data, pose data, haptic commands, and device-to-device connection details stay on the phone, the Arduino, and the viewer laptop. The system is intended to keep the data inside your own personal devices.",
+      "Mesh data, pose data, haptic commands, and device-to-device connection details stay on the phone, the Arduino, and the viewer laptop.",
   },
   {
     title: "Storage and sharing",
     body:
-      "This project page does not describe any server-side storage, analytics, or third-party sharing for HAVEN navigation data. If you export logs or modify the viewer yourself, you control where those files go.",
+      "HAVEN has no server that stores navigation data, and it doesn't send that data to analytics or anyone else. If you export logs or change the viewer yourself, where those files go is up to you.",
   },
 ];
 

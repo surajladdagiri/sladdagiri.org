@@ -444,7 +444,7 @@ export default function Atlas() {
         </div>
 
         <p style={{ fontFamily: T.body, fontSize: 16, lineHeight: 1.7, color: T.dim, maxWidth: 640, margin: "12px 0 28px" }}>
-          Jobs and research labs I&apos;ve applied to, plan to apply to, or want to reach out to — with contacts, outreach, drafts, and my angle for each.
+          Jobs and research labs I&apos;ve applied to or plan to contact, with my notes on each.
         </p>
 
         {/* controls */}
@@ -477,7 +477,7 @@ export default function Atlas() {
         ) : data.entries.length === 0 ? (
           <div style={{ border: `1px dashed ${T.ruleStrong}`, borderRadius: T.radius, padding: "28px 22px", textAlign: "center" }}>
             <div style={{ fontFamily: T.display, fontSize: 20, fontWeight: 600, marginBottom: 8 }}>No entries yet</div>
-            <p style={{ fontFamily: T.body, fontSize: 15, lineHeight: 1.7, color: T.dim, maxWidth: 460, margin: "0 auto 16px" }}>Add your first job or lab to start tracking applications, contacts, and outreach.</p>
+            <p style={{ fontFamily: T.body, fontSize: 15, lineHeight: 1.7, color: T.dim, maxWidth: 460, margin: "0 auto 16px" }}>Add a job or lab to get started.</p>
             <button style={btn("solid")} onClick={() => setEditing({})}>+ Add entry</button>
           </div>
         ) : results.length === 0 ? (

@@ -6,27 +6,27 @@ const SECTIONS = [
   {
     title: "Commitment",
     body:
-      "I want this site to be usable by as many people as possible, including people who rely on assistive technology. I aim to follow the Web Content Accessibility Guidelines (WCAG) 2.1 at level AA as a practical target.",
+      "I want the site to work for everyone, including people using screen readers or other assistive tech. My target is level AA of the Web Content Accessibility Guidelines (WCAG) 2.1.",
   },
   {
     title: "What's in place",
     body:
-      "Pages use semantic HTML and a clear heading structure. Interactive elements are reachable and operable by keyboard, images carry descriptive alternative text, and the color palette is chosen for readable contrast on the dark background.",
+      "Pages use semantic HTML with headings in order. Everything you can click also works from the keyboard, and images have alt text. I picked the text colors to stay readable on the dark background.",
   },
   {
     title: "Motion and animation",
     body:
-      "The 3D scenes and scroll effects are decorative and hidden from assistive tech. If your device or browser requests reduced motion, the animations are disabled automatically and the site falls back to static, still layouts.",
+      "The 3D scenes and scroll effects are decoration, so screen readers skip them. If your device is set to reduce motion, the animations turn off and the pages stay still.",
   },
   {
     title: "Known limitations",
     body:
-      "The 3D graphics are visual only and convey no information that isn't also in text. Some embedded third-party content (for example the App Store) follows its own accessibility standards, which I do not control.",
+      "Nothing shown in the 3D graphics is missing from the text. Pages I link to, like the App Store, have their own accessibility, which I can't control.",
   },
   {
     title: "Feedback",
     body:
-      "If you hit an accessibility barrier anywhere on the site, please tell me — I take it seriously and will do my best to fix it quickly. Include the page and what went wrong so I can reproduce it.",
+      "If something on the site doesn't work for you, please email me with the page and what went wrong. I'll try to fix it quickly.",
   },
 ];
 

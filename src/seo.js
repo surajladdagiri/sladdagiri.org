@@ -10,12 +10,12 @@ const WORK = { name: "Work", path: "/portfolio" };
 export const ROUTE_META = {
   "/": {
     title: "Suraj Laddagiri",
-    desc: "Suraj Laddagiri is a software engineer and a UC San Diego senior. He ships iOS apps, builds Bluetooth hardware, and trains machine-learning models.",
+    desc: "Suraj Laddagiri is a UC San Diego senior who writes iOS apps, some of which control Bluetooth hardware he built or run machine-learning models on the phone.",
     type: "profile",
   },
   "/portfolio": {
     title: "Work | Suraj Laddagiri",
-    desc: "Projects by Suraj Laddagiri, including two shipped iOS apps, Bluetooth hardware, and a machine-learning model that predicts congressional votes.",
+    desc: "Projects by Suraj Laddagiri: two App Store apps, on-device pose estimation with SLEAP, a model that predicts congressional votes, and this website.",
     crumb: "Work",
   },
   "/haven": {
@@ -36,6 +36,18 @@ export const ROUTE_META = {
     crumb: "Congressional Vote Prediction",
     parent: WORK,
   },
+  "/website": {
+    title: "sladdagiri.org | Suraj Laddagiri",
+    desc: "How this site is built: a React 19 app with hand-written Three.js, plus Cloudflare Workers, D1, R2, and a Durable Object that keeps two browsers' video playback in sync.",
+    crumb: "sladdagiri.org",
+    parent: WORK,
+  },
+  "/sleap-ios": {
+    title: "SLEAP iOS | Suraj Laddagiri",
+    desc: "SLEAP iOS runs a SLEAP-trained animal pose model on iPhone and iPad with ONNX Runtime and Core ML, predicting 13 keypoints per fly at up to 17 FPS. Built by Suraj Laddagiri.",
+    crumb: "SLEAP iOS",
+    parent: WORK,
+  },
   "/igadblock": {
     title: "IGAdBlock | Suraj Laddagiri",
     desc: "IGAdBlock is an iOS tweak by Suraj Laddagiri that removes ads from Instagram's feed by hooking its data sources at runtime, found through reverse engineering.",
@@ -44,7 +56,7 @@ export const ROUTE_META = {
   },
   "/demos": {
     title: "Demos | Suraj Laddagiri",
-    desc: "Live, interactive demos from Suraj Laddagiri.",
+    desc: "Apps by Suraj Laddagiri that you can install today.",
     crumb: "Demos",
   },
   "/atlas": {
@@ -54,7 +66,7 @@ export const ROUTE_META = {
   },
   "/privacy": {
     title: "Privacy Policy | Suraj Laddagiri",
-    desc: "How sladdagiri.org handles visitor data: limited, private analytics only, no advertising cookies, no third-party trackers, and nothing sold or shared.",
+    desc: "What sladdagiri.org logs about visitors, why it logs it, and how to get your data deleted. The site uses no ad cookies or third-party trackers.",
     crumb: "Privacy",
   },
   "/terms": {

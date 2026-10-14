@@ -111,8 +111,7 @@ export default function MusicStrip() {
         <P>
           The strip is a chain of addressable WS2812B LEDs on an ESP32. The ESP32
           holds the Bluetooth connection and runs the lighting modes. The iOS app
-          is the remote. It reads the current song, picks colors from the album
-          art, and sends the state to the ESP32 over BLE. One tap on the phone
+          is the remote. It reads the current song and pulls colors from the album art, then sends the new state to the ESP32 over BLE. One tap on the phone
           can set a plain color, an animation, or the music-reactive mode.
         </P>
 
