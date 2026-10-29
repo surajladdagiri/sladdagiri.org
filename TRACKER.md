@@ -53,6 +53,39 @@ Only `name` is required; everything else is optional.
 | `tags` | string[] | Free-form tags. |
 | `notes` | string | Anything else. |
 
+### Research fields (lab entries from the outreach research)
+
+These come from the Salk/Scripps outreach document and are all optional.
+
+| Field | Type | Notes |
+|-------|------|-------|
+| `pi` | string | Principal investigator. |
+| `fitScore` | number | Subjective fit, 0–100. |
+| `scores` | object | `{ skills /30, projects /25, alignment /20, readiness /25 }`; sums to `fitScore`. |
+| `fitRank` / `outreachRank` | number | Rank by fit and by outreach priority (1 = best). |
+| `rationale` | string | One-line reason for the score. |
+| `recommendation`, `connection`, `employment`, `vacancy`, `outreachStatus` | string | Columns from the priority list. |
+| `angle` | string | Suggested pitch (shown with a Copy button). |
+| `summary` | string | Markdown header block for the lab. |
+| `sections` | object[] | `{ title, md }` research subsections (markdown). |
+| `sources` | object[] | `{ label, url }`. |
+| `flags` | string[] | e.g. affiliation discrepancy, shared lab, umbrella center. |
+| `institutionNote`, `tagline`, `reviewed`, `dataSource` | string | Provenance details. |
+
+### Loading research in bulk
+
+The lab research is loaded with a seed file instead of the UI. It's generated
+outside this repo (it holds contacts, so it is never committed). To load or
+refresh it, run from `workers/analytics`:
+
+```
+npx wrangler d1 execute analytics --remote --file /path/to/atlas-labs-seed.sql
+```
+
+Re-running is safe: each lab is an upsert keyed by `id`, and it keeps any
+`status`, `notes`, `outreach`, `appliedDate`, `draftEmail`, `tags`, and
+`projects` already edited in Atlas while refreshing the research fields.
+
 ## Deploy note
 
 The Worker auto-creates the `tracker` table on first use — no migration needed.
