@@ -211,8 +211,38 @@ function CopyButton({ text }) {
 }
 const P = ({ children }) => <p style={{ fontFamily: T.body, fontSize: 14.5, lineHeight: 1.65, color: T.dim, margin: 0 }}>{children}</p>;
 
+/* ---------- one-click status actions ---------- */
+function QuickActions({ e, onSet, onUndo, pending, size = "sm" }) {
+  const hist = e.statusHistory || [];
+  const last = hist[hist.length - 1];
+  const pad = size === "sm" ? "4px 9px" : "7px 12px";
+  const fs = size === "sm" ? 11 : 12;
+  const b = (active, color) => ({
+    fontFamily: T.mono, fontSize: fs, letterSpacing: "0.03em", padding: pad, borderRadius: T.radius,
+    cursor: pending ? "wait" : active ? "default" : "pointer", whiteSpace: "nowrap",
+    border: `1px solid ${active ? color : T.rule}`, background: active ? color : "transparent",
+    color: active ? T.accentInk : T.ink, opacity: pending ? 0.6 : 1, fontWeight: active ? 700 : 500,
+  });
+  const stop = (fn) => (ev) => { ev.stopPropagation(); if (!pending) fn(); };
+  return (
+    <div onClick={(ev) => ev.stopPropagation()} style={{ display: "inline-flex", gap: 6, alignItems: "center", flexWrap: "wrap" }}>
+      <button style={b(e.status === "applied", T.accent)} disabled={pending || e.status === "applied"} onClick={stop(() => onSet(e, "applied"))} title="Mark as applied">
+        {e.status === "applied" ? "✓ Applied" : "Applied"}
+      </button>
+      <button style={b(e.status === "rejected", T.red)} disabled={pending || e.status === "rejected"} onClick={stop(() => onSet(e, "rejected"))} title="Mark as rejected">
+        {e.status === "rejected" ? "✕ Rejected" : "Rejected"}
+      </button>
+      {last && (
+        <button style={b(false)} disabled={pending} onClick={stop(() => onUndo(e))} title={`Undo: back to ${STATUS[last.status]?.label || last.status}`}>
+          Undo
+        </button>
+      )}
+    </div>
+  );
+}
+
 /* ---------- detail panel (modal) ---------- */
-function Detail({ e, onClose, onEdit, onDelete }) {
+function Detail({ e, onClose, onEdit, onDelete, onSet, onUndo, pending }) {
   useEffect(() => {
     const onKey = (ev) => ev.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
@@ -270,6 +300,7 @@ function Detail({ e, onClose, onEdit, onDelete }) {
           {hasPostingLead(e) && <Flag>Mentions a posting</Flag>}
           {(e.tags || []).map((t) => <Tag key={t}>{t}</Tag>)}
           <span style={{ flex: 1 }} />
+          <QuickActions e={e} onSet={onSet} onUndo={onUndo} pending={pending} size="md" />
           <button onClick={onEdit} style={btn("ghost")}>Edit</button>
           <button onClick={onDelete} style={btn("danger")}>Delete</button>
         </div>
@@ -367,7 +398,7 @@ function Detail({ e, onClose, onEdit, onDelete }) {
 }
 
 /* ---------- card view ---------- */
-function EntryCard({ e, onOpen }) {
+function EntryCard({ e, onOpen, onSet, onUndo, pending }) {
   return (
     <article onClick={onOpen} style={{ cursor: "pointer", background: T.surface, border: `1px solid ${T.rule}`, borderRadius: T.radius, padding: "16px 18px", display: "flex", flexDirection: "column", gap: 10 }}>
       <div style={{ display: "flex", gap: 12, justifyContent: "space-between", alignItems: "flex-start" }}>
@@ -391,8 +422,10 @@ function EntryCard({ e, onOpen }) {
         {e.outreachRank != null && <span>outreach #{e.outreachRank}</span>}
         {e.priority && <span>{e.priority}</span>}
         {hasPostingLead(e) && <span style={{ color: T.accent }}>posting</span>}
+        {e.appliedDate && <span>applied {e.appliedDate}</span>}
         {(e.flags || []).length > 0 && <span style={{ color: T.accent }}>⚑ {e.flags.length}</span>}
       </div>
+      <div style={{ marginTop: "auto", paddingTop: 4 }}><QuickActions e={e} onSet={onSet} onUndo={onUndo} pending={pending} /></div>
     </article>
   );
 }
@@ -410,11 +443,11 @@ function SortHead({ k, label, sort, setSort, align = "left", title }) {
     </th>
   );
 }
-function Table({ rows, sort, setSort, onOpen }) {
+function Table({ rows, sort, setSort, onOpen, onSet, onUndo, pendingIds }) {
   const td = { padding: "10px 10px", borderBottom: `1px solid ${T.rule}`, verticalAlign: "middle" };
   return (
     <div style={{ overflowX: "auto", border: `1px solid ${T.rule}`, borderRadius: T.radius }}>
-      <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 900 }}>
+      <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 1120 }}>
         <thead style={{ background: T.bg2 }}>
           <tr>
             <SortHead k="fitRank" label="Fit #" sort={sort} setSort={setSort} align="right" />
@@ -428,6 +461,7 @@ function Table({ rows, sort, setSort, onOpen }) {
             <SortHead k="readiness" label="Rd" sort={sort} setSort={setSort} align="right" title="Readiness /25" />
             <SortHead k="priority" label="Priority" sort={sort} setSort={setSort} />
             <SortHead k="status" label="Status" sort={sort} setSort={setSort} />
+            <th style={{ textAlign: "left", padding: "10px 10px", fontFamily: T.mono, fontSize: 11, letterSpacing: "0.05em", textTransform: "uppercase", color: T.dim, borderBottom: `1px solid ${T.ruleStrong}` }}>Quick update</th>
           </tr>
         </thead>
         <tbody>
@@ -448,7 +482,8 @@ function Table({ rows, sort, setSort, onOpen }) {
               <td style={td}><ScoreBar score={e.fitScore} /></td>
               {SUB.map(([k]) => <td key={k} style={{ ...td, textAlign: "right", fontFamily: T.mono, fontSize: 12.5, color: T.dim }}>{e.scores?.[k] ?? "—"}</td>)}
               <td style={{ ...td, fontFamily: T.mono, fontSize: 12, color: e.priority === "high" ? T.accent2 : T.dim }}>{e.priority || "—"}</td>
-              <td style={td}><StatusPill status={e.status} /></td>
+              <td style={td}><StatusPill status={e.status} />{e.appliedDate && e.status === "applied" && <div style={{ fontFamily: T.mono, fontSize: 10.5, color: T.faint, marginTop: 4 }}>{e.appliedDate}</div>}</td>
+              <td style={td}><QuickActions e={e} onSet={onSet} onUndo={onUndo} pending={pendingIds.has(e.id)} /></td>
             </tr>
           ))}
         </tbody>
@@ -703,6 +738,41 @@ export default function Atlas() {
     } catch (e) { alert("Save failed: " + e); } finally { setSaving(false); }
   };
 
+  // one-click status changes: update the screen right away, save in the
+  // background, roll back if the save fails. Each change pushes the previous
+  // status onto statusHistory so Undo can step back.
+  const [pendingIds, setPendingIds] = useState(() => new Set());
+  const localDate = () => new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  const persist = async (before, after) => {
+    const swap = (to) => setData((d) => ({ ...d, entries: d.entries.map((x) => (x.id === before.id ? to : x)) }));
+    swap(after);
+    setPendingIds((p) => new Set(p).add(before.id));
+    try {
+      const r = await fetch(`${ANALYTICS_URL}/tracker`, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` }, body: JSON.stringify(after) });
+      if (r.status === 401) { swap(before); logout(); return; }
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      const j = await r.json().catch(() => ({}));
+      if (j && j.entry) swap(j.entry);
+    } catch (err) {
+      swap(before);
+      alert(`Couldn't save the change to "${before.name}": ${err}`);
+    } finally {
+      setPendingIds((p) => { const n = new Set(p); n.delete(before.id); return n; });
+    }
+  };
+  const quickSet = (entry, next) => {
+    if (entry.status === next) return;
+    const statusHistory = [...(entry.statusHistory || []), { status: entry.status, appliedDate: entry.appliedDate || "", at: Date.now() }].slice(-20);
+    const appliedDate = next === "applied" && !entry.appliedDate ? localDate() : entry.appliedDate || "";
+    persist(entry, { ...entry, status: next, appliedDate, statusHistory });
+  };
+  const undoStatus = (entry) => {
+    const hist = [...(entry.statusHistory || [])];
+    const last = hist.pop();
+    if (!last) return;
+    persist(entry, { ...entry, status: last.status, appliedDate: last.appliedDate || "", statusHistory: hist });
+  };
+
   const deleteEntry = async (entry) => {
     if (!window.confirm(`Delete "${entry.name}"? This can't be undone.`)) return;
     try {
@@ -869,16 +939,16 @@ export default function Atlas() {
         ) : results.length === 0 ? (
           <p style={{ fontFamily: T.mono, fontSize: 13, color: T.faint }}>No entries match those filters.</p>
         ) : view === "table" ? (
-          <Table rows={results} sort={sort} setSort={setSort} onOpen={(e) => setOpenId(e.id || e.name)} />
+          <Table rows={results} sort={sort} setSort={setSort} onOpen={(e) => setOpenId(e.id || e.name)} onSet={quickSet} onUndo={undoStatus} pendingIds={pendingIds} />
         ) : (
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 14 }}>
-            {results.map((e) => <EntryCard key={e.id || e.name} e={e} onOpen={() => setOpenId(e.id || e.name)} />)}
+            {results.map((e) => <EntryCard key={e.id || e.name} e={e} onOpen={() => setOpenId(e.id || e.name)} onSet={quickSet} onUndo={undoStatus} pending={pendingIds.has(e.id)} />)}
           </div>
         )}
       </div>
 
       {open && !editing && (
-        <Detail e={open} onClose={() => setOpenId(null)} onEdit={() => setEditing(open)} onDelete={() => deleteEntry(open)} />
+        <Detail e={open} onClose={() => setOpenId(null)} onEdit={() => setEditing(open)} onDelete={() => deleteEntry(open)} onSet={quickSet} onUndo={undoStatus} pending={pendingIds.has(open.id)} />
       )}
       {editing && (
         <EntryForm initial={editing.id ? editing : null} onCancel={() => setEditing(null)} onSave={saveEntry} saving={saving} />
