@@ -23,6 +23,7 @@ const Accessibility = lazy(() => import("./pages/Accessibility"));
 const CongressML = lazy(() => import("./pages/CongressML"));
 const SleapIOS = lazy(() => import("./pages/SleapIOS"));
 const Website = lazy(() => import("./pages/Website"));
+const ScrollParty = lazy(() => import("./pages/ScrollParty"));
 const Atlas = lazy(() => import("./pages/Atlas"));
 const Theater = lazy(() => import("./pages/Theater"));
 const Upload = lazy(() => import("./pages/Upload"));
@@ -163,6 +164,7 @@ const FOOTER_LINKS = [
   { label: "Congressional Vote Prediction", to: "/congress" },
   { label: "sladdagiri.org", to: "/website" },
   { label: "IGAdBlock", to: "/igadblock" },
+  { label: "ScrollParty", to: "/scrollparty" },
   { label: "Demos", to: "/demos" },
 ];
 
@@ -254,6 +256,7 @@ export default function App() {
         <Route path="congress" element={<CongressML />} />
         <Route path="sleap-ios" element={<SleapIOS />} />
         <Route path="website" element={<Website />} />
+        <Route path="scrollparty" element={<ScrollParty />} />
         <Route path="atlas" element={<Atlas />} />
         <Route path="privacy" element={<SitePrivacy />} />
         <Route path="terms" element={<Terms />} />

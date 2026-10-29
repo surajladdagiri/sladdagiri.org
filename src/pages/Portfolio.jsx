@@ -277,6 +277,24 @@ export default function Portfolio() {
           { label: "Details", to: "/igadblock" },
         ],
       },
+      {
+        index: "07",
+        eyebrow: "Jailbreak tweak · In progress",
+        title: "ScrollParty",
+        blurb:
+          "An experimental tweak for watching Instagram Reels with a friend on two phones. Either person can scroll, pause, hold for 2x, or open comments, and the other phone follows. The tweak can already detect each of those actions. The hard part, which I'm working on now, is rebuilding one person's feed on the other phone, since every account gets its own personalized feed.",
+        tags: ["Reverse engineering", "Objective-C runtime", "Theos + Logos", "Real-time sync", "In progress"],
+        stats: [
+          { label: "Platform", value: "Jailbroken iOS" },
+          { label: "Detects", value: "Scroll, play, 2x, comments" },
+          { label: "Now", value: "Feed reconstruction" },
+          { label: "Next", value: "WebSocket sync" },
+        ],
+        links: [
+          { label: "Details", to: "/scrollparty", primary: true },
+          { label: "GitHub", href: "https://github.com/surajladdagiri/ScrollParty" },
+        ],
+      },
     ],
     [baseUrl]
   );

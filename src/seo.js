@@ -48,6 +48,12 @@ export const ROUTE_META = {
     crumb: "SLEAP iOS",
     parent: WORK,
   },
+  "/scrollparty": {
+    title: "ScrollParty | Suraj Laddagiri",
+    desc: "ScrollParty is an experimental iOS tweak by Suraj Laddagiri for watching Instagram Reels in sync on two phones, built by reverse-engineering Instagram's Reels classes at runtime.",
+    crumb: "ScrollParty",
+    parent: WORK,
+  },
   "/igadblock": {
     title: "IGAdBlock | Suraj Laddagiri",
     desc: "IGAdBlock is an iOS tweak by Suraj Laddagiri that removes ads from Instagram's feed by hooking its data sources at runtime, found through reverse engineering.",
